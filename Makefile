@@ -1,7 +1,7 @@
 #Author: Polonio Davide <poloniodavide@gmail.com>
 #License: GPLv3
 
-OUTPUT_NAME= RiskAndSecurityManagement
+OUTPUT_NAME= SecurityAndRiskManagement
 LIST_NAME= listOfSections.tex
 PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main
