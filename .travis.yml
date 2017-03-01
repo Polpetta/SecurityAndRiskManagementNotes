@@ -17,3 +17,12 @@ script:
 - make
 before_deploy:
 - git fetch --tags
+deploy:
+  provider: releases
+  api_key:
+    secure: i/F8Pi3TtrhkA58Xj5Q6PHnq3c+TPe08iWvYFjrj+2hMUzs3JJxxJKXQaHiUuaLjX9cGRkJ9NRU4tveBQMK0V0bm6v/ztzfbdzuHetzGi/nDazGuPjNJSg3v1gXKQcTVNH41CkAaP7RU/2G0wxY+dHAq9Gz0tMPKVg0V2OhSX9F4ll/9uPtTPB0RVixJpnaogEk8yVPGJBgvh+IAkghbpIRLldjGN33lRPI2IF5eM1mc8hokoC0uV8SIC/1aevCCYzS07j/TZRT3TnANQJYP6AW7Aaixd5agD+vB0pH6D0rwbnbKewhTWYv4BGlGymFsObGGJ/GSd80woAY1Ngqz8+SaRnKsGH3JpXsZB4bbirDbxOKjl+DMgDMrN0i3lBJIsiWolUfukxvPZOEogXilOo4GuwXXaRnxalnlHsn2ecFKCLu0AbegV1AHcwec2zsfd1K4FWa0lksvRRVpRKlPYdUT1oo2E1TFphZI6N2gmExwd3MzBGdKsCG0Z0yp6wcZnlGFglejq8FkG85hmCXi02cHzmH5yow2ElDfBE/axQC63qu9MefdYrMKgL5w00LJFrGFjof8Cq9wSgbxCWDVby7U7JwchtOTSJquVtwfRwdA89PLG9xbcZV+7lqzRNCQIw3DiLl+SwkUAokBopeHUFyZvlY+ceJLurNK/YVcXTk=
+  file: SecurityAndRiskManagement.pdf
+  skip_cleanup: true
+  on:
+    repo: Polpetta/SecurityAndRiskManagementNotes
+    tags: true
