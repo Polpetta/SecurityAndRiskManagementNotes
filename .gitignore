@@ -135,5 +135,7 @@ sympy-plots-for-*.tex/
 
 res/listOfSections.tex
 
-Tesi.zip
+SecurityAndRiskManagement.zip
 bin/*
+
+*.tex.backup
