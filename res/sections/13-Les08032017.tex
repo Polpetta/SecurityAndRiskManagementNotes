@@ -1,0 +1,176 @@
+\section{Classificazione dell'evento danneggiante}
+
+\begin{itemize}
+\item negligible: costo non significativo
+\item minor: non ignorabile ma con costo senza impatto
+\item major: impatto su uno o più dipartimenti e può impattare sui clienti esterni
+\item crisis: evento che ci costa la permanenza sul mercato
+\end{itemize}
+
+Minor, major e crisis dovrebbero essere documentati e tracciati per poter rimediare.
+
+\subsection{Disastro e impatto}
+
+%%TODO da trasformare in tabella
+
+Se c'è un incendio, questo impatta sulle classi e il dipartimento. Come lo classifichiamo? Crisi, potrebbe essere major se limitato ad una parte del dipartimento. Attenzione: c'è la vita umana in rischio e quindi un forte rischio da tenere in considerazione.
+
+Attacco hacker: attaccano i registri. Può essere un evento major che ha implicazioni legali.
+
+Indisponibilità dalla rete: crisis. I dipartimenti dipendono dalla rete perché ci lavorano e questo blocca completamente il dipartimento.
+
+Social engineering: può esserci un attacco al sistema di registrazione (mi prendono psw e token).
+
+Server failure: stesse conseguenze di network unavailable. Classificato come major (crisis in alcuni casi, es. sessione d'esami).
+
+\subsection{Tempi di recupero}
+
+Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo nell'\textbf{interruption window} (finestra di tempo per cui il servizio non è disponibile). Abbiamo fatto un disaster recovery plan e possiamo entrare in \textbf{alternate mode} (servizio più scarno ma disponibile).
+
+\textbf{Service Delivery Objective:} livello di servizio che possiamo fornire in alternate mode (es. una banca vuole che sia garantito almeno il 50\% delle transazioni durante la alternate mode, quindi SDO è 50\%).
+
+\textbf{Maximum Tolerable Outage:} periodo intercorso tra l'evento negativo e il momento in cui riusciamo a ripristinare il servizio.
+
+\textbf{Restoration plan:} permette di passare dall'alternate mode al regular service mode.
+
+\subsection{Definizioni}
+
+\textbf{Business Continuity:} riuscire ad operare anche se con una modalità degradata di servizio.
+
+Disaster recovery: permette di sopravvivere anche se il servizio IT è non disponbile
+
+Alternate Process Mode: modalità alternata.
+
+Disaster Recovery mode: piano che permette di passare in modalità alternata.
+
+Restoration plan: permette di passare dalla modalità alternata a quella normale.
+
+\section{Classificazione dei servizi}
+
+Il servizio ha un costo associato, di conseguenza anche la mancanza erogazione del servizio.
+
+\textbf{Critical:} non posso sostituirlo con un processo non IT, non si deve fermare. Costo molto elevato. Esempio: telemedicina, un medico sta al MIT e tramite telemedicina opera qualcuno a Ginevra, chiaramente il servizio non può essere interrotto. Questo servizio implica la safety, ogni servizio che implica la safety è critica per definizione.
+
+\textbf{Vital:} andare avanti a mano per un tempo molto ridotto. Costo elevato.
+
+\textbf{Sensitive:} posso sostituire all'IT una procedura manuale per un periodo limitato di tempo ma mi costa di più.
+
+\textbf{Nonsensitive:} posso andare avanti manualmente per un periodo esteso di tempo.
+
+\subsection{Esempio: determine criticality of business processes}
+
+Abbiamo una grande compagnia con le seguenti sotto-componenti (vedi immagine con albero che ha per radice corporate.
+
+Il servizio più importante è sales, perché non si può spedire senza vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non fatturano.
+
+Sotto alle sales abbiamo web service and sales calls. Tra i due web service è critico perché non può essere sostituito manualmente, mentre le sales calls possono essere segnate a mano.
+
+Nelle sales cales è più importante orders che inventory perché...
+
+Gli ingegneri sono a bassa priorità perché anche se non lavorano per una settimana sullo sviluppo di un prodotto semplicemente viene ritardato di una settimana.
+
+\subsection{RPO and RTO}
+
+\textbf{Recovery Point Objective:} ammontare dei dati che possiamo perdere quando recuperiamo dal backup.
+
+\textbf{Recovery Time Objective:} tempo che serve per recuperare le applicazioni e ripartire in modo da poter ripristinare il servizio.
+
+Se voglio avere RPO/RTO bassi devo avere una spesa maggiore (es. se voglio RPO minore vuol dire che devo effettuare backup più spesso, che significa rendere non disponibile il dato su cui sto effettuando backup, ossia chi deve lavorarci non può farlo).
+
+\textbf{Orphan data:} dati che vanno persi e non sono recuperabili.
+
+\subsection{Business Impact Analysis Summary}
+
+%%TODO Copiare la tabella
+
+\section{RAID}
+
+Sistema di ridondanza per i dati.
+
+RAID 0: i dischi anziché essere memorizzati su un disco sono memorizzati su due dischi. Possibile accesso parallelo ma niente backup (striping).
+
+RAID 1: backup su un altro disco (mirroring).
+
+...
+
+RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping con in aggiunta dei bit di parità.
+
+\section{Network Disaster recovery}
+
+Per recuperare un problema di rete la cosa più semplice è diversificare (avere ridondanza, una rete alternativa). Due tipi di ridondanza
+\begin{itemize}
+\item alternative routing: faccio un contratto con una società che mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo fisico, altrimenti è inutile;
+\begin{itemize}
+\item last-mile circuit protection: se mi tranciano l'ultimo miglio tra l'azienda e la centralina posso mantenere comunicazioni tramite microwave communication, faccio comunicazione punto punto.
+\item long-haul network diversity
+\end{itemize}
+\item diverse routing: si fa con la stessa società ma questa società garantisce un instradamento diverso.
+\end{itemize}
+
+\section{Disruption vs Recovery costs}
+
+%%TODO copiare il grafico
+
+Asse x: tempo di disservizio del servizio
+Asse y: costo
+
+\textbf{Hot site:} il centro di backup è allineato con il centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro operativo). Il tempo di recupero da downtime è molto basso ma il costo è molto alto.
+
+\textbf{Warm site:} c'è un altro sito che ha tutti gli assets pronti per lavorare ma non c'è nessuno nel sito di backup.
+
+\textbf{Cold site:} abbiamo un sito predisposto per l'emergenza ma che di fatto è vuoto. Es: gli attacchi sono pronti ma mancano i server e le configurazioni.
+
+Ci sono le \textbf{alternative recovery strategies} che hanno costi molto bassi di recupero. Es: due società si accordano per condividere i siti caldi. Questo rientra nella fase di \textbf{reciprocal agreeement}.
+
+\textbf{Mobile site:} un mezzo mobile viene con un'antenna sul sito e garantisce la connettività.
+
+\section{Cloud computing}
+
+Il cloud computing è caratterizzato da elasticità e (?). Posso scalare le risorse che mi servono, sia in positivo che in negativo. Permette un'azienda di liberarsi del proprio reparto macchine (no server fisici in loco).
+
+Vantaggi: agilità, efficienza del costo, deployment veloce e alta scalabilità.
+
+Svantaggi: costi customizzati, usabilità, connettività (mia e di chi fornisce il cloud computing), sicurezza.
+
+\subsection{Modello di dispiegamento}
+
+Public: pago e accedo al cloud.
+
+Private: creo un mio datacenter e lo utilizzo per i miei servizi.
+
+Hybrid: via di mezzo tra public e private.
+
+Community: raggruppa organizzazioni che hanno lo stesso tipo di interessi o problematiche. Privato ma "allargato".
+
+\subsection{Modello di servizio}
+
+Software(SaaS): si fa girare applicazioni di terze parti sul cloud.
+
+Platform(PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci faccio girare le mie applicazioni. 
+
+Infrastructure(IaaS): viene fornita la macchina e l'azienda ci mette sopra quello di cui ha bisogno.
+
+\subsection{Caratteristiche essenziali}
+
+Resource pooling
+
+Broad network access
+
+Rapid elasticity
+
+altro... vedi schema sul cloud.
+
+\subsection{Major Areas of Security Concerns}
+
+Service Level Agreement (SLA): definisce performance, sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di fornitura di internet, il SLA di solito è la banda minima garantita.
+
+Multi-tenancy: la mia applicazione è sullo stesso server usato da altre organizzazione. Servono segmentazione, isolazione e delle policy.
+
+Your coverage: la sicurezza dipende dall'infrastruttura dell'azienda e da quella del cloud provider.
+
+Non è possibile trasferire la responsabilità dei servizi nei confronti dei propri clienti. Es: dichiarazione dei redditi con il commercialista, il commercialista fa la dichiarazione ma io la firmo e di conseguenza sono il responsabile legale.
+
+\subsection{Accordo reciproco}
+
+Vantaggio: costo basso. Ha anche diversi svantaggi, tra cui la sicurezza.
+Processi veramente critici vanno posti a distanza geografica perché se capita una catastrofe è molto probabile che venga colpito anche chi è vicino a me (suscettibilità allo stesso disastro).
