@@ -110,7 +110,8 @@ Il servizio ha un costo associato, di conseguenza anche la mancanza erogazione
 del servizio lo ha. In ordine di importanza:
 \begin{enumerate}
  \item[\textbf{Critical}] Non posso sostituirlo con un processo non IT, non si 
-deve fermare. Costo molto elevato. Esempio: telemedicina, un medico sta al MIT 
+deve fermare. Costo molto elevato. \\
+Esempio: telemedicina, un medico sta al MIT 
 e tramite telemedicina opera qualcuno a Ginevra, chiaramente il servizio non 
 può essere interrotto. Questo servizio implica la \textit{safety}, ogni 
 servizio che implica la safety è critica per definizione.
@@ -119,17 +120,20 @@ servizio che implica la safety è critica per definizione.
 elevato.
 
  \item[\textbf{Sensitive}] Posso sostituire all'IT una procedura manuale per un 
-periodo limitato di tempo ma mi costa di più.
+periodo limitato di tempo ma mi costa di più. 
 
  \item[\textbf{Nonsensitive}] Posso andare avanti manualmente per un periodo 
-esteso di tempo.
+esteso di tempo. 
 
 \end{enumerate}
 
-\subsection{Esempio: determine criticality of business processes}
+Nelle aziende di solito è sempre presente un processo critico. È strano se non 
+ce n'è neanche uno, ma dipende molto dalla realtà.
 
-Abbiamo una grande compagnia con le seguenti sotto-componenti (vedi immagine con 
-albero che ha per radice corporate).
+\subsection{Esempio: determinazione di criticità nei processi di business}
+
+Abbiamo una grande compagnia con le seguenti sotto-componenti (vedi immagine 
+con albero che ha per radice \textit{corporate}).
 
 Il servizio più importante è \textit{sales}, perché non si può spedire senza 
 vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non 
@@ -139,133 +143,176 @@ Sotto alle sales abbiamo \textit{web service} and \textit{sales calls}. Tra i
 due web service è critico perché non può essere sostituito manualmente, mentre 
 le sales calls possono essere segnate a mano.
 
-Nelle sales cales è più importante orders che inventory perché... %%TODO Finire
+%Nelle sales è più importante orders che inventory perché... % TODO Finire
 
 Gli ingegneri sono a bassa priorità perché anche se non lavorano per una 
 settimana sullo sviluppo di un prodotto semplicemente viene ritardato di una 
-settimana.
+settimana. Ovviamente bisogna tenere in considerazione il fatto che se c'è una 
+\textit{deadline} vicina il rischio sale.
 
 \subsection{RPO and RTO}
 
 \begin{itemize}
- \item \textbf{Recovery Point Objective:} ammontare dei dati che possiamo 
+ \item \textbf{Recovery Point Objective}: ammontare dei dati che possiamo 
 perdere quando recuperiamo dal backup.
 
- \item \textbf{Recovery Time Objective:} tempo che serve per recuperare le 
+ \item \textbf{Recovery Time Objective}: tempo che serve per recuperare le 
 applicazioni e ripartire in modo da poter ripristinare il servizio.
 
- \item \textbf{Orphan data:} dati che vanno persi e non sono recuperabili.
+ \item \textbf{Orphan data}: dati che vanno persi e non sono recuperabili.
 \end{itemize}
 
-Se voglio avere RPO/RTO bassi devo avere una spesa maggiore (es. se voglio RPO 
-minore vuol dire che devo effettuare backup più spesso, che significa rendere 
-non disponibile il dato su cui sto effettuando backup, ossia chi deve lavorarci 
-non può farlo).
+Se voglio avere \textit{RPO} basso devo avere una spesa maggiore (es. se lo 
+voglio minore vuol dire che devo effettuare backup più spesso, che significa 
+rendere non disponibile il dato su cui sto effettuando backup, ossia chi deve 
+lavorarci non può farlo).
+\textit{RTO} è ovvio invece: più velocemente vogliamo essere operativi più 
+questo costa.
 
 \subsection{Business Impact Analysis Summary}
 
-%%TODO Copiare la tabella
+% TODO Copiare la tabella
 
-\section{RAID}
+\section{Diverse tipologie di \textit{disaster recovery}}
 
-Sistema di ridondanza per i dati.
+\subsection{RAID}
 
-RAID 0: i dischi anziché essere memorizzati su un disco sono memorizzati su due 
-dischi. Possibile accesso parallelo ma niente backup (striping).
+Sistema di ridondanza per i dati. Sono sei con diverse modalità.
+\begin{itemize}
+  \item RAID 0: i dischi anziché essere memorizzati su un disco sono 
+  memorizzati su due dischi. Possibile accesso parallelo ma niente backup 
+  (striping).
+  
+  \item RAID 1: backup su un altro disco (mirroring).
+  
+  \item Altri raid
+  
+  \item RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping 
+  con in aggiunta dei bit di parità.
+  
+\end{itemize}
 
-RAID 1: backup su un altro disco (mirroring).
-
-...
-
-RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping con in 
-aggiunta dei bit di parità.
-
-\section{Network Disaster recovery}
+\subsection{Network Disaster recovery}
 
 Per recuperare un problema di rete la cosa più semplice è diversificare (avere 
-ridondanza, una rete alternativa). Due tipi di ridondanza
+ridondanza, una rete alternativa). Due tipi di ridondanza:
 \begin{itemize}
-\item alternative routing: faccio un contratto con una società che mi fornisce 
-un altro mezzo fisico che esce dalla mia azienda. Bisogna essere sicuri che il 
-mezzo che fornisce questa seconda società non sia lo stesso mezzo fisico, 
-altrimenti è inutile;
-\begin{itemize}
-\item last-mile circuit protection: se mi tranciano l'ultimo miglio tra 
-l'azienda e la centralina posso mantenere comunicazioni tramite microwave 
-communication, faccio comunicazione punto punto.
-\item long-haul network diversity
-\end{itemize}
-\item diverse routing: si fa con la stessa società ma questa società garantisce 
-un instradamento diverso.
+  \item \textbf{alternative routing}: faccio un contratto con una società che 
+  mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere 
+sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo 
+fisico, altrimenti è inutile;
+  \begin{itemize}
+    \item last-mile circuit protection: se mi tranciano l'ultimo miglio tra 
+l'azienda e la centralina posso mantenere comunicazioni tramite 
+\textit{microwave communication}\footnote{Comunicazione a Microonde.}, faccio 
+comunicazione punto punto. Questa tecnologia viene usata abbastanza spesso in 
+quanto non richiede una particolare installazione ed è abbastanza economica.
+    \item long-haul network diversity
+  \end{itemize}
+  \item \textbf{diverse routing}: si fa con la stessa società ma questa società 
+garantisce un instradamento diverso.
 \end{itemize}
 
-\section{Disruption vs Recovery costs}
+\subsection{Disruption vs Recovery costs}
 
-%%TODO copiare il grafico
+Questi due obiettivi sono ovviamente conflittuali.
+
+% TODO copiare il grafico
 
 Asse x: tempo di disservizio del servizio
 Asse y: costo
 
-\textbf{Hot site:} il centro di backup è allineato con il centro operativo (es. 
-gestione dei satelliti, ho due siti, uno hot e l'altro operativo). Il tempo di 
-recupero da downtime è molto basso ma il costo è molto alto.
+Esistono diverse tecnologie di backup:
+\begin{itemize}
+  \item \textbf{Hot site}: il centro di \textit{backup} è allineato con il 
+  centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro 
+  operativo). Il tempo di recupero da \textit{downtime} è molto basso ma il 
+  costo è molto alto. Il costo è molto alto perché bisogna duplicare 
+  l'infrastruttura e il costo dell'\textit{information processes}.
+  
+  \item \textbf{Warm site}: c'è un altro sito che ha tutti gli assets pronti 
+  per lavorare ma non è ancora operativo.
+  
+  \item \textbf{Cold site}: abbiamo un sito predisposto per l'emergenza ma che 
+  di fatto è vuoto. Ad esempio gli attacchi per il computer sono pronti ma 
+  mancano i server e le configurazioni. Questa installazione è quella che 
+  richiede più tempo per diventare operativo, anche se il suo costo è molto 
+  basso.
+  
+  \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi 
+  di recupero ma si trovano in una fascia operativa media. Due società nello 
+  stesso segmento di mercato ma non troppo in competizione si potrebbero 
+  accordare per condividere i siti caldi. Questo rientra nella fase di 
+  \textbf{reciprocal agreeement}.
+  
+  
+  \item \textbf{Mobile site:} un mezzo mobile viene con un'antenna sul sito e 
+  garantisce la connettività.
+  
+\end{itemize}
 
-\textbf{Warm site:} c'è un altro sito che ha tutti gli assets pronti per 
-lavorare ma non c'è nessuno nel sito di backup.
 
-\textbf{Cold site:} abbiamo un sito predisposto per l'emergenza ma che di fatto 
-è vuoto. Es: gli attacchi sono pronti ma mancano i server e le configurazioni.
+\subsection{Cloud computing}
 
-Ci sono le \textbf{alternative recovery strategies} che hanno costi molto bassi 
-di recupero. Es: due società si accordano per condividere i siti caldi. Questo 
-rientra nella fase di \textbf{reciprocal agreeement}.
+Il \textit{cloud computing} è caratterizzato da elasticità e scalabilità. Posso 
+scalare le risorse che mi servono, sia in positivo che in negativo perchè non 
+sono regolari. Permette un'azienda di liberarsi del proprio reparto macchine 
+(no server fisici in loco).
 
-\textbf{Mobile site:} un mezzo mobile viene con un'antenna sul sito e 
-garantisce la connettività.
+\paragraph*{Vantaggi} Agilità, efficienza del costo, \textit{deployment} veloce 
+e alta scalabilità.
 
-\section{Cloud computing}
+\paragraph*{Svantaggi} Costi customizzati, usabilità, connettività (mia e di 
+chi fornisce il \textit{cloud computing}), sicurezza.
 
-Il cloud computing è caratterizzato da elasticità e (?). Posso scalare le 
-risorse che mi servono, sia in positivo che in negativo. Permette un'azienda di 
-liberarsi del proprio reparto macchine (no server fisici in loco).
+\subsubsection{Modello di dispiegamento}
 
-Vantaggi: agilità, efficienza del costo, deployment veloce e alta scalabilità.
+Esistono diversi metodi di dispiegamento:
+\begin{itemize}
+  \item Pubblico: pago e accedo al cloud (ad esempio Amazon AWS).
+  
+  \item Privato: creo un mio \textit{datacenter} e lo utilizzo per i miei 
+  servizi (ad esempio il datacenter di una banca).
+  
+  \item Ibrido: via di mezzo tra public e private.
+  
+  \item Comunitario: raggruppa organizzazioni che hanno lo stesso tipo di 
+  interessi o problematiche. Privato ma ``allargato''.
+  
+\end{itemize}
 
-Svantaggi: costi customizzati, usabilità, connettività (mia e di chi fornisce 
-il cloud computing), sicurezza.
+Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il 
+\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la 
+\textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità 
+diverse sulla stessa macchina grazie alla virtualizzazione. In caso di 
+fallimento di una macchina potrebbero fallire più servizi di diversi utenti, 
+per non parlare del fatto che un utente malintenzionato potrebbe tentare di 
+accedere al servizio di un altro utente risiedente sulla stessa istanza.
 
-\subsection{Modello di dispiegamento}
+\subsubsection{Modello di servizio}
 
-Public: pago e accedo al cloud.
+Esistono diversi modelli di servizio:
+\begin{itemize}
+  \item Software (SaaS): si fa girare applicazioni di terze parti sul cloud.
+  \item Platform (PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci 
+  faccio girare le mie applicazioni. 
+  \item Infrastructure (IaaS): viene fornita la macchina e l'azienda ci mette 
+  sopra quello di cui ha bisogno.
+  
+\end{itemize}
 
-Private: creo un mio datacenter e lo utilizzo per i miei servizi.
+\subsubsection{Caratteristiche essenziali}
 
-Hybrid: via di mezzo tra public e private.
+% TODO: Aggiungere schema sul cloud?
 
-Community: raggruppa organizzazioni che hanno lo stesso tipo di interessi o 
-problematiche. Privato ma "allargato".
+\begin{itemize}
+  \item Resource pooling
+  \item Broad network access
+  \item Rapid elasticity
+  \item Altro... vedi schema sul cloud
+\end{itemize}
 
-\subsection{Modello di servizio}
-
-Software(SaaS): si fa girare applicazioni di terze parti sul cloud.
-
-Platform(PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci faccio 
-girare le mie applicazioni. 
-
-Infrastructure(IaaS): viene fornita la macchina e l'azienda ci mette sopra 
-quello di cui ha bisogno.
-
-\subsection{Caratteristiche essenziali}
-
-Resource pooling
-
-Broad network access
-
-Rapid elasticity
-
-altro... vedi schema sul cloud.
-
-\subsection{Major Areas of Security Concerns}
+\subsubsection{Major Areas of Security Concerns}
 
 Service Level Agreement (SLA): definisce performance, sicurezza, policy, 
 disponibilità e molte altre cose. Esempio: contratto di fornitura di internet, 
@@ -282,9 +329,10 @@ propri clienti. Es: dichiarazione dei redditi con il commercialista, il
 commercialista fa la dichiarazione ma io la firmo e di conseguenza sono il 
 responsabile legale.
 
-\subsection{Accordo reciproco}
+\subsubsection{Accordo reciproco}
 
-Vantaggio: costo basso. Ha anche diversi svantaggi, tra cui la sicurezza.
-Processi veramente critici vanno posti a distanza geografica perché se capita 
-una catastrofe è molto probabile che venga colpito anche chi è vicino a me 
-(suscettibilità allo stesso disastro).
+\paragraph*{Vantaggi} Costo basso. 
+
+\paragraph*{Svantaggi}La sicurezza. Processi veramente critici vanno posti a 
+distanza geografica perché se capita una catastrofe è molto probabile che venga 
+colpito anche chi è vicino a me (suscettibilità allo stesso disastro).
