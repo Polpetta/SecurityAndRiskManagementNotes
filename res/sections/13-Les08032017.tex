@@ -24,7 +24,6 @@ rimediare.
 
 \subsection{Disastro e impatto}
 
-%%TODO da trasformare in tabella
 Supponiamo di essere in una Università.
 Potrebbero accedere i seguenti disastri:
 \begin{itemize}
@@ -132,8 +131,11 @@ ce n'è neanche uno, ma dipende molto dalla realtà.
 
 \subsection{Esempio: determinazione di criticità nei processi di business}
 
-Abbiamo una grande compagnia con le seguenti sotto-componenti (vedi immagine 
-con albero che ha per radice \textit{corporate}).
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.42]{dcobp}
+ \caption{Una grande compagnia con le seguenti sotto-componenti}
+\end{figure}
 
 Il servizio più importante è \textit{sales}, perché non si può spedire senza 
 vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non 
@@ -171,9 +173,35 @@ questo costa.
 
 \subsection{Business Impact Analysis Summary}
 
-% TODO Copiare la tabella
+Per fare un riassunto della unità viene qui proposto un esempio. In una 
+università, potremmo avere la seguente \textit{Business Impact Analysis 
+Summary}\footnote{Per comodità esiste anche l'abbreviazione BIA.}
 
-\section{Diverse tipologie di \textit{disaster recovery}}
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|p{5cm}|}
+\hline
+\textbf{Servizio}      & \textbf{RPO (ore)} & \textbf{RTO (ore)} & 
+\textbf{Risorse critiche}           & \textbf{Note speciali}                     
+                           \\
+\hline
+Registrazione & 0 ore     & 4 ore     & SOLAR, rete, Registratore  & Alta 
+priorità durante Nov - Gennaio, Maggio - Giugno, Agosto \\
+\hline
+Personale     & 2 ore     & 8 ore     & PeopleSoft                 & Potrebbe 
+operare manualmente per alcune ore                  \\
+\hline
+Insegnamenti  & 1 giorno  & 1 ora     & D2L, rete, file di facoltà & Durante il 
+semestre scolastico: alta priorità               \\
+\hline
+\end{tabular}%
+}
+\caption{Un esempio di BIA per una Università}
+\end{table}
+
+
+\section{Tipologie di \textit{disaster recovery}}
 
 \subsection{RAID}
 
@@ -213,13 +241,18 @@ quanto non richiede una particolare installazione ed è abbastanza economica.
 garantisce un instradamento diverso.
 \end{itemize}
 
-\subsection{Disruption vs Recovery costs}
+\subsection{Rottura vs Costi di ripristino}
 
 Questi due obiettivi sono ovviamente conflittuali.
 
-% TODO copiare il grafico
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{dvsrc}
+ \caption{Relazione tra una rottura e i costi di ripristino del servizio}
+\end{figure}
 
 Asse x: tempo di disservizio del servizio
+
 Asse y: costo
 
 Esistono diverse tecnologie di backup:
@@ -246,7 +279,7 @@ Esistono diverse tecnologie di backup:
   \textbf{reciprocal agreeement}.
   
   
-  \item \textbf{Mobile site:} un mezzo mobile viene con un'antenna sul sito e 
+  \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e 
   garantisce la connettività.
   
 \end{itemize}
@@ -264,6 +297,13 @@ e alta scalabilità.
 
 \paragraph*{Svantaggi} Costi customizzati, usabilità, connettività (mia e di 
 chi fornisce il \textit{cloud computing}), sicurezza.
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{itc}
+ \caption{Una visione generale di come funziona un servizio \textit{cloud}}
+\end{figure}
 
 \subsubsection{Modello di dispiegamento}
 
@@ -303,26 +343,30 @@ Esistono diversi modelli di servizio:
 
 \subsubsection{Caratteristiche essenziali}
 
-% TODO: Aggiungere schema sul cloud?
-
+Qui di seguito sono elencate le caratteristiche essenziali che un servizio 
+cloud offre:
 \begin{itemize}
   \item Resource pooling
   \item Broad network access
   \item Rapid elasticity
-  \item Altro... vedi schema sul cloud
+  \item Measured service
+  \item On-demand self-service
 \end{itemize}
 
 \subsubsection{Major Areas of Security Concerns}
 
-Service Level Agreement (SLA): definisce performance, sicurezza, policy, 
-disponibilità e molte altre cose. Esempio: contratto di fornitura di internet, 
-il SLA di solito è la banda minima garantita.
+\begin{itemize}
+ \item \textbf{Service Level Agreement (SLA)}: definisce performance, 
+sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di 
+fornitura di internet, il SLA di solito è la banda minima garantita.
 
-Multi-tenancy: la mia applicazione è sullo stesso server usato da altre 
-organizzazione. Servono segmentazione, isolazione e delle policy.
+ \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server 
+usato da altre organizzazioni. È quindi necessario avere un'adeguata 
+segmentazione e isolazione. Un set di \textit{policy} sono anche necessarie.
 
-Your coverage: la sicurezza dipende dall'infrastruttura dell'azienda e da 
-quella del cloud provider.
+ \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura 
+dell'azienda e da quella del cloud provider.
+\end{itemize}
 
 Non è possibile trasferire la responsabilità dei servizi nei confronti dei 
 propri clienti. Es: dichiarazione dei redditi con il commercialista, il 
