@@ -21,56 +21,96 @@ Gli esercizi si trovano nella sezione \ref{EsBCDR1}.
 
 \section{Disaster recovery testing}
 
-Un incidente non viene dichiarato immediatamente, ma c'è una procedura di 
-chiamate prima di una dichiarazione di incidente. Quando una situazione di 
-incidente è dichiarata l'incolumità fisica è la prima a essere presa in 
-considerazione. Gli \textit{Stackeholders} sono subito contattati, mentre 
-l'ufficio stampa si occupa di dichiarare l'incidente. Questa parte è molto 
-delicata, è il danno dev'essere spiegato in maniera molto delicata.
+Un incidente non viene dichiarato immediatamente, ma c'è una procedura da 
+rispettare. Quando una situazione di incidente è dichiarata l'incolumità fisica 
+è la prima a essere presa in considerazione. Gli \textit{Stackeholders} sono 
+subito contattati, mentre l'ufficio stampa si occupa di dichiarare l'incidente. 
+Questa parte è molto delicata, e il danno dev'essere spiegato in maniera da non 
+costituire una brutta pubblicità per l'azienda.
 
-L'ufficio IT entra in azione dopo tutte queste procedure, e comincia ad agire 
-per risolvere il problema.
+L'ufficio IT entra in azione dopo tutte queste procedure preliminari sono 
+annunciate, e comincia ad agire per risolvere il problema.
 
-\subsection{Preparazione di un piano di \textit{piano di recupero}}
+\subsection{Preparazione di un piano di recupero}
 
 La vita delle persone viene messa sempre in primo piano. Viene poi definito chi 
 deve fare cosa. Le copie del piano di recupero devono essere distribuite in 
-diverse locazioni per evitare che essa possa esser distrutta.
+diverse locazioni per evitare che possano essere distrutte.
 
-\subsubsection{Responsabilità di un piano di recupero}
+\subsubsection{Responsabilità in un piano di recupero}
 
-In ogni piano della struttura ad esempio dovrebbe necessario che una persona 
-che si incarichi di controllare ogni stanza del piano in caso di una 
-evacuazione.
+All'interno dell'azienda parte del personale ricopre dei ruoli dal punto di 
+vista della sicurezza delle persone, e sono pronti ad agire in caso una 
+situazione di pericolo si manifesti.
+
+Ad esempio, in ogni piano di una struttura (come un ufficio o un edificio 
+pubblico) dovrebbe essere presente una persona che si incarichi di controllare 
+ogni stanza per verificare l'assenza di persone in difficoltà in caso di una 
+evacuazione d'emergenza.
 
 \subsection{Documenti di un piano di recupero}
 
 % TODO: copiare la tabella
 
-\subsection{\textit{Mean time between failure}}
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[H]
+\centering
+\label{my-label}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|p{5cm}|p{5cm}|}
+\hline
+\textbf{Focus}                   & \textbf{IT}                                   
+                                              & \textbf{Business}                
+                                                                    \\ \hline
+Evento di recupero      & Piano di recupero del disastro. Procedure per 
+recuperare in modalità alternativa   & Piano di recupero del Business. Recupero 
+del business dopo un disastro                      \\ \hline
+                        & Piano di contingenza IT: recupero della maggior parte 
+delle applicazioni o sistemi & Piano di emergenza per gli occupanti: proteggere 
+la vita e le risorse sotto pericolo fisico \\ \hline
+                        & Piano di risposta per un incidente cibernetico 
+malizioso                           & Piano di comunicazione di crisi: da un 
+report della situazione al pubblico e al personale   \\ \hline
+Continuità del business &                                                        
+                            & Piano di continuità del business                   
+                                         \\ \hline
+                        &                                                        
+                            & Piano di continuità delle operazioni in caso di 
+interruzioni prolungate                     \\ \hline
+\end{tabular}%
+}
+\caption{Lista dei vari documenti di un piano di recupero}
+\end{table}
+
+\subsection{\textit{Mean Time Between Failure}}
 
 Detto anche MTBF è la somma del \textit{Mean Time to Repair} (MTTR) più il 
 \textit{Mean Time To Fail} (MTTF).
 
-% TODO: inserire schema da slide
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{mtbf}
+ \caption{Grafico rappresentate i vari valori di un MTBF, MTTR e MTTF}
+\end{figure}
+
 
 L'affidabilità può essere misurata. Un tipica misura è quella detta del 
-\textit{5 9s}, ovvero del $99.999\%$, ovvero 5 minuti e mezzo di fallimento 
-all'anno.
+\textit{5 9s}, ovvero del $99.999\%$ di \textit{uptime}, ovvero 5 minuti e 
+mezzo di fallimento all'anno del servizio.
 
 \subsection{Esecuzione del test}
 
 È l'esecuzione del piano per verificarne il suo funzionamento.
 Il test viene effettuato in questo ordine:
-\begin{itemize}
-  \item Desk-Based Evaluation/Paper test \\
-  Un gruppo comincia a seguire i passi della procedura a mano e li esegue a mano
-  \item Preparedness Test \\
-  Una parte dell'intero test viene eseguito. Parte differenti del test vengono 
-  eseguite regolarmente.
-  \item Full Operational Test \\
+\begin{enumerate}
+  \item \textbf{Desk-Based Evaluation/Paper test} \\
+  Un gruppo comincia a seguire i passi della procedura e li esegue a mano
+  \item \textbf{Preparedness Test} \\
+  Una o più parti dell'intero test vengono eseguite.
+  \item \textbf{Full Operational Test} \\
   Simulazione di un disastro completo
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{Tipologie di test per il Business Continuity}
 
@@ -85,8 +125,8 @@ Esistono diverse tipologie di test per il \textit{Business Continuity}:
   Esecuzione del piano basato specificamente per uno scenario, senza un sito 
   alternativo
   \item Parallel Test \\
-  Viene azionato la \textit{facility} alternativa fuori dal sito, senza 
-  interrompere il sito regolare
+  Viene azionato la struttura alternativa fuori dal sito, senza 
+  interrompere il funzionamento del sito regolare
   \item Full-Interruption \\
   Si passa alla modalità alternativa da quella regolare, per verificare che 
   tutto sia funzionante.
@@ -95,24 +135,29 @@ Esistono diverse tipologie di test per il \textit{Business Continuity}:
 \subsubsection{Obiettivi del testing}
 
 Il testing del piano deve risultare in un recupero con successo delle 
-infrastrutture e dei processi \textit{business}
+infrastrutture e dei processi di \textit{business}
 
 \paragraph*{Vantaggi} Ci sono i seguenti vantaggi nell'eseguire il testing:
 \begin{itemize}
   \item Identificazione di probabili errori
   \item Verifica delle assunzioni fatte
   \item Verifica dei tempi
-  \item Allenare e coordinare lo staff
+  \item Allenamento e coordinamento dello staff
 \end{itemize}
 
 \subsubsection{Procedure del testing}
 
-% TODO: inserire schema presenti sulle slide
-
-I test sono inizialmente semplice e poi diventano man mano sempre più complesso 
+I test sono inizialmente semplici e poi diventano man mano sempre più complessi 
 con il tempo.
 
-Include di solito una terza parte indipendente, per poter permetterne una 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{tp}
+ \caption{Varie procedure del testing}
+\end{figure}
+
+Includono di solito una terza parte indipendente, per poter permetterne una 
 migliore osservazione.
 
 Dalla valutazione del test si ottengono quelli che sono i \textbf{punti di 
@@ -121,15 +166,17 @@ miglioramento}, che devono essere effettivamente messi in pratica.
 \paragraph*{Passi del test} Esistono diversi passi del test. C'è la sua 
 preparazione, l'esecuzione del test e la pulizia dopo-test. Importante è 
 ricordarsi di eseguire una pulizia dei dati dopo l'esecuzione del test, ma di 
-quelli che non sono importanti per la valutazione stessa del test (altrimenti 
-il test sarebbe inutile).
+quelli che non sono importanti per la sua valutazione (altrimenti il test 
+sarebbe inutile).
 
 \subsubsection{\textit{Gap Analysis}}
 
-Una \textit{gap analysis} è relativa a un obiettivo che un'azienda si pone, ed 
-è necessaria affinché una azienda possa migliorare se stessa. Quelli che sono 
-più controllati sono i processi, perché le persone sono quelle che sono più 
-difficili da ``modificare''.
+Una \textit{gap analysis} è relativa a un obiettivo che un'azienda si pone 
+rispetto al punto in cui è, ed è necessaria affinché una azienda possa 
+migliorare se stessa. Quelli che sono più controllati sono i 
+processi\footnote{Importante è il PDCA (miglioramento continuo della qualità 
+dei processi).}, perché le persone sono quelle che sono più difficili da 
+``modificare'' ed essere migliorate.
 
 \subsection{Auditing di un BCP}
 
