@@ -1,8 +1,27 @@
 \chapter{Information security}
 
+Obiettivi:
+\begin{itemize}
+\item principi della sicurezza dell'informazione
+\item posizioni all'interno degli organigrammi all'interno della gestione della sicurezza
+\item tecniche di accesso controllato
+\item tecniche di autenticazione
+\item tecniche di combinazione di combinazione
+\item tecniche biometriche
+\item elementi del Bell-LaPadula
+\item elementi di sicurezza miliare
+\item backup
+\item schemi di classificazione dell'informazione
+\end{itemize}
+
 \section{Goal della sicurezza dell'informazione}
 
+L'IS è una triade: integrità, disponibilità e confidenzialità. È molto
+importante anche la conformità rispetto alla legge e rispetto ai requisiti di 
+privacy.
+
 L'Italia è leader nella privacy e le sue normative sono molto avanzate.
+
 
 \section{Principi dell'information security}
 
@@ -36,6 +55,17 @@ Questi principi non invecchiano mai e sono fondamentali:
 
 \section{Gestione della sicurezza della informazione}
 
+Componenti di un programma di information security di successo:
+
+\begin{itemize}
+\item  Senior Mgmt commitment: capire se i manager sono realmente interessati alla sicurezza dell'azienda.
+\item Politiche (direttive di alto livello per raggiungere delle obiettive) e Procedure (declinano le politiche su aspetti concreti).
+\item Allocazione delle responsabilità: chi fa cosa.
+\item Educazione e Consapevolezza sulla sicurezza: l'educazione e la consapevolezza sono il modo migliore per prevenire le frodi e gli incidenti.
+\item Audit e Compliance (azioni che devono essere attuate per aderire alla legge): se l'azienda non è compliance ci sono delle azioni correttive/punitive.
+\item Gestione e risposta agli incidenti.
+\end{itemize}
+
 Dovrebbe essere presente un programma per la sicurezza della informazione. La 
 prima cosa da fare di solito è capire se c'è il 
 \textit{commitment}\footnote{L'impegno} da parte dei ``pezzi grossi'', ovvero 
@@ -68,20 +98,35 @@ eseguiti dei confronti e vengono analizzati eventuali dubbi.
 % TODO: inserire schema
 
 \begin{itemize}
-  \item Information Owner o Data Owner \\
+  \item CEO/President \\
+  \item CISO: in principio non esisteva, adesso sta prendendo il sopravvento. Copre anche il ruolo del CSO.
+  \begin{itemize}
+	\item Security Specialist
+	\item Security Administrator \\
+	Alloca le risorse per gli impiegati basandosi sulla documentazione scritta, 
+  oltre a monitorare l'accesso ai terminali e alle applicazioni e a preparare 
+  report sulla sicurezza.
+  \end{itemize}
+  \item CSO: c'è da sempre
+  \item Business Executive
+  \begin{itemize}
+  \item Information/Data Owner \\
   Questo ruolo si occupa di:
   \begin{itemize}
     \item Decidere che è responsabile all'accesso al dato. Molto importante è 
     la gestione dell'\textit{authorization creep}, ovvero quando si hanno delle 
     autorizzazioni che inizialmente erano utili ma che ora non servono più.
   \end{itemize}
+  \item Process Owner \\
+  Responsabile del processo (algoritmo che opera sul dato)
+  \item IS Auditor \\
+\end{itemize}
+  \item Information Owner o Data Owner \\
+  
   \item Data custodian \\
   Si preoccupa della protezione dei dati e potrebbe essere un analista di 
   sistema o un amministrazione di sistema.
-  \item Security administrator \\
-  Alloca le risorse per gli impiegati basandosi sulla documentazione scritta, 
-  oltre a monitorare l'accesso ai terminali e alle applicazioni e a preparare 
-  report sulla sicurezza.
+  
 \end{itemize}
 
 \section{Classificazione della sicurezza}
@@ -94,15 +139,43 @@ Anche la sicurezza ha una propria classificazione, che è:
   \item Nonsensitive
 \end{itemize}
 
+\subsection{Classificazione della sensitività}
+
+\begin{itemize}
+\item Public: può accedervi chiunque.
+\item Internal: può accedervi solo chi è interno all'azienda.
+\item Private: possono accedervi solo per persone autorizzate.
+\item Confidential: può accedervi sono chi è in una determinata lista.
+\end{itemize}
+
 \subsection{Classificazione del dato}
 
 Diversi dati possono essere classificati, ma come?
-Nell'informazione cartacea, se correttamente classificata riporta un 
-apposito timbro per esempio.
 
-La \textit{overclassification} è un problema grosso nella classificazione dei 
-dati: se sono presenti troppi dati con un'alta classificazione si sprecano 
-risorse inutilmente.
+\begin{itemize}
+\item Come marchiamo le informazioni classificate? Nell'informazione cartacea, 
+se correttamente classificata riporta un apposito timbro per esempio.
+\item Chi decide che classificazione dare ai dati? Il classico problema è la
+overclassification: dò una classificazione più alta di quella necessaria al
+documento, il che implica spreco di risorse.
+\item Come vengono trasportate/conservate/gestite/archiviate le informazioni classificate?
+\item Cosa dice la legge sulla gestione di questa informazione?
+\item Chi ha l'autorità per determinare chi ha l'accesso e per cosa si ha
+l'accesso? Tipicamente il CISO.
+\end{itemize}
+
+\subsection{Gestione dei dati sensibili}
+
+%copia tabella
+
+Le informazioni priviledged hanno un trattamento di tipo privilegiale e di solito hanno carattere legale.
+
+\subsubsection{Conservazione e distruzion di dati confidenziali}
+
+%da completare
+Disposing of Media
+Repair: quando viene mandato fuori un materiale per la riparazione (es. le fotocopiatrici hanno una memoria interna che deve essere cancellata prima di essere mandata in riparazione).
+Storage
 
 \section{Esercizi}
 
@@ -115,3 +188,4 @@ Gli esercizi si trovano nella sezione \ref{EsBCDR3}
 Per ridurre il rischio di un attacco in maniera facile, viene evitato di 
 mettere tutte le difese in un unico punto, ma vengono stratificate le difese in 
 diversi punti, usando tecnologie diverse.
+Per arrivare al kernel, devono essere bucati prima tutti gli strati intorno.
