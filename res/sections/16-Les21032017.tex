@@ -1,14 +1,15 @@
 \chapter{Access Control Techniques}
+\label{AccessControlTechniques}
 \begin{itemize}
- \item Mandatory Access Control: General (system-determined) access control. 
+ \item Mandatory Access Control: General (system-determined) access control.
  Specifica di chi può accedere a cosa.
- \item Discretionary Access Control: persone che hanno l'autorizzazione ad 
- accedere. Si trova spesso dove l'informazione risulta essere classificata
- \item Role-Based Access Controll: è la soluzione migliore per il contesto 
- organizzativi classici. Essendoci un numero fissato di ruoli per 
- l'amministratore di sistema è più semplice perché può concentrarsi sui ruoli 
- anziché sul singolo impiegato. Questa realtà è ancora in forte sviluppo.
- \item Physical Access Control: è quell'area legata alla sicurezza fisica, ed è 
+ \item Discretionary Access Control: persone che hanno l'autorizzazione ad
+ accedere. Si trova spesso dove l'informazione deve essere classificata
+ \item Role-Based Access Control: è la soluzione migliore per i contesti
+ organizzativi classici. Essendoci un numero fissato di ruoli per
+ l'amministratore di sistema la loro gestione diviene più semplice, piuttosto
+che gestire ogni singolo impiegato. Questa realtà è ancora in forte sviluppo.
+ \item Physical Access Control: è quell'area legata alla sicurezza fisica, ed è
  legata al CSO ultimamente. Si costituisce di lucchetti, chiavi, ecc...
 \end{itemize}
 
@@ -16,7 +17,7 @@
 \section{Role-Based Access Control}
 %TODO copia tabella
 
-Prima di mettersi a fare controlli sugli accessi bisogna prima comoprendere per 
+Prima di mettersi a fare controlli sugli accessi bisogna prima comoprendere per
 bene che ruoli sono presenti all'interno dell'azienda (analisi interna).
 
 
@@ -28,46 +29,48 @@ Si applica una classificazione dell'informazione, che può essere:
  \item Secret
  \item Confidential
  \item Non-classified
- 
+
 \end{itemize}
 
-Per evitarel'overclassification si utilizzano i domini: si cercano di mettere 
+Per evitare l'overclassification si utilizzano i domini: si cercano di mettere
 delle persone con determinate competenze nel contesto giusto.
-Ad esempio: se un dominio è il nucleare e io non ho competenze a riguardo non 
+Ad esempio: se un dominio è il nucleare e io non ho competenze a riguardo non
 posso accedere a quel dominio.
 
-Un soggetto può accedere ad un oggetto solo se domina la classificazione 
+Un soggetto può accedere ad un oggetto solo se domina la classificazione
 dell'oggetto.
 
 \section{Modello Bell-La Padula}
 
-Si è dimostrato che adottando questo modello possiamo avere buone proprietà di 
+Si è dimostrato che adottando questo modello possiamo avere buone proprietà di
 confinamento dell'informazione.
 
-Utilizza il principio di confidenzialità: si può avere accesso in lettura a 
-tutto ciò che dominiamo. Per la scrittura invece vale il contrario: posso 
-accedere in scrittura a tutto ciò che mi domina ma non posso scrivere a ciò che 
-domino. Il tutto viene riassunto in \textit{no read up} e \textit{no write 
+Utilizza il principio di confidenzialità: si può avere accesso in lettura a
+tutto ciò che dominiamo. Per la scrittura invece vale il contrario: posso
+accedere in scrittura a tutto ciò che mi domina ma non posso scrivere a ciò che
+domino. Il tutto viene riassunto in \textit{no read up} e \textit{no write
 down}.
 
 Principio di tranquillità: le classi degli oggetti non possono cambiare.
 
-
-La declassificazione risolve il problema del galleggiamento verso l'alto. Avere 
-troppi documenti top-secret può causare problema. Eseguire una 
-declassificazione è una procedura costosa, ed è quando il livello di segretezza 
+% In che contesto aveva detto sta cosa? Era sempre riguardo Bell-La Padula
+La declassificazione risolve il problema del galleggiamento verso l'alto. Avere
+troppi documenti top-secret può causare problema. Eseguire una
+declassificazione è una procedura costosa, ed è quando il livello di segretezza
 di un certo documento viene abbassato.
 
 \section{System Access Control}
 
+Il \textit{System Access Control} si occupa di:
 \begin{itemize}
  \item eseguire il log degli eventi
- \item Report all'amministrazione di sistema dei tentativi falliti di accesso, 
- che possono essere anche accidentiali.
+ \item generare report per l'amministrazione di sistema dei tentativi falliti
+di accesso, che possono essere anche accidentiali.
 \end{itemize}
 
 \section{Application-Level Access Control}
 
+Gli obiettivi del \textit{application-level access control} sono:
 \begin{itemize}
  \item creare/cambiare file o struttura del database
  \item autorizzare azioni al livello di:
@@ -80,85 +83,84 @@ di un certo documento viene abbassato.
 \item log di accessi alla rete e ai dati
 \end{itemize}
 
-\subsection{Password}
+\section{Password}
 
-\subsection{Tutto quello che avreste voluto sapere ma non avete mai osato 
+\subsection{Tutto quello che avreste voluto sapere ma non avete mai osato
 chiedere sulle password}
 
-Cos'è una password? Una sequenza arbitraria di caratteri segreta e difficile da 
+Cos'è una password? Una sequenza arbitraria di caratteri segreta e difficile da
 indovinare.
 
-Ancora al tempo di Venezia era presente addirittura una sezione di cifratura 
+Ancora al tempo di Venezia era presente addirittura una sezione di cifratura
 apposita. Oggi, l'NSA è l'istituzione che ha più matematici al mondo.
 
 \subsubsection{Gestione delle password}
 
 Le password servono a discriminare chi ha diritto o no ad accedere al servizio.
-Le password nei sistemi vengono solitamente cifrate e salvate, in questa 
-maniera non è presente la password in chiaro. Per eseguire ciò di solito si 
+Le password nei sistemi vengono solitamente cifrate e salvate, in questa
+maniera non è presente la password in chiaro. Per eseguire ciò di solito si
 eseguono delle tecniche di \textit{hashing}.
 
 \subsubsection{Difficoltà delle password}
 
-Con una password da N caratteri, in cui ogni carattere può assumere M valori, 
+Con una password da N caratteri, in cui ogni carattere può assumere M valori,
 abbiamo $N^M$ possibili password.
 
-\subsubsection{Come creare una buona password}
+\subsection{Come creare una buona password}
 
-Le password scelte dagli utenti non sono solitamente forti, ma tendono ad 
-essere deboli e ripetitive. La bontà di una password dipende anche dalla sua 
+Le password scelte dagli utenti non sono solitamente forti, ma tendono ad
+essere deboli e ripetitive. La bontà di una password dipende anche dalla sua
 \textit{entropia}.
-Le password solitamente sono simili a quelle di nomi di persone, date di 
+Le password solitamente sono simili a quelle di nomi di persone, date di
 nascite o numeri di telefono.
 
 \paragraph*{Base words}
-Le \textit{base-words} passwords sono password significative dal punto di vista 
-memnoniche che risultano essere difficile da indovinare da un attaccante perchè 
-per un estraneo risultano come se fossero una combinazione casuale di lettere. 
+Le \textit{base-words passwords} sono password significative dal punto di vista
+memnonico che risultano essere difficili da indovinare da un attaccante perchè
+per un estraneo risultano come se fossero una combinazione casuale di parole.
 È un metodo molto valido per costruire una forte password.
 
 \paragraph*{Facciamo i conti}
 
-Il dizionario inglese ha 170 mila parole, vuol dire che se combiniamo 2 parole 
-abbiamo 29 miliardi di tentativi per indovinare per psw. Il problema è che le 
-GPU moderne possono provare fino a 40 miliardi di psw al giorno.
-È possibile attaccare oggi come oggi sistemi molto difesi tramite attacchi di 
+Il dizionario inglese ha 170 mila parole, vuol dire che se combiniamo 2 parole
+abbiamo 29 miliardi di tentativi per indovinare per password. Il problema è che
+le GPU moderne possono provare fino a 40 miliardi di password al giorno.
+È possibile attaccare oggi come oggi sistemi molto difesi tramite attacchi di
 forza bruta.
-$2^80$ è il limite teorico oltre il quale un sistema è considerato 
-inattaccabile. Una psw di 10 caratteri con 46 possibili caratteri ha circa 
-$2^55$ possibilità.
+$2^{80}$ è il limite teorico oltre il quale un sistema è considerato
+inattaccabile. Una password di 10 caratteri con 46 possibili caratteri ha circa
+$2^{55}$ possibilità.
 
 \paragraph*{Attacco del dizionario}
-Le password sono solitamente deboli all'attacco del dizionario: ovvero sono 
-password che hanno al loro interno pattern di persone/cose (come ad esempio il 
-nome di una serie TV o simili). I dizionari al giorno d'oggi sono addirittura 
-comprabili, e presentano tutte le entry del determinato campo semantico.
-È meglio quindi evitare l'uso di password che abbiano pattern al loro interno. 
+Le password sono solitamente deboli all'attacco del dizionario: ovvero sono
+password che hanno al loro interno pattern di persone/cose (come ad esempio il
+nome di una serie TV o simili). I dizionari al giorno d'oggi sono addirittura
+comprabili, e presentano tutte le entry di un determinato campo semantico.
+È meglio quindi evitare l'uso di password che abbiano pattern al loro interno.
 È meglio la generazione di una password totalmente casuale.
 
-\paragraph{Autenticazione a due fattori}
+\subsection{Autenticazione a due fattori}
 
-L'autentificazione viene detta forte quando è ad almeno due valori. 
-Autentificazione forte vuol dire usare almeno due canali differenti.
+L'autentificazione viene detta forte quando è ad almeno due fattori.
+Autenticazione forte vuol dire usare almeno due canali differenti.
 
-Ad esempio al giorno d'oggi durante un'autenticazione bancaria si richiedono 
-solitamente un codice e un altro codice proveniente da una chiavetta/sms/token 
-hardware.
+Ad esempio al giorno d'oggi durante un'autenticazione bancaria si richiedono
+solitamente il proprio codice bancario e un altro codice proveniente da una
+chiavetta/sms/token hardware.
 
-Il tutto si basa su questi tre puntiavetta) e qualcosa che siamo (biometrico. 
-per eseguire una corretta autenticazione:
+Per eseguire una corretta autenticazione il tutto si basa su questi tre punti:
 \begin{itemize}
- \item Qualcosa che siamo
- \item Qualcosa che abbiamo
- \item Qualcosa che sappiamo
+ \item Qualcosa che siamo (impronte biometriche)
+ \item Qualcosa che abbiamo (ad esempio una chiavetta)
+ \item Qualcosa che sappiamo (ad esempio una password)
 \end{itemize}
 
-Per avere un'autenticazione forte devono essere presente almeno due di queste 
-tecniche. Questo funziona bene perchè almeno due canali devono essere 
-compromessi.
+Per avere un'autenticazione forte devono essere presente almeno due di queste
+tecniche. Questo funziona bene perchè almeno due canali devono essere
+compromessi da un attaccante per poter ottenere l'accesso.
 
-Una nuova tecnica è anche quella della autorizzazione tramite 
-geolocalizzazione. Sempre nell'ambito bancario, pagamenti eseguiti a breve 
+Una nuova tecnica è anche quella della autorizzazione tramite
+geolocalizzazione. Sempre nell'ambito bancario, pagamenti eseguiti a breve
 tempo da diverse parti del mondo non vengono autorizzati.
 
 \subsection{Single Sign On}
@@ -172,31 +174,32 @@ Vantaggi:
 \end{itemize}
 
 
-Il Single Sign On serve per poter accedere a una serie di servizi offerti dal 
-provider. Con il SSO è il segmento con cui ci si autentica per primi che 
+Il Single Sign On serve per poter accedere a una serie di servizi offerti dal
+provider. Con il SSO è il segmento con cui ci si autentica per primi che
 fornisce l'autorizzazione anche per le altre applicazioni.
-La sicurezza che il SSO offre non è la stessa che la segmentazione dei servizi 
+La sicurezza che il SSO offre non è la stessa che la segmentazione dei servizi
 offre.
 Svantaggi:
 \begin{itemize}
-\item %TODO finiscimi
+\item %TODO finiscimi, prendi i punti dalle slide
 \end{itemize}
 
-\subsection{Multi-factor authenticator}
+% Da rimuovere?
+%\subsection{Multi-factor authenticator}
 
 \subsection{Biometria}
 
-È molto utile per eseguire autenticazioni, ma funziona ancora male in contesti 
+È molto utile per eseguire autenticazioni, ma funziona ancora male in contesti
 quali per esempio le riprese di sicurezza.
 
 Chi sei e cosa fai, è suscettibile ad errori.
 
 \begin{itemize}
-\item False Rejection Rate: falso negativo, un reject che non dovrebbe esserci 
-stato
-\item False Acceptance Rate: falso positivo, un accept quando non avrebbe 
-dovuto esserci
-\item Failure to Enroll Rate: numero di utenti che non sono riusciti a 
+\item False Rejection Rate: anche detto \textbf{falso negativo}, un reject che
+non dovrebbe esserci stato
+\item False Acceptance Rate: anche detto \textbf{falso positivo}, un accept
+quando non avrebbe dovuto esserci
+\item Failure to Enroll Rate: numero di utenti che non sono riusciti a
 registrarsi correttamente
 \end{itemize}
 
@@ -208,19 +211,19 @@ registrarsi correttamente
 
 \begin{itemize}
  \item Procedure di identificazione e autenticazione
- \item Backup delle autenticazioni (es. non chiedere l'autenticazione ogni 
+ \item Backup delle autenticazioni (es. non chiedere l'autenticazione ogni
  volta)
  \item Trasmissione/conservazione sicura dei dati biometrici
  \item Sicurezza fisica dell'hardware
  \item Test di valutazione
 \end{itemize}
 
-I dispositivi per la cattura del viso per esempio stanno in aree aperte, e se 
-un attaccante è in grado di manomettere il dispositivo ha la possibilità di 
-inserire un dispositivo di acquisizione personale, per poter registrare i dati 
-e ottenerli in maniera non autorizzata. In questa maniera l'attaccante è in 
-grado di eseguire un furto d'identità. Questi strumenti dovrebbero essere posti 
-in aree controllate, cosa che spesso non succede. È importante che l'integrità 
+I dispositivi per la cattura del viso per esempio stanno in aree aperte, e se
+un attaccante è in grado di manomettere il dispositivo ha la possibilità di
+inserire un dispositivo di acquisizione personale, per poter registrare i dati
+e ottenerli in maniera non autorizzata. In questa maniera l'attaccante è in
+grado di eseguire un furto d'identità. Questi strumenti dovrebbero essere posti
+in aree controllate, cosa che spesso non succede. È importante che l'integrità
 di questi strumenti venga manetenuta.
 
 \subsection{Verifiche di un IS Auditor}
@@ -229,52 +232,16 @@ di questi strumenti venga manetenuta.
  \item Che siano implementate
  \item che i processi seguano il pattern del \textit{need to know}
  \item security awareness
- \item L'owner e il custode devono sapere di essere responsabili di quello che 
- fanno e 
+ \item L'owner e il custode devono sapere di essere responsabili di quello che
+ fanno e
  \item Security Adimistrator deve forni
- \item I meccanismi di sicurezza devono essere aggiornati e consistenti con la 
+ \item I meccanismi di sicurezza devono essere aggiornati e consistenti con la
  realtà
- \item I servizi amministrativi devono essere consistenti, e devono provvedere 
+ \item I servizi amministrativi devono essere consistenti, e devono provvedere
  sicurezza fisica e logica
 \end{itemize}
 
 % ESERCIZI
 \section{Esercizi}
 
-A form of biometrics that is considered invasive by users is:
-\begin{itemize}
- \item Retina (risposta esatta)
- \item Iris
- \item 3D hand
- \item Signature
-\end{itemize}
-
-La forma di biometria che è meno invasivo
-
-\begin{itemize}
-\item 
-\item
-\item
-\item 
-\end{itemize}
-
-Julie is a Data Owner. She configures permissions in the database to enable 
-users to access the forms she thinks they should be able to access. This 
-technique is known as
-
-\begin{itemize}
-\item 
-\item
-\item
-\item Discretionary (corretta)
-\end{itemize}
-
-John has a secuirty clearance of (Engineering, Confidential). Using Bell and La 
-Padula Model, John can write to
-
-\begin{itemize}
-\item Confidential
-\item Top secret, secret and Confidential (corretta)
-\item Confidential and Unclassified
-\item Unclassified
-\end{itemize}
+Gli esercizi sono disponibili nella sezione apposita, in \ref{EsPass}
