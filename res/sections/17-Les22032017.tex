@@ -1,0 +1,266 @@
+\section{Storage e Audit Trail}
+
+\subsection{Backup dati}
+
+Diverse aziende al giorno d'oggi sviluppano diverse milioni di linee di codice, 
+e raggruppano queste linee in librerie, che vengono salvate nei sistemi. La 
+perdita di queste liberie costituiscono una catastrofe. È quindi necessario:
+\begin{itemize}
+ \item Mantenere i backup dei dati lontani dall'azienda (off-site=
+ \item Avere un posto sicuro in cui tenere le librerie/siti. Se questi siti 
+ hanno informazioni sensibili è meglio tenerlo in un posto nascosto, la cui 
+ conoscenza è ristretta a pochi.
+\end{itemize}
+
+\subsection{Audit Traill}
+
+Chi fa cosa quando?
+
+Fare audit non è una cosa semplice, ed è necessario seguire alcune 
+\textit{best-practices}
+
+\begin{itemize}
+ \item L'audit trail traccia le responsabilità (chi ha fatto cosa e quando?). 
+ Il concetto è quello di utilizzare il tracciamento continuo, in modo da poter 
+ capire quali sono le cause che hanno generato l'evento negativo
+ \item il log deve essere sicuro, l'attaccante può penetrare il sistema, 
+ ottiene una topologia della rete, attacca il servizio, accede i dati e 
+ cancella le tracce. I log devono essere sicuri (es. read only). Un altro 
+ possibile attacco è alterare il timestamp dei log.
+ \item Un'altra cosa importante per le grosse società con responsabilità verso 
+ terzi è che i log siano firmati digitalmente.
+
+\end{itemize}
+
+\subsubsection{Strumenti per l'audit trail}
+
+Sono presenti solitamente un sacco di informazioni catturate, che necessitano 
+di essere distinte e categorizzate.
+Una buona pratica è scremare l'informazione fin dall'inizio, e viene detto 
+\textbf{audit reduction}.
+
+È fondamentale essere in grado di trovare \textbf{varianze o cambiamenti 
+anomali nel comportamento del sistema}. Esistono strumenti in grado di fare 
+ciò, che mandano un allarme quando notano un'anomali al di sopra del treshold 
+impostato. L'intelligenza artificiale si sta approciando a questo tipo di 
+problema
+
+
+%esercizi
+
+Audit trails:
+\begin{itemize}
+ \item should be modifiable only by security administrators
+ \item should be difficult to change (risposta esatta)
+ \item should only save important logs, using log reduction
+ \item should avoid encryption to ensure no loss and quick access
+\end{itemize}
+
+% TODO mettere part anche nella parte prima
+\part{Networking}
+
+\chapter{Network Security}
+
+\section{The problem of Network Security}
+
+Ci sono due punti:
+
+\begin{itemize}
+\item gli oggetti sono sempre connessi
+\item ci saranno sempre più oggetti connessi
+\end{itemize}
+
+Si ha una pressione del mercato molto forte, e questo causa che la sicurezza 
+dei sistema diminuisce di molto. Si stima che nel mercato ci saranno 20 
+miliarti di dispositivi \textit{IoT}. Questo grande numero è anche dettato dal 
+fatto che "chi prima arriva meglio alloggia", e quindi il primo che ha una 
+buona idea riesce a prendersi la fascia maggiore di mercato. Gli utenti poi 
+tenderanno a non cambiare più servizio (fenomeno chiamato come 
+\textit{lock-in}). Un altro fenomeno importante è legato all'\textit{effetto 
+scala}: è quando si esegue un gran lavoro per creare una nuova invenzione, per 
+avere un guadagno minimo.
+
+Il fattore scalabilità è molto importante anche. Quindi il fattore di scala 
+sulla network security è molto importante.
+
+\subsection{Hacking networks}
+
+Esistono diverse fasi per poter guadagnare l'accesso fraudolento alle 
+informazioni.
+
+% TODO trovare il nome della prima fase
+\subsubsection{Phase 1: ?}
+
+Queste sono le modalità per guadagnare informazioni:
+\begin{itemize}
+ \item accesso fisico
+ \item Guardare dentro i rifiuto dell'azienda per trovare informazioni
+ \item Recuperare informazioni da google, newsgroups web sites
+ \item Social engineering
+ \item whols database \& arin.net
+ \item interrogazioni al DNS
+\end{itemize}
+
+\subsection{Phase 2: Scanning}
+
+Soprattutto utile per le reti wireless, come ad esempio \textit{scanning}. Per 
+definizioni le reti wireless fanno \textbf{beaconing}: dichiarano le loro 
+informazioni a tutti, e questo presenta delle falle di sicurezza. Sono presenti 
+attacchi al giorno d'oggi noti e con percentuale fortissima, così forte che se 
+fossero applicate al \textit{wired} nessuno pagherebbe più online.
+
+\begin{itemize}
+\item War driving: posso trovare una rete wireless?
+\item War dialing: posso trovare un modem a cui connettermi?
+\item Network mapping: ho qualcuno che esporta un servizio, quale servizio 
+viene fornito su qualche porta?
+\item Vulnerability-Scanning Tools: quale versione del software è installato 
+sui dispositivi?
+\end{itemize}
+
+\subsubsection{Attacchi passivi}
+
+Gli attacchi sono passivi quando l'attaccante agisce in maniera passiva, e non 
+modifica il sistema (per esempio non cambia i dati all'interno dei pacchetti o 
+cosa del genere). Un attacco passivo potrebbe essere per esempio catturare 
+tutti i dati presenti all'interno del sistema. Questo tipo di attacco è 
+disponibile anche sulle reti cablate, il problema che nelle reti cablate è 
+possibile trovare se uno sta eseguendo questa azione.
+
+\begin{itemize}
+\item Eavesdropping: ascoltare pacchetti provenienti da altre parti (sniffing)
+\item Traffic analysis: acquisire conoscenza sulla rete osservando i pattern di 
+traffico
+\item Footprinting: testare per determinare il software installato sui sistemi 
+(network mapping)
+\end{itemize}
+
+\subsubsection{Attacchi attivi}
+
+Gli attacchi sono attivi quando l'attaccante agisce in maniera attiva, per 
+esempio modificando il contenuto dei pacchetti.
+
+Questi sono una lista di attacchi attivi più famosi:
+\begin{itemize}
+\item DoS\footnote{DoS sta per \textit{Denial of Service}}
+\item Masquerading of spoofing
+\item Modificare il messaggio: il messaggio viene modificato durante la 
+trasmissione. È sufficiente criptarlo.
+\item Packet replay: un pacchetto viene ritrasmesso per accedere ad un servizio.
+\end{itemize}
+
+\subsubsection{Phase 3: Guadagnare l'accesso}
+
+Attacchi alle reti:
+
+\begin{itemize}
+\item sniffing
+\item ip address spoofing
+\item session hijacking
+\end{itemize}
+
+Attacchi al sistema:
+
+\begin{itemize}
+\item Buffer overflow
+\item Password cracking
+\item SQL Injection
+\item Abuso del protocolli web
+\item DoS
+\item Trap Door
+\item Virus, Worm, Trojan horse
+\end{itemize}
+
+\section{Attacchi}
+
+\subsection{Man-in-the-Middle Attack}
+
+Il suo attacco si basa sullo scambio di chiavi tramite l'algoritmo di 
+\textit{diffie-hellman}.
+
+\subsubsection{Diffie-Hellman Key exchange protocol}
+
+Inventato nel 1976, usa una crittografia a chiave asimmetrica.
+
+Permetta a due comunicanti di generare una chiave simmetrica senza basarsi su 
+un segreto pre-definito (attenzione: non è un algoritmo di criptazione). 
+Purtroppo sarà poco effettivo contro il quantum computing, ed è quindi cercare 
+una soluzione alternativa prima dell'uscita del quantum computing.
+
+
+\subsubsection{Secure Key generation}
+
+Alice e Bob vogliono scambiarsi una chiave ma sono geograficamente lontani.
+
+Le due parti si scambiano delle informazioni pubbliche. Queste informazioni 
+vengono combinate con le info private per generare una chiave, utilizzata per 
+l'encryption.
+
+\paragraph*{Come avviene lo scambio dell'informazione pubblica e privata}
+
+Vengono eseguiti i seguenti passi:
+
+\begin{enumerate}
+ \item Si sceglie un numero primo $p$ di grandezza ragionevole (almeno 2048 
+ bit).
+ \item Si prende una radice primitiva (generatore) di $p$: dato p prendo un 
+ numero a caso, se ho un generatore so che esite un numero per cui elevando il 
+ generatore a quel numero posso ottenere tutto il campo.
+\end{enumerate}
+
+\paragraph*{Generazione della chiave simmetrica}
+% TODO da rivedere
+
+Parte privata: Alice genera un numero x, Bob crea un y, entrambi lo tengono 
+segreto.
+
+Alice: $R_1 = g^x mod\ p$
+Bob: $R_2 = g^y mod\ p$
+
+Queste informazioni vengono scambiate su un canale pubblico.
+
+Bob riceve G1, quello che fa è fare $K = (R_1)^y mod p$. Alice fa la stessa 
+cosa e quindi ottengono una chiave segreta condivisa che è $g^{xy} mod p$.
+
+Il calcolo del logaritmo discreto ad oggi è un problema che è difficile da 
+risolvere in maniera efficente, ed è quello su cui la sicurezza si basa su 
+questo problema.
+
+\subsubsection{Esecuzione dell'attacco}
+
+Questo tipo di attacco è attivo, dove i dati vengono dirottati da un attaccante 
+che sta nel mezzo dell'attacco, simulando una falsa trasparenza. Questa 
+mediazione non è individuabile da parte dei due comunicanti legittimi. In 
+questa maniera l'attaccante ha la possibilità di generare le chiavi per 
+comunicare con Alice e Bob (i due comunicanti legittimi), ma lo fanno con 
+l'attaccante nel mezzo, che è in grado di leggere tutte le comunicazioni.
+L'attacco viene eseguito in questa maniera:
+\begin{enumerate}
+\item Viene mandato un messaggio da Alice
+\item L'attaccante decripta il messaggio, lo salva e lo ricripta con la chiave 
+simmetrica che usa da Bob e gli manda il messaggio
+\item Bob legge il messaggio, senza sapere nulla.
+\end{enumerate}
+
+
+\subsubsection{Conclusioni}
+
+DH è il cornerstone della sicurezza, viene usato quotidianamente. Non è un 
+algoritmo di encriptyion.
+Per risolvere il problema dell'attacco è necessario aggiungere un meccanismo di 
+autenticazione.
+
+\subsection{SQL Injection}
+
+Sfrutta il fatto che ciò che viene passato come input che deve essere 
+interpretata in un certo modo viene forzata ad essere interpretata in un altro.
+
+Il modo migliore per proteggersi da questo tipo di attacco è di eseguirne un 
+corretto \textit{escaping}.
+
+\subsubsection{Password cracking}
+
+% TODO copiare tabella
+
+8 caratteri è il minimo per un password, anche poco. In due ore è possibile 
+rompere una qualsiasi password di 8 caratteri.
