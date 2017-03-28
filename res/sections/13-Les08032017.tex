@@ -1,36 +1,35 @@
 \section{Classificazione dell'evento danneggiante}
 
-È importante classificare i danni subiti secondo un costo.
-Gli eventi danneggianti possono essere classificati. Sono riportati in ordine 
-crescente diverse categorie:
+Gli eventi danneggianti possono essere classificati in base ai costi
+che possono comportare. Sono riportati in ordine crescente diverse categorie:
 
 \begin{itemize}
 \item Negligible \\
 Costo non significativo
 \item Minor \\
-Non ignorabile ma con costo senza impatto
+Non ignorabile ma con costo senza impatto sul business
 \item Major \\
 Impatto su uno o più dipartimenti e può impattare sui clienti esterni
 \item Crisis \\
 Evento che ci costa la permanenza sul mercato
 \end{itemize}
 
-Questa classificazione non è semplice, anche perché a ogni categoria ha una 
+Questa classificazione non è semplice, anche perché ogni categoria ha una 
 classe di costi e contromisure diverse. Si può avere una sovrastima e una 
 sottostima dei costi, che corrispettivamente portano ad un amento dei costi 
-eccessivi o a una sicurezza non adeguata.
+eccessivi o ad una sicurezza non adeguata.
 Minor, major e crisis dovrebbero essere documentati e tracciati per poter 
 rimediare.
 
 \subsection{Disastro e impatto}
 
-Supponiamo di essere in una Università.
-Potrebbero accedere i seguenti disastri:
+Supponiamo di essere in un' Università.
+Potrebbero accadere i seguenti disastri:
 \begin{itemize}
  \item Incendio \\
- Questo impatta sulle classi e il dipartimento. Come lo 
+ Questo impatta sulle auli e il dipartimento. Come lo 
 classifichiamo? Crisi, potrebbe essere major se limitato ad una parte del 
-dipartimento. Attenzione: c'è la vita umana in rischio e quindi un forte 
+dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte 
 rischio da tenere in considerazione.
 
  \item Attacco hacker \\
@@ -39,10 +38,11 @@ evento major che ha implicazioni legali (non \`e possibile registrare voti).
 
  \item Indisponibilità dalla rete \\
  Livello di disastro: crisi. I dipartimenti dipendono dalla rete perché 
-ci lavorano e questo blocca completamente il dipartimento. Oggi una rete viene 
-considerata come il sistema nervoso di una organizzazione. Senza quello, 
+ci lavorano. Questo blocca completamente il dipartimento. Oggi una rete viene 
+considerata come il sistema nervoso di un' organizzazione. Senza la quale 
 l'organizzazione \`e costretta a fermarsi (blocco di registrazioni online ad 
 esempio con impossibilità degli studenti di seguire).
+%%TODO a seguire cosa? 
 
  \item Social engineering \\
  Può esserci un attacco al sistema di registrazione magari tramite una frode 
@@ -51,20 +51,25 @@ esempio con impossibilità degli studenti di seguire).
  \item Server failure \\
  Collasso dei server. Si hanno le stesse conseguenze di network unavailable. 
 Classificato come major (crisi in alcuni casi, ad esempio durante una sessione 
-d'esami). Al giorno d'oggi \`e possibile contenere il disastro, e queste 
-contromisure sono standard e pure a basso costo, in quanto sono hardware.
+d'esami). Al giorno d'oggi è posibile contenere il disastro grazie a contrimisure
+standard, che richiedono un basso costo poichè basate su hardware.
 \end{itemize}
 
 \subsection{Recupero del servizio}
 
-Per attuare un recupero è possibile che siano necessarie anche due settimane. 
+Per attuare un recupero del servizio è possibile che siano necessarie anche due settimane. 
 Questo perché sono involti processi che vanno capiti e contestualizzati.
 
-% TODO Aggiungere grafico appena le slide sono disponibili
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[scale=0.65]{res/img/recovery-times.png}
+	\end{center}
+	\caption{Grafico che mostra le fasi che portano al ripristino del servizio regolare} %%TODO improve description
+\end{figure}
 
 Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo 
 nell'\textbf{interruption window} (finestra di tempo per cui il servizio non è 
-disponibile). Se è stato fatto un \textit{disaster recovery plan} è 
+disponibile). Se è stato fatto un \textit{disaster recovery plan}
 possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per 
 esempio se era possibile servire 100 utenti contemporaneamente magari adesso 
 \`e possibile servirne solamente 50.} ma disponibile).
@@ -81,9 +86,9 @@ sua conclusione con il ripristino delle normali operazioni\footnote{Anche
 detto \textit{restoration}} viene definito come \textbf{Maximum Tolerable 
 Outage}.
 
-È possibile che non sia possibile ritornare subito al 100\% dell'operatività. 
+Può darsi che non sia possibile ritornare subito al 100\% dell'operatività. 
 È quindi necessario avere un \textbf{restoration plan} che permetta di passare 
-dall'\textit{alternate mode} al \textit{regular service mode} in minor tempo 
+dall'\textit{alternate mode} al \textit{regular service mode} nel minor tempo 
 possibile.
 
 \subsubsection{Definizioni}
@@ -105,7 +110,7 @@ Di seguito viene riportata una lista di definizioni appena viste:
 
 \section{Classificazione dei servizi}
 
-Il servizio ha un costo associato, di conseguenza anche la mancanza erogazione 
+Il servizio ha un costo associato, di conseguenza anche la mancata erogazione 
 del servizio lo ha. In ordine di importanza:
 \begin{enumerate}
  \item[\textbf{Critical}] Non posso sostituirlo con un processo non IT, non si 
@@ -155,7 +160,7 @@ settimana. Ovviamente bisogna tenere in considerazione il fatto che se c'è una
 \subsection{RPO and RTO}
 
 \begin{itemize}
- \item \textbf{Recovery Point Objective}: ammontare dei dati che possiamo 
+ \item \textbf{Recovery Point Objective}: ammontare di dati che possiamo 
 perdere quando recuperiamo dal backup.
 
  \item \textbf{Recovery Time Objective}: tempo che serve per recuperare le 
@@ -173,8 +178,8 @@ questo costa.
 
 \subsection{Business Impact Analysis Summary}
 
-Per fare un riassunto della unità viene qui proposto un esempio. In una 
-università, potremmo avere la seguente \textit{Business Impact Analysis 
+Per fare un riassunto dell' unità viene qui proposto un esempio. In una 
+università, potremmo avere il seguente \textit{Business Impact Analysis 
 Summary}\footnote{Per comodità esiste anche l'abbreviazione BIA.}
 
 \begin{table}[H]
