@@ -1,67 +1,51 @@
 \subsubsection{Fase 4: Exploit \& mantenimento dell'accesso}
 
-È quando l'attaccante prendere il controllo del computer della vittima, o lo 
-rende parte di una \textit{botnet}\footnote{Rete di computer controllati senza 
-autorizzazione tipicamente da remoto da un'entità maliziosa}.
+Questa fase è quando l'attaccante prendere il controllo del computer della 
+vittima, o lo rende parte di una \textit{botnet}\footnote{Rete di computer 
+controllati senza autorizzazione tipicamente da remoto da un'entità maliziosa}. 
+Esistono diversi sitemi per portare a termine questa fase.
 
-Troiano vi da un servizio (per questo motivo lo si installa) ma 
-contemporaneamente fa qualcosa di malizioso in background.
+\paragraph*{Trojan} Il \textit{Trojan} solitamente fornisce un servizio (per 
+questo motivo lo si installa) ma contemporaneamente fa qualcosa di malizioso in 
+background, spesso installando una \textbf{backdoor}.
+Una backdoor è una porta di accesso non nota. Di solito queste tipologia di 
+sistemi è progettata per Windows ma ultimamente è stata adattata anche per i 
+sistemi Unix. Questo fornisce l'accesso a una \textit{shell} remota, che 
+permette di fatto l'accesso al computer.
 
+\paragraph*{Spyware} Gli \textit{spyware} mirano al furto di informazioni 
+dell'utente, per esempio come i \textit{keyloggers}\footnote{Vengono presi tutti 
+gli input da tastiera}. 
 
-Una backdoor è una porta di accesso non nota. Di solito i sistemi sono 
-progettati per Windows ma ultimamente anche per i sistemi Unix. Questo da 
-l'accesso a una \textit{shell} remota, che permette di fatto l'accesso al 
-computer.
+\paragraph*{Adware} Gli \textit{adware} invece puntato a far visualizzare 
+pubblicità, spesso non voluta, all'utente finale.
 
+\paragraph*{Botnets}
 
-Gli \textit{spyware} mirano al furto di informazioni dell'utente, per esempio 
-come i \textit{keyloggers}\footnote{Vengono presi tutti gli input da tastiera}. 
-Gli \textit{adware} invece puntato a far visualizzare pubblicità, spesso non 
-voluta, all'utente finale.
+In una architettura \textit{top-down}, si ha il \textit{bot-master} che è colui 
+che comanda i \textit{bot-managers} che mandano i comandi finali all'insieme 
+finale di computer infettati, definiti come \textit{zombie army}.
 
-\subsection{Botnotes}
-
-In una architettura top-down, si ha il \textit{bot-master} che è colui che 
-comanda i \textit{bot-managers} che mandano i comandi finali all'insieme finale 
-di computer infettati, definiti come \textit{zombie army}.
-
-Che cosa ci si fa con gli \textit{zombie}? Le \textit{botnet} vengono creati sia 
-per scopi governativi o per più importante, soldi. I servizi che vengono 
-``venduti'' solitamente sono:
+Che cosa ci si fa con gli \textit{zombie}? Le \textit{botnet} vengono create 
+sia per scopi governativi o, in maniera maggiore, per soldi. I servizi che 
+vengono ``venduti'' solitamente sono:
 \begin{itemize}
-\item Spam (tipicamente per pubblicizzare medicinali anche contraffatti) 
+\item Spam (tipicamente per pubblicizzare medicinali anche contraffatti via 
+e-mail)
 \item DoS. Gli attacchi ora si sono evoluti a un nuovo livello. \textit{Devices} 
 come \textit{IoT} sono stati usati nel Novembre del 2016 per creare uno dei più 
 grossi attacchi DoS.
 \end{itemize}
 
+\subsection{Esercizi}
 
-%esercizi
-
-An attack where multiple computers send connection packets to a server 
-simultaneously to slow the firewall (ddos) \todo{Finire esercizio!}
-
-% altro
-
-A man in the middle attack is implementi which additional type of attack:
-\begin{itemize}
-
-\item Spoofing (risposta esatta)
-\item DoS
-\item Phishing
-\item Pharming
-
-\end{itemize}
-
+Gli esercizi sono disponibili alla sezione \ref{EsHacknet}.
 
 
 \section{Network Encryption}
 
-\subsection{Symmetric Cryptography}\todo{Sarebbe carino aggiungere le immagini 
-mancanti}
-
-\subsubsection{Componenti crittografiche}
-
+\paragraph*{Componenti crittografiche}
+Nelle comunicazioni criptate sono sempre identificabili questi elementi:
 \begin{itemize}
 \item Sender
 \item Receiver
@@ -70,60 +54,44 @@ mancanti}
 \item Cypher text
 \end{itemize}
 
+
 \subsection{Categorie di crittografia}
 
-Chiave simmetrica (chiave segreta) e chiave asimmetrica (chiave pubblica).
+Esistono due tipologie di crittografia a chiave, e possono essere crittografia 
+tramite \textbf{chiave simmetrica} che utilizza un metodo in cui la chiave è 
+segreta oppure crittografia tramite \textbf{chiave asimmetrica} dove invece una 
+delle due chiavi può essere pubblica.
 
-\subsubsection{Crittografia asimmetrica}
+\subsection{Crittografia simmetrica}\todo{Sarebbe carino aggiungere le immagini 
+mancanti}
 
-Servono due chiavi, una per cifrare e una per decifrare. Per cifrare il mittente 
-usa la chiave pubblica del destinatario. Il destinatario usa la sua chiave 
-privata per decifrare.
+Questo tipo di crittografia si identifica per il fatto che per cifrare e 
+decrifrare il messaggio occorre avere la stessa chiave.
 
-\todo{aggiungere gli schemini}
-
-Le chiavi asimmetriche pubbliche e private hanno una relazione di tipo 
-matematico. Il fatto è che dalla chiave pubblica dal punto di vista matematico 
-non siamo in grado di recuperare la chiave privata.
-
-\subsubsection{Chiave simmetrica}
-
-Per cifrare e decrifrare il messaggio occorre avere la stessa chiave.
-
-\paragraph{Cifrari tradizionali} Esistono diversi tipi di cifrari, che possono 
-essere:
+\paragraph*{Tipologie di cifrari} Esistono diversi tipi di cifrari, che 
+tradizionalmente sono:
 \begin{itemize}
-\item A sostituzione
-\begin{itemize}
- \item Monoalfabetico - Quando si ha come riferimento un solo alfabeto
- Vedi ad esempio cifrario di Cesare, perchè in corrispondenza di una doppia c'è 
-la stessa lettera trasposta. Ovvero le occorrenze vengono rispettate
- \item Polialfabetico - Quando si hanno come riferimenti multipli alfabeti
- In una corrispondenza di una doppia occorrenza si ottengono due caratteri 
-diversi
-\end{itemize}
-\item A trasposizione. Questo tipo di cifrario esegue una trasposizione del 
-testo a disposizione, dove la chiave sarà il vero segreto. La funzione di 
-trasposizione è sempre bigettiva.
-\end{itemize}
-
-
-
-\subparagraph{Monoalfabetico}
-
-Usa un unico alfabeto tramite trasposizione e sostituzione (es. cifrario di 
+ \item A sostituzione
+ \begin{itemize}
+  \item[Monoalfabetico] Usa un unico alfabeto tramite trasposizione e 
+sostituzione (es. cifrario di 
 Cesare). Si capisce che è monoalfabetico dal fatto che le doppie mappano sulle 
 stesse lettere.
-
 Al contrario, se le doppie non mappano sulla stessa lettera posso dire che il 
 cifrario è non monoalfabetico (che non vuol dire polialfabetico).
 
-\subparagraph{Cifrario a trasposizione}
+  \item[Polialfabetico] Quando si hanno come riferimenti multipli alfabeti.
+ In una corrispondenza di una doppia occorrenza si ottengono due caratteri 
+diversi
+ \end{itemize}
+ \item A trasposizione. Questo tipo di cifrario esegue una trasposizione del 
+testo, dove la chiave sarà il vero segreto. La funzione di trasposizione è 
+sempre bigettiva. 
+\end{itemize}
 
-Fa una permutazione del testo. La funzione di permutazione deve essere 
-bigettiva.
+\subsubsection{Cifrari}
 
-\subparagraph{Cifrari XOR}
+\paragraph{Cifrari XOR}
 
 È una delle soluzioni migliori, e funziona molto bene. Dato un input, si esegue 
 uno XOR esclusivo con una chiave $K$, ottenenedo il \textit{cyphertext}. Per 
@@ -144,21 +112,25 @@ sicura dal punto di vista dell'\textit{information theory}. La sicurezza a cui
 siamo legati oggi è basata su problemi computazionali, in cui l'attaccante si 
 considera battutto se il numero di operazioni da eseguire è $\ge 2^{80}$.
 
-%% Nonostante le sue caratteristiche non viene utilizzato perchè devo avere 
-sempre chiavi nuove. Altrimenti se intercetto due messaggi codificati con la 
-stessa chiave:
-%% $$
-%% c_0 \oplus c_1 = m_0 \oplus m_1
-%% $$
-
-\subsubparagraph{One-time pad (OTP)} In questo caso, anche se l'attaccante ha 
-una capacità di calcolo infinita non sarà in grado di recuperare il 
-\textit{plain text}, e tutti questi testi sarebbero equiprobabili. La chiave, 
-tuttavia, è utilizzabile solamente una volta ed dev'essere completamente 
-casuale.
+\subparagraph{One-time pad (OTP)}
+In questo caso, anche se l'attaccante ha una capacità di calcolo infinita non 
+sarà in grado di recuperare il \textit{plain text}, e tutti questi testi 
+sarebbero equiprobabili. La chiave, tuttavia, è utilizzabile solamente una volta 
+ed dev'essere completamente casuale.
 Un problema però è la frequenza delle lettere che si susseguono in un messaggio, 
 e quindi un attaccante ha la possibilità di eseguire un'analisi statistica del 
 testo.
+Nonostante le sue caratteristiche non viene utilizzato perchè bisogna avere 
+sempre chiavi nuove. Altrimenti se vengono intercettati due messaggi codificati 
+con la stessa chiave è possibile riuscire applicando la statistica a capire il 
+contenuto del messaggio.
+
+% Nonostante le sue caratteristiche non viene utilizzato perchè devo avere 
+%sempre chiavi nuove. Altrimenti se intercetto due messaggi codificati con la 
+%stessa chiave:
+% $$
+% c_0 \oplus c_1 = m_0 \oplus m_1
+% $$
 
 \subparagraph{Cifrario a rotazione}
 
@@ -177,12 +149,14 @@ testo.
 \todo{Copiare l'immagine}
 
 La grandezza della chiave dichiarata è 64 bit, ma in verità non è 64 bit, ma è 
-minore (56 bit, eseguita in maniera deterministica), a causa dell'NSA che voleva 
-leggere le comunicazioni tra gli utenti.
+minore (56 bit, eseguita in maniera deterministica sull'ottavo bit), a causa 
+dell'NSA che voleva leggere le comunicazioni tra gli utenti. Una versione 
+aggiornata e più sicura è stata poi rilasciata.
 
 \subparagraph{Triple DES}
 
-Concatenazione del DES in cascata.
+Il \textit{Triple DES} consiste semplicemente in una concatenazione del DES in 
+cascata.
 
 \subparagraph{AES}
 
@@ -192,22 +166,22 @@ eseguito uno XOR con la sotto chiave d'ingresso.
 
 \todo{Copiare spiegazione da wikipedia}
 
-AES ha tre differenti configurazioni in base alle chiavi e a... \todo{completare 
-la frase}
+AES ha tre differenti configurazioni in base alle chiavi e a... 
+\todo{Completare la frase}
 
-\subsubparagraph{Struttura di ogni round}
+\subsubparagraph*{Struttura di ogni round}
 
 La struttura di ogni round di AES è:
 \begin{itemize}
  \item sostiturazione
  \item permutazione
  \item operazione complessa
- \item \todo{completare}
+ \item \todo{Da completare}
 \end{itemize}
 
 \paragraph{Modalità di operazione per i cifrari a blocchi}
 
-\todo{copia schema}
+\todo{Copiare schema}
 
 \subparagraph{ECB mode}
 
@@ -241,5 +215,14 @@ chiavi.
 Per ora l'unico motivo per cui possiamo dire che questi algoritmi sono sicuri è 
 il fatto che non siamo ancora riusciti a romperli.
 
-\subsection{Asymmetric Cryptography}
+\subsection{Crittografia asimmetrica}
 
+Servono due chiavi, una per cifrare e una per decifrare. Per cifrare il 
+mittente usa la chiave pubblica del destinatario. Il destinatario usa la sua 
+chiave privata per decifrare.
+
+\todo{Aggiungere gli schemini}
+
+Le chiavi asimmetriche pubbliche e private hanno una relazione di tipo 
+matematico. Il fatto è che dalla chiave pubblica dal punto di vista matematico 
+non si è in grado di recuperare la chiave privata.
