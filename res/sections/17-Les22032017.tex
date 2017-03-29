@@ -79,14 +79,14 @@ lavoro per creare una nuova invenzione, per ottenere infine un guadagno minimo.
 %Il fattore scalabilità è molto importante anche. Quindi il fattore di scala 
 %sulla network security è molto importante.
 
-\subsection{Hacking networks}
+\section{Hacking networks}
 
 Gli attacchi informatici si suddividono in diverse fasi, ognuna delle quali 
 esegue un passo verso l'ottenimento dell'accesso fraudolento alle informazioni 
 di un sistema.
 
 % TODO trovare il nome della prima fase
-\subsubsection{Fase 1: ?}\todo{Trovare il nome della prima fase}
+\subsection{Fase 1: ?}\todo{Trovare il nome della prima fase}
 
 Nella prima fase si cercano informazioni sulla vittima, e i posti migliori dove 
 guardare sono:
@@ -99,7 +99,7 @@ guardare sono:
  \item interrogazioni al DNS
 \end{itemize}
 
-\subsubsection{Fase 2: \textit{Scanning}}
+\subsection{Fase 2: \textit{Scanning}}
 
 Soprattutto utile per le reti wireless. Per definizioni le reti wireless fanno 
 \textbf{beaconing}: dichiarano le loro informazioni a tutti, e questo presenta 
@@ -116,7 +116,7 @@ viene fornito su qualche porta?
 sui dispositivi?
 \end{itemize}
 
-\paragraph*{Attacchi passivi}
+\subsubsection{Attacchi passivi}
 
 Gli attacchi sono passivi quando l'attaccante agisce in maniera passiva, e non 
 modifica il sistema (per esempio non cambia i dati all'interno dei pacchetti o 
@@ -133,7 +133,7 @@ traffico
 (network mapping)
 \end{itemize}
 
-\paragraph*{Attacchi attivi}
+\subsubsection{Attacchi attivi}
 
 Gli attacchi sono attivi quando l'attaccante agisce in maniera attiva, per 
 esempio modificando il contenuto dei pacchetti.
@@ -147,7 +147,7 @@ trasmissione. È sufficiente criptarlo.
 \item Packet replay: un pacchetto viene ritrasmesso per accedere ad un servizio.
 \end{itemize}
 
-\subsubsection{Fase 3: Guadagnare l'accesso}
+\subsection{Fase 3: Guadagnare l'accesso}
 
 Quando si hanno sufficienti informazioni riguardo la vittima è possibile da 
 parte dell'attaccante iniziare un attacco.
@@ -171,14 +171,14 @@ Attacchi al sistema:
 \item virus, worm, trojan horse
 \end{itemize}
 
-\paragraph{Attacchi}
+\subsubsection{Attacchi}
 
-\subparagraph{Man-in-the-Middle Attack}
+\paragraph{Man-in-the-Middle Attack}
 
 Il suo attacco si basa sullo scambio di chiavi tramite l'algoritmo di 
 \textit{diffie-hellman}.
 
-\subsubparagraph{Diffie-Hellman Key exchange protocol}
+\subparagraph{Diffie-Hellman Key exchange protocol}
 
 Inventato nel 1976, usa una crittografia a chiave asimmetrica.
 
@@ -188,7 +188,7 @@ Purtroppo sarà poco effettivo contro il quantum computing, ed è quindi cercare
 una soluzione alternativa prima dell'uscita del quantum computing.
 
 
-\subsubparagraph{Secure Key generation}
+\subparagraph{Secure Key generation}
 
 Alice e Bob vogliono scambiarsi una chiave ma sono geograficamente lontani.
 
@@ -226,7 +226,7 @@ Il calcolo del logaritmo discreto ad oggi è un problema che è difficile da
 risolvere in maniera efficiente, ed è quello su cui la sicurezza si basa su 
 questo problema.
 
-\subsubparagraph{Esecuzione dell'attacco MITM}
+\subparagraph{Esecuzione dell'attacco MITM}
 
 Questo tipo di attacco è attivo, dove i dati vengono dirottati da un attaccante 
 che sta nel mezzo dell'attacco, simulando una falsa trasparenza. Questa 
@@ -243,14 +243,14 @@ simmetrica che usa da Bob e gli manda il messaggio
 \end{enumerate}
 
 
-\subsubparagraph{Conclusioni}
+\subparagraph{Conclusioni}
 
 DH è il cornerstone della sicurezza, viene usato quotidianamente. Non è un 
-algoritmo di encriptyion.
+algoritmo di \textit{encryption}.
 Per risolvere il problema dell'attacco è necessario aggiungere un meccanismo di 
 autenticazione.
 
-\subparagraph{SQL Injection}
+\paragraph{SQL Injection}
 
 Sfrutta il fatto che ciò che viene passato come input che deve essere 
 interpretata in un certo modo viene forzata ad essere interpretata in un altro.
@@ -258,7 +258,7 @@ interpretata in un certo modo viene forzata ad essere interpretata in un altro.
 Il modo migliore per proteggersi da questo tipo di attacco è di eseguirne un 
 corretto \textit{escaping}.
 
-\subparagraph{Password cracking}
+\paragraph{Password cracking}
 
 \todo{Copiare tabella mancante}
 
