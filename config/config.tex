@@ -149,3 +149,23 @@
 \newcommand{\glsfirstoccur}{\ap{{[g]}}}
 
 \newcommand{\intro}[1]{\emph{\textsf{#1}}}
+
+%-------------------INIZIO creazione subsubparagraph--------------------------------------
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\def\toclevel@subsubparagraph{6}
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {3.25ex \@plus 1ex \@minus .2ex} % beforeskip
+    {-1em}                           % afterskip
+    {\normalfont\normalsize\bfseries}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{13.5em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
+\makeatother
+%-------------------FINE creazione subsubparagraph--------------------------------------

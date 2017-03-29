@@ -171,14 +171,14 @@ Attacchi al sistema:
 \item virus, worm, trojan horse
 \end{itemize}
 
-\section{Attacchi}
+\paragraph{Attacchi}
 
-\subsection{Man-in-the-Middle Attack}
+\subparagraph{Man-in-the-Middle Attack}
 
 Il suo attacco si basa sullo scambio di chiavi tramite l'algoritmo di 
 \textit{diffie-hellman}.
 
-\subsubsection{Diffie-Hellman Key exchange protocol}
+\subsubparagraph{Diffie-Hellman Key exchange protocol}
 
 Inventato nel 1976, usa una crittografia a chiave asimmetrica.
 
@@ -188,7 +188,7 @@ Purtroppo sarà poco effettivo contro il quantum computing, ed è quindi cercare
 una soluzione alternativa prima dell'uscita del quantum computing.
 
 
-\subsubsection{Secure Key generation}
+\subsubparagraph{Secure Key generation}
 
 Alice e Bob vogliono scambiarsi una chiave ma sono geograficamente lontani.
 
@@ -196,7 +196,7 @@ Le due parti si scambiano delle informazioni pubbliche. Queste informazioni
 vengono combinate con delle informazioni private per generare una chiave, 
 utilizzata per l'\textit{encryption}.
 
-\paragraph*{Come avviene lo scambio dell'informazione pubblica e privata}
+\subsubparagraph*{Come avviene lo scambio dell'informazione pubblica e privata}
 
 Vengono eseguiti i seguenti passi:
 
@@ -208,7 +208,7 @@ Vengono eseguiti i seguenti passi:
  generatore a quel numero posso ottenere tutto il campo.
 \end{enumerate}
 
-\paragraph*{Generazione della chiave simmetrica}
+\subsubparagraph*{Generazione della chiave simmetrica}
 % TODO da rivedere
 
 Parte privata: Alice genera un numero $x$, Bob crea un $y$, entrambi lo tengono 
@@ -226,7 +226,7 @@ Il calcolo del logaritmo discreto ad oggi è un problema che è difficile da
 risolvere in maniera efficiente, ed è quello su cui la sicurezza si basa su 
 questo problema.
 
-\subsubsection{Esecuzione dell'attacco MITM}
+\subsubparagraph{Esecuzione dell'attacco MITM}
 
 Questo tipo di attacco è attivo, dove i dati vengono dirottati da un attaccante 
 che sta nel mezzo dell'attacco, simulando una falsa trasparenza. Questa 
@@ -243,14 +243,14 @@ simmetrica che usa da Bob e gli manda il messaggio
 \end{enumerate}
 
 
-\subsubsection{Conclusioni}
+\subsubparagraph{Conclusioni}
 
 DH è il cornerstone della sicurezza, viene usato quotidianamente. Non è un 
 algoritmo di encriptyion.
 Per risolvere il problema dell'attacco è necessario aggiungere un meccanismo di 
 autenticazione.
 
-\subsection{SQL Injection}
+\subparagraph{SQL Injection}
 
 Sfrutta il fatto che ciò che viene passato come input che deve essere 
 interpretata in un certo modo viene forzata ad essere interpretata in un altro.
@@ -258,7 +258,7 @@ interpretata in un certo modo viene forzata ad essere interpretata in un altro.
 Il modo migliore per proteggersi da questo tipo di attacco è di eseguirne un 
 corretto \textit{escaping}.
 
-\subsection{Password cracking}
+\subparagraph{Password cracking}
 
 % TODO copiare tabella
 
