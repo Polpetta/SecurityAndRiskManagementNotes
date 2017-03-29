@@ -91,7 +91,7 @@ sempre bigettiva.
 
 \subsubsection{Cifrari}
 
-\paragraph{Cifrari XOR}
+\paragraph{Cifrario XOR}
 
 È una delle soluzioni migliori, e funziona molto bene. Dato un input, si esegue 
 uno XOR esclusivo con una chiave $K$, ottenenedo il \textit{cyphertext}. Per 
@@ -112,7 +112,7 @@ sicura dal punto di vista dell'\textit{information theory}. La sicurezza a cui
 siamo legati oggi è basata su problemi computazionali, in cui l'attaccante si 
 considera battutto se il numero di operazioni da eseguire è $\ge 2^{80}$.
 
-\subparagraph{One-time pad (OTP)}
+\subparagraph*{One-time pad (OTP)}
 In questo caso, anche se l'attaccante ha una capacità di calcolo infinita non 
 sarà in grado di recuperare il \textit{plain text}, e tutti questi testi 
 sarebbero equiprobabili. La chiave, tuttavia, è utilizzabile solamente una volta 
@@ -132,19 +132,19 @@ contenuto del messaggio.
 % c_0 \oplus c_1 = m_0 \oplus m_1
 % $$
 
-\subparagraph{Cifrario a rotazione}
+\paragraph{Cifrario a rotazione}
 
 \todo{Copiare l'immagine}
 
-\subparagraph{S-boxes}
+\paragraph{S-boxes}
 
 \todo{Copiare l'immagine}
 
-\subparagraph{P-boxes}
+\paragraph{P-boxes}
 
 \todo{Copiare l'immagine}
 
-\subparagraph{DES}
+\paragraph{DES}
 
 \todo{Copiare l'immagine}
 
@@ -153,12 +153,12 @@ minore (56 bit, eseguita in maniera deterministica sull'ottavo bit), a causa
 dell'NSA che voleva leggere le comunicazioni tra gli utenti. Una versione 
 aggiornata e più sicura è stata poi rilasciata.
 
-\subparagraph{Triple DES}
+\subparagraph*{Triple DES}
 
 Il \textit{Triple DES} consiste semplicemente in una concatenazione del DES in 
 cascata.
 
-\subparagraph{AES}
+\paragraph{AES}
 
 Utilizza una chiave a 128 bit in input. La prima operazione che viene eseguita è 
 una sostituzione di byte, per poi eseguire una trasposizione e poi viene 
@@ -179,11 +179,11 @@ La struttura di ogni round di AES è:
  \item \todo{Da completare}
 \end{itemize}
 
-\paragraph{Modalità di operazione per i cifrari a blocchi}
+\subsubsection{Modalità di operazione per i cifrari a blocchi}
 
 \todo{Copiare schema}
 
-\subparagraph{ECB mode}
+\paragraph{ECB mode}
 
 \todo{Spiegazione da wiki + schema}
 
@@ -191,7 +191,7 @@ L'ECB è tuttiavia deprecato in quanto \todo{Eh non si è capito alla fine!!}
 
 Non funziona molto bene per le immagini.
 
-\subparagraph{CBC mode}
+\paragraph{CBC mode}
 
 L'idea di questo algoritmo è quello di concatenare i vari blocchi tra loro, 
 stabilendo quindi una dipendenza tra i vari blocchi. Viene eseguito uno XOR tra 
