@@ -84,9 +84,9 @@ cifrario è non monoalfabetico (che non vuol dire polialfabetico).
  In una corrispondenza di una doppia occorrenza si ottengono due caratteri 
 diversi
  \end{itemize}
- \item A trasposizione. Questo tipo di cifrario esegue una trasposizione del 
-testo, dove la chiave sarà il vero segreto. La funzione di trasposizione è 
-sempre bigettiva. 
+ \item A trasposizione \\
+ Questo tipo di cifrario esegue una trasposizione del testo, dove la chiave sarà 
+il vero segreto. La funzione di trasposizione è sempre bigettiva. 
 \end{itemize}
 
 \subsubsection{Cifrari}
@@ -115,12 +115,13 @@ considera battutto se il numero di operazioni da eseguire è $\ge 2^{80}$.
 \subparagraph*{One-time pad (OTP)}
 In questo caso, anche se l'attaccante ha una capacità di calcolo infinita non 
 sarà in grado di recuperare il \textit{plain text}, e tutti questi testi 
-sarebbero equiprobabili. La chiave, tuttavia, è utilizzabile solamente una volta 
-ed dev'essere completamente casuale.
+sarebbero equiprobabili. \todo{Qui mi son perso l'inizio del discorso, com'era?}
+La chiave, tuttavia, è utilizzabile solamente una volta ed dev'essere 
+completamente casuale.
 Un problema però è la frequenza delle lettere che si susseguono in un messaggio, 
 e quindi un attaccante ha la possibilità di eseguire un'analisi statistica del 
 testo.
-Nonostante le sue caratteristiche non viene utilizzato perchè bisogna avere 
+Nonostante le sue caratteristiche OTP non viene utilizzato perchè bisogna avere 
 sempre chiavi nuove. Altrimenti se vengono intercettati due messaggi codificati 
 con la stessa chiave è possibile riuscire applicando la statistica a capire il 
 contenuto del messaggio.
@@ -148,10 +149,12 @@ contenuto del messaggio.
 
 \todo{Copiare l'immagine}
 
-La grandezza della chiave dichiarata è 64 bit, ma in verità non è 64 bit, ma è 
-minore (56 bit, eseguita in maniera deterministica sull'ottavo bit), a causa 
-dell'NSA che voleva leggere le comunicazioni tra gli utenti. Una versione 
-aggiornata e più sicura è stata poi rilasciata.
+La grandezza della chiave dichiarata è 64 bit\footnote{In verità non era 
+realmente 64 bit, ma è minore (56 bit, eseguita in maniera deterministica 
+sull'ottavo bit), a causa dell'NSA che voleva leggere le comunicazioni tra gli 
+utenti. Una versione aggiornata e più sicura è stata poi rilasciata.} e offriva 
+al tempo un buon livello di sicurezza. Questa tecnologia è stata col tempo 
+superata.
 
 \subparagraph*{Triple DES}
 
@@ -161,13 +164,16 @@ cascata.
 \paragraph{AES}
 
 Utilizza una chiave a 128 bit in input. La prima operazione che viene eseguita è 
-una sostituzione di byte, per poi eseguire una trasposizione e poi viene 
-eseguito uno XOR con la sotto chiave d'ingresso.
+una sostituzione di byte, per poi eseguire $n$ trasposizioni e infine eseguire
+uno XOR con la sotto chiave d'ingresso.
 
-\todo{Copiare spiegazione da wikipedia}
-
-AES ha tre differenti configurazioni in base alle chiavi e a... 
-\todo{Completare la frase}
+AES ha tre differenti configurazioni in base alle chiavi e al numero di 
+ripetizioni dei round di trasformazione. Le configurazioni possibili sono:
+\begin{itemize}
+ \item 10 cicli di ripetizioni per chiavi a 128 bit
+ \item 12 cicli di ripetizioni per chiavi a 192 bit
+ \item 14 cicli di ripetizioni per chiavi a 256 bit
+\end{itemize}
 
 \subsubparagraph*{Struttura di ogni round}
 
@@ -189,7 +195,8 @@ La struttura di ogni round di AES è:
 
 L'ECB è tuttiavia deprecato in quanto \todo{Eh non si è capito alla fine!!}
 
-Non funziona molto bene per le immagini.
+Dal punto di vista grafico si nota come non funzioni molto bene per le 
+immagini.
 
 \paragraph{CBC mode}
 
@@ -198,22 +205,21 @@ stabilendo quindi una dipendenza tra i vari blocchi. Viene eseguito uno XOR tra
 il \textit{plain text} da cifrare e il blocco precedente del testo già cifrato. 
 In questa maniera ricorsiva la cifratura di un blocco dipende dalla cifratura di 
 tutti i blocchi precedenti. Per il blocco iniziale viene utilizzato un 
-\textit{inizialization vector}, che è un vettore casuale che serve per generare 
+\textit{initialization vector}, che è un vettore casuale che serve per generare 
 la necessaria entropia anche sul blocco iniziale.
 
-%%Gli altri metodi non li abbiamo fatti!
+% Gli altri metodi non li abbiamo fatti!
 
 \subsubsection{Conclusioni}
 
-La chiave simmetrica è molto sicura contro i computer quantistici, è molto 
-efficiente.
-
-Svantaggi: tutti questi algoritmi non hanno una prova matematica della loro 
+La chiave simmetrica è molto sicura contro i computer quantistici, e risulta 
+essere anche molto efficiente. Sono presenti tuttavia degli svantaggi, ovvero 
+che tutti questi algoritmi non hanno una prova matematica della loro 
 sicurezza (ad eccezione dell'OTP). Un altro svantaggio è la gestione delle 
 chiavi.
 
 Per ora l'unico motivo per cui possiamo dire che questi algoritmi sono sicuri è 
-il fatto che non siamo ancora riusciti a romperli.
+il fatto che non si è stato ancora in grado di forzarli.
 
 \subsection{Crittografia asimmetrica}
 
