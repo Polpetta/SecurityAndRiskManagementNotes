@@ -1,0 +1,245 @@
+\subsubsection{Fase 4: Exploit \& mantenimento dell'accesso}
+
+È quando l'attaccante prendere il controllo del computer della vittima, o lo 
+rende parte di una \textit{botnet}\footnote{Rete di computer controllati senza 
+autorizzazione tipicamente da remoto da un'entità maliziosa}.
+
+Troiano vi da un servizio (per questo motivo lo si installa) ma 
+contemporaneamente fa qualcosa di malizioso in background.
+
+
+Una backdoor è una porta di accesso non nota. Di solito i sistemi sono 
+progettati per Windows ma ultimamente anche per i sistemi Unix. Questo da 
+l'accesso a una \textit{shell} remota, che permette di fatto l'accesso al 
+computer.
+
+
+Gli \textit{spyware} mirano al furto di informazioni dell'utente, per esempio 
+come i \textit{keyloggers}\footnote{Vengono presi tutti gli input da tastiera}. 
+Gli \textit{adware} invece puntato a far visualizzare pubblicità, spesso non 
+voluta, all'utente finale.
+
+\subsection{Botnotes}
+
+In una architettura top-down, si ha il \textit{bot-master} che è colui che 
+comanda i \textit{bot-managers} che mandano i comandi finali all'insieme finale 
+di computer infettati, definiti come \textit{zombie army}.
+
+Che cosa ci si fa con gli \textit{zombie}? Le \textit{botnet} vengono creati sia 
+per scopi governativi o per più importante, soldi. I servizi che vengono 
+``venduti'' solitamente sono:
+\begin{itemize}
+\item Spam (tipicamente per pubblicizzare medicinali anche contraffatti) 
+\item DoS. Gli attacchi ora si sono evoluti a un nuovo livello. \textit{Devices} 
+come \textit{IoT} sono stati usati nel Novembre del 2016 per creare uno dei più 
+grossi attacchi DoS.
+\end{itemize}
+
+
+%esercizi
+
+An attack where multiple computers send connection packets to a server 
+simultaneously to slow the firewall (ddos) \todo{Finire esercizio!}
+
+% altro
+
+A man in the middle attack is implementi which additional type of attack:
+\begin{itemize}
+
+\item Spoofing (risposta esatta)
+\item DoS
+\item Phishing
+\item Pharming
+
+\end{itemize}
+
+
+
+\section{Network Encryption}
+
+\subsection{Symmetric Cryptography}\todo{Sarebbe carino aggiungere le immagini 
+mancanti}
+
+\subsubsection{Componenti crittografiche}
+
+\begin{itemize}
+\item Sender
+\item Receiver
+\item Encryption
+\item Decryption
+\item Cypher text
+\end{itemize}
+
+\subsection{Categorie di crittografia}
+
+Chiave simmetrica (chiave segreta) e chiave asimmetrica (chiave pubblica).
+
+\subsubsection{Crittografia asimmetrica}
+
+Servono due chiavi, una per cifrare e una per decifrare. Per cifrare il mittente 
+usa la chiave pubblica del destinatario. Il destinatario usa la sua chiave 
+privata per decifrare.
+
+\todo{aggiungere gli schemini}
+
+Le chiavi asimmetriche pubbliche e private hanno una relazione di tipo 
+matematico. Il fatto è che dalla chiave pubblica dal punto di vista matematico 
+non siamo in grado di recuperare la chiave privata.
+
+\subsubsection{Chiave simmetrica}
+
+Per cifrare e decrifrare il messaggio occorre avere la stessa chiave.
+
+\paragraph{Cifrari tradizionali} Esistono diversi tipi di cifrari, che possono 
+essere:
+\begin{itemize}
+\item A sostituzione
+\begin{itemize}
+ \item Monoalfabetico - Quando si ha come riferimento un solo alfabeto
+ Vedi ad esempio cifrario di Cesare, perchè in corrispondenza di una doppia c'è 
+la stessa lettera trasposta. Ovvero le occorrenze vengono rispettate
+ \item Polialfabetico - Quando si hanno come riferimenti multipli alfabeti
+ In una corrispondenza di una doppia occorrenza si ottengono due caratteri 
+diversi
+\end{itemize}
+\item A trasposizione. Questo tipo di cifrario esegue una trasposizione del 
+testo a disposizione, dove la chiave sarà il vero segreto. La funzione di 
+trasposizione è sempre bigettiva.
+\end{itemize}
+
+
+
+\subparagraph{Monoalfabetico}
+
+Usa un unico alfabeto tramite trasposizione e sostituzione (es. cifrario di 
+Cesare). Si capisce che è monoalfabetico dal fatto che le doppie mappano sulle 
+stesse lettere.
+
+Al contrario, se le doppie non mappano sulla stessa lettera posso dire che il 
+cifrario è non monoalfabetico (che non vuol dire polialfabetico).
+
+\subparagraph{Cifrario a trasposizione}
+
+Fa una permutazione del testo. La funzione di permutazione deve essere 
+bigettiva.
+
+\subparagraph{Cifrari XOR}
+
+È una delle soluzioni migliori, e funziona molto bene. Dato un input, si esegue 
+uno XOR esclusivo con una chiave $K$, ottenenedo il \textit{cyphertext}. Per 
+decriptare il testo la soluzione è prendere il testo cifrato e metterlo di nuovo 
+in XOR esclusivo con la chiave.
+
+Crittaggio
+$$
+m \oplus k = c
+$$
+\indent Decrittaggio
+$$
+m \oplus k = (m \oplus k) \oplus k = m \oplus (k \oplus k) = m \oplus 0 = m
+$$
+
+Questo cifrario viene definito come ``cifrario perfetto'', ovvero la soluzione è 
+sicura dal punto di vista dell'\textit{information theory}. La sicurezza a cui 
+siamo legati oggi è basata su problemi computazionali, in cui l'attaccante si 
+considera battutto se il numero di operazioni da eseguire è $\ge 2^{80}$.
+
+%% Nonostante le sue caratteristiche non viene utilizzato perchè devo avere 
+sempre chiavi nuove. Altrimenti se intercetto due messaggi codificati con la 
+stessa chiave:
+%% $$
+%% c_0 \oplus c_1 = m_0 \oplus m_1
+%% $$
+
+\subsubparagraph{One-time pad (OTP)} In questo caso, anche se l'attaccante ha 
+una capacità di calcolo infinita non sarà in grado di recuperare il 
+\textit{plain text}, e tutti questi testi sarebbero equiprobabili. La chiave, 
+tuttavia, è utilizzabile solamente una volta ed dev'essere completamente 
+casuale.
+Un problema però è la frequenza delle lettere che si susseguono in un messaggio, 
+e quindi un attaccante ha la possibilità di eseguire un'analisi statistica del 
+testo.
+
+\subparagraph{Cifrario a rotazione}
+
+\todo{Copiare l'immagine}
+
+\subparagraph{S-boxes}
+
+\todo{Copiare l'immagine}
+
+\subparagraph{P-boxes}
+
+\todo{Copiare l'immagine}
+
+\subparagraph{DES}
+
+\todo{Copiare l'immagine}
+
+La grandezza della chiave dichiarata è 64 bit, ma in verità non è 64 bit, ma è 
+minore (56 bit, eseguita in maniera deterministica), a causa dell'NSA che voleva 
+leggere le comunicazioni tra gli utenti.
+
+\subparagraph{Triple DES}
+
+Concatenazione del DES in cascata.
+
+\subparagraph{AES}
+
+Utilizza una chiave a 128 bit in input. La prima operazione che viene eseguita è 
+una sostituzione di byte, per poi eseguire una trasposizione e poi viene 
+eseguito uno XOR con la sotto chiave d'ingresso.
+
+\todo{Copiare spiegazione da wikipedia}
+
+AES ha tre differenti configurazioni in base alle chiavi e a... \todo{completare 
+la frase}
+
+\subsubparagraph{Struttura di ogni round}
+
+La struttura di ogni round di AES è:
+\begin{itemize}
+ \item sostiturazione
+ \item permutazione
+ \item operazione complessa
+ \item \todo{completare}
+\end{itemize}
+
+\paragraph{Modalità di operazione per i cifrari a blocchi}
+
+\todo{copia schema}
+
+\subparagraph{ECB mode}
+
+\todo{Spiegazione da wiki + schema}
+
+L'ECB è tuttiavia deprecato in quanto \todo{Eh non si è capito alla fine!!}
+
+Non funziona molto bene per le immagini.
+
+\subparagraph{CBC mode}
+
+L'idea di questo algoritmo è quello di concatenare i vari blocchi tra loro, 
+stabilendo quindi una dipendenza tra i vari blocchi. Viene eseguito uno XOR tra 
+il \textit{plain text} da cifrare e il blocco precedente del testo già cifrato. 
+In questa maniera ricorsiva la cifratura di un blocco dipende dalla cifratura di 
+tutti i blocchi precedenti. Per il blocco iniziale viene utilizzato un 
+\textit{inizialization vector}, che è un vettore casuale che serve per generare 
+la necessaria entropia anche sul blocco iniziale.
+
+%%Gli altri metodi non li abbiamo fatti!
+
+\subsubsection{Conclusioni}
+
+La chiave simmetrica è molto sicura contro i computer quantistici, è molto 
+efficiente.
+
+Svantaggi: tutti questi algoritmi non hanno una prova matematica della loro 
+sicurezza (ad eccezione dell'OTP). Un altro svantaggio è la gestione delle 
+chiavi.
+
+Per ora l'unico motivo per cui possiamo dire che questi algoritmi sono sicuri è 
+il fatto che non siamo ancora riusciti a romperli.
+
+\subsection{Asymmetric Cryptography}
+
