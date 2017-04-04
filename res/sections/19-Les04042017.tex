@@ -1,0 +1,236 @@
+\documentclass{book}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{todonotes}
+
+%-------------------INIZIO creazione subsubparagraph--------------------------------------
+\makeatletter
+\newcounter{subsubparagraph}[subparagraph]
+\def\toclevel@subsubparagraph{6}
+\renewcommand\thesubsubparagraph{%
+  \thesubparagraph.\@arabic\c@subsubparagraph}
+\newcommand\subsubparagraph{%
+  \@startsection{subsubparagraph}    % counter
+    {6}                              % level
+    {\parindent}                     % indent
+    {3.25ex \@plus 1ex \@minus .2ex} % beforeskip
+    {-1em}                           % afterskip
+    {\normalfont\normalsize\bfseries}}
+\newcommand\l@subsubparagraph{\@dottedtocline{6}{13.5em}{5em}}
+\newcommand{\subsubparagraphmark}[1]{}
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
+\makeatother
+%-------------------FINE creazione subsubparagraph--------------------------------------
+
+\begin{document}
+
+% Ok, c'è già negli appunti, la riga successiva va rimossa dopo
+\subsection{Asymmetric Cryptography}
+
+\subsubsection{RSA}
+
+Si basa sull'esponenziazione, e presenta dei parametri pubblici e dei parametri privati.
+
+
+La chiave pubblica solitamente si indirizza con $e$, mentre quella privata con $P$(\todo{d???}). È necessario eseguire:
+
+\[ C = P^e\ mod\ n \]
+
+Per decriptare:
+
+\[ P = C^d\ mod\ n \]
+
+dove $n = p \cdot q$ con $|p| \sim 1$Kb.
+
+Questo avviene grazie alle proprietà dell'RSA.
+
+La modalità del RSA che permette dalla composizione di messaggi non è sicura perché
+
+\[ c_1 \cdot c_2 = {p^e}_1 \cdot {p^e}_2 = (p_1 \cdot p_2)^e\]
+
+
+Si basa su una proprietà molto forte che viene definita comee \textit{Malleability}, molto utile soprattutto nelle firme, perchè garantisce l'autenticità di chi manda i messaggi.
+
+
+\paragraph{Funzionamento}
+
+Si calcolano due primi grandi, si prende $\Phi$ dove rappresenta il numero coprimi con $n$.
+Esiste la proprietà per cui $\Phi(n) = (p-1) \cdot (q-1)$.
+
+La chiave privata è l'inverso della chiave pubblica $mod\ n$ ($d = e^{-1}  \text{ mod } \Phi(n)$).
+
+Assunzioni per l'RSA:
+\begin{itemize}
+	\item \todo{Dopo sistemo} $\Phi(n) = (p-1)(q-1)$ senza $p$ e $q$ è oneroso calcolare $\Phi(n)$ e quindi se si riuscisse a fattorizzare $n$ si potrebbe trovare $p$ e $q$ e quindi si basa sul fatto che è difficile fare la fattorizzazione.
+    \item \todo{Qui? Non ha più detto la seconda assunzione dell'RSA - FeelsBadMan:(}
+\end{itemize}
+
+
+Come si sceglie $e$? La $e$ può essere scelta a piacere e di solito viene scelto $3$, in quanto è primo e siamo ragionevolmente certi che può essere reversibile. Purtroppo è stavo verificato che è debole e quindi il numero è stato cambiato.
+
+\subsubsection{Conclusioni}
+
+Vantaggi:
+\begin{itemize}
+\item Risolve il problema della gestione delle chiavi
+\item Basato su problemi matematici
+\item Relativamente recente
+\end{itemize}
+
+Svantaggi:
+\begin{itemize}
+\item Insicuro contro il quantum computing
+\item Computazionalmente pesante
+\end{itemize}
+
+
+\section{Network defense}
+
+\subsection{Difesa in profondità}
+
+Le difese in profondità comprendono diversi strati di protezione, per prevenire attacchi dall'esterno ma che potrebbero avvenire anche dall'interno.
+
+\subsubsection{Bastion Host}
+
+Pur essendo un'architttettura vecchia, viene ancora utilizzata.
+Computer fortificato contro gli attaccanti:
+\begin{itemize}
+\item applicazioni disattivate
+\item sistema operativo patchato
+\item Configurazioni di sicurezza strette
+\end{itemize}
+
+\subsection{Attaccando la rete}\footnote{\textit{Black Hat} è anche un termine per distinguere gli attaccanti.}
+
+Quali sono i punti d'accesso in una rete? Inizialmente, potrebbe essere da una chiavetta USB (vedi Stuxnet).
+
+\textbf{Tutto ciò che ha un contatto con l'esterno può infettare la rete.}
+
+Come ci si può quindi difendere da ciò?
+\paragraph*{DMZ} Innanzitutto, è consigliabile usare una DMZ, \textit{De-Militarized Zone}, per separare la rete commerciale da quella interna.
+
+
+
+\paragraph*{Filtri}
+
+Il filtro serve a filtrare le connessioni. Livello 0 della sicurezza
+
+\begin{itemize}
+\item Route filter: sorgente e destinatario
+\item Packet filter: pacchetto
+\item Content filter: contenuto
+\end{itemize}
+
+\subparagraph*{Packet Filter Firewall}
+
+%todo
+\todo{Qui c'è un TODO ma non son sicuro riguardo a cosa}
+
+La modalità di configurazione di un firewall comporta vantaggi (capacità inspettiva) e svantaggi (lentezza della rete). È un bilanciamento tra lentezza della porta e capacità ispettiva.
+
+Esistono diverse configurazioni per il \textit{firewalling}:
+\begin{itemize}
+ \item Router Packet Filtering: analisi sul singolo pacchetto, non c'è memoria dei precedenti
+ \item Stateful Inspection: non guardiamo il singolo pacchetto ma la trama dei vari pacchetti. Causa un po' di overhead
+ \item Circuit-Level Firewall: viene utilizzato un \textit{Proxy Server} che funge da intermediario e porta la risposta. Funge da mediatore, con spesso la capacità di \textit{screening}.
+ \item Application-Level Firewall: tutte le applicazioni che accedono ad internet vengono gestite dal proxy
+\end{itemize}
+
+\paragraph*{Multi-Homed Firewall}
+
+Vuol dire che ci sono due uscite: una che va verso la DMZ e una verso la rete privata.
+
+VPN significa \textit{Virtual Private Network}, che permettono alle macchine di essere virtualmente sulla stessa rete. Tutte le grandi società hanno una propria VPN.
+
+\paragraph*{Regole di sicurezza per gli accessi}
+
+\todo{Copia slide - Writing Rules}
+
+Le regole derivano innanzitutto dalle policy di sicurezza. L'altro input per dare le regole è il mondo del reale (capacità di filtering). Dopo che le regole sono state scritte sicuramente possiamo fare PDCA\footnote{Detto anche \textit{Ciclo di Deming}} per migliorare le regole. Le policy vanno aggiornate, in base alla posizione aziendale (più o meno aggressiva) e ai breakthrough tecnologici (es. introduzione del cloud computing).
+
+
+
+\subsection{Canali di accesso logico}
+
+Sono i canali tramite i quali è possibile accedere a una rete.
+
+Esistono diversi canali di accessi, che sono per esempio:
+\begin{itemize}
+\item Wlan (la seconda più pericolosa perché vi si può accedere da fuori l'azienda) \todo{Dipende dove è messa. O ho capito male?}
+\item Usb (la più pericolosa)
+\item Internet (non così pericolosa perché c'è il firewall)
+\end{itemize}
+
+È importante quindi che anche queste entrate vengano protette.
+
+\todo{Ha messo una tabella ma è per fare un esempio}
+\paragraph*{Esempio di applicazioni di una scuola}
+\todo{Copiare tabella}
+
+\subsection{Intrusion Detection Systems \& Intrusion Prevention Systems}
+
+Detti anche IDS e IPS sono dei sistemi che aiutano la protezione del sistema. Gli HIDS sono detti anche \textit{Host IDS} e sono IDS installati nella macchina. Questi sistemi purtroppo non hanno una mappa completa del traffico di rete, e non riescono a proteggere in maniera efficace il computer: c'è un problema di falsi positivi: il sistema che si sta facendo qualcosa di scorretto perché il comportamento devia dallo standard, ma non è necessariamente un comportamento negativo.
+
+\subsubsection{IDS Intelligence Systems}
+
+Basati sulle firme: pattern specifici vengono riconosciuti come attacchi. Problema dei falsi positivi.
+
+Basati sulla statistica: viene capito il comportamento atteso del sistema. Se c'è una variazione, potrebbe esserci un attacco.
+
+Basati su reti neurali: base statistica con auto-apprendimento.
+
+\subsection{Honeypot \& Honeynet}
+
+Sostanzialmente sono delle ``trappole''. In un \textit{honeypot} si vuole indurre l'attaccante ad entrare in un certo sistema, mentre l'\textit{honeynet} è un modo per poter studiare l'attaccante tramite la simulazione di una rete che possa rappresentare del valore per l'attaccante e hanno un buon funzionamento\footnote{Vengono spesso utilizzate dalle università}.
+
+\subsubsection{Data privacy}
+
+\begin{itemize}
+\item Confidenzialità
+\item Autenticità
+\item Integrità
+\item Nonrepudation: non c'è la possibilità di dire "\textit{non l'ho inviato io quel messaggio}" (firma digitale). Le chiavi simmetriche non garantiscono questa proprietà e quindi non si possono impelementare per fare pagamenti online..
+\end{itemize}
+
+\subsubsection{Remote Access Security}
+
+Le VPN vengono spesso implementate con IPSec \todo{cos'è IPSec?}
+
+\subsubsection{Secure Hash Functions}
+
+L' hash è una funzione matematica che prende in input una stringa di idmensione aribtraria e restituisce una stringa di dimensione fissa. La sicurezza di oggi è basata sugli \textit{hash} Presenta diverse proprietà:
+\begin{itemize}
+\item La non invertibilità (\emph{one way hash})
+\item Collision resistance: è difficile trovare una coppia $(x_1,x_2)$ tale che $h(x_1) = h(x_2)$ con $h$ funzione di hash\footnote{Grazie a questa proprietà si possono eseguire le firme digitali}.
+\end{itemize}
+
+\paragraph*{Utilizzo}
+
+Per utilizzare gli hash si può prendere il messaggio $M$, eseguire l'hash di $M$ ($h(M)$) e appendere questo risultato alla fine, avendo quindi $payload = M + h(M)$. A questo punto, è possibile inviare il messaggio. Il destinatario dovrà solamente eseguire l'hash del messaggio per verificare che il messaggio sia stato correttamente inviato.
+
+\paragraph*{HMAC\footnote{https://it.wikipedia.org/wiki/HMAC}}
+
+È un RFC specifico, riconosciuto come standard e utilizzato nell'invio dei messaggi.
+
+
+\subsubsection{Firma elettronica}
+
+Come si fa a firmare un messaggio? Si prende il messaggio e lo si esponenzia alla chiave privata. Chi lo riceve utilizza la chiave pubblica per decriptare il messaggio. In questo modo abbiamo la non-repudiabilità.
+
+Mandiamo una coppia $ \langle m, Sig(h(m)) \rangle $ quando mi arriva un messaggio devo controllare che
+$h(m) = h(m)$ in modo da verificare che il messaggio sia integro.
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
