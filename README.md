@@ -5,6 +5,17 @@ Security and Risk management notes
 
 Qui puoi trovare gli appunti del corso tenuto all'Universita' degli studi di Padova.
 
+# Download
+
+Versioni PDF gia' compilate automaticamente da Travis-CI possono essere [reperite nella sezione releases](https://github.com/Polpetta/SecurityAndRiskManagementNotes/releases)
+
+## Compilare il PDF
+
+Se si vuole invece manualmente compilare il PDF, da terminale Linux basta semplicemente dare questo comando (dalla root del progetto):
+```sh
+make
+```
+
 # Contribuire
 
 Migliorie tramite Pull Requests o segnalazioni di difetti tramite Issues sono piu' che apprezzati, grazie! :blush:
