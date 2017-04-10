@@ -1,16 +1,13 @@
-% È roba un po' confusa, è prima mattina per tutti. Se hai capito meglio quello 
+% È roba un po' confusa, è prima mattina per tutti. Se hai capito meglio quello
 che il prof voleva dire sei libero di mettere a posto :D
-Un attaccante può tentare di modificare il messaggio ma quello che gli mancherà 
+Un attaccante può tentare di modificare il messaggio ma quello che gli mancherà
 sarà $k$, ovvero la mia chiave con cui cifro il messaggio.
-L'attaccante allora potrebbe provare a sostituire la chiave $k$, e il difensore 
-non si accorgerebbe di nulla. Questo metodo funziona quando il file ha quindi 
+L'attaccante allora potrebbe provare a sostituire la chiave $k$, e il difensore
+non si accorgerebbe di nulla. Questo metodo funziona quando il file ha quindi
 una struttura, ed è presente un'alta entropia.
 
-
-\subsubsection{Firme elettroniche}
-
-Non si firma mai il messaggio perché è molto oneroso ($m^d$ con $m$ molto 
-grande), quello che si fa è applicare l'hash al messaggio e fare la firma 
+Non si firma mai il messaggio perché è molto oneroso ($m^d$ con $m$ molto
+grande), quello che si fa è applicare l'hash al messaggio e fare la firma
 dell'hash del messaggio.
 
 $$
@@ -23,22 +20,22 @@ $$
 \langle m, h(m), n \rangle
 $$
 
-Per verificare prendo il messaggio, calcolo l'hash e lo confronto con l'hash 
-ricevuto del messaggio. Se sono uguali la comunicazione è andata a buon fine. 
+Per verificare prendo il messaggio, calcolo l'hash e lo confronto con l'hash
+ricevuto del messaggio. Se sono uguali la comunicazione è andata a buon fine.
 Questo garantisce l'autenticità del messaggio e il non ripudio.
 
-Il non ripudio è qualcosa di fondamentale per permettere il commercio. Il non 
-ripudio è possibile perchè si è in grado di \textbf{firmare}. La firma digitale 
+Il non ripudio è qualcosa di fondamentale per permettere il commercio. Il non
+ripudio è possibile perchè si è in grado di \textbf{firmare}. La firma digitale
 implementa il non ripudio nel mondo elettronico.
 
-\subsubsection{Public Key Infrastructure}
+\paragraph{Public Key Infrastructure}
 
 \todo{Copia disegno}
 
-Una \textit{Certification Authority} è una struttura che gestisce la 
-\textit{catena di trust}. In Italia sono presenti queste società che permettono 
-di firmare in maniera digitale documenti, con valore legale. Questo avviene 
-perchè quando si va ad aprire un account è necessario presentare a mano la 
+Una \textit{Certification Authority} è una struttura che gestisce la
+\textit{catena di trust}. In Italia sono presenti queste società che permettono
+di firmare in maniera digitale documenti, con valore legale. Questo avviene
+perchè quando si va ad aprire un account è necessario presentare a mano la
 propria carta d'identità.
 
 Quindi in una CA sono presenti:
@@ -51,13 +48,13 @@ Quindi in una CA sono presenti:
 
 I primi tre punti costituiscono $m$.
 
-È anche presente un database pubblico con i certificati che sono stati revocati, 
-questo per assicurare al venditore che prima di ogni transazione possa andare a 
+È anche presente un database pubblico con i certificati che sono stati revocati,
+questo per assicurare al venditore che prima di ogni transazione possa andare a
 verificare dalla CA che il certificato dell'acquirente è valido.
 
 Esistono diverse CA.
 
-\subsection{Network Access Server}
+\subsubsection{Network Access Server}
 
 NAS: Network Access Server
 
@@ -68,18 +65,18 @@ Oggi queste modalità sono soppiantate da VPN.
 \subsection{Vulnerability Assessment}
 
 \begin{itemize}
-\item Scan servers, work stations e controllare i dispositivi per le 
-vulnerabilità (servizi open, patching, vulnerabilità delle configurazioni). 
-L'80\% degli attacchi avviene perchè i sistemi non sono patchati. Alcune aziende 
-prevedono nella policy che i sistemi devono essere patchati ogni $x$ mesi in 
+\item Scan servers, work stations e controllare i dispositivi per le
+vulnerabilità (servizi open, patching, vulnerabilità delle configurazioni).
+L'80\% degli attacchi avviene perchè i sistemi non sono patchati. Alcune aziende
+prevedono nella policy che i sistemi devono essere patchati ogni $x$ mesi in
 modo da evitare vulnerabilità. Senza queste policy è difficile che si facciano!
 % PATCHAH PATCHAH PATCHAH PATCHAH
 \item Controlli e test per il corretto funzionamento
 \begin{itemize}
  \item Aderenza alle \textit{policy \& standards}
 \end{itemize}
-\item Penetration testing, molto utilizzato per le reti wireless, meno utile su 
-servizi web. 
+\item Penetration testing, molto utilizzato per le reti wireless, meno utile su
+servizi web.
 \end{itemize}
 
 \subsubsection{Serviced Applications}
@@ -97,10 +94,10 @@ servizi web.
 A map of the network that shows where service requests entrer and are processed:
 
 \begin{itemize}
-\item Is called the path of physical access (no perché è la mappa degli accessi 
+\item Is called the path of physical access (no perché è la mappa degli accessi
 logici)
 \item Is primarily used in developing security policies
-\item Can be used to determine whether sufficient defense in depth is 
+\item Can be used to determine whether sufficient defense in depth is
 implemented (corretta)
 \item Helps to determine where antivirus software should be installed
 \end{itemize}
@@ -139,7 +136,7 @@ Anti-virus software typically implements which type of defensive software
 \item Neural Network
 \item Statistical-based
 \item Signature-based (corretta)
-\item Packet filter 
+\item Packet filter
 \end{itemize}
 
 
@@ -156,7 +153,7 @@ MD5 is an example of what type of software
 
 % ALTRO ESERCIZIO
 
-A personal firewall implemented as parte of the OS or antivirus software 
+A personal firewall implemented as parte of the OS or antivirus software
 qualifies as a:
 
 \begin{itemize}
@@ -168,30 +165,30 @@ qualifies as a:
 
 \part{Risk Management}
 
-Quanto è importante vestire nella sicurezza? La sicurezza è sempre più 
-``venduta'' e comunicata come il classico ROI\footnote{Ritorno d'investimento}. 
-Inoltre c'è anche un altro fattore da tenere conto: la pubblicità. La cattiva 
-pubblicità infatti è molto devastante per un'azienda, e può danneggiare molto 
-facilmente la fiducia degli utenti. Si stima che ci sia un ritorno 
+Quanto è importante vestire nella sicurezza? La sicurezza è sempre più
+``venduta'' e comunicata come il classico ROI\footnote{Ritorno d'investimento}.
+Inoltre c'è anche un altro fattore da tenere conto: la pubblicità. La cattiva
+pubblicità infatti è molto devastante per un'azienda, e può danneggiare molto
+facilmente la fiducia degli utenti. Si stima che ci sia un ritorno
 dell'investimento del 5\%.
 
-Non tutti i controlli vanno implementati, bisogna sapere a cosa indirizzare. 
+Non tutti i controlli vanno implementati, bisogna sapere a cosa indirizzare.
 L'importante è convinvere i decisori a ``convincerli'' a spendere in sicurezza.
 
 
 
 \chapter{Gestione del rischio}
 
-La storia, il grado di maturità, la cultura, la società e la tolleranza 
-influiscono sul rischio. Esistono anche dei fattori esterni, che sono le 
-\textit{regulation}, ovvero le normative, le leggi. Il fattore esterno è la 
-motivazione più forte oggigiorno, in quanto son previsti anche sanzioni di tipo 
+La storia, il grado di maturità, la cultura, la società e la tolleranza
+influiscono sul rischio. Esistono anche dei fattori esterni, che sono le
+\textit{regulation}, ovvero le normative, le leggi. Il fattore esterno è la
+motivazione più forte oggigiorno, in quanto son previsti anche sanzioni di tipo
 penale.
 
-L'altro fattore esterno è la \textit{industry}, ossia confrontarsi con i propri 
+L'altro fattore esterno è la \textit{industry}, ossia confrontarsi con i propri
 competitor.
 
-\textbf{Risk tolerance:} come il management vive la percezione del rischio 
+\textbf{Risk tolerance:} come il management vive la percezione del rischio
 (quanto rischio è disposto ad accettare).
 
 \section{Risk Management Process}
@@ -203,7 +200,7 @@ I passi della gestione del rischio si suddividono in passi:
 \item Trattamento del rischio
 \item Risk assessment
 	\begin{itemize}
-		\item Identificazione (Asset: materiali, 
+		\item Identificazione (Asset: materiali,
 immateriali\footnote{Reputazione ad esempio})
 		\item Analisi
 		\item valutazione
@@ -218,13 +215,13 @@ immateriali\footnote{Reputazione ad esempio})
 \item Accept Residual Risk
 \end{enumerate}
 
-Il rischio di può ridurre, mantenere, trasferire, evitare. Alla fine rimane il 
-rischio residuo, dove bisogna decidere se questo rischio è sopportabile o meno, 
-o se ci sono miglioramenti che sono possibili da intraprendere. In caso sia 
+Il rischio di può ridurre, mantenere, trasferire, evitare. Alla fine rimane il
+rischio residuo, dove bisogna decidere se questo rischio è sopportabile o meno,
+o se ci sono miglioramenti che sono possibili da intraprendere. In caso sia
 possibile eseguire un'ulteriore riduzione del rischio si re-itera il processo.
 
-Una volta che il lavoro è stato fatto questo dev'essere comunicato con le varie 
-persone incaricate. Il monitoraggio è una parte fondamentale del PDCA, che 
+Una volta che il lavoro è stato fatto questo dev'essere comunicato con le varie
+persone incaricate. Il monitoraggio è una parte fondamentale del PDCA, che
 permette un miglioramento continuo
 
 
@@ -234,54 +231,54 @@ permette un miglioramento continuo
 
 \section{Risk Appetite}
 
-Come una persona si pone nel confronto del rischio (es. aprire mail che dentro 
+Come una persona si pone nel confronto del rischio (es. aprire mail che dentro
 hanno spam, dare i dati della carta di credito).
 
-È sempre meglio in ogni caso eseguire una valutazione piuttosto che scegliere 
+È sempre meglio in ogni caso eseguire una valutazione piuttosto che scegliere
 ``a scatola chiusa''.
 
 
 \section{Processo di Risk Management}
 
-Si parte con il \textit{Risk appetite}, per identificare il rischio, per poi 
-muoversi verso la creazione di un piano della gestione del rischio, che è 
-importante che venga implementato. Siccome i rischi si evolvono e continuano a 
-cambiare, è importate eseguire un \textit{monitoring} continuo del rischio. È 
-anche importante tenere in considerazione il fatto che i controlli potrebbero 
-introdurre delle nuove vulnerabilità. 
+Si parte con il \textit{Risk appetite}, per identificare il rischio, per poi
+muoversi verso la creazione di un piano della gestione del rischio, che è
+importante che venga implementato. Siccome i rischi si evolvono e continuano a
+cambiare, è importate eseguire un \textit{monitoring} continuo del rischio. È
+anche importante tenere in considerazione il fatto che i controlli potrebbero
+introdurre delle nuove vulnerabilità.
 
 Il processo quindi dev'essere iterativo, in quanto l'ambiente è dinamico.
 
 
 \subsection{Risk Assessment}
-%CROWN JUWELS (gioiello della corona) assets che valgono l'80% degli asset p.es. 
+%CROWN JUWELS (gioiello della corona) assets che valgono l'80% degli asset p.es.
 brevetto particolare che è il core business
 Include 5 step:
 
 \subsubsection{Assegnazione dei valori agli assets}
 
-Quando eseguo \textit{risk assessment} non è possibile contare tutti gli oggetti 
-all'iterno di un'azienda, ed è quindi importante individuare solamente tutto 
+Quando eseguo \textit{risk assessment} non è possibile contare tutti gli oggetti
+all'iterno di un'azienda, ed è quindi importante individuare solamente tutto
 quello che veramente conta per la socità.
 
 \paragraph*{In pratica}
 % Parte aggiunta dopo
 
-Per agire quindi bisogna valutare l'ultimo \textit{risk assessment} che è stato 
+Per agire quindi bisogna valutare l'ultimo \textit{risk assessment} che è stato
 effettuato, e bisogna vedere se ci sono state aggiunte o rimozioni.
 
-Una volta identificati gli \textit{assets} più importanti è necessario 
-calcolarne il valore, che spesso non risulta essere semplice\footnote{Ad esempio 
-il costo di un determinato Software}. Bisogna inoltre calcolare il costo di una 
+Una volta identificati gli \textit{assets} più importanti è necessario
+calcolarne il valore, che spesso non risulta essere semplice\footnote{Ad esempio
+il costo di un determinato Software}. Bisogna inoltre calcolare il costo di una
 eventuale \textit{recovery}.
 
 
 
-\subsubsection{Determinare la perdita causata dalle vulnerabilità e dalle 
+\subsubsection{Determinare la perdita causata dalle vulnerabilità e dalle
 minacce}
 
-Bisogna assegnare un valore a questi oggetti, soprattutto se immateriali. Spesso 
-i beni immateriali (come la reputazione) si riesce a valutare effettivamente 
+Bisogna assegnare un valore a questi oggetti, soprattutto se immateriali. Spesso
+i beni immateriali (come la reputazione) si riesce a valutare effettivamente
 solamente dopo che la perdita è avvenuta.
 
 Le perdite vengono calcolare su confidenzialità, integrità e disponiblità.
@@ -289,16 +286,16 @@ Le perdite vengono calcolare su confidenzialità, integrità e disponiblità.
 \paragraph*{In pratica}
 % Parte aggiunta dopo
 
-Esistono i costi tangibili e intangibili. Sono presenti anche il costo del 
-rimpiazzo e quelle legate alle perdite. 
-Il costo dal punto di vista intangibile è di tipo qualitativa, e non 
+Esistono i costi tangibili e intangibili. Sono presenti anche il costo del
+rimpiazzo e quelle legate alle perdite.
+Il costo dal punto di vista intangibile è di tipo qualitativa, e non
 quantitativa.
 
 \todo{Ci sarebbe una tabella qui}
 
 \subsubsection{Stimare la probabilità di exploit}
 
-Si valuta qual è la probabilità che un evento malevolo mi colpisca tramite 
+Si valuta qual è la probabilità che un evento malevolo mi colpisca tramite
 survey, interviste e casi simili già accaduti.
 
 \paragraph*{In pratica}
@@ -307,9 +304,9 @@ survey, interviste e casi simili già accaduti.
 
 \subsubsection{Calcolare la perdita attesa}
 
-La perdita è composta dal \textit{downtime}, \textit{recovery}, 
-\textit{liability} e il rimpiazzo del prodotto. Il costo dell rimpiazzo spesso è 
-minore di tutto quello che ci sta prima: ovvero tutti i costi che vengono a 
+La perdita è composta dal \textit{downtime}, \textit{recovery},
+\textit{liability} e il rimpiazzo del prodotto. Il costo dell rimpiazzo spesso è
+minore di tutto quello che ci sta prima: ovvero tutti i costi che vengono a
 crearsi a causa della disfunzione creata.
 
 \paragraph*{In pratica}
@@ -320,7 +317,7 @@ crearsi a causa della disfunzione creata.
 
 Survey e controllo esistenti, più nuovi controlli.
 
-Decidiamo se trattare, trasferire, mantenere o ignorare il rischio. 
+Decidiamo se trattare, trasferire, mantenere o ignorare il rischio.
 \todo{completare}.
 
 \paragraph*{In pratica}
