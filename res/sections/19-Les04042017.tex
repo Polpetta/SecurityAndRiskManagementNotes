@@ -7,11 +7,11 @@ privati.
 La chiave pubblica solitamente si indirizza con $e$, mentre quella privata con
 $P$(\todo{d???}). È necessario eseguire:
 
-\[ C = P^e\ mod\ n \]
+\[ C = P^e \mod n \]
 
 Per decriptare:
 
-\[ P = C^d\ mod\ n \]
+\[ P = C^d \mod n \]
 
 dove $n = p \cdot q$ con $|p| \sim 1$Kb.
 
@@ -34,8 +34,8 @@ Si calcolano due primi grandi, si prende $\Phi$ dove rappresenta il numero
 coprimi con $n$.
 Esiste la proprietà per cui $\Phi(n) = (p-1) \cdot (q-1)$.
 
-La chiave privata è l'inverso della chiave pubblica $mod\ n$ ($d = e^{-1}
-\text{ mod } \Phi(n)$).
+La chiave privata è l'inverso della chiave pubblica $\mod n$ ($d = e^{-1}
+\mod \Phi(n)$).
 
 Assunzioni per l'RSA:
 \begin{itemize}
