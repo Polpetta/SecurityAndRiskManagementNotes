@@ -216,13 +216,13 @@ Vengono eseguiti i seguenti passi:
 Parte privata: Alice genera un numero $x$, Bob crea un $y$, entrambi lo tengono 
 segreto.
 
-Alice: $R_1 = g^x mod\ p$
-Bob: $R_2 = g^y mod\ p$
+Alice: $R_1 = g^x \mod\ p$
+Bob: $R_2 = g^y \mod\ p$
 
 Queste informazioni vengono scambiate su un canale pubblico.
 
-Bob riceve G1, quello che fa è fare $K = (R_1)^y mod\ p$. Alice fa la stessa 
-cosa e quindi ottengono una chiave segreta condivisa che è $g^{xy} mod\ p$.
+Bob riceve G1, quello che fa è fare $K = (R_1)^y \mod\ p$. Alice fa la stessa 
+cosa e quindi ottengono una chiave segreta condivisa che è $g^{xy} \mod\ p$.
 
 Il calcolo del logaritmo discreto ad oggi è un problema che è difficile da 
 risolvere in maniera efficiente, ed è quello su cui la sicurezza si basa su 
