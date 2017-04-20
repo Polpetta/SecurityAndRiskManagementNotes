@@ -5,10 +5,10 @@ Si basa sul giudizio, e soprattutto su informazioni a contorno. Si perde la rapp
 \subsubsection{Difference Estimation Sampling}
 
 Problemi tipici che bisogna indirizzare è la media e la deviazione standard.
-La media non è un fenomeno che cattura meglio l'andamento generale, per la presenza di \textit{outlier}, ovvero dei punti fuori dall'intervallo di rappresentazione. %?
+La media non è un fenomeno che cattura bene l'andamento generale, per la presenza di \textit{outlier}, ovvero dei punti fuori dall'intervallo di rappresentazione. %?
 La media è quindi un parametro assolutamente inaffidabile (va verificato ulteriormente!). Un parametro più affidabile che non è soggetto agli \textit{outlier} è la mediana.
 
-L'intervallo di confidenza è la probabilità che il campione rappresenti la parte della popolazione. Viene rappresentato con un epsilon, e più piccolo è e meglio è. Solitamente, si usa un intervallo di confidenza del 90\%. Il problema è la possibilità di usare una distribuzione fallace completamente duale rispetto all'intervallo di confidenza.
+L'intervallo di confidenza è la probabilità che il campione rappresenti la parte della popolazione. Viene rappresentato con un $\epsilon$, e più piccolo è e meglio è. Solitamente, si usa un intervallo di confidenza del 90\%. Il problema è la possibilità di usare una distribuzione fallace completamente duale rispetto all'intervallo di confidenza.
 
 
 \subsubsection{Tipi di campionamento}
@@ -48,11 +48,11 @@ Questa tipologia di tool sono molto utili, e danno la possibilità di avere acce
 \item Chi deve ricevere il rapporto?
 \item Contesto (cosa viene analizzato), gli obiettivi, il periodo coperto e quanto l'audit è durato\footnote{Audit che durano troppo poco con tante persone da analizzare non vanno bene, soprattutto se devono essere svolti in poco tempo.}.
 \item Findings (quello che è stato trovato), che deve essere supportato da delle \emph{evidence} (prove). Le raccomandazioni possono essere date in due modi: seguendo gli standard (es. standard ISO) o facendo il merge tra la nostra esperienza, la nostra conoscenza e quello che può fare l'azienda per risolvere i problemi evidenziati.
-\item Raggruppare per concretezza delle evidenze che abbiamo trovato
+\item Raggruppare per concretezza delle evidenze che abbiamo trovato.
 \item menzionare i problemi trovati e le critiche costruttive.
 \end{itemize}
 
-Il rapporto di audit è una parte molto importante: un rapporto dettagliato permette ai successori di verificare il corretto funzionamento o meno dell'azienda negli anni passati, e permette di capire meglio il contesto. Un rapporto di audit dovrebbe essere bilanciato, altrimenti se si arriva a mettere a fuoco troppe cose negative non va bene, ma è importante anche non trascurarle. È importante tenere a mente che il rapporto di audit è fatto per essere leggo dai ``piani alti''. Tenersi all'evidenza e ai fatti è sempre un'azione consigliata.
+Il rapporto di audit è una parte molto importante: un rapporto dettagliato permette ai successori di verificare il corretto funzionamento o meno dell'azienda negli anni passati, e permette di capire meglio il contesto. Un rapporto di audit dovrebbe essere bilanciato, altrimenti se si arriva a mettere a fuoco troppe cose negative non va bene, ma è importante anche non trascurarle. È importante tenere a mente che il rapporto di audit è fatto per essere letto dai ``piani alti''. Tenersi all'evidenze e ai fatti è sempre un'azione consigliata.
 
 
 
@@ -66,16 +66,16 @@ Sono delle prove, e esistono in diverse forme:
 \begin{itemize}
 \item Note dalle interviste
 \item Risultati dei test
-\item Email o corrispondenza
-\item Documentazione
-\item Osservazioni
-\end{itemize}
 
 Le migliori fonti per ottenere informazioni sono:
 \begin{itemize}
 \item Esterne: fonti da organizzazioni esterne (per esempio i fornitori).
 \item Qualificate: le più autoritative
-\item Oggettive: evidenze per cui non è possibile esprimere un periodo soggettivo
+\item Oggettive: evidenze per cui non è possibile esprimer
+\item Email o corrispondenza
+\item Documentazione
+\item Osservazioni
+\end{itemize}e un periodo soggettivo
 \item Tempo: deve essere coerente con la nostra attività di audit 
 \end{itemize}
 
@@ -95,11 +95,11 @@ Il \textit{follow-up} serve \todo{boh}
 
 \section{Raccomandazioni finali sull'Audit}
 
-Queste ultime note sono molto importanti e vanno sempre tenute in considerazioni:
+Queste ultime note sono molto importanti e vanno sempre tenute in considerazione:
 \begin{itemize}
-\item Mai eccedere lo scopo di quello che si deve fare, ovvero, mai ficcare il naso dove non serve. I permessi che vengono accordati devono essere scritti, in maniera tale che rimanga una traccia.
+\item Mai eccedere lo scopo di quello che si deve fare, ovvero, mai ficcare il naso dove non serve. I permessi che vengono accordati devono essere messi per iscritto, affinchè ne rimanga una traccia.
 \item Tutti i test potrebbero impattare sul sistema, ed è quindi una buona pratica avvisare i settori interessati dei possibili disguidi prima di iniziare ad eseguire qualisiasi test.
-\item Quando si lavora con i dati è importante non toccare dati o configurazioni importanti
+\item Quando si lavora con i dati è importante non toccare dati o configurazioni importanti.
 \end{itemize}
 
 
@@ -107,7 +107,7 @@ Queste ultime note sono molto importanti e vanno sempre tenute in considerazioni
 
 Audit finanziario, operazionale, integrativo, forense (è successo un evento negativo che ha scatenato reazioni civili o penali e viene chiamato un auditor esterno per fare analisi forense), IS, amministrativo.
 
-\subsubsection{Computer-Assisted Audit Techniques}
+\subsubsection{Computer-Assisted Audit Techniques (CAAT)}
 
 I software permettono agli auditor di:
 \begin{itemize}
@@ -138,7 +138,7 @@ Their password was `HelpTheCommunity', and transmissions were
 unencrypted. I could read everything...
 \end{verbatim}
 
-In questo dialogo, è evidente come ci sia un rilascio di informazioni non controllato, che potrebbero portare un attacco di tipo malizioso.
+In questo dialogo, è evidente come ci sia un rilascio di informazioni non controllato, che potrebbe portare un attacco di tipo malizioso.
 
 
 
@@ -147,7 +147,7 @@ In questo dialogo, è evidente come ci sia un rilascio di informazioni non contr
 Il problema è che l'intervistato ha divulgato informazioni sull'azienda, nonostante l'NDA. Anche se i problemi fossero attualmente risolti sta comunque infangando il nome della società auditata.
 
 
-Bisognerebbe invece fare:
+Bisognerebbe invece dire:
 \begin{verbatim}
 You: I developed an audit plan for Help-The-Community
 Interviewer: What specifically did you do?
