@@ -4,9 +4,9 @@ Un piano per la continuazione del business si suddivide nei seguenti passi:
 \begin{enumerate}
   \item Attuazione dell'\textit{Business Impact Analysis}
   \item Dare priorità ai servizi per supportare i processi critici del business
-  \item Determinazione di modalità alternative di processo per servizi critici 
+  \item Determinazione di modalità alternative di processo per servizi critici
   e vitali
-  \item Sviluppare il piano di \textit{Disaster Recovery} per i servizi di 
+  \item Sviluppare il piano di \textit{Disaster Recovery} per i servizi di
   recupero IS
   \item Sviluppo del Business Continuity Plan per le operazioni di recupero e
   continuazione del business
@@ -24,20 +24,20 @@ Quando avviene un disastro c'è una persona che ha il compito di allertare le
 altre persone (di solito il Chief Security Officer). Quando il CSO dichiara l'
 incidente le persone posso aprire il libro del Disaster Recovery.
 
-Un incidente non viene dichiarato immediatamente, ma c'è una procedura da 
-rispettare. Quando una situazione di incidente è dichiarata l'incolumità fisica 
-è la prima a essere presa in considerazione. Gli \textit{Stackeholders} sono 
-subito contattati, mentre l'ufficio stampa si occupa di dichiarare l'incidente. 
-Questa parte è molto delicata, e il danno dev'essere spiegato in maniera da non 
+Un incidente non viene dichiarato immediatamente, ma c'è una procedura da
+rispettare. Quando una situazione di incidente è dichiarata l'incolumità fisica
+è la prima a essere presa in considerazione. Gli \textit{Stackeholders} sono
+subito contattati, mentre l'ufficio stampa si occupa di dichiarare l'incidente.
+Questa parte è molto delicata, e il danno dev'essere spiegato in maniera da non
 costituire una brutta pubblicità per l'azienda.
 
-L'ufficio IT entra in azione dopo tutte queste procedure preliminari sono 
+L'ufficio IT entra in azione dopo tutte queste procedure preliminari sono
 annunciate, e comincia ad agire per risolvere il problema.
 
 \subsection{Preparazione di un piano di recupero}
 
-La vita delle persone viene messa sempre in primo piano. Viene poi definito chi 
-deve fare cosa. Le copie del piano di recupero devono essere distribuite in 
+La vita delle persone viene messa sempre in primo piano. Viene poi definito chi
+deve fare cosa. Le copie del piano di recupero devono essere distribuite in
 diverse locazioni per evitare che possano essere distrutte.
 
 \subsubsection{Preoccupazi per un piano BCP/DR}
@@ -54,13 +54,13 @@ Copie del piano devono essere mantenute in luoghi secondari.
 
 \subsubsection{Responsabilità in un piano di recupero}
 
-All'interno dell'azienda parte del personale ricopre dei ruoli dal punto di 
-vista della sicurezza delle persone, e sono pronti ad agire in caso una 
+All'interno dell'azienda parte del personale ricopre dei ruoli dal punto di
+vista della sicurezza delle persone, e sono pronti ad agire in caso una
 situazione di pericolo si manifesti.
 
-Ad esempio, in ogni piano di una struttura (come un ufficio o un edificio 
-pubblico) dovrebbe essere presente una persona che si incarichi di controllare 
-ogni stanza per verificare l'assenza di persone in difficoltà in caso di una 
+Ad esempio, in ogni piano di una struttura (come un ufficio o un edificio
+pubblico) dovrebbe essere presente una persona che si incarichi di controllare
+ogni stanza per verificare l'assenza di persone in difficoltà in caso di una
 evacuazione d'emergenza.
 
 \subsection{Documenti di un piano di recupero}
@@ -71,23 +71,28 @@ evacuazione d'emergenza.
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|p{5cm}|p{5cm}|}
 \hline
-\textbf{Focus}                   & \textbf{IT}                                   
-                                              & \textbf{Business}                
+\textbf{Focus}                   & \textbf{IT}
+
+                                              & \textbf{Business}
+
                                                                     \\ \hline
-Evento di recupero      & Piano di recupero del disastro. Procedure per 
-recuperare in modalità alternativa   & Piano di recupero del Business. Recupero 
+Evento di recupero      & Piano di recupero del disastro. Procedure per
+recuperare in modalità alternativa   & Piano di recupero del Business. Recupero
 del business dopo un disastro                      \\ \hline
-                        & Piano di contingenza IT: recupero della maggior parte 
-delle applicazioni o sistemi & Piano di emergenza per gli occupanti: proteggere 
+                        & Piano di contingenza IT: recupero della maggior parte
+delle applicazioni o sistemi & Piano di emergenza per gli occupanti: proteggere
 la vita e le risorse sotto pericolo fisico \\ \hline
-                        & Piano di risposta per un incidente cibernetico 
-malizioso                           & Piano di comunicazione di crisi: da un 
+                        & Piano di risposta per un incidente cibernetico
+malizioso                           & Piano di comunicazione di crisi: da un
 report della situazione al pubblico e al personale   \\ \hline
-Continuità del business &                                                        
-                            & Piano di continuità del business                   
+Continuità del business &
+
+                            & Piano di continuità del business
+
                                          \\ \hline
-                        &                                                        
-                            & Piano di continuità delle operazioni in caso di 
+                        &
+
+                            & Piano di continuità delle operazioni in caso di
 interruzioni prolungate                     \\ \hline
 \end{tabular}%
 }
@@ -96,11 +101,12 @@ interruzioni prolungate                     \\ \hline
 
 \subsection{\textit{Mean Time Between Failure}}
 
-Detto anche MTBF è la somma del \textit{Mean Time to Repair} (MTTR) più il 
-\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che percorre tra 
+Detto anche MTBF è la somma del \textit{Mean Time to Repair} (MTTR) più il
+\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che percorre tra
 l'inizio di due fallimenti.
 
-Il MTTR è il tempo medio necessario per la riparazione, mentre il MTTF è il tempo medio dalla riparazione ad un nuovo fallimento.
+Il MTTR è il tempo medio necessario per la riparazione, mentre il MTTF è il
+tempo medio dalla riparazione ad un nuovo fallimento.
 
 \begin{figure}[H]
  \centering
@@ -109,8 +115,8 @@ Il MTTR è il tempo medio necessario per la riparazione, mentre il MTTF è il te
 \end{figure}
 
 
-L'affidabilità può essere misurata. Un tipica misura è quella detta del 
-\textit{5 9s}, ovvero del $99.999\%$ di \textit{uptime}, ovvero 5 minuti e 
+L'affidabilità può essere misurata. Un tipica misura è quella detta del
+\textit{5 9s}, ovvero del $99.999\%$ di \textit{uptime}, ovvero 5 minuti e
 mezzo di fallimento all'anno del servizio.
 
 \subsection{Esecuzione del test}
@@ -119,7 +125,8 @@ mezzo di fallimento all'anno del servizio.
 Il test viene effettuato in questo ordine:
 \begin{enumerate}
   \item \textbf{Desk-Based Evaluation/Paper test} \\
-  Un gruppo comincia a seguire i passi della procedura e li esegue a mano, simile al walkthrough.
+  Un gruppo comincia a seguire i passi della procedura e li esegue a mano,
+simile al walkthrough.
   \item \textbf{Preparedness Test} \\
   Una o più parti dell'intero test vengono eseguite personalmente da qualcuno.
   \item \textbf{Full Operational Test} \\
@@ -133,22 +140,22 @@ Esistono diverse tipologie di test per il \textit{Business Continuity}:
   \item Checklist Review \\
   Rivisitazione per piano di copertura. Tutti i piani importanti sono coperti?
   \item Structured Walkthrough \\
-  Rivisitazione di tutti gli aspetti del piano, spesso guardando tutti gli 
+  Rivisitazione di tutti gli aspetti del piano, spesso guardando tutti gli
   scenari
   \item Simulation Test \\
-  Esecuzione del piano basato specificamente per uno scenario, senza un sito 
+  Esecuzione del piano basato specificamente per uno scenario, senza un sito
   alternativo
   \item Parallel Test \\
-  Viene azionato la struttura alternativa fuori dal sito, senza 
+  Viene azionato la struttura alternativa fuori dal sito, senza
   interrompere il funzionamento del sito regolare
   \item Full-Interruption \\
-  Si passa alla modalità alternativa da quella regolare, per verificare che 
+  Si passa alla modalità alternativa da quella regolare, per verificare che
   tutto sia funzionante.
 \end{itemize}
 
 \subsubsection{Obiettivi del testing}
 
-L'obiettivo del testing è verificare che il piano riesca a recuperare con 
+L'obiettivo del testing è verificare che il piano riesca a recuperare con
 successo le infrastrutture e i processi di \textit{business}.
 
 \paragraph*{Vantaggi} Ci sono i seguenti vantaggi nell'eseguire il testing:
@@ -161,7 +168,7 @@ successo le infrastrutture e i processi di \textit{business}.
 
 \subsubsection{Procedure del testing}
 
-I test sono inizialmente semplici e poi diventano man mano sempre più complessi 
+I test sono inizialmente semplici e poi diventano man mano sempre più complessi
 con il tempo.
 
 \begin{figure}[H]
@@ -170,25 +177,25 @@ con il tempo.
  \caption{Varie procedure del testing}
 \end{figure}
 
-Includono di solito una terza parte indipendente, per poter permetterne una 
+Includono di solito una terza parte indipendente, per poter permetterne una
 migliore osservazione.
 
-Dalla valutazione del test si ottengono quelli che sono i \textbf{punti di 
+Dalla valutazione del test si ottengono quelli che sono i \textbf{punti di
 miglioramento}, che devono essere effettivamente messi in pratica.
 
-\paragraph*{Passi del test} Esistono diversi passi del test. C'è la sua 
-preparazione, l'esecuzione del test e la pulizia dopo-test. Importante è 
-ricordarsi di eseguire una pulizia dei dati dopo l'esecuzione del test, ma di 
-quelli che non sono importanti per la sua valutazione (altrimenti il test 
+\paragraph*{Passi del test} Esistono diversi passi del test. C'è la sua
+preparazione, l'esecuzione del test e la pulizia dopo-test. Importante è
+ricordarsi di eseguire una pulizia dei dati dopo l'esecuzione del test, ma di
+quelli che non sono importanti per la sua valutazione (altrimenti il test
 sarebbe inutile).
 
 \subsubsection{\textit{Gap Analysis}}
 
-Una \textit{gap analysis} è relativa a un obiettivo che un'azienda si pone 
-rispetto al punto in cui è, ed è necessaria affinché una azienda possa 
-migliorare se stessa. Quelli che sono più controllati sono i 
-processi\footnote{Importante è il PDCA (miglioramento continuo della qualità 
-dei processi).}, perché le persone sono quelle che sono più difficili da 
+Una \textit{gap analysis} è relativa a un obiettivo che un'azienda si pone
+rispetto al punto in cui è, ed è necessaria affinché una azienda possa
+migliorare se stessa. Quelli che sono più controllati sono i
+processi\footnote{Importante è il PDCA (miglioramento continuo della qualità
+dei processi).}, perché le persone sono quelle che sono più difficili da
 ``modificare'' ed essere migliorate.
 
 \subsection{Auditing di un BCP}
@@ -205,7 +212,8 @@ Sono presenti diversi step da controllare, che possono essere:
 
 \subsubsection{Assicurazione}
 
-Un modo per esternalizzare il rischio completamente è tramite un contratto di assicurazione.
+Un modo per esternalizzare il rischio completamente è tramite un contratto di
+assicurazione.
 
 \begin{figure}[H]
 \centering

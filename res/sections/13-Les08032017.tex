@@ -14,11 +14,11 @@ Impatto su uno o più dipartimenti e può impattare sui clienti esterni
 Evento che ci costa la permanenza sul mercato
 \end{itemize}
 
-Questa classificazione non è semplice, anche perché ogni categoria ha una 
-classe di costi e contromisure diverse. Si può avere una sovrastima e una 
-sottostima dei costi, che portano rispettivamente ad un amento dei costi 
+Questa classificazione non è semplice, anche perché ogni categoria ha una
+classe di costi e contromisure diverse. Si può avere una sovrastima e una
+sottostima dei costi, che portano rispettivamente ad un amento dei costi
 eccessivi o ad una sicurezza non adeguata.
-Minor, major e crisis dovrebbero essere documentati e tracciati per poter 
+Minor, major e crisis dovrebbero essere documentati e tracciati per poter
 rimediare.
 
 \subsection{Disastro e impatto}
@@ -27,68 +27,71 @@ Supponiamo di essere in un' Università.
 Potrebbero accadere i seguenti disastri:
 \begin{itemize}
  \item Incendio \\
- Questo impatta sulle auli e il dipartimento. Come lo 
-classifichiamo? Crisi, potrebbe essere major se limitato ad una parte del 
-dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte 
+ Questo impatta sulle auli e il dipartimento. Come lo
+classifichiamo? Crisi, potrebbe essere major se limitato ad una parte del
+dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte
 rischio da tenere in considerazione.
 
  \item Attacco hacker \\
- Attaccano per esempio il sistema di registrazione dei voti. Può essere un 
+ Attaccano per esempio il sistema di registrazione dei voti. Può essere un
 evento major che ha implicazioni legali (non \`e possibile registrare voti).
 
  \item Indisponibilità dalla rete \\
- Livello di disastro: crisi. I dipartimenti dipendono dalla rete perché 
-ci lavorano. Questo blocca completamente il dipartimento. Oggi una rete viene 
-considerata come il sistema nervoso di un' organizzazione. Senza la quale 
-l'organizzazione \`e costretta a fermarsi (blocco di registrazioni online ad 
+ Livello di disastro: crisi. I dipartimenti dipendono dalla rete perché
+ci lavorano. Questo blocca completamente il dipartimento. Oggi una rete viene
+considerata come il sistema nervoso di un' organizzazione. Senza la quale
+l'organizzazione \`e costretta a fermarsi (blocco di registrazioni online ad
 esempio con impossibilità degli studenti di seguire).
-\todo{a seguire cosa?} 
+\todo{a seguire cosa?}
 
  \item Social engineering \\
- Può esserci un attacco al sistema di registrazione magari tramite una frode 
+ Può esserci un attacco al sistema di registrazione magari tramite una frode
 (mi prendono password e token).
 
  \item Server failure \\
- Collasso dei server. Si hanno le stesse conseguenze di network unavailable. 
-Classificato come major (crisi in alcuni casi, ad esempio durante una sessione 
-d'esami). Al giorno d'oggi è posibile contenere il disastro grazie a contrimisure
+ Collasso dei server. Si hanno le stesse conseguenze di network unavailable.
+Classificato come major (crisi in alcuni casi, ad esempio durante una sessione
+d'esami). Al giorno d'oggi è posibile contenere il disastro grazie a
+contrimisure
 standard, che richiedono un basso costo poichè basate su hardware.
 \end{itemize}
 
 \subsection{Recupero del servizio}
 
-Per attuare un recupero del servizio è possibile che siano necessarie anche due settimane. 
+Per attuare un recupero del servizio è possibile che siano necessarie anche due
+settimane.
 Questo perché sono coinvolti processi che vanno capiti e contestualizzati.
 
 \begin{figure}[h!]
-	\begin{center}
-		\includegraphics[scale=0.65]{res/img/recovery-times.png}
-	\end{center}
-	\caption{Grafico che mostra le fasi che portano al ripristino del servizio regolare.}
+        \begin{center}
+                \includegraphics[scale=0.65]{res/img/recovery-times.png}
+        \end{center}
+        \caption{Grafico che mostra le fasi che portano al ripristino del
+servizio regolare.}
 \end{figure}
 \todo{IMPROVE DESCRIPTION OF IMAGE}
-Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo 
-nell'\textbf{interruption window} (finestra di tempo per cui il servizio non è 
+Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo
+nell'\textbf{interruption window} (finestra di tempo per cui il servizio non è
 disponibile). Se è stato fatto un \textit{disaster recovery plan}
-possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per 
-esempio se era possibile servire 100 utenti contemporaneamente magari adesso 
+possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per
+esempio se era possibile servire 100 utenti contemporaneamente magari adesso
 \`e possibile servirne solamente 50.} ma disponibile).
 
-Il \textbf{Service Delivery Objective} è il livello di servizio che possiamo 
-fornire in \textit{alternate mode} (ad esempio una banca vuole che sia 
-garantito almeno il 50\% delle transazioni durante la alternate mode, quindi 
+Il \textbf{Service Delivery Objective} è il livello di servizio che possiamo
+fornire in \textit{alternate mode} (ad esempio una banca vuole che sia
+garantito almeno il 50\% delle transazioni durante la alternate mode, quindi
 l'SDO è 50\%).
 
-La modalità alternativa ovviamente non perdura costantemente, ed ad un certo 
-punto raggiunge una fine in cui il comportamento normale del sistema viene 
-ripristinato. Il tempo passato tra l'inizio della modalità alternativa e la 
-sua conclusione con il ripristino delle normali operazioni\footnote{Anche 
-detto \textit{restoration}} viene definito come \textbf{Maximum Tolerable 
+La modalità alternativa ovviamente non perdura costantemente, ed ad un certo
+punto raggiunge una fine in cui il comportamento normale del sistema viene
+ripristinato. Il tempo passato tra l'inizio della modalità alternativa e la
+sua conclusione con il ripristino delle normali operazioni\footnote{Anche
+detto \textit{restoration}} viene definito come \textbf{Maximum Tolerable
 Outage}.
 
-Può darsi che non sia possibile ritornare subito al 100\% dell'operatività. 
-È quindi necessario avere un \textbf{restoration plan} che permetta di passare 
-dall'\textit{alternate mode} al \textit{regular service mode} nel minor tempo 
+Può darsi che non sia possibile ritornare subito al 100\% dell'operatività.
+È quindi necessario avere un \textbf{restoration plan} che permetta di passare
+dall'\textit{alternate mode} al \textit{regular service mode} nel minor tempo
 possibile.
 
 \subsubsection{Definizioni}
@@ -100,7 +103,7 @@ Di seguito viene riportata una lista di definizioni appena viste:
  Riuscire ad operare anche se con una modalità degradata del servizio.
  \item \textbf{Disaster recovery} \\
  Permette di sopravvivere anche se il servizio IT è non disponbile
- \item \textbf{Alternate Process Mode} 
+ \item \textbf{Alternate Process Mode}
  Modalità alternata.
  \item \textbf{Disaster Recovery mode} \\
  Piano che permette di passare in modalità alternata.
@@ -110,28 +113,28 @@ Di seguito viene riportata una lista di definizioni appena viste:
 
 \section{Classificazione dei servizi}
 
-Il servizio ha un costo associato, di conseguenza anche la mancata erogazione 
+Il servizio ha un costo associato, di conseguenza anche la mancata erogazione
 del servizio lo ha. In ordine di importanza:
 \begin{enumerate}
- \item[\textbf{Critical}] Non posso sostituirlo con un processo non IT, non si 
+ \item[\textbf{Critical}] Non posso sostituirlo con un processo non IT, non si
 deve fermare. Costo molto elevato. \\
-Esempio: telemedicina, un medico sta al MIT 
-e tramite telemedicina opera qualcuno a Ginevra, chiaramente il servizio non 
-può essere interrotto. Questo servizio implica la \textit{safety}, ogni 
+Esempio: telemedicina, un medico sta al MIT
+e tramite telemedicina opera qualcuno a Ginevra, chiaramente il servizio non
+può essere interrotto. Questo servizio implica la \textit{safety}, ogni
 servizio che implica la safety è critica per definizione.
 
- \item[\textbf{Vital}] Andare avanti a mano per un tempo molto ridotto. Costo 
+ \item[\textbf{Vital}] Andare avanti a mano per un tempo molto ridotto. Costo
 elevato.
 
- \item[\textbf{Sensitive}] Posso sostituire all'IT una procedura manuale per un 
-periodo limitato di tempo ma mi costa di più. 
+ \item[\textbf{Sensitive}] Posso sostituire all'IT una procedura manuale per un
+periodo limitato di tempo ma mi costa di più.
 
- \item[\textbf{Nonsensitive}] Posso andare avanti manualmente per un periodo 
-esteso di tempo. 
+ \item[\textbf{Nonsensitive}] Posso andare avanti manualmente per un periodo
+esteso di tempo.
 
 \end{enumerate}
 
-Nelle aziende di solito è sempre presente un processo critico. È strano se non 
+Nelle aziende di solito è sempre presente un processo critico. È strano se non
 ce n'è neanche uno, ma dipende molto dalla realtà.
 
 \subsection{Esempio: determinazione di criticità nei processi di business}
@@ -142,44 +145,44 @@ ce n'è neanche uno, ma dipende molto dalla realtà.
  \caption{Una grande compagnia con le seguenti sotto-componenti}
 \end{figure}
 
-Il servizio più importante è \textit{sales}, perché non si può spedire senza 
-vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non 
+Il servizio più importante è \textit{sales}, perché non si può spedire senza
+vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non
 fatturano.
 
-Sotto alle sales abbiamo \textit{web service} and \textit{sales calls}. Tra i 
-due web service è critico perché non può essere sostituito manualmente, mentre 
+Sotto alle sales abbiamo \textit{web service} and \textit{sales calls}. Tra i
+due web service è critico perché non può essere sostituito manualmente, mentre
 le sales calls possono essere segnate a mano.
 
 %Nelle sales è più importante orders che inventory perché... % TODO Finire
 
-Gli ingegneri sono a bassa priorità perché anche se non lavorano per una 
-settimana sullo sviluppo di un prodotto semplicemente viene ritardato di una 
-settimana. Ovviamente bisogna tenere in considerazione il fatto che se c'è una 
+Gli ingegneri sono a bassa priorità perché anche se non lavorano per una
+settimana sullo sviluppo di un prodotto semplicemente viene ritardato di una
+settimana. Ovviamente bisogna tenere in considerazione il fatto che se c'è una
 \textit{deadline} vicina il rischio sale.
 
 \subsection{RPO and RTO}
 
 \begin{itemize}
- \item \textbf{Recovery Point Objective}: ammontare di dati che possiamo 
+ \item \textbf{Recovery Point Objective}: ammontare di dati che possiamo
 perdere quando recuperiamo dal backup.
 
- \item \textbf{Recovery Time Objective}: tempo che serve per recuperare le 
+ \item \textbf{Recovery Time Objective}: tempo che serve per recuperare le
 applicazioni e ripartire in modo da poter ripristinare il servizio.
 
  \item \textbf{Orphan data}: dati che vanno persi e non sono recuperabili.
 \end{itemize}
 
-Se voglio avere \textit{RPO} basso devo avere una spesa maggiore (es. se lo 
-voglio minore vuol dire che devo effettuare backup più spesso, che significa 
-rendere non disponibile il dato su cui sto effettuando backup, ossia chi deve 
+Se voglio avere \textit{RPO} basso devo avere una spesa maggiore (es. se lo
+voglio minore vuol dire che devo effettuare backup più spesso, che significa
+rendere non disponibile il dato su cui sto effettuando backup, ossia chi deve
 lavorarci non può farlo).
-\textit{RTO} è ovvio invece: più velocemente vogliamo essere operativi più 
+\textit{RTO} è ovvio invece: più velocemente vogliamo essere operativi più
 questo costa.
 
 \subsection{Business Impact Analysis Summary}
 
-Per fare un riassunto dell' unità viene qui proposto un esempio. In una 
-università, potremmo avere il seguente \textit{Business Impact Analysis 
+Per fare un riassunto dell' unità viene qui proposto un esempio. In una
+università, potremmo avere il seguente \textit{Business Impact Analysis
 Summary}\footnote{Per comodità esiste anche l'abbreviazione BIA.}
 
 \begin{table}[H]
@@ -187,17 +190,18 @@ Summary}\footnote{Per comodità esiste anche l'abbreviazione BIA.}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|p{5cm}|}
 \hline
-\textbf{Servizio}      & \textbf{RPO (ore)} & \textbf{RTO (ore)} & 
-\textbf{Risorse critiche}           & \textbf{Note speciali}                     
+\textbf{Servizio}      & \textbf{RPO (ore)} & \textbf{RTO (ore)} &
+\textbf{Risorse critiche}           & \textbf{Note speciali}
+
                            \\
 \hline
-Registrazione & 0 ore     & 4 ore     & SOLAR, rete, Registratore  & Alta 
+Registrazione & 0 ore     & 4 ore     & SOLAR, rete, Registratore  & Alta
 priorità durante Nov - Gennaio, Maggio - Giugno, Agosto \\
 \hline
-Personale     & 2 ore     & 8 ore     & PeopleSoft                 & Potrebbe 
+Personale     & 2 ore     & 8 ore     & PeopleSoft                 & Potrebbe
 operare manualmente per alcune ore                  \\
 \hline
-Insegnamenti  & 1 giorno  & 1 ora     & D2L, rete, file di facoltà & Durante il 
+Insegnamenti  & 1 giorno  & 1 ora     & D2L, rete, file di facoltà & Durante il
 semestre scolastico: alta priorità               \\
 \hline
 \end{tabular}%
@@ -212,37 +216,37 @@ semestre scolastico: alta priorità               \\
 
 Sistema di ridondanza per i dati. Sono sei con diverse modalità.
 \begin{itemize}
-  \item RAID 0: i dischi anziché essere memorizzati su un disco sono 
-  memorizzati su due dischi. Possibile accesso parallelo ma niente backup 
+  \item RAID 0: i dischi anziché essere memorizzati su un disco sono
+  memorizzati su due dischi. Possibile accesso parallelo ma niente backup
   (striping).
-  
+
   \item RAID 1: backup su un altro disco (mirroring).
-  
+
   \item Altri raid
-  
-  \item RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping 
+
+  \item RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping
   con in aggiunta dei bit di parità.
-  
+
 \end{itemize}
 
 \subsection{Network Disaster recovery}
 
-Per recuperare un problema di rete la cosa più semplice è diversificare (avere 
+Per recuperare un problema di rete la cosa più semplice è diversificare (avere
 ridondanza, una rete alternativa). Due tipi di ridondanza:
 \begin{itemize}
-  \item \textbf{alternative routing}: faccio un contratto con una società che 
-  mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere 
-sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo 
+  \item \textbf{alternative routing}: faccio un contratto con una società che
+  mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere
+sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo
 fisico, altrimenti è inutile;
   \begin{itemize}
-    \item last-mile circuit protection: se mi tranciano l'ultimo miglio tra 
-l'azienda e la centralina posso mantenere comunicazioni tramite 
-\textit{microwave communication}\footnote{Comunicazione a Microonde.}, faccio 
-comunicazione punto punto. Questa tecnologia viene usata abbastanza spesso in 
+    \item last-mile circuit protection: se mi tranciano l'ultimo miglio tra
+l'azienda e la centralina posso mantenere comunicazioni tramite
+\textit{microwave communication}\footnote{Comunicazione a Microonde.}, faccio
+comunicazione punto punto. Questa tecnologia viene usata abbastanza spesso in
 quanto non richiede una particolare installazione ed è abbastanza economica.
     \item long-haul network diversity
   \end{itemize}
-  \item \textbf{diverse routing}: si fa con la stessa società ma questa società 
+  \item \textbf{diverse routing}: si fa con la stessa società ma questa società
 garantisce un instradamento diverso.
 \end{itemize}
 
@@ -262,45 +266,45 @@ Asse y: costo
 
 Esistono diverse tecnologie di backup:
 \begin{itemize}
-  \item \textbf{Hot site}: il centro di \textit{backup} è allineato con il 
-  centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro 
-  operativo). Il tempo di recupero da \textit{downtime} è molto basso ma il 
-  costo è molto alto. Il costo è molto alto perché bisogna duplicare 
+  \item \textbf{Hot site}: il centro di \textit{backup} è allineato con il
+  centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro
+  operativo). Il tempo di recupero da \textit{downtime} è molto basso ma il
+  costo è molto alto. Il costo è molto alto perché bisogna duplicare
   l'infrastruttura e il costo dell'\textit{information processes}.
-  
-  \item \textbf{Warm site}: c'è un altro sito che ha tutti gli assets pronti 
+
+  \item \textbf{Warm site}: c'è un altro sito che ha tutti gli assets pronti
   per lavorare ma non è ancora operativo.
-  
-  \item \textbf{Cold site}: abbiamo un sito predisposto per l'emergenza ma che 
-  di fatto è vuoto. Ad esempio gli attacchi per il computer sono pronti ma 
-  mancano i server e le configurazioni. Questa installazione è quella che 
-  richiede più tempo per diventare operativo, anche se il suo costo è molto 
+
+  \item \textbf{Cold site}: abbiamo un sito predisposto per l'emergenza ma che
+  di fatto è vuoto. Ad esempio gli attacchi per il computer sono pronti ma
+  mancano i server e le configurazioni. Questa installazione è quella che
+  richiede più tempo per diventare operativo, anche se il suo costo è molto
   basso.
-  
-  \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi 
-  di recupero ma si trovano in una fascia operativa media. Due società nello 
-  stesso segmento di mercato ma non troppo in competizione si potrebbero 
-  accordare per condividere i siti caldi. Questo rientra nella fase di 
+
+  \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi
+  di recupero ma si trovano in una fascia operativa media. Due società nello
+  stesso segmento di mercato ma non troppo in competizione si potrebbero
+  accordare per condividere i siti caldi. Questo rientra nella fase di
   \textbf{reciprocal agreeement}.
-  
-  
-  \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e 
+
+
+  \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e
   garantisce la connettività.
-  
+
 \end{itemize}
 
 
 \subsection{Cloud computing}
 
-Il \textit{cloud computing} è caratterizzato da elasticità e scalabilità. Posso 
-scalare le risorse che mi servono, sia in positivo che in negativo perchè non 
-sono regolari. Permette un'azienda di liberarsi del proprio reparto macchine 
+Il \textit{cloud computing} è caratterizzato da elasticità e scalabilità. Posso
+scalare le risorse che mi servono, sia in positivo che in negativo perchè non
+sono regolari. Permette un'azienda di liberarsi del proprio reparto macchine
 (no server fisici in loco).
 
-\paragraph*{Vantaggi} Agilità, efficienza del costo, \textit{deployment} veloce 
+\paragraph*{Vantaggi} Agilità, efficienza del costo, \textit{deployment} veloce
 e alta scalabilità.
 
-\paragraph*{Svantaggi} Costi customizzati, usabilità, connettività (mia e di 
+\paragraph*{Svantaggi} Costi customizzati, usabilità, connettività (mia e di
 chi fornisce il \textit{cloud computing}), sicurezza.
 
 
@@ -315,23 +319,23 @@ chi fornisce il \textit{cloud computing}), sicurezza.
 Esistono diversi metodi di dispiegamento:
 \begin{itemize}
   \item Pubblico: pago e accedo al cloud (ad esempio Amazon AWS).
-  
-  \item Privato: creo un mio \textit{datacenter} e lo utilizzo per i miei 
+
+  \item Privato: creo un mio \textit{datacenter} e lo utilizzo per i miei
   servizi (ad esempio il datacenter di una banca).
-  
+
   \item Ibrido: via di mezzo tra public e private.
-  
-  \item Comunitario: raggruppa organizzazioni che hanno lo stesso tipo di 
+
+  \item Comunitario: raggruppa organizzazioni che hanno lo stesso tipo di
   interessi o problematiche. Privato ma ``allargato''.
-  
+
 \end{itemize}
 
-Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il 
-\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la 
-\textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità 
-diverse sulla stessa macchina grazie alla virtualizzazione. In caso di 
-fallimento di una macchina potrebbero fallire più servizi di diversi utenti, 
-per non parlare del fatto che un utente malintenzionato potrebbe tentare di 
+Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il
+\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la
+\textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità
+diverse sulla stessa macchina grazie alla virtualizzazione. In caso di
+fallimento di una macchina potrebbero fallire più servizi di diversi utenti,
+per non parlare del fatto che un utente malintenzionato potrebbe tentare di
 accedere al servizio di un altro utente risiedente sulla stessa istanza.
 
 \subsubsection{Modello di servizio}
@@ -339,16 +343,16 @@ accedere al servizio di un altro utente risiedente sulla stessa istanza.
 Esistono diversi modelli di servizio:
 \begin{itemize}
   \item Software (SaaS): si fa girare applicazioni di terze parti sul cloud.
-  \item Platform (PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci 
-  faccio girare le mie applicazioni. 
-  \item Infrastructure (IaaS): viene fornita la macchina e l'azienda ci mette 
+  \item Platform (PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci
+  faccio girare le mie applicazioni.
+  \item Infrastructure (IaaS): viene fornita la macchina e l'azienda ci mette
   sopra quello di cui ha bisogno.
-  
+
 \end{itemize}
 
 \subsubsection{Caratteristiche essenziali}
 
-Qui di seguito sono elencate le caratteristiche essenziali che un servizio 
+Qui di seguito sono elencate le caratteristiche essenziali che un servizio
 cloud offre:
 \begin{itemize}
   \item Resource pooling
@@ -361,27 +365,27 @@ cloud offre:
 \subsubsection{Major Areas of Security Concerns}
 
 \begin{itemize}
- \item \textbf{Service Level Agreement (SLA)}: definisce performance, 
-sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di 
+ \item \textbf{Service Level Agreement (SLA)}: definisce performance,
+sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di
 fornitura di internet, il SLA di solito è la banda minima garantita.
 
- \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server 
-usato da altre organizzazioni. È quindi necessario avere un'adeguata 
+ \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server
+usato da altre organizzazioni. È quindi necessario avere un'adeguata
 segmentazione e isolazione. Un set di \textit{policy} sono anche necessarie.
 
- \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura 
+ \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
 dell'azienda e da quella del cloud provider.
 \end{itemize}
 
-Non è possibile trasferire la responsabilità dei servizi nei confronti dei 
-propri clienti. Ad esempio: dichiarazione dei redditi con il commercialista, il 
+Non è possibile trasferire la responsabilità dei servizi nei confronti dei
+propri clienti. Ad esempio: dichiarazione dei redditi con il commercialista, il
 commercialista fa la dichiarazione ma chi la firma è il responsabile legale.
 
 \subsubsection{Accordo reciproco}
 
-\paragraph*{Vantaggi} Costo basso. 
+\paragraph*{Vantaggi} Costo basso.
 
-\paragraph*{Svantaggi}La sicurezza. Processi veramente critici vanno posti a 
-distanza geografica perché se capita una catastrofe è molto probabile che venga 
-colpito anche a chi è vicino (ovvero è presente una suscettibilità allo stesso 
+\paragraph*{Svantaggi}La sicurezza. Processi veramente critici vanno posti a
+distanza geografica perché se capita una catastrofe è molto probabile che venga
+colpito anche a chi è vicino (ovvero è presente una suscettibilità allo stesso
 disastro).
