@@ -15,10 +15,32 @@ che gestire ogni singolo impiegato. Questa realtà è ancora in forte sviluppo.
 
 
 \section{Role-Based Access Control}
-\todo{TODO copia tabella}
+
 
 Prima di mettersi a fare controlli sugli accessi bisogna prima comprendere per
 bene quali ruoli sono presenti all'interno dell'azienda (analisi interna).
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|p{10cm}|}
+\hline
+\textbf{Nome del ruolo} & \textbf{Informazioni d'accesso e permessi (R=read,
+W=write)} \\
+\hline
+Istruttore & Form dei voti RW; Esami sostenuti dallo studente R; Trasferimento
+di crediti R \\
+\hline
+Consigliere & Esami sostenuti dallo studente R; Pagamento tasse R; Trasferimento
+di crediti R \\
+\hline
+Registratore & Pagamento tasse RW; Trasferimento di crediti RW \\
+\hline
+\end{tabular}%
+}
+\caption{Un esempio di un \textit{Role-Based Access Control}}
+\end{table}
+
 
 
 \section{Military Security Policy}
@@ -182,7 +204,7 @@ La sicurezza che il SSO offre non è la stessa che la segmentazione dei servizi
 offre.
 Svantaggi:
 \begin{itemize}
-\item Single Point of Failure (SPOF) 
+\item Single Point of Failure (SPOF)
 \item Lo sviluppo del software è complicato per via di diversi sistemi operativi
 \item Implementazione onerosa
 \end{itemize}
@@ -212,7 +234,8 @@ registrarsi correttamente
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.425]{best_biometrics_table}
- \caption{Confronto tra le varie biometrie rispetto a tempo di risposta e EER (\emph{Equal Error Rate}) più basso. }
+ \caption{Confronto tra le varie biometrie rispetto a tempo di risposta e EER
+(\emph{Equal Error Rate}) più basso. }
 \end{figure}
 
 
