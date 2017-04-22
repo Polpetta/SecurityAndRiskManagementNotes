@@ -211,22 +211,55 @@ Vengono eseguiti i seguenti passi:
 \end{enumerate}
 
 \subsubparagraph*{Generazione della chiave simmetrica}
-\todo{Da rivedere}
 
 Parte privata: Alice genera un numero $x$, Bob crea un $y$, entrambi lo tengono
 segreto.
 
-Alice: $R_1 = g^x \mod\ p$
-Bob: $R_2 = g^y \mod\ p$
+Alice: $R_1 = g^x \mod p$
+Bob: $R_2 = g^y \mod p$
 
 Queste informazioni vengono scambiate su un canale pubblico.
 
-Bob riceve G1, quello che fa è fare $K = (R_1)^y \mod\ p$. Alice fa la stessa
-cosa e quindi ottengono una chiave segreta condivisa che è $g^{xy} \mod\ p$.
+Bob riceve G1, quello che fa è fare $K = (R_1)^y \mod p$. Alice fa la stessa
+cosa e quindi ottengono una chiave segreta condivisa che è $g^{xy} \mod p$.
 
 Il calcolo del logaritmo discreto ad oggi è un problema che è difficile da
 risolvere in maniera efficiente, ed è quello su cui la sicurezza si basa su
 questo problema.
+
+\subsubparagraph*{Esempio}
+
+Di seguito viene riportato un piccolo esempio a passi per rendere pi\`u chiaro
+il funzionamento:
+\begin{enumerate}
+ \item Alice e Bob si mettono d'accordo e usano $p = 23$ come modulo, e come
+base $g = 5$ (che \`e una radice primitiva di $23$).
+ \item Alice sceglie un numero intero segreto $a = 6$, e manda a Bob $A = g^a
+\mod p$.
+ \begin{itemize}
+  \item $A = 5^6 \mod 23 = 8$
+ \end{itemize}
+
+ \item Bob sceglie allo stesso modo un intero segreto $b = 15$ e manda ad alice
+$B = g^b \mod p$
+ \begin{itemize}
+  \item $B = 5^{15} \mod 23 = 19$
+ \end{itemize}
+
+ \item Alice computa $s = B^a \mod p$
+ \begin{itemize}
+  \item $s = 19^6 \mod 23 = 2$
+ \end{itemize}
+
+ \item Bob computa $s = A^b \mod p$
+ \begin{itemize}
+  \item $s = 8^{15} \mod 23 = 2$
+ \end{itemize}
+
+ \item Ora Alice e Bob condividono lo stesso segreto (ovvero il numero $2$)
+
+\end{enumerate}
+
 
 \subparagraph{Esecuzione dell'attacco MITM}
 
