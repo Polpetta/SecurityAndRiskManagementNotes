@@ -5,7 +5,7 @@ privati.
 
 
 La chiave pubblica solitamente si indirizza con $e$, mentre quella privata con
-$P$(\todo{d???}). È necessario eseguire:
+$P(d)$. È necessario eseguire:
 
 \[ C = P^e \mod n \]
 
@@ -37,16 +37,10 @@ Esiste la proprietà per cui $\Phi(n) = (p-1) \cdot (q-1)$.
 La chiave privata è l'inverso della chiave pubblica $\mod n$ ($d = e^{-1}
 \mod \Phi(n)$).
 
-Assunzioni per l'RSA:
-\begin{itemize}
-	\item \todo{Dopo sistemo} $\Phi(n) = (p-1)(q-1)$ senza $p$ e $q$ è
-oneroso calcolare $\Phi(n)$ e quindi se si riuscisse a fattorizzare $n$ si
-potrebbe trovare $p$ e $q$ e quindi si basa sul fatto che è difficile fare la
-fattorizzazione.
-    \item \todo{Qui? Non ha più detto la seconda assunzione dell'RSA -
-FeelsBadMan:(}
-\end{itemize}
-
+Per l'RSA \`e importante tenere in considerazione che $\Phi(n) = (p-1)(q-1)$
+senza $p$ e $q$ è oneroso calcolare $\Phi(n)$ e quindi se si riuscisse a
+fattorizzare $n$ si potrebbe trovare $p$ e $q$ e quindi si basa sul fatto che è
+difficile fare la fattorizzazione.
 
 Come si sceglie $e$? La $e$ può essere scelta a piacere e di solito viene scelto
 $3$, in quanto è primo e siamo ragionevolmente certi che può essere reversibile.
@@ -102,18 +96,17 @@ interna.
 
 \paragraph*{Filtri}
 
-Il filtro serve a filtrare le connessioni. Livello 0 della sicurezza
-
+Il filtro serve a filtrare le connessioni. \`E identificabile come il livello 0
+della sicurezza, e si divide in diverse categorie di filtri:
 \begin{itemize}
-\item Route filter: sorgente e destinatario
-\item Packet filter: pacchetto
-\item Content filter: contenuto
+\item Route filter: verifica la sorgente e la destinazione degli indirizzi IP
+\item Packet filter: scansiona le intestazioni dei pacchetti e li scarta se non
+passano i controlli impostati
+\item Content filter: scansiona il contenuto dei pacchetti e li scarta se non
+passano i controlli impostati
 \end{itemize}
 
 \subparagraph*{Packet Filter Firewall}
-
-%todo
-\todo{Qui c'è un TODO ma non son sicuro riguardo a cosa}
 
 La modalità di configurazione di un firewall comporta vantaggi (capacità
 inspettiva) e svantaggi (lentezza della rete). È un bilanciamento tra lentezza
@@ -132,6 +125,14 @@ capacità di \textit{screening}.
 internet vengono gestite dal proxy
 \end{itemize}
 
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{packetFilterFirewall}
+ \caption{Schema di funzionamento generale di un firewall filtratore di
+pacchetti}
+\end{figure}
+
 \paragraph*{Multi-Homed Firewall}
 
 Vuol dire che ci sono due uscite: una che va verso la DMZ e una verso la rete
@@ -143,34 +144,64 @@ VPN.
 
 \paragraph*{Regole di sicurezza per gli accessi}
 
-\todo{Copia slide - Writing Rules}
-
 Le regole derivano innanzitutto dalle policy di sicurezza. L'altro input per
 dare le regole è il mondo del reale (capacità di filtering). Dopo che le regole
 sono state scritte sicuramente possiamo fare PDCA\footnote{Detto anche
-\textit{Ciclo di Deming}} per migliorare le regole. Le policy vanno aggiornate,
+\textit{Ciclo di Deming} \url{https://en.wikipedia.org/wiki/PDCA}} per
+migliorare le regole. Le policy vanno aggiornate,
 in base alla posizione aziendale (più o meno aggressiva) e ai breakthrough
 tecnologici (es. introduzione del cloud computing).
 
-
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{writingRules}
+ \caption{\textit{Flow} per la scrittura delle regole di sicurezza per gli
+accessi}
+\end{figure}
 
 \subsection{Canali di accesso logico}
 
 Sono i canali tramite i quali è possibile accedere a una rete.
 
-Esistono diversi canali di accessi, che sono per esempio:
-\begin{itemize}
-\item Wlan (la seconda più pericolosa perché vi si può accedere da fuori
-l'azienda) \todo{Dipende dove è messa. O ho capito male?}
-\item Usb (la più pericolosa)
-\item Internet (non così pericolosa perché c'è il firewall)
-\end{itemize}
+Esistono diversi canali di accessi, che sono qui elencati in ordine
+descrescente di pericolosit\`a:
+\begin{enumerate}
+ \item Usb
+ \item Wlan (la seconda più pericolosa perché vi si può accedere da fuori
+l'azienda)
+ \item Internet (non così pericolosa perché c'è il firewall)
+\end{enumerate}
 
 È importante quindi che anche queste entrate vengano protette.
 
-\todo{Ha messo una tabella ma è per fare un esempio}
 \paragraph*{Esempio di applicazioni di una scuola}
-\todo{Copiare tabella}
+
+Qui di seguito viene riportato un esempio:
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|p{5cm}|p{3cm}|p{3cm}|}
+\hline
+\textbf{Applicazioni} & \textbf{Origine} & \textbf{Server} & \textbf{Controlli
+richiesti} \\
+\hline
+Voti; Lauree & Registrazione Universitaria & Laureati & Confidenzialità;
+Integrità; Autenticazione \\
+\hline
+Voti; Studenti Correnti & Stati Uniti & Laureandi & Confidenzialità; Integrità;
+Autenticazione \\
+\hline
+Pagamenti & Pagamenti internazionali; Reports Universitari & Laureandi &
+Confidenzialità; Integrità; Autenticazione; Non-ripudio \\
+\hline
+Pagine Web & Internazionale & DMZ: aperto al pubblico & \\
+\hline
+\end{tabular}%
+}
+\caption{Un esempio di diversi canali di accesso logici per una infrastruttura
+universitaria}
+\end{table}
 
 \subsection{Intrusion Detection Systems \& Intrusion Prevention Systems}
 
@@ -213,7 +244,14 @@ proprietà e quindi non si possono impelementare per fare pagamenti online..
 
 \paragraph{Remote Access Security}
 
-Le VPN vengono spesso implementate con IPSec \todo{cos'è IPSec?}
+Le VPN vengono spesso implementate con IPSec.
+
+IPSec \`e un protocollo di rete che permette di autenticare e criptare i
+pacchetti mandati lungo la rete. Include anche protocolli per stabilire mutue
+autenticazioni tra agenti all'inizio di una sessione e permette inoltre le
+negoziazioni di chiavi crittografiche. IPSec permette di progettere flussi di
+dati tra due host, tra due \textit{gateway} o tra un \textit{gateway} e un
+host.
 
 \paragraph{Secure Hash Functions}
 
