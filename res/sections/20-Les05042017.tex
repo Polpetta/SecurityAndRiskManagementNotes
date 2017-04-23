@@ -30,13 +30,18 @@ implementa il non ripudio nel mondo elettronico.
 
 \paragraph{Public Key Infrastructure}
 
-\todo{Copia disegno}
-
 Una \textit{Certification Authority} è una struttura che gestisce la
 \textit{catena di trust}. In Italia sono presenti queste società che permettono
 di firmare in maniera digitale documenti, con valore legale. Questo avviene
 perchè quando si va ad aprire un account è necessario presentare a mano la
 propria carta d'identità.
+
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{publicKeyInfrastructure}
+ \caption{Schema di funzionamento di una infrastruttura a chiave pubblica}
+\end{figure}
 
 Quindi in una CA sono presenti:
 \begin{itemize}
@@ -54,13 +59,18 @@ verificare dalla CA che il certificato dell'acquirente è valido.
 
 Esistono diverse CA.
 
+
 \subsubsection{Network Access Server}
 
-NAS: Network Access Server
+NAS: Network Access Server presenta differenti caratteristiche. Un NAS gestisce
+l'autenticazione degli utenti, compiendo l'\textit{access control} e
+l'\textit{accounting} di essi. Una volta eseguito con successo un login,
+vengono inviate al client le informazioni sull'utente (come ad esempio il suo
+ID).
+Il problema dei NAS \`e che sono proni ad attacchi da parte di hackers, oltre a
+essere suscettibili di attacchi DOS.
 
-Oggi queste modalità sono soppiantate da VPN.
-
-\todo{Completare}
+Oggi questa modalità \`e stata soppiantata dalle VPN.
 
 \subsection{Vulnerability Assessment}
 
@@ -79,13 +89,46 @@ modo da evitare vulnerabilità. Senza queste policy è difficile che si facciano
 servizi web.
 \end{itemize}
 
-\subsubsection{Serviced Applications}
+%\subsubsection{Serviced Applications}
 
-\todo{Copia tabella}
+% Qui non mettiamo la tabella perche' e' inutile, non aggiunge nessun contenuto
+utile agli appunti imho
 
 \section{Riassunto dei controlli di rete}
 
-\todo{copia elenco}
+Riassumento, i controlli di rete possono essere di tre tipologie:
+
+\begin{enumerate}
+ \item Tecniche di controllo di sicurezza della rete
+ \begin{itemize}
+  \item Criptazione
+  \item VPN
+  \item Hashing
+  \item Firme digitali
+  \item Configurazione host in modalità \textit{bastion}
+  \item Certificato di autorit\`a, infrastruttura a chiave pubblica
+ \end{itemize}
+
+ \item Protezione dei \textit{device} nella rete
+ \begin{itemize}
+  \item Firewall
+  \item Proxy server
+  \item DMZ
+  \item Sistemi di rivelazione di intrusione
+  \item Sistemi di prevenzione di intrusione
+  \item NAS (\textit{network access server})
+  \item \textit{Honeypot}, \textit{honeynet}
+ \end{itemize}
+
+ \item Protocolli di sicurezza
+ \begin{itemize}
+  \item SSL
+  \item SSH
+  \item S/MIME
+  \item Gestione dell'informazione sulla sicurezza: gestione dei log
+ \end{itemize}
+\end{enumerate}
+
 
 
 \section{Esercizi}
