@@ -166,28 +166,34 @@ competitor.
 (quanto rischio è disposto ad accettare).
 
 \section{Risk Management Process}
-\todo{copia schema}
-I passi della gestione del rischio si suddividono in passi:
+La gestione del rischio si suddivide nei seguenti in passi:
 \begin{enumerate}
 \item Individuazione dei limiti e dei contesti
 \item Valutazione del rischio
 \item Trattamento del rischio
 \item Risk assessment
-	\begin{itemize}
-		\item Identificazione (Asset: materiali,
-immateriali\footnote{Reputazione ad esempio})
-		\item Analisi
-		\item valutazione
-	\end{itemize}
+\begin{itemize}
+  \item Identificazione (Asset: materiali, non materiali\footnote{Reputazione ad
+esempio})
+  \item Analisi
+  \item valutazione
+\end{itemize}
 \item Risk Treatment
-	\begin{itemize}
-	\item evitare
-	\item ridurre
-	\item trasferire
-	\item mantenere
-	\end{itemize}
+\begin{itemize}
+  \item evitare
+  \item ridurre
+  \item trasferire
+  \item mantenere
+\end{itemize}
 \item Accept Residual Risk
 \end{enumerate}
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{riskManagementProcess}
+ \caption{Schema del processo di gestione del rischio}
+\end{figure}
+
 
 Il rischio di può ridurre, mantenere, trasferire, evitare. Alla fine rimane il
 rischio residuo, dove bisogna decidere se questo rischio è sopportabile o meno,
@@ -225,9 +231,28 @@ Il processo quindi dev'essere iterativo, in quanto l'ambiente è dinamico.
 
 
 \subsection{Risk Assessment}
-%CROWN JUWELS (gioiello della corona) assets che valgono l'80% degli asset p.es.
-brevetto particolare che è il core business
-Include 5 step:
+
+\`E formato da 5 step:
+\begin{enumerate}
+ \item Assegnazione dei valori agli \textit{assets}. \`E solitamente presente
+il problema dell'identificazione dei \textit{Crown Juwels} (gioiello della
+corona) ovvero gli \textit{assets} che valgono buona parte del totale, p.es.
+brevetto particolare che è il core business.
+ \item Determinazione della perdita dovuta e vulnerabilità nel sistema
+ \item Stima della possibilit\`a di un attacco portato a termine con successo
+(ogni quanto potrebbe accadere?)
+ \item Calcolare l'eventuale perdita. Son sempre da tenere a mente le seguenti
+formule:
+ \begin{itemize}
+  \item $Perdita\ =\ Downtime\ +\ Recovery\ +\ Liability\ +\ Replacement$
+  \item $Esposizione\ al\ rischio\ =\ Vulnerability\ \cdot\ Loss$
+ \end{itemize}
+
+ \item Gestione del rischio
+\end{enumerate}
+
+Ogni punto verr\`a spiegato meglio nei successivi paragrafi.
+
 
 \subsubsection{Assegnazione dei valori agli assets}
 
@@ -265,7 +290,12 @@ rimpiazzo e quelle legate alle perdite.
 Il costo dal punto di vista intangibile è di tipo qualitativa, e non
 quantitativa.
 
-\todo{Ci sarebbe una tabella qui}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{threatAgentTypes}
+ \caption{Tabella con dei possibili esempi}
+\end{figure}
+
 
 \subsubsection{Stimare la probabilità di exploit}
 
@@ -273,6 +303,11 @@ Si valuta qual è la probabilità che un evento malevolo mi colpisca tramite
 survey, interviste e casi simili già accaduti.
 
 \paragraph*{In pratica}
+
+La passata esperienza, la definizione degli standard internazionali, i consigli
+di specialisti ed esperti nel settore, ricerche di mercato e esperimenti
+tramite prototipi sono diversi modi da cui \`e possibile attingere
+informazione per capire quanto si \`e esposti a un possibile \textit{exploit}.
 
 
 
@@ -285,15 +320,134 @@ crearsi a causa della disfunzione creata.
 
 \paragraph*{In pratica}
 
+Per calcolare la perdita attesa esistono tre tipologie di calcolo: la stima
+\textbf{qualitativa}, quella \textbf{quantitativa} e quella
+\textbf{semiquantitativa}.
+
+% Sta roba sta in 6.3.1.4 Calcolare la perdita attesa
+% Copy-Pastata dalla lezione 21
+\begin{itemize}
+\item Qualitativa: corretta perchè riuscite a prioritizzare i rischi, quindi
+capite cosa è più importante di cosa.
+\item Quantitativa: la più corretta perché in qualche modo riporta in una scala
+assoluta (es. soldi). Il problema è arrivarci ad una valutazione corretta.
+\item Semiquantitativa: mix tra le prime due.
+\end{itemize}
+
+\subparagraph*{Analisi qualitativa}
+
+\todo{Va troppo veloce}
+
+
+\subparagraph*{Analisi semiquantitativa}
+
+\todo{Vedi sopra}
+
+\subparagraph*{Analisi quantitativa}
+
+\begin{itemize}
+\item Single Loss Expectancy (SLE): il costo per l'organizzazione se una
+minaccia si verifica\todo{aggiungere formule}
+\item Annualized Rate of Occurrence (ARO): quanto costa questo evento in un
+anno?
+\item Annual Loss Expectancy (ALE): la perdita attesa annuale è dato da: $ALE =
+SLE \cdot ARO$
+\end{itemize}
+
+
+Quanto si perde del bene se l'evento capita?
+
+Sull'anno questo evento quanto mi costa? L'evento negativo ha sicuramente un
+certo costo, ma che impatto ha all'anno? Se per esempio una alluvione avviene
+ogni 30 anni, allora il suo costo è $1/30$ all'anno. Quindi ogni anno l'azienda
+ha da risparmiare un certo valore per far frontee alla perdita futura.
+
+\subsubparagraph*{Esempio}
+
+
+Quantitativamente:
+\begin{itemize}
+\item Il costo di un incidepnte HIPAA con protezioni insufficenti:
+\begin{itemize}
+ \item SLE = 50k + (1y in prigione) \$ 100k = \$150k
+ \item Più perdite in termine di reputazione
+\end{itemize}
+\item Stima del tempo = 10 anni o meno = 0,1
+\item Stime di perdita annuale (ALE): \$150 $\cdot 0,1$ = \$15k
+\end{itemize}
+
+\todo{Ci sarebbe anche la tabella per completare l'esempio. Serve? Per me è no,
+non quella gialla piuttosto quella dopo? - Ok per quella dopo allora}
+
+% Anche questa parte e' copy-pastata dalla lezione 21
+
+Le \textit{Security breach notification laws} sono leggi che impongono ad entità
+che sono state soggette a data stealing di notificarlo ai clienti e di prendere
+contromisure per cercare di rimediare alle possibili conseguenze. Esiste una
+direttiva europea.
+
+
+\paragraph*{Tipologie di Minacce}
+
+Tipi di aggenti:
+\begin{itemize}
+\item Hackers Crackers
+\item Criminali
+\item Terroristi
+\item Spie industriali
+\item Dall'interno
+\end{itemize}
+%copiare tabella
+
+
+\paragraph*{Come difendersi}
+
+Per difendersi le grande società di software eseguono delle settimane di
+allenamento per i programmatori definite anche come \textit{security coding}
+
 
 
 \subsubsection{Trattamento dei rischi}
 
-Survey e controllo esistenti, più nuovi controlli.
+Si eseguono delle \textit{survey} e si controllano i rischi esistenti. Se non
+dovesse essere abbastanza, vengono aggiunti nuovi controlli.
 
-Decidiamo se trattare, trasferire, mantenere o ignorare il rischio.
-\todo{completare}.
+Con il trattamento del rischio viene deciso se evitare, trasferire, mantenere,
+mitigare o pianificareil rischio.
+
+\begin{itemize}
+\item Accettazione del rischio. È importante prendere delle decisioni riguardo
+all'accettazione del rischio.
+\item Evitare il rischio: bloccare i comportamenti che causano esposizione al
+rischio
+\item Mitigazione del rischio: implementare dei controlli per minimizzare le
+vulnerabilità sotto un livello accettabile.
+\item Trasferimento del rischio: qualcun'altro assume il rischio per l'azienda.
+Per esempio potrebbe essere ricorrere ad una assicurazione.
+\item Pianificazione del rischio: implementare una serie di contromisure. Che
+controlli dovrebbero essere messe in piedi?
+\end{itemize}
+% Il prof ha detto che la roba prima la chiede sicuramente :(
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{treatRisk}
+ \caption{Schema di come dovrebbe essere trattato il rischio}
+\end{figure}
+
+
+
+Ad un certo punto potrebbe non essere più possibile eliminare il rischio. Il
+rischio che rimane viene detto \textbf{richio residuo} e questo rischio viene
+accettato.
+
+La \textit{sensitivity analysis} indica quanto l'azienda è ``sensibile'' a certi
+avvenimenti.
+
+Il \textit{risk assessment} va fatto solo su una parte dell'azienda, non su
+tutte.
+
 
 \paragraph*{In pratica}
 
-
+% Vedi appunti della lezione successiva.

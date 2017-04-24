@@ -1,35 +1,7 @@
-% Sta roba sta in 6.3.1.4 Calcolare la perdita attesa
-
-\textit{Security breach notification laws} sono leggi che impongono ad entità 
-che sono state soggette a data stealing di notificarlo ai clienti e di prendere 
-contromisure per cercare di rimediare alle possibili conseguenze. Esiste una 
-direttiva europea.
-
-
-\paragraph*{Tipologie di Minacce}
-
-Tipi di aggenti:
-\begin{itemize}
-\item Hackers Crackers
-\item Criminali
-\item Terroristi
-\item Spie industriali
-\item Dall'interno
-\end{itemize}
-%copiare tabella
-
-
-\paragraph*{Come difendersi}
-
-Per difendersi le grande società di software eseguono delle settimane di 
-allenamento per i programmatori definite anche come \textit{security coding}
-
-
-
 % STEP 3 6.3.1.5 Trattamento dei rischi
 
-Ci si basa per cose sull'esperienza passata per eventi per esempio atmosferici. 
-Per eventi che invece non è possibile basarsi sulle esperienze precedenti ci si 
+Ci si basa per cose sull'esperienza passata per eventi per esempio atmosferici.
+Per eventi che invece non è possibile basarsi sulle esperienze precedenti ci si
 basa su delle \textit{guidelines}.
 
 \paragraph*{Fonti di perdite}
@@ -38,107 +10,19 @@ Archetipi:
 \begin{itemize}
 \item Utente malintenzionato (o malizioso): vuole causare un danno all'azienda
 \item Utente non intenzionale: causa un danno all'azienda ma senza volerlo
-\item Utente che piega le regole: in qualche modo è a metà tra i due profili 
+\item Utente che piega le regole: in qualche modo è a metà tra i due profili
 precedenti. Le sue azioni sono intenzionali, ma non maliziose.
 \end{itemize}
 
-Il 51\% pensa sia accettabile prendere dati dell'azienda perchè pensano che sia 
-normale farlo in assenza di \textit{policies}. Molti dati vengono passati 
-nell'azienda tramite \textit{Dropbox} o su \textit{Gmail}. Molti anche eseguono 
-download illegali sul computer aziendale. Essenzialmente, c'è poco controllo sui 
-dati, facendo vedere come un utente può avere un atteggiamento malizioso senza 
+Il 51\% pensa sia accettabile prendere dati dell'azienda perchè pensano che sia
+normale farlo in assenza di \textit{policies}. Molti dati vengono passati
+nell'azienda tramite \textit{Dropbox} o su \textit{Gmail}. Molti anche eseguono
+download illegali sul computer aziendale. Essenzialmente, c'è poco controllo sui
+dati, facendo vedere come un utente può avere un atteggiamento malizioso senza
 troppi problemi.
 
 
 % Questa parte È NUOVA, il resto VA INTEGRATO con gli appunti dei giorni scorsi
-\paragraph*{Step 4: calcolare la perdita attesa}
-
-Tre tipi di valutazione
-\begin{itemize}
-\item Qualitativa: corretta perchè riuscite a prioritizzare i rischi, quindi 
-capite cosa è più importante di cosa.
-\item Quantitativa: la più corretta perché in qualche modo riporta in una scala 
-assoluta (es. soldi). Il problema è arrivarci ad una valutazione corretta.
-\item Semiquantitativa: 
-\end{itemize}
-
-\subparagraph*{Analisi qualitativa}
-
-\todo{Va troppo veloce}
-
-
-\subparagraph*{Analisi semiquantitativa}
-
-\todo{vedi sopra}
-
-.
-
-\subparagraph*{Analisi quantitativa}
-
-\begin{itemize}
-\item Single Loss Expectancy (SLE): il costo per l'organizzazione se una 
-minaccia si verifica\todo{aggiungere formule}
-\item Annualized Rate of Occurrence (ARO): quanto costa questo evento in un 
-anno?
-\item Annual Loss Expectancy (ALE): la perdita attesa annuale è dato da: $ALE = 
-SLE \cdot ARO$
-\end{itemize}
-
-
-Quanto si perde del bene se l'evento capita? 
-
-Sull'anno questo evento quanto mi costa? L'evento negativo ha sicuramente un 
-certo costo, ma che impatto ha all'anno? Se per esempio una alluvione avviene 
-ogni 30 anni, allora il suo costo è $1/30$ all'anno. Quindi ogni anno l'azienda 
-ha da risparmiare un certo valore per far frontee alla perdita futura.
-
-\subsubparagraph*{Esempio}
-
-
-Quantitativamente:
-\begin{itemize}
-\item Il costo di un incidepnte HIPAA con protezioni insufficenti:
-\begin{itemize}
- \item SLE = 50k + (1y in prigione) \$ 100k = \$150k
- \item Più perdite in termine di reputazione
-\end{itemize}
-\item Stima del tempo = 10 anni o meno = 0,1
-\item Stime di perdita annuale (ALE): \$150 $\cdot 0,1$ = \$15k
-\end{itemize}
-
-\todo{Ci sarebbe anche la tabella per completare l'esempio. Serve? Per me è no, 
-non quella gialla piuttosto quella dopo? - Ok per quella dopo allora}
-
-\paragraph*{Step 5: trattamento del rischio}
-
-
-
-\begin{itemize}
-\item Accettazione del rischio. È importante prendere delle decisioni riguardo 
-all'accettazione del rischio.
-\item Evitare il rischio: bloccare i comportamenti che causano esposizione al 
-rischio
-\item Mitigazione del rischio: implementare dei controlli per minimizzare le 
-vulnerabilità sotto un livello accettabile.
-\item Trasferimento del rischio: qualcun'altro assume il rischio per l'azienda. 
-Per esempio potrebbe essere ricorrere ad una assicurazione.
-\item Pianificazione del rischio: implementare una serie di contromisure. Che 
-controlli dovrebbero essere messe in piedi?
-\end{itemize}
-\todo{Ha detto che lo chiede sicuramente :(}
-
-\todo{copiare flowchart?}
-Ad un certo punto potrebbe non essere più possibile eliminare il rischio. Il 
-rischio che rimane viene detto \textbf{richio residuo} e questo rischio viene 
-accettato.
-
-La \textit{sensitivity analysis} indica quanto l'azienda è ``sensibile'' a certi 
-avvenimenti.
-
-Il risk assessment va fatto solo su una parte dell'azienda, non su tutte.
-
-
-
 \subsection{Tipi di controlli}
 
 \todo{Add control types l'immagine}
@@ -147,22 +31,22 @@ La vulnerabilità è ciò che una minaccia sfrutta per portare un attacco.
 
 
 % Questa parte dove va? Cos'è?
-La tolleranza zero è una policy adottata all'interno dell'azienda, su cui 
-l'azienda di solito non transige ed esegue il licenziamento. Alcuni esempi sono 
-per esempio su discriminazioni raziali o basati sulla religione. 
+La tolleranza zero è una policy adottata all'interno dell'azienda, su cui
+l'azienda di solito non transige ed esegue il licenziamento. Alcuni esempi sono
+per esempio su discriminazioni raziali o basati sulla religione.
 
 
 \paragraph*{Controlli e contromisure}
 
 Il costo non dovrebbe mai superare la perdita attesa.
-Contromisura = Controllo mirato (specifico per un particolare tipo di minaccia o 
+Contromisura = Controllo mirato (specifico per un particolare tipo di minaccia o
 vulnerabilità)
 \todo{Mancano pro e contro}
 
 \paragraph*{Step 6: monitoraggio del rischio}
 
 Praticamente consiste nel PDCA.
-C'è l'IOS\footnote{Office of Internal IOS Service è l'ufficio che se ne occupa.} 
+C'è l'IOS\footnote{Office of Internal IOS Service è l'ufficio che se ne occupa.}
 che fa il planning dell'audit per i prossimi $n$ anni.
 
 
@@ -170,10 +54,10 @@ che fa il planning dell'audit per i prossimi $n$ anni.
 
 \paragraph*{Security control baselines and metrics}
 
-Una \textit{baseline} è un parametro di riferimento ed è molto importante, 
-perchè ci permette di prendere le misure sulle cose per vedere se stiamo 
+Una \textit{baseline} è un parametro di riferimento ed è molto importante,
+perchè ci permette di prendere le misure sulle cose per vedere se stiamo
 migliorando o meno!
-Le misure sono collezionate durante gli anni. La consistenza delle misurazioni 
+Le misure sono collezionate durante gli anni. La consistenza delle misurazioni
 sono molto importanti.
 
 \section{Risk management}
@@ -181,7 +65,7 @@ sono molto importanti.
 È business driven (non technology driven).
 
 
-Lo \textit{steering cometee} definisce le proprietà della gestione del rischio. 
+Lo \textit{steering cometee} definisce le proprietà della gestione del rischio.
 Ed è preferibile metterci gente che conosce a fondo il business.
 
 \subsection{I ruoli del risk-management}
@@ -194,11 +78,11 @@ Ed è preferibile metterci gente che conosce a fondo il business.
 
 \subsection{Due Diligence}
 
-È quella cosa che va messa in piedi per non essere perseguiti in maniera civile, 
-ovvero far le cose con ``buon senso''. Oggi come oggi si esegue il \textit{risk 
-assessment} per prevenire guai dal punto di vista civile. La \textbf{due care} 
-si esegue per ridurre il rischio a livelli accettabili. Nell'ordinamento 
-giuridico italiano il termine è diligenza del buon padre di famiglia (articolo 
+È quella cosa che va messa in piedi per non essere perseguiti in maniera civile,
+ovvero far le cose con ``buon senso''. Oggi come oggi si esegue il \textit{risk
+assessment} per prevenire guai dal punto di vista civile. La \textbf{due care}
+si esegue per ridurre il rischio a livelli accettabili. Nell'ordinamento
+giuridico italiano il termine è diligenza del buon padre di famiglia (articolo
 1176).
 
 
@@ -207,12 +91,12 @@ giuridico italiano il termine è diligenza del buon padre di famiglia (articolo
 
 Il Risk Assessment includes:
 \begin{itemize}
-\item The steps: risk analysis, risk treatment, risk acceptance, and risk 
+\item The steps: risk analysis, risk treatment, risk acceptance, and risk
 monitoring
-\item Answers the question: What risk are we prone to, and what is the financial 
+\item Answers the question: What risk are we prone to, and what is the financial
 costs of these risks?
 \item Assesses controls after implementation
-\item The identification, financial analysis, and prioritization of risks, anon 
+\item The identification, financial analysis, and prioritization of risks, anon
 of controls (risposta esatta)
 \end{itemize}
 
@@ -220,12 +104,12 @@ of controls (risposta esatta)
 % Altro esercizio
 Risk management includes:
 \begin{itemize}
-\item The steps: risk analysis, risk treatment, risk acceptance, and risk 
+\item The steps: risk analysis, risk treatment, risk acceptance, and risk
 monitoring (risposta esatta)
-\item Answers the question: What risk are we prone to, and what is the financial 
+\item Answers the question: What risk are we prone to, and what is the financial
 costs of these risks?
 \item Assesses controls after implementation
-\item The identification, financial analysis, and prioritization of risks, anon 
+\item The identification, financial analysis, and prioritization of risks, anon
 of controls
 \end{itemize}
 
@@ -235,7 +119,7 @@ The FIRST step in Security Risk assessment is:
 \item determine threats and vulnerabilities
 \item determine values of key assets (corretta)
 \item Analyze existing controls
-\item 
+\item
 \end{itemize}
 
 
@@ -249,7 +133,7 @@ The FIRST step in Security Risk assessment is:
 \end{itemize}
 
 
-The role(s) responsible for deciding whether risk should be accepted, 
+The role(s) responsible for deciding whether risk should be accepted,
 transferred, or mitigated is:
 \begin{itemize}
 \item The Chied information officer
@@ -291,13 +175,13 @@ The primary purpose of risk management is to:
 Due diligence ensures that
 
 \begin{itemize}
-\item An organization has exercised the best possible security practices 
+\item An organization has exercised the best possible security practices
 according to best practices
-\item An organization has exercised acceptably reasonable security practices 
+\item An organization has exercised acceptably reasonable security practices
 addressing all major security areas
-\item An organization has implemented risk management and established the 
+\item An organization has implemented risk management and established the
 necessary controls
-\item An organization has allocated a CISO who is responsible for securing the 
+\item An organization has allocated a CISO who is responsible for securing the
 organization's information assets
 \end{itemize}
 
@@ -305,9 +189,9 @@ organization's information assets
 
 \begin{itemize}
 \item The average cost of loss of this asset, for a single incident
-\item An estimate using quantitative risk management of the frequency of asset 
+\item An estimate using quantitative risk management of the frequency of asset
 loss due to a threat
-\item an estimate using qualitative risk management of the priority of the 
+\item an estimate using qualitative risk management of the priority of the
 vulnerability
 \item ALE = SLE x ARO (corretta)
 \end{itemize}
