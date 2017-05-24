@@ -1,0 +1,266 @@
+
+\section{Race condition}
+
+Questo attacco può essere molto pericoloso in alcune situazioni, come nel caso 
+per esempio di computazioni eseguite su architettura \textit{CUDA}, in cui era 
+possibile estrarre informazioni sensibili durante la computazione. In ambiente 
+\textit{cloud} è importante assicurarsi che ci sia un \textit{hypervisor} che 
+coordina tutte le computazioni.
+
+Una situazione del genere può accadere in società di esplorazione geologica (eni 
+ad esempio) o in situazioni di sequenziazione genomica/proteica.
+
+\section{Messaggi d'errore troppo verbosi}
+
+A volte i messaggi di errore sono troppi verbosi, e possono far inferire delle 
+informazioni. Un messaggio di errore troppo verboso è solitamente il form di 
+login: in alcuni servizi sono presenti messaggi come ``password scorretta'', che 
+permette all'attaccante di sapere che esiste un login con quell'indirizzo 
+e-mail.
+
+\section{External Control of Path}
+Normalmente quando si ha un sito web bisogna settare i diritti. Se dall'esterno 
+si può lanciare un file (per esempio un file word) si da una backdoor ad un 
+potenziale attaccante.\todo{Sistema}
+
+
+
+\section{Uso di software non fidato}
+
+Il software a volte installato dall'utente non è fidato, che può essere uno 
+\textit{spyware} che si occupa di raccogliere informazioni a scopo pubblicitario 
+o di profilazione.
+
+Il software free è sicuro? Sì, ma solo se è \textit{open-source} e ha un po' di 
+``anzianità'' (viene utilizzato da un po' di tempo).
+
+\section{Problemi classici di sicurezza}
+
+Per esempio il codice:
+\begin{verbatim}
+Security() {
+ String contents, environment;
+ String spath = "security.dat"
+ File security = new File();
+ if (security.open(spath) > 0) {
+  contents = security.read();
+  environment = security.read();
+ } else
+  print("Error: Security.dat not found");
+}
+\end{verbatim}
+
+Questa porzione di codice contiene diversi errori:
+\begin{itemize}
+\item Errori troppo verbosi
+\item Il file viene salvato in chiaro
+\item Non viene chiuso il file dopo la lettura
+\item Non viene controllata la lunghezza della lettura del file
+\end{itemize}
+
+Un altro errore è:
+\begin{verbatim}
+purchaseProduct() {
+ password ="
+}
+\end{verbatim}
+Un problema è la password \emph{hard-coded} del codice.
+
+Ci sono errori gravi in questo pezzo di codice:
+\begin{itemize}
+\item Le password vengono salvate sul codice (detto anche \textit{hardcoded})
+\item Ci potrebbe essere un \textit{overflow}, che a volte potrebbe accadere uno 
+\textit{swift-to-left} % correggete la mia scrittura REEEEEE
+\item Viene usata una routine locale per eseguire la criptazione dei dati, 
+mentre si dovrebbe sempre utilizzare algoritmi standard
+\end{itemize}
+
+
+\paragraph*{Come evitare gli errori} Un modo per evitare questi errori è 
+adeguatamente testare il software che viene scritto. Purtroppo non è possibile 
+testare il programma con tutti gli input possibili, ed è quindi necessario 
+controllare adeguatamente il software con una \textit{test-suite} adeguata. 
+Anche il \textit{model-checking} è importante per analizzare il software. % 
+controlla mirko perchè sto guardando un video su youtube contemporaneamente
+
+
+% ESERCIZIIIIIII
+
+Definition Matching:
+
+\begin{itemize}
+\item Whitelist
+\item Blacklist
+\item Nonce
+\item Jail
+\item Sandbox Environment
+\end{itemize}
+
+con:
+
+\begin{enumerate}
+\item a set of resource imposed on programs by the operating system kernel (e.g. 
+disk quotas) 
+\item Uses a time-sensitive mark to prevent packet replay (e.g. captcha)
+\item list of acceptable input
+\item a security mechanism for quarantining unstrusted running programs
+\item reject suspect input
+\end{enumerate}
+
+Soluzione:
+\begin{itemize}
+\item Whitelist: 3 
+\item Nonce: 2
+\item Jail: 1
+\item Sandbox: 4
+
+\end{itemize}
+
+
+
+% ALTRO ESERCIZIO
+A third part inserts attack data into another organization's html response. This 
+is know as:
+\begin{itemize}
+\item cross-site scripting (soluzione corretta)
+\item blacklist
+\item race condition
+\item cleartext
+\end{itemize}
+
+
+
+
+% Altro esercizio
+
+What technique would not be appropriate in avoiding % figa so mare
+
+\begin{itemize}
+\item Separate control information from data information
+\item Use library 
+\item
+\item
+\end{itemize}
+
+% Altro esercizio
+Which of the following is the true concerning web servers?
+\begin{itemize}
+\item servers cannot retain web session state, and thus the client must do it
+\item the single best place to do input validatio and authentication is at the 
+client-side
+\item using client as storage is safe if encryption and integrity checking are 
+used (risposta esatta)
+\item The server can trust web input if it validates the data in the web form
+\end{itemize}
+
+
+
+% Altro esercizio
+
+\begin{itemize}
+\item Nonce
+\item Whitelist (risposta esatta)
+\item Blacklist
+\item Integrity Checking
+\item
+\end{itemize}
+
+%Altro esercizio
+
+Easter egg by Fede ;)
+
+The best implementation of access control would be:
+\begin{itemize}
+\item do not provide chaches for sensitive data
+\item always use minimal possible permission in code, for as short of a time as 
+possible (risposta esatta)
+\item avoid using cookies and hidden filds
+\item never provide an authorization above guest to web users
+\end{itemize}
+
+% Altro esercizio
+SQL injection is the best protected against by using
+\begin{itemize}
+\item Cleartext
+\item Encrtption and Integrity Checking
+\item Sanitization (risposta esatta)
+\item ClClefly uch as UTF-8defined code suche as UTF-8
+\end{itemize}
+
+% Altro esercizio
+The main way to avoid replay between a client and server is:
+\begin{itemize}
+\item Integrity checking
+\item whitelist Whitelist
+\item blacklist Blacklist
+\item Nonce (risposta esatta)
+\end{itemize}
+
+
+% Altro esercizio
+An attack that could cause the most problems includes
+\begin{itemize}
+\item hard-coded password (risposta esatta)
+\item race condition
+\item denial of service
+\item chatty error message
+\end{itemize}
+
+% Altro esercizio
+The best way to ensure no message modification occurs is
+\begin{itemize}
+\item Hashing (risposta esatta)
+\item Whitelist
+\item Blacklist
+\item Encryption
+\end{itemize}
+
+% Altro esercizio
+
+All of the following except which answer can result in invalid data and 
+break-in?
+\begin{itemize}
+\item Non-random random number generator
+\item Buffer overflow
+\item Uninitialized variables resulting in error messages
+\item Race conditions (risposta esatta)
+\end{itemize}
+
+% ALLELUIA
+
+\part{Controlli di sicurezza}
+
+Questo modulo si concentra sui controlli di sicurezza del software. Per fare ciò 
+dovremo vedere il ciclo di vita del software, con un occhio però alla sicurezza.
+Partiremo dall'analisi dei requisiti, per andare all'analisi del rischio e per 
+finire con lo sviluppo del software.
+Anche l'ambiente produttivo richiede attenzione, è importante il mantenimento da 
+parte di vista della sicurezza per non introdurre bug nel software.
+
+\chapter{Validazione degli input}
+
+\section{Validazione delle transazioni}
+
+Alcuni punti importanti riguardo la validazioni delle transazioni sono:
+\begin{itemize}
+\item Sequence Check:
+\item Limit o Range Check:
+\item Validity Check or Table Lookup:
+\item Reasonableness Check: 
+Per esempio oggi come oggi il numero di pizze in america hanno poche grandi 
+catene, e questo perchè? Perchè il sistema è diventato tutto informatizzato, ed 
+è per questo che PizzaHat ha il monopolio in america, grazie alla sua 
+applicazione. È per questo che il controllo sull'input è molto importante, 
+perchè un possibile attacco di Denial Of Service sarebbe ordinare un numero 
+incontrollato di pizze.
+\item Existence Check:
+\item Key verification: fare inserire due volte la mail (per esempio)
+\item Check digit:
+\item Completeness Check
+\item Duplicate Check: è importante che il sistemi controlli un possibile doppio 
+acquisto da parte di un utente, che potrebbe eseguire un acquisto per errore. 
+Anche questa tipologia di controlli dovrebbero essere eseguiti.
+\item Consistency or Logical Relationship Check: son difficili da eseguire in 
+maniera automatizzata, e i controlli logici permettono di controllare per 
+esempio se gli utenti stanno mentendo o meno. 
+\end{itemize}
