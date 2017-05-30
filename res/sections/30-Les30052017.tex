@@ -1,0 +1,267 @@
+\part{Application Controls}
+
+Esame: descrizione di un caso + poche domande
+
+\todo{Era la descrizione dell'immagine con un sacco di freccette}
+Abuse case (invece di use case) sono i tipici casi in cui il sistema può essere 
+flesso in chiara violazione delle policy di sicurezza.
+
+Code review consiste anche nell'analisi statica.
+
+Test sul software: penetration test, stress test 
+
+\paragraph{Transaction Validation}
+
+\paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni 
+dopo che sono state aggregate. \todo{Insert Image}
+
+\paragraph{Transaction Authorization}
+Manuale 
+
+Automatico
+
+\paragraph{Error Handling Alternatives}
+Rigettare le transazioni con errori e continuare a processare il batch;
+Stoppare tutto il batch
+
+
+
+\subparagraph{Data Processing}
+
+\todo{copia schema}
+
+Il processing comprende controllo dei parametri di sistema (es. specificare 
+minimo e massimo), Standing data (file permanenti), report delle eccezioni 
+(errori nelle transazioni), log delle transazioni, file delle transazioni 
+(giornaliero).
+
+\paragraph{Processing controls}
+
+Per-Transaction Basis \todo{completare}
+\begin{itemize}
+\item Editing
+\item Controlli sugli ammontare calcolati
+\item Controlli programmati
+\item Report delle eccezioni
+\end{itemize}
+
+Per-Batch Basis
+
+\begin{itemize}
+\item Batch Register: 
+\item Run-To-Run Basis
+\item 
+\end{itemize}
+
+\paragraph{Controllo sui dati}
+
+\todo{copiare l'elenco}
+
+Source document retention: la gestione dei documenti è un'attività molto onerosa 
+perché richiede che ci sia una organizzazione in piedi.
+
+Internal \& External Labeling: c'è il backup, bisogna etichettarli in modo da 
+trovare quello giusto.
+
+%%%%ESERCIZI
+
+
+A hash total of customer numbers is one input to the sales program. This program 
+generates its own total to compare against this input parameter. What is the 
+purpose of this procedure?
+
+\begin{itemize}
+\item Validate customer numbers are accurate
+\item Detect lost of changed transaction(s) (risposta esatta)
+\item Detect error(s) in sales transactions
+\item Validate that each sales transaction is complete.
+\end{itemize}
+
+
+
+
+Batch balancing is used to?
+
+\begin{itemize}
+\item Ensure that test data accurately matches real data when consideing 
+transaction types
+\item Detect lost or changed transaction(s) during processing (risposta esatta)
+\item Detect errors in sale(s) transactions
+\item Verify batch total is reasonable
+\end{itemize}
+
+
+
+Batch totals may not match when error transactions are removed. The process that 
+verifies full processing did occur correctly, while accounting may not match 
+when errorounting for error is called:
+
+\begin{itemize}
+\item Audit trail
+\item Validation
+\item Batch balancing
+\item Reconciliation (risposta esatta)
+\end{itemize}
+
+
+
+\chapter{Application Audit}
+
+I task degli auditor delle applicazioni. Bisogna andare a testare le 
+applicazioni che sono significative per l'azienda. Tutte è impossibile.
+Testare i controlli. Analisi del risultato devo estendere il controllo è 
+inutile, è oneroso e così via.
+
+\todo{Insert image: Integrated testing facilities}
+
+
+\todo{Insert image parallel operation}
+si fa quando si vuole aggiornare i sistemi in produzione. 
+
+\todo{Insert image Embedded}
+Embedded Audit Modules (EAM): il suo grande svantaggio È quello di rallentare il 
+sistema. Qualora vada tutto bene sono soldi spesi inutilmente.
+Systems Control Audit Review File (SCARF): 
+Sample Audit Review File (SARF) scelta a campione non è più la scelta migliore.
+
+%%%%%VIETATO PRANZARE PRIMA DI SRM
+\paragraph{Testing Application Techniques}
+\todo{copia elenco}
+Validate Systems $\Leftarrow$ Importanti Parallel Simulation e Parallel 
+Operation 
+
+
+
+\paragraph{Tecniche di Auditing Onine}
+Audit Hooks:all'interno del codice ci sono delle condizioni particolari che se 
+sono soddisfatte triggerano delle operazioni di auditing, è meno pesante delle 
+EAM infatti viene attivato il controllo SOLO quando si raggiungono certi path 
+del CFG.
+\todo{Copia  tabella}
+\todo{Copia disegnino di Hook}
+
+
+% Altro esercizio
+
+Embedded audit modules is associated mostly clearly with:
+\begin{itemize}
+\item Audit Hooks (risposta esatta)
+\item Snapshots
+\item Batch processing
+\item Parallel operation
+\end{itemize}
+
+This technique provides statistical information about the normal input data 
+file, to determine if the file is sufficiently varied for the auditor.
+
+\begin{itemize}
+\item test data
+\item snapshots
+\item system control audit and review file (risposta esatta)
+\item transaction selection program
+\end{itemize}
+
+% Altro esercizio
+
+Combining real and test data during an audit is known as:
+\begin{itemize}
+\item parallel operation
+\item integrated testing facilities (risposta esatta)
+\item batch processing
+\item embedded audit modules
+\end{itemize}
+
+
+% Altro esercizio
+
+Transactions with duplicate IDs are checked for and rejected ---> DUPLICATE 
+CHECK
+Input is double checked via seond person OR all digits are entered twice ---> 
+Duplicate Check
+
+I campi inseriti sono inseriti correttamente --> 
+
+
+I valori inseriti sono plausibili --> RESANABLENESS check
+
+
+\part{Incident process process forensics}
+
+Un incidente relativo alla sicurezza può capitare per molti problemi. Un 
+incidente è catalogato come tale quando c'è una violazione della \textit{policy} 
+di sicurezza. Un incidente può essere di due tipologie:
+\begin{itemize}
+\item Malizioso
+\item Casuale (non malizioso)
+\end{itemize}
+
+\chapter{Incident Response vs Business Contiuity}
+
+Avere un piano di risposta agli incidenti fa parte della \textit{business 
+continuity plan}.
+
+\section{Business Continuity Plan}
+
+\subsection{Terminologia della \textit{recovery}}
+\todo{Add refernce to old image --> RECOVERY TERMS}
+Esiste una determinata tipologia di termini:
+\begin{itemize}
+\item Interruption Window
+\item Service Delivery Objective
+\item ?? \todo{Aggiungimi :(}
+\end{itemize}
+
+In particolare, esistono diversi ruoli che vedremo in dettaglio.
+
+\paragraph*{IMT} L'IMT, che significa \textbf{Incident Management Team}, fa 
+parte della \textit{steering commitee} e sono membri dell'IRT. % va troppo 
+veloce
+
+
+
+
+\paragraph*{IRT} L'IRT, che significa \textbf{Incident Response Team}, ed è il 
+team che gestisce l'incidente, ha una conoscenza tecnica dei sistemi e di 
+``hacking'' (è il classico informatico)
+
+\paragraph*{Investigatore} Presenti in aziende grandi, è una persona di fiducia 
+che ha accesso a tutte le risorse aziendali e si occupa di cercare le cause 
+dell'incidente che a volte possono anche essere dolose.
+
+
+
+\subsection{Incident Response Plan}
+
+Questo piano si suddivide in diversi \textit{step}:
+\begin{enumerate}
+\item Preparazione
+\item Identificazione
+\item Contenimento
+\item Analisi e eradicazione
+\item Recupero
+\item Imparare
+\end{enumerate} 
+
+Vediamo brevemente il significato di ogni passo, che sarà analizzato in 
+profondità più avanti.
+
+\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, ovvero è 
+una fase che è l'\textbf{analisi dello scenario}.
+
+\paragraph*{Identificazione} Questo \textit{step} succede quando si viene 
+avvisati dell'anomalia e si comincia a cercare la causa del problema. Più e 
+ricco e sistema il complesso informativo più è difficile trovare la causa del 
+problema.
+
+\paragraph*{Contenimento} In questa fase si cerca di ``limitare i danni'', con 
+l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare 
+elementi della produttività.
+
+\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perchè è 
+successo, e si cerca di risolvere la causa.
+
+\paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per 
+ritornare alla fase di preparazione
+
+\paragraph*{Imparare} Questa parte è molto importante, in quanto imparare la 
+lezione permette di evitare futuri attacchi e di rendere il sistema più sicuro.
