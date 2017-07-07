@@ -1,0 +1,201 @@
+\section{Controlli}
+\label{es:Controlli}
+
+La teoria riguardante questi esercizi è disponibile in \ref{Controlli}
+
+\begin{Exercise} [
+  title={Associa i termini},
+  label={esControlli1}
+  ]
+
+  \Question Eseguire il match delle definizioni di:
+\begin{itemize}
+\item Whitelist
+\item Blacklist
+\item Nonce
+\item Jail
+\item Sandbox Environment
+\end{itemize}
+con:
+\begin{enumerate}
+ \item un insieme di risorse imposte ai programmi dal kernel del sistema 
+operativo (per esempio la quota disco)
+ \item utilizzo di timestamp per impedire il \textit{replay} attack (ad esempio 
+captcha)
+ \item usare una lista di input accettabili
+ \item un meccanismo di sicurezza per porre in quarantena programmi non fidati
+ \item rigettare input sospetto
+\end{enumerate}
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli1},
+  number={1}
+  ]
+
+  \Question Soluzione:
+\begin{itemize}
+\item Whitelist: 3 
+\item Nonce: 2
+\item Jail: 1
+\item Sandbox: 4
+
+\end{itemize}
+
+\end{Answer}
+
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli2}
+  ]
+
+  \Question Una terza parte inserisce dati maliziosi in un'altra pagina html 
+maliziosa. Questa è conosciuta come:
+\begin{itemize}
+\item cross-site scripting
+\item blacklist
+\item race condition
+\item cleartext
+\end{itemize}
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli2},
+  number={2}
+  ]
+
+  \Question Risposta esatta: 1
+\end{Answer}
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli3}
+  ]
+
+  \Question What technique would not be appropriate in avoiding % figa so mare
+\todo{Completami!}
+\begin{enumerate}
+\item Separate control information from data information
+\item Use library 
+\item
+\item
+\end{enumerate}
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli3},
+  number={3}
+  ]
+
+  \Question Risposta esatta: ??
+\end{Answer}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli4}
+  ]
+
+  \Question Quale delle seguenti risposte è vera riguardo ai web servers?
+  \begin{enumerate}
+   \item i server non possono avere lo stato della sessione, e quindi se ne 
+devono occupare i client
+   \item il solo miglior punto per fare input validation e autenticazione è 
+lato client
+   \item usare il client come punto di salvataggio è sicuro se la criptazione 
+e i controlli di integrità sono attivi
+   \item I server possono fidarsi degli input provenienti dal web se validano i 
+dati nella form.
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli4},
+  number={4}
+  ]
+
+  \Question Risposta esatta: 3
+\end{Answer}
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli5}
+  ]
+
+  \Question 
+  \begin{itemize}
+\item Nonce
+\item Whitelist (risposta esatta)
+\item Blacklist
+\item Integrity Checking
+\item
+\end{itemize}
+
+\todo{Completami!}
+
+  
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli5},
+  number={5}
+  ]
+
+  \Question Risposta esatta: ??
+\end{Answer}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli6}
+  ]
+
+  \Question La migliore implementazione per eseguire correttamente 
+\textit{access control} sarebbe:
+\begin{enumerate}
+ \item non dare possibilità all'attaccante di guadagnare dati sensibili
+ \item usare sempre il minor numero di permessi nel codice, per la durata più 
+breve possibile
+ \item evitare di usare cookies e file nascosti
+ \item non darei mai una autorizzazione più avanzata di quella \textit{guest} 
+per gli utenti web
+\end{enumerate}
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli6},
+  number={6}
+  ]
+
+  \Question Risposta esatta: 2
+\end{Answer}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esControlli7}
+  ]
+
+  \Question La protezione migliore contro il \textit{SQL injection} è:
+  \begin{enumerate}
+    \item Cleartext
+    \item Encrtption and Integrity Checking
+    \item Sanitization
+    \item ClClefly uch as UTF-8defined code suche as UTF-8
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esControlli7},
+  number={7}
+  ]
+
+  \Question Risposta esatta: 3
+\end{Answer}
