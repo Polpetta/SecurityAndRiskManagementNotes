@@ -62,8 +62,14 @@ tramite \textbf{chiave simmetrica} che utilizza un metodo in cui la chiave è
 segreta oppure crittografia tramite \textbf{chiave asimmetrica} dove invece una 
 delle due chiavi può essere pubblica.
 
-\subsection{Crittografia simmetrica}\todo{Sarebbe carino aggiungere le immagini 
-mancanti}
+\subsection{Crittografia simmetrica}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{res/img/symmetric.png}
+\caption{Funzionamento del crittografia a chiave simmetrica}
+\label{fig:password:symmetric}
+\end{figure}
 
 Questo tipo di crittografia si identifica per il fatto che per cifrare e 
 decrifrare il messaggio occorre avere la stessa chiave.
@@ -126,28 +132,40 @@ sempre chiavi nuove. Altrimenti se vengono intercettati due messaggi codificati
 con la stessa chiave è possibile riuscire applicando la statistica a capire il 
 contenuto del messaggio.
 
-% Nonostante le sue caratteristiche non viene utilizzato perchè devo avere 
-%sempre chiavi nuove. Altrimenti se intercetto due messaggi codificati con la 
-%stessa chiave:
-% $$
-% c_0 \oplus c_1 = m_0 \oplus m_1
-% $$
-
 \paragraph{Cifrario a rotazione}
 
-\todo{Copiare l'immagine}
+\begin{center}
+  \includegraphics[scale=0.2]{res/img/caesar.png}
+  \captionof{figure}{Funzionamento del cifrario a rotazione}
+  \label{fig:password:caesar}
+\end{center}
+
 
 \paragraph{S-boxes}
 
-\todo{Copiare l'immagine}
+\begin{center}
+  \includegraphics[scale=0.5]{res/img/sboxes.png}
+  \captionof{figure}{Funzionamento di una S-box}
+  \label{fig:password:sboxes}
+\end{center}
+
 
 \paragraph{P-boxes}
 
-\todo{Copiare l'immagine}
+\begin{center}
+  \includegraphics[scale=0.3]{res/img/pboxes.png}
+  \captionof{figure}{Funzionamento di una P-box}
+  \label{fig:password:pboxes}
+\end{center}
+
 
 \paragraph{DES}
 
-\todo{Copiare l'immagine}
+\begin{center}
+  \includegraphics[scale=0.5]{res/img/des.png}
+  \captionof{figure}{Funzionamento dell'algoritmo DES}
+\label{fig:password:des}
+\end{center}
 
 La grandezza della chiave dichiarata è 64 bit\footnote{In verità non era 
 realmente 64 bit, ma è minore (56 bit, eseguita in maniera deterministica 
@@ -166,6 +184,7 @@ cascata.
 Utilizza una chiave a 128 bit in input. La prima operazione che viene eseguita è 
 una sostituzione di byte, per poi eseguire $n$ trasposizioni e infine eseguire
 uno XOR con la sotto chiave d'ingresso.
+AES opera utilizzando matrici di $4\cdot4$ byte chiamate stati (states). Quando l'algoritmo ha blocchi di 128 bit in input, la matrice State ha 4 righe e 4 colonne; se il numero di blocchi in input diventa di 32 bit più lungo, viene aggiunta una colonna allo State, e così via fino a 256 bit. In pratica, si divide il numero di bit del blocco in input per 32 e il quoziente specifica il numero di colonne.
 
 AES ha tre differenti configurazioni in base alle chiavi e al numero di 
 ripetizioni dei round di trasformazione. Le configurazioni possibili sono:
@@ -177,26 +196,51 @@ ripetizioni dei round di trasformazione. Le configurazioni possibili sono:
 
 \subsubparagraph*{Struttura di ogni round}
 
-La struttura di ogni round di AES è:
+C'è un passaggio iniziale:
 \begin{itemize}
- \item sostiturazione
- \item permutazione
- \item operazione complessa
- \item \todo{Da completare}
+\item \textbf{AddRoundKey:} ogni byte della tabella viene combinato con la chiave di sessione, la chiave di sessione viene calcolata dal gestore delle chiavi.
 \end{itemize}
+
+
+Successivamente per cifrare sono previsti diversi round o cicli di processamento: ogni round (fase) dell'AES (eccetto l'ultimo) consiste dei seguenti quattro passaggi:
+
+\begin{enumerate}
+\item \textbf{SubBytes:} sostituzione non lineare di tutti i byte che vengono rimpiazzati secondo una specifica tabella.
+\item \textbf{ShiftRows:} spostamento dei byte di un certo numero di posizioni dipendente dalla riga di appartenenza
+\item \textbf{MixColumns:} combinazione dei byte con un'operazione lineare, i byte vengono trattati una colonna per volta.
+\item \textbf{AddRoundKey:} ogni byte della tabella viene combinato con la chiave di sessione, la chiave di sessione viene calcolata dal gestore delle chiavi.
+\end{enumerate}
+
+
+Il numero di round o cicli di processamento/elaborazione crittografica dei quattro passaggi precedenti è 10 con l'ultimo round che salta il passaggio \textbf{MixColumns}.
 
 \subsubsection{Modalità di operazione per i cifrari a blocchi}
 
-\todo{Copiare schema}
-
 \paragraph{ECB mode}
 
-\todo{Spiegazione da wiki + schema}
+Il messaggio viene diviso in blocchi e ogni blocco viene criptato separatamente.
 
-L'ECB è tuttiavia deprecato in quanto \todo{Eh non si è capito alla fine!!}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{res/img/ecb.png}
+\caption{Funzionamento del metodo di encryption Electronic CodeBlock}
+\label{fig:password:ecb}
+\end{figure}
+
+Lo svantaggio di questo metodo è che blocchi identifci vengono cifrati nello 
+stesso modo e quindi portano allo stesso risultato, non nascondendo i pattern 
+all'interno dei dati. Di conseguenza, non fornisce in alcun modo la 
+\textit{confidenzialità}.
 
 Dal punto di vista grafico si nota come non funzioni molto bene per le 
-immagini.
+immagini (esempio del pinguino di Linux che viene cifrato ma è riconoscibile).
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{res/img/password_linux.png}
+\caption{Risultato dopo encryption con ECB}
+\label{fig:password:linux_ecb}
+\end{figure}
 
 \paragraph{CBC mode}
 
@@ -208,7 +252,12 @@ tutti i blocchi precedenti. Per il blocco iniziale viene utilizzato un
 \textit{initialization vector}, che è un vettore casuale che serve per generare 
 la necessaria entropia anche sul blocco iniziale.
 
-% Gli altri metodi non li abbiamo fatti!
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{res/img/cbc.png}
+\caption{Funzionamento del metodo di encryption Cipher Block Chaining}
+\label{fig:password:cbc}
+\end{figure}
 
 \subsubsection{Conclusioni}
 
@@ -227,7 +276,12 @@ Servono due chiavi, una per cifrare e una per decifrare. Per cifrare il
 mittente usa la chiave pubblica del destinatario. Il destinatario usa la sua 
 chiave privata per decifrare.
 
-\todo{Aggiungere gli schemini}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.65]{res/img/asymmetric.png}
+\caption{Funzionamento della crittografia con chiave asimmetrica}
+\label{fig:password:asymmetric}
+\end{figure}
 
 Le chiavi asimmetriche pubbliche e private hanno una relazione di tipo 
 matematico. Il fatto è che dalla chiave pubblica dal punto di vista matematico 
