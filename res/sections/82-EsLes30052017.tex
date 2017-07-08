@@ -1,0 +1,88 @@
+\section{Controlli di Sicurezza}
+\label{esCs}
+
+\subsection{Application Controls}
+\label{esCs:ac}
+
+La teoria riguardante questi esercizi si trova in \ref{cs:ac}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esCs1}
+  ]
+
+  \Question Un hash totale dei numeri del cliente \`e un input al programma di
+vendita. Questo programma genera il suo totale e lo compara a quello dato in
+input. Qual \`e lo scopo di questa procedura?
+\begin{enumerate}
+ \item Assicurarsi che i numeri del cliente siano accurati
+ \item Trovare transazioni cambiate perse
+ \item Trovare errori nelle transazioni delle vendite
+ \item Assicurarsi che ogni transazione di vendita sia completa
+\end{enumerate}
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esCs1},
+  number={1}
+  ]
+
+  \Question Risposta esatta: 2
+\end{Answer}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esCs2}
+  ]
+
+  \Question Il \textit{batch balancing} \`e usato per
+  \begin{enumerate}
+   \item Assicurarsi che i dati di test corrispondano accuratamente ai dati
+reali quando vengono considerati i tipi di transazione
+   \item Trovare transazioni perse o cambiate durante la loro elaborazione
+   \item Trovare errori nelle transazioni delle vendite
+   \item Verificare che il lotto totale abbia senso
+  \end{enumerate}
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esCs2},
+  number={2}
+  ]
+
+  \Question Risposta esatta: 2
+\end{Answer}
+
+
+\begin{Exercise} [
+  title={Quiz},
+  label={esCs3}
+  ]
+
+  \Question I lotti totali potrebbero non corrispondere quando transazioni
+erronee sono rimosse. Il processo che verifica che tutte la transazioni siano
+state portate a termine ha eseguito correttamente. Il conteggio degli errori
+viene chiamato\footnote{Testo originale: \texttt{Batch totals may not match when
+error transactions are removed. The process that verifies full processing did
+occur correctly, while accounting for errors is called:}}:
+
+\begin{enumerate}
+\item Audit trail
+\item Validation
+\item Batch balancing
+\item Reconciliation
+\end{enumerate}
+
+
+\end{Exercise}
+
+\begin{Answer} [
+  ref={esCs3},
+  number={3}
+  ]
+
+  \Question Risposta esatta: 4
+\end{Answer}
