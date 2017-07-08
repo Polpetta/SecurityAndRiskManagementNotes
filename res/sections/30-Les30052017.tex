@@ -1,22 +1,22 @@
-\part{Application Controls}
+\chapter{Application Controls}
 
 Esame: descrizione di un caso + poche domande
 
 \todo{Era la descrizione dell'immagine con un sacco di freccette}
-Abuse case (invece di use case) sono i tipici casi in cui il sistema può essere 
+Abuse case (invece di use case) sono i tipici casi in cui il sistema può essere
 flesso in chiara violazione delle policy di sicurezza.
 
 Code review consiste anche nell'analisi statica.
 
-Test sul software: penetration test, stress test 
+Test sul software: penetration test, stress test
 
 \paragraph{Transaction Validation}
 
-\paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni 
+\paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni
 dopo che sono state aggregate. \todo{Insert Image}
 
 \paragraph{Transaction Authorization}
-Manuale 
+Manuale
 
 Automatico
 
@@ -30,9 +30,9 @@ Stoppare tutto il batch
 
 \todo{copia schema}
 
-Il processing comprende controllo dei parametri di sistema (es. specificare 
-minimo e massimo), Standing data (file permanenti), report delle eccezioni 
-(errori nelle transazioni), log delle transazioni, file delle transazioni 
+Il processing comprende controllo dei parametri di sistema (es. specificare
+minimo e massimo), Standing data (file permanenti), report delle eccezioni
+(errori nelle transazioni), log delle transazioni, file delle transazioni
 (giornaliero).
 
 \paragraph{Processing controls}
@@ -48,26 +48,26 @@ Per-Transaction Basis \todo{completare}
 Per-Batch Basis
 
 \begin{itemize}
-\item Batch Register: 
+\item Batch Register:
 \item Run-To-Run Basis
-\item 
+\item
 \end{itemize}
 
 \paragraph{Controllo sui dati}
 
 \todo{copiare l'elenco}
 
-Source document retention: la gestione dei documenti è un'attività molto onerosa 
+Source document retention: la gestione dei documenti è un'attività molto onerosa
 perché richiede che ci sia una organizzazione in piedi.
 
-Internal \& External Labeling: c'è il backup, bisogna etichettarli in modo da 
+Internal \& External Labeling: c'è il backup, bisogna etichettarli in modo da
 trovare quello giusto.
 
 %%%%ESERCIZI
 
 
-A hash total of customer numbers is one input to the sales program. This program 
-generates its own total to compare against this input parameter. What is the 
+A hash total of customer numbers is one input to the sales program. This program
+generates its own total to compare against this input parameter. What is the
 purpose of this procedure?
 
 \begin{itemize}
@@ -83,7 +83,7 @@ purpose of this procedure?
 Batch balancing is used to?
 
 \begin{itemize}
-\item Ensure that test data accurately matches real data when consideing 
+\item Ensure that test data accurately matches real data when consideing
 transaction types
 \item Detect lost or changed transaction(s) during processing (risposta esatta)
 \item Detect errors in sale(s) transactions
@@ -92,8 +92,8 @@ transaction types
 
 
 
-Batch totals may not match when error transactions are removed. The process that 
-verifies full processing did occur correctly, while accounting may not match 
+Batch totals may not match when error transactions are removed. The process that
+verifies full processing did occur correctly, while accounting may not match
 when errorounting for error is called:
 
 \begin{itemize}
@@ -107,35 +107,35 @@ when errorounting for error is called:
 
 \chapter{Application Audit}
 
-I task degli auditor delle applicazioni. Bisogna andare a testare le 
+I task degli auditor delle applicazioni. Bisogna andare a testare le
 applicazioni che sono significative per l'azienda. Tutte è impossibile.
-Testare i controlli. Analisi del risultato devo estendere il controllo è 
+Testare i controlli. Analisi del risultato devo estendere il controllo è
 inutile, è oneroso e così via.
 
 \todo{Insert image: Integrated testing facilities}
 
 
 \todo{Insert image parallel operation}
-si fa quando si vuole aggiornare i sistemi in produzione. 
+si fa quando si vuole aggiornare i sistemi in produzione.
 
 \todo{Insert image Embedded}
-Embedded Audit Modules (EAM): il suo grande svantaggio È quello di rallentare il 
+Embedded Audit Modules (EAM): il suo grande svantaggio È quello di rallentare il
 sistema. Qualora vada tutto bene sono soldi spesi inutilmente.
-Systems Control Audit Review File (SCARF): 
+Systems Control Audit Review File (SCARF):
 Sample Audit Review File (SARF) scelta a campione non è più la scelta migliore.
 
 %%%%%VIETATO PRANZARE PRIMA DI SRM
 \paragraph{Testing Application Techniques}
 \todo{copia elenco}
-Validate Systems $\Leftarrow$ Importanti Parallel Simulation e Parallel 
-Operation 
+Validate Systems $\Leftarrow$ Importanti Parallel Simulation e Parallel
+Operation
 
 
 
 \paragraph{Tecniche di Auditing Onine}
-Audit Hooks:all'interno del codice ci sono delle condizioni particolari che se 
-sono soddisfatte triggerano delle operazioni di auditing, è meno pesante delle 
-EAM infatti viene attivato il controllo SOLO quando si raggiungono certi path 
+Audit Hooks:all'interno del codice ci sono delle condizioni particolari che se
+sono soddisfatte triggerano delle operazioni di auditing, è meno pesante delle
+EAM infatti viene attivato il controllo SOLO quando si raggiungono certi path
 del CFG.
 \todo{Copia  tabella}
 \todo{Copia disegnino di Hook}
@@ -151,7 +151,7 @@ Embedded audit modules is associated mostly clearly with:
 \item Parallel operation
 \end{itemize}
 
-This technique provides statistical information about the normal input data 
+This technique provides statistical information about the normal input data
 file, to determine if the file is sufficiently varied for the auditor.
 
 \begin{itemize}
@@ -174,12 +174,12 @@ Combining real and test data during an audit is known as:
 
 % Altro esercizio
 
-Transactions with duplicate IDs are checked for and rejected ---> DUPLICATE 
+Transactions with duplicate IDs are checked for and rejected ---> DUPLICATE
 CHECK
-Input is double checked via seond person OR all digits are entered twice ---> 
+Input is double checked via seond person OR all digits are entered twice --->
 Duplicate Check
 
-I campi inseriti sono inseriti correttamente --> 
+I campi inseriti sono inseriti correttamente -->
 
 
 I valori inseriti sono plausibili --> RESANABLENESS check
@@ -187,8 +187,8 @@ I valori inseriti sono plausibili --> RESANABLENESS check
 
 \part{Incident process process forensics}
 
-Un incidente relativo alla sicurezza può capitare per molti problemi. Un 
-incidente è catalogato come tale quando c'è una violazione della \textit{policy} 
+Un incidente relativo alla sicurezza può capitare per molti problemi. Un
+incidente è catalogato come tale quando c'è una violazione della \textit{policy}
 di sicurezza. Un incidente può essere di due tipologie:
 \begin{itemize}
 \item Malizioso
@@ -197,7 +197,7 @@ di sicurezza. Un incidente può essere di due tipologie:
 
 \chapter{Incident Response vs Business Contiuity}
 
-Avere un piano di risposta agli incidenti fa parte della \textit{business 
+Avere un piano di risposta agli incidenti fa parte della \textit{business
 continuity plan}.
 
 \section{Business Continuity Plan}
@@ -213,19 +213,19 @@ Esiste una determinata tipologia di termini:
 
 In particolare, esistono diversi ruoli che vedremo in dettaglio.
 
-\paragraph*{IMT} L'IMT, che significa \textbf{Incident Management Team}, fa 
-parte della \textit{steering commitee} e sono membri dell'IRT. % va troppo 
+\paragraph*{IMT} L'IMT, che significa \textbf{Incident Management Team}, fa
+parte della \textit{steering commitee} e sono membri dell'IRT. % va troppo
 veloce
 
 
 
 
-\paragraph*{IRT} L'IRT, che significa \textbf{Incident Response Team}, ed è il 
-team che gestisce l'incidente, ha una conoscenza tecnica dei sistemi e di 
+\paragraph*{IRT} L'IRT, che significa \textbf{Incident Response Team}, ed è il
+team che gestisce l'incidente, ha una conoscenza tecnica dei sistemi e di
 ``hacking'' (è il classico informatico)
 
-\paragraph*{Investigatore} Presenti in aziende grandi, è una persona di fiducia 
-che ha accesso a tutte le risorse aziendali e si occupa di cercare le cause 
+\paragraph*{Investigatore} Presenti in aziende grandi, è una persona di fiducia
+che ha accesso a tutte le risorse aziendali e si occupa di cercare le cause
 dell'incidente che a volte possono anche essere dolose.
 
 
@@ -240,28 +240,28 @@ Questo piano si suddivide in diversi \textit{step}:
 \item Analisi e eradicazione
 \item Recupero
 \item Imparare
-\end{enumerate} 
+\end{enumerate}
 
-Vediamo brevemente il significato di ogni passo, che sarà analizzato in 
+Vediamo brevemente il significato di ogni passo, che sarà analizzato in
 profondità più avanti.
 
-\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, ovvero è 
+\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, ovvero è
 una fase che è l'\textbf{analisi dello scenario}.
 
-\paragraph*{Identificazione} Questo \textit{step} succede quando si viene 
-avvisati dell'anomalia e si comincia a cercare la causa del problema. Più e 
-ricco e sistema il complesso informativo più è difficile trovare la causa del 
+\paragraph*{Identificazione} Questo \textit{step} succede quando si viene
+avvisati dell'anomalia e si comincia a cercare la causa del problema. Più e
+ricco e sistema il complesso informativo più è difficile trovare la causa del
 problema.
 
-\paragraph*{Contenimento} In questa fase si cerca di ``limitare i danni'', con 
-l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare 
+\paragraph*{Contenimento} In questa fase si cerca di ``limitare i danni'', con
+l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare
 elementi della produttività.
 
-\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perchè è 
+\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perchè è
 successo, e si cerca di risolvere la causa.
 
-\paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per 
+\paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per
 ritornare alla fase di preparazione
 
-\paragraph*{Imparare} Questa parte è molto importante, in quanto imparare la 
+\paragraph*{Imparare} Questa parte è molto importante, in quanto imparare la
 lezione permette di evitare futuri attacchi e di rendere il sistema più sicuro.
