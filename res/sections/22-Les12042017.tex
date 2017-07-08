@@ -121,9 +121,9 @@ male)
 \item Identificare le aree che sono state esternalizzate
 \end{itemize}
 
-\subsection{Step 2: Perform risk assessment} 
+\subsection{Step 2: Risk assessment e Piano di Audit}\footnote{Chiesti all'esame dal prof.}
 
-\footnote{Chiesti all'esame dal prof.}
+\subsubsection{Effettuare il risk assessmen}
 
 \paragraph*{Rischio inerente}
 
@@ -154,7 +154,7 @@ di una banca avviene una frode che non viene rilevata).
 Combinazione dei rischi precedenti.
 
 
-\subsection{Step 3: Preparare un piano di Audit}
+\subsubsection{Preparare un piano di Audit}
 
 È importante prevedere un lavoro di Audit che sia pianificabile in tempo: 
 prendere un lavoro che deve essere svolto in pochissimo tempo non è 
@@ -178,9 +178,9 @@ La pianificazione dev'essere eseguita correttamente, in quanto solitamente il
 tempo per eseguire un audit non è molto e sono presenti \textit{deadline} 
 strette.
 
-\subsubsection{Vocabolario della Pianificazione dell'Audit}
-
-In una pianificazione dell'audit, sono importanti tenere a mente i seguenti 
+\paragraph{Vocabolario della Pianificazione dell'Audit}
+\newline
+In una pianificazione dell'audit, è importante tenere a mente i seguenti 
 vocaboli:
 \begin{itemize}
 \item \textbf{Soggetto dell'audit:} l'area che viene auditata
@@ -190,18 +190,18 @@ vocaboli:
 oggetto.
 \end{itemize}
 
+
 \paragraph*{Esempio}
 
-\begin{figure}[h!]
-	\begin{center}
-		
-\includegraphics[scale=0.4]{res/img/audit_plan_vocabulary_example.png}
+\begin{figure}[H]
+	\begin{center}	
+\includegraphics[scale=0.3]{res/img/audit_plan_vocabulary_example.png}
 	\end{center}
 	\caption{Esempio per prendere confidenza con i termini dell'audit plan.}
 	\label{fig:audit:plan:vocabulary:example}
 \end{figure}
 
-\subsection{Step 4: Aggiungere dettagli al piano}
+\subsection{Step 3: Aggiungere dettagli al piano}
 
 Gli step sono: (i) tradurre gli oggetti dell'audit in oggetti più specifici, 
 (ii) identificare e selezionare l'approccio di audit per testare e verificare i 
@@ -209,176 +209,156 @@ controlli, (iii) identificare gli individui da intervistare, (iv) ottenere le
 policy, standardn procedure e linee guida aziendali e (v) sviluppare degli 
 strumenti e delle metodologie di audit.
 
-\subsection{Step 5: Valutare l'area di audit}
+\subsection{Step 4: Valutare l'area di audit}
 
-Vengono usati \textit{tool} di tipo generale, e anche osservazioni sul campo. 
-Queste osservazioni sul campo sono sempre molto utili, perchè permette di 
-vedere effettivamente come i dipendenti stanno lavorando (per esempio osservando 
+Vengono usati \textit{strumenti} di tipo generale e osservazioni sul campo. 
+Queste osservazioni sul campo sono sempre molto utili, perché permettono di 
+vedere effettivamente come i dipendenti stanno lavorando (es. osservando 
 un amministratore di sistema si potrebbe scoprire se è stata applicata una 
-corretta \textit{segregation of duties}), e permette di scoprire elevate 
+corretta \textit{segregation of duties}) e permette di scoprire elevate 
 criticità.
 
+\subsection{Step 5: Valutare i controlli}
 
-\todo{step 5 o 6?}
 È sempre molto importante lavorare sulla struttura organizzativa, che deve 
 essere aggiornata in maniera continua.
 Altri punti importanti:
 \begin{itemize}
-\item Review IS organization: separation of duties
-\item Revisione delle policy, standard, procedure di IS: definite, aggiornate 
+\item \textbf{Revisione dell'organizzazione IS:} separation of duties;
+\item \textbf{Revisione delle policy, standard, procedure di IS:} definite, aggiornate 
 periodicamente. Sulle policy viene indicato il versionamento del documento 
-(versione, data, firma di chi ha autorizzato).
-\item Revisione della documentazione IS
-\item Intervista del personale: segregation of duties, security awareness, 
+(versione, data, firma di chi ha autorizzato);
+\item \textbf{Revisione della documentazione IS};
+\item \textbf{Intervista del personale:} segregation of duties, security awareness, 
 competenze relative al proprio lavoro. È importante conoscere come i dipendenti 
 lavorano all'interno dell'azienda, senza porre domande troppo sospette. Una 
-domanda molto importante da fare è: \textit{Come si trova sul lavoro?} In 
-quando quando ci si trova a fare dei \textit{task} che non è adatti a fare ci 
-saranno molto probabilmente delle difficoltà. Questo da il \textit{sentiment} 
-della situazione aziendale.
-\item Osservare il personale:\todo{O osservazioni personali?} documentare tutto 
-con un livello sufficiente di dettagli, questa documentazione deve essere tale 
+domanda molto importante da fare è: \textit{"come si trova sul lavoro?"} in 
+quando quando ci si trova ad eseguire dei \textit{task} che non è per cui non 
+si è adatti ci sono molto probabilmente delle difficoltà. Questo da il 
+\textit{sentiment} della situazione aziendale;
+\item \textbf{Osservare il personale:} documentare tutto con un livello 
+sufficiente di dettaglio, questa documentazione deve essere tale 
 da fornire evidenza dei fatti.
-
 \end{itemize}
 
 
 \subsubsection{Tipologie di controlli}
 
-
+I controlli sono principalmente di tre tipi
 \begin{itemize}
-\item Controlli correttivi: corregge i problemi e previene i problemi futuri
-\item Controlli detettivi: servono a rilevare un problema (es. hash totals che 
+\item Correttivi: corregge i problemi e previene i problemi futuri
+\item Detettivi: servono a rilevare un problema (es. hash totals che 
 verifica l'integrità dei file)
-\item Controlli preventivi: sono i controlli più difficili da eseguire ma anche 
+\item Preventivi: sono i controlli più difficili da eseguire ma anche 
 i migliori perché permettono di evitare il rischio.
 \end{itemize}
 
-I \textbf{controlli correttivi} sono quei controlli che risolvono i problemi e 
+\begin{figure}[H]
+	\begin{center}	
+\includegraphics[scale=0.3]{res/img/control_timeline.png}
+	\end{center}
+	\caption{Linea del tempo dei vari tipi di controllo.}
+\end{figure}
+
+\paragraph*{Controlli correttivi} Controlli che risolvono i problemi e 
 evitano che quella tipologia di problema risorga nel futuro. Ad esempio il 
 \textit{contingency plan}\footnote{Il \textit{contingency plan} è quella 
 attività che permette l'erogazione di un servizio anche ad un livello 
 degradato.} è uno di questi.
 
-I \textbf{controlli detettivi} controllano per esempio l'integrità delle 
-informazioni, come per esempio l'integrità dei database. Esistono software 
-molto costosi che permettono di analizzare i log di sistema, per capire 
-maggiori informazioni sul sistema.
+\paragraph*{Controlli detettivi} Controllano l'integrità delle 
+informazioni, (es. l'integrità dei database). Esistono software 
+molto costosi che permettono di analizzare i log di sistema, per carpire 
+maggiori informazioni.
 
-I \textbf{controlli preventivi} sono i controlli più difficile da eseguire, ma 
+\paragraph*{Controlli preventivi} I controlli più difficile da eseguire, ma 
 quelli che permettono di far risparmiare di più. Alcune cose che solitamente 
-sono da verificare sono per esempio che i dischi siano criptati, che il 
+sono da verificare sono che i dischi siano criptati e che il 
 personale sia adeguatamente aggiornato e preparato.
 Il personale è fondamentale: persone che non sono adatte al ruolo faranno male 
-il lavoro, e quindi o verranno/si faranno licenziare subito, causando un 
-elevato \textit{turnover}. Questo indice deve essere basso per un'azienda, e 
+il lavoro e verranno (o si faranno) licenziare subito, causando un 
+elevato \textit{turnover}. Questo indice deve essere basso per un'azienda e 
 costituisce un problema enorme in quando prendere una persona costa risorse, in 
-tempo e soldi. Questa soglia di \textit{turnover} non deve mai superare la 
-soglia del 5-7\%.
+tempo e soldi. La soglia di \textit{turnover} non deve mai superare il 5-7\%.
 
 \subsubsection{Manutenzione dei controlli}
+
 Questi tipi di controlli sono di natura qualitatitva.
 
-Controlli in overlap: va a compensare il rischio di controllo, in modo che se 
+\textbf{Controlli in overlap:} va a compensare il rischio di controllo, in modo che se 
 un controllo non trova il problema possa trovarlo un altro.
 
-Controllo compensativo: supporta un controllo più debole.
+\textbf{Controllo compensativo:} supporta un controllo più debole.
 
-\todo{Copiare tabella}
-
-
-\subsection{Step 6: Test di Audit}
+\subsection{Step 6 e 7: Test dell'audit}
 
 
-Evidence: le \textbf{risultanze} (\emph{Findings}) sono basate su prove e fatti 
+\textbf{Evidence:} i risultati (\emph{findings}) sono basati su prove e fatti 
 sufficienti e affidabili e su una corretta interpretazione dell'evidenza. 
 
-La \textbf{documentazione} è fondamentale. Il lavoro di audit e l'evidenza 
-dell'audit per supportare le conclusioni devono essere completamente 
-documentate.
-\todo{RiControlla con le slide}
-%Documentazione: il lavoro di audit e l'evidenza dell'audit per supportare le 
-% conclusioni devono essere completamente documentate. 
+\textbf{Documentazione:} il lavoro di audit e l'evidenza 
+devono essere completamente documentate per supportare le conclusioni.
 
-La \textbf{supervisione} dev'essere eseguita in maniera professionale, e 
-dovrebbe esserci sempre un supervisore o un responsabile.
-
-Lo \textbf{scetticismo} è importante, e ogni azione va guardata con un certo 
-occhio di riguardo. Quando si incontrano regolarità bisogna andare in 
-profondità, reportando le irregolarità in maniera corretta. Anche le 
-controparti vanno informate, e questa tipologie di azioni non vanno eseguite di 
-``nascosto''. Lo stesso discorso va fatto anche se la controparte è in malafede.
-In caso venga scopera una controparte che è in malafede bisogna avvisare 
-immediatamente riguardo alla situazione, perchè è presente il rischio che la 
-controparte cancelli le prove che la colpevolizzino.
-
-
-
-
-
-Supervisione: lo staff di audit viene supervisionato per assicurare che l'audit 
+\textbf{Supervisione:} lo staff di audit viene supervisionato per assicurare che l'audit 
 venga eseguito in modo professionale.
 
-Scetticismo professionale: bisognare essere scettici nei confronti dei 
+\textbf{Scetticismo professionale:} bisognare essere scettici nei confronti dei 
 controlli in modo da verificare tutto quello che deve essere verificato.
+Quando si incontrano irregolarità bisogna andare in profondità, riportandole 
+in maniera corretta. Anche le controparti vanno informate e questa tipologia di 
+azioni non va mai eseguita di ``nascosto''. Lo stesso discorso va fatto anche 
+se la controparte è in malafede. In caso venga scopera una controparte che è in 
+malafede bisogna avvisare immediatamente riguardo alla situazione, perché è 
+presente il rischio che la controparte cancelli le prove che la colpevolizzano.
 
+\subsubsection{Test sostantivo e test di conformità}
 
-\subsubsection{Test sostanziali e test di compliance}
-
-Test sostanziali \todo{va troppo veloce}
-
-Test di compliance: c'è qualcosa? Quel qualcosa funziona per quello che è stato 
-pensato? Tipicamente viene eseguito tramite una checklist.
-
-Ci sono due tipologie principali di test:
+Ci sono due tipologie principali di test
 \begin{itemize}
-\item Test di complianza, in cui è importante chiedersi: sono i controlli 
-presenti eseguiti in maniera consistente?
-\item Test sostanziali. Il controllo sostanziale deve sostenere il business. 
-%substantive
+\item \textbf{Test sostantivo:} verifica che tutto funzioni come dovrebbe;
+\item \textbf{Test di conformità (compliance):} è importante chiedersi  \textit{"i controlli 
+sono presenti e eseguiti in maniera consistente?"}.
 \end{itemize}
 
-
-Se i risultati dei test di compliance sono scarsi, mi aspetto che i controlli 
+Se i risultati dei test di conformità sono scarsi, mi aspetto che i controlli 
 sostanziali siano più numerosi in tipo e numero.
 
-\section{Step 7: Test di compliance}
+\subsubsection{Step 6: Test di conformità}
 
-Controllo: il software in produzione è controllato?
+\textbf{Controllo:} il software in produzione è controllato?
 \begin{itemize}
-\item Test: I file eseguibili vengono buildati dal codice sorgente che sta nel 
+\item \textbf{Test:} I file eseguibili vengono buildati dal codice sorgente che sta nel 
 repository? Se questo non accade è un grave problema, perchè significa che si 
 sta usando del software in produzione che è diverso da quello che è presente 
 nel repository.
-\item Test: Sono state seguite le procedure adeguate durante la release? Nelle 
+\item \textbf{Test:} Sono state seguite le procedure adeguate durante la release? Nelle 
 aziende grosse, è presente un libro dei test, in cui chi è responsabile appone 
 una firma prima di rilasciare una certa versione del software.
 \end{itemize}
 
 
-\section{Step 8: Test sostanziali}
+\subsubsection{Step 7: Test sostanziali}
 
-Audit: is financial statement section related to sales accurate? \todo{tradurre 
-appena rallenta}
+Audit: la sezione finanziaria sulle vendite è accurata? 
 
 \begin{itemize}
-\item Test: tracciare il processing di un esempio di transazione attraverso il 
-sistema, eseguendo i calcoli manualmente
-\item Test: testare le condizioni di errore
+\item \textbf{Test:} tracciare il processing di un esempio di transazione attraverso il 
+sistema, eseguendo i calcoli manualmente;
+\item \textbf{Test:} testare le condizioni di errore.
 \end{itemize}
 
 
 
-\subsection{Campionamento}
+\paragraph{Campionamento}
 
-Campionamento statistico: ci sono tecniche standard, fornisce un 
-\textit{intervallo di confidenza} (intervallo in cui siamo sicuri che il nostro 
-campione sia significativo). Se abbiamo N item, con un campione di $\sqrt{N}$ 
+\textbf{Campionamento statistico:} ci sono tecniche standard, fornisce un 
+\textit{intervallo di confidenza}\footnote{intervallo in cui siamo sicuri che il nostro 
+campione sia significativo}. Se abbiamo N item, con un campione di $\sqrt{N}$ 
 elementi garantisce una precisione del 99.9\%.
 $$
 (1 - 1/100)^K
 $$
 
-Campionamento non stastistico:
-
-Tutto ciò che è statisticamente rappresentato
+\textbf{Campionamento non stastistico:} si basa sul giudizio e soprattutto su 
+informazioni a contorno. Si perde la rappresentatività del campione statistico, 
+ma si troverà delle evidenze su ciò che staremo cercando.
