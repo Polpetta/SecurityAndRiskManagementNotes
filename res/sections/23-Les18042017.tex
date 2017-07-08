@@ -1,47 +1,44 @@
-
-
-Si basa sul giudizio, e soprattutto su informazioni a contorno. Si perde la
-rappresentatività del campione statistico, ma ci troverà delle evidenze su ciò
-che staremo cercando.
-
-\subsubsection{Difference Estimation Sampling}
+\subparagraph*{Difference Estimation Sampling}
 
 Problemi tipici che bisogna indirizzare è la media e la deviazione standard.
-La media non è un fenomeno che cattura bene l'andamento generale, per la
-presenza di \textit{outlier}, ovvero dei punti fuori dall'intervallo di
-rappresentazione. %?
-La media è quindi un parametro assolutamente inaffidabile (va verificato
-ulteriormente!). Un parametro più affidabile che non è soggetto agli
-\textit{outlier} è la mediana.
+La \textbf{media} non è un fenomeno che cattura bene l'andamento generale, per la
+presenza di \textit{outlier}, ovvero dei punti fuori dal comportamento 
+tipico del campione.
+La media è un parametro poco aaffidabile (va verificato
+ulteriormente). Un parametro più affidabile che non è soggetto agli
+outlier è la \textbf{mediana}.
 
 L'intervallo di confidenza è la probabilità che il campione rappresenti la parte
-della popolazione. Viene rappresentato con un $\epsilon$, e più piccolo è e
-meglio è. Solitamente, si usa un intervallo di confidenza del 90\%. Il problema
+della popolazione. Viene rappresentato con un $\epsilon$, il quale più piccolo è e
+meglio è. Solitamente, si usa un intervallo di confidenza del 90\%. Un problema
 è la possibilità di usare una distribuzione fallace completamente duale rispetto
 all'intervallo di confidenza.
 
 
-\subsubsection{Tipi di campionamento}
+\subparagraph*{Tipi di campionamento}
 
-\paragraph*{Campionamento Stop-or-Go} facciamo un campionamento ridotto, se non
-si trova ciò che cerco mi fermo.
+\subsubparagraph*{Campionamento Stop-or-Go} facciamo un campionamento ridotto, se trovo 
+ciò che cerco mi fermo (e.g. se i primi 20 elementi hanno zero errori allora mi fermo, 
+altrimenti...).
 
-\paragraph*{Campionamento discovery} usato quando l'occorrenza dell'evento che
+\subsubparagraph*{Campionamento discovery:} usato quando l'occorrenza dell'evento che
 sto cercando è molto rara.
 
-\paragraph*{Campionamento degli attributi} un attributo è qualsiasi
-caratteristica che identifica una transazione rispetto alle altre. Per esempio
-transazioni effettuate ad un certo orario.
+\subsubparagraph*{Campionamento degli attributi:} un attributo è qualsiasi
+caratteristica che identifica una transazione rispetto alle altre (es.
+transazioni effettuate ad un certo orario).
 
-\subparagraph*{Tasso di errore tollerabile} il massimo rate di errore
+\subsubsubparagraph*{Tasso di errore tollerabile:} il massimo rate di errore
 tollerabile.
 
-\paragraph*{Campionamento variabile} quanto è accurato il campione nel matchare
+\subsubsubparagraph*{Campionamento variabile:} quanto è accurato il campione nel rappresentare
 l'intera popolazione?
 
 
-\subsubsection{Campionamento variabile}
+\subparagraph{Campionamento variabile}
+
 Si guardi la figura \ref{fig:variable:sampling}.
+
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=0.45]{res/img/variable_sampling.png}
@@ -50,18 +47,16 @@ Si guardi la figura \ref{fig:variable:sampling}.
         \label{fig:variable:sampling}
 \end{figure}
 
+\subsubparagraph*{Generic Audit Software (GAS)}
 
-
-\paragraph{Generalized Audit Software}
-
-Questa tipologia di tool sono molto utili, e danno la possibilità di avere
+Questa tipologia di tool sono molto utili e danno la possibilità di avere
 accesso a:
 \begin{itemize}
-\item Accesso ai file
-\item Organizzazione dei file
-\item Selezione dei dati: selezione di un insieme di record
-\item Funzioni statistiche
-\item Funzioni aritmetiche
+\item Accesso degli utenti ai file;
+\item Organizzazione dei file;
+\item Selezione dei dati (eg. selezione di un insieme di record);
+\item Funzioni statistiche;
+\item Funzioni aritmetiche.
 \end{itemize}
 
 \subsection{Step 8: Preparare il rapporto di Audit}
@@ -72,76 +67,71 @@ accesso a:
 \item Contesto (cosa viene analizzato), gli obiettivi, il periodo coperto e
 quanto l'audit è durato\footnote{Audit che durano troppo poco con tante persone
 da analizzare non vanno bene, soprattutto se devono essere svolti in poco
-tempo.}.
+tempo.};
 \item Findings (quello che è stato trovato), che deve essere supportato da delle
 \emph{evidence} (prove). Le raccomandazioni possono essere date in due modi:
-seguendo gli standard (es. standard ISO) o facendo il merge tra la nostra
+seguendo gli standard (es. standard ISO) o mettendo assieme la nostra
 esperienza, la nostra conoscenza e quello che può fare l'azienda per risolvere i
-problemi evidenziati.
-\item Raggruppare per concretezza delle evidenze che abbiamo trovato.
-\item menzionare i problemi trovati e le critiche costruttive.
+problemi evidenziati;
+\item Raggruppare per concretezza delle evidenze che abbiamo trovato;
+\item Menzionare i problemi trovati e le critiche costruttive.
 \end{itemize}
 
 Il rapporto di audit è una parte molto importante: un rapporto dettagliato
 permette ai successori di verificare il corretto funzionamento o meno
-dell'azienda negli anni passati, e permette di capire meglio il contesto. Un
+dell'azienda negli anni passati e permette di capire meglio il contesto. Un
 rapporto di audit dovrebbe essere bilanciato, altrimenti se si arriva a mettere
 a fuoco troppe cose negative non va bene, ma è importante anche non trascurarle.
 È importante tenere a mente che il rapporto di audit è fatto per essere letto
-dai ``piani alti''. Tenersi all'evidenze e ai fatti è sempre un'azione
+dai ``piani alti''. Tenersi alle prove e ai fatti è sempre un'azione
 consigliata.
-
-
-
-\todo{Inserire tabellina con un esempio di Report di un audit (facoltativo)}
-
-
 
 \subsubsection{Evidenza}
 
-Sono delle prove, e esistono in diverse forme:
-\begin{itemize}
-\item Note dalle interviste
-\item Risultati dei test
+Sono delle prove e esistono in diverse forme: note dalle interviste, risultati 
+dei test, email o corrispondenza, documentazione e osservazioni.
 
 Le migliori fonti per ottenere informazioni sono:
 \begin{itemize}
-\item Esterne: fonti da organizzazioni esterne (per esempio i fornitori).
-\item Qualificate: le più autoritative
-\item Oggettive: evidenze per cui non è possibile esprimer
-\item Email o corrispondenza
-\item Documentazione
-\item Osservazioni
-\end{itemize}e un periodo soggettivo
-\item Tempo: deve essere coerente con la nostra attività di audit
+\item \textbf{Esterne:} fonti da organizzazioni esterne (es. i fornitori);
+\item \textbf{Qualificate:} le più autorevoli;
+\item \textbf{Oggettive:} evidenze per cui non è possibile esprimere un periodo 
+soggettivo
+\item \textbf{Tempo:} deve essere coerente con il periodo della nostra attività 
+di audit
 \end{itemize}
-
-
 
 \subsubsection{Comunicazione dei risultati}
 
 La comunicazione dei risultati è una passo decisivo. Questi risultati devono
 essere riportati alle persone interessate.
 La parte grossa dell'audit deve essere consegnata ai manager ad alto
-livello.\todo{Copia schema?}
+livello.
 
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=0.45]{res/img/communication_audit.png}
+        \end{center}
+        \caption{Procedimento per la comunicazione dei risultati dell'audit.}
+\end{figure}
 
 \subsection{Step 9: Prosieguo}
 
 
-Il \textit{follow-up} serve \todo{boh}
+Il \textit{follow-up} serve a verificare se il management ha intrapreso le azioni 
+necessari a correggere i problemi in tempo.
 
 \section{Raccomandazioni finali sull'Audit}
 
 Queste ultime note sono molto importanti e vanno sempre tenute in
 considerazione:
 \begin{itemize}
-\item Mai eccedere lo scopo di quello che si deve fare, ovvero, mai ficcare il
+\item Mai eccedere lo scopo di quello che si deve fare, ovvero mai ficcare il
 naso dove non serve. I permessi che vengono accordati devono essere messi per
 iscritto, affinchè ne rimanga una traccia.
-\item Tutti i test potrebbero impattare sul sistema, ed è quindi una buona
-pratica avvisare i settori interessati dei possibili disguidi prima di iniziare
-ad eseguire qualisiasi test.
+\item Tutti i test potrebbero impattare sul sistema quindi è una buona
+pratica avvisare i settori interessati dei possibili disservizi prima di eseguire 
+qualisiasi test.
 \item Quando si lavora con i dati è importante non toccare dati o configurazioni
 importanti.
 \end{itemize}
