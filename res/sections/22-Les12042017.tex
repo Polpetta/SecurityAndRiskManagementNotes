@@ -9,9 +9,8 @@ difficile per via del cloud.
 \paragraph*{Definizione}
 
 Un processo sistematico nel quale un team qualificato, competente e 
-indipendente 
-ottiene in maniera obiettiva\footnote{La \textit{Evidence} significa prova, e 
-tutti i sentimenti del tipo ``ho sentito che'' non sono prove, e per questo non 
+indipendente ottiene in maniera obiettiva\footnote{La evidence significa prova e 
+tutte le evidenze del tipo ``ho sentito che'' non sono prove, e per questo non 
 possono far parte dell'audit.} e valutano le asserzioni riguardo ai processi 
 con l'obiettivo di creare un'opinione a riguardo e riportare il grado in cui 
 l'asserzione è implementata.
@@ -179,7 +178,7 @@ tempo per eseguire un audit non è molto e sono presenti \textit{deadline}
 strette.
 
 \paragraph{Vocabolario della Pianificazione dell'Audit}
-\newline
+
 In una pianificazione dell'audit, è importante tenere a mente i seguenti 
 vocaboli:
 \begin{itemize}
@@ -246,23 +245,23 @@ da fornire evidenza dei fatti.
 
 I controlli sono principalmente di tre tipi
 \begin{itemize}
-\item Correttivi: corregge i problemi e previene i problemi futuri
+\item Correttivi: corregge i problemi e previene problemi futuri;
 \item Detettivi: servono a rilevare un problema (es. hash totals che 
-verifica l'integrità dei file)
+verifica l'integrità dei file);
 \item Preventivi: sono i controlli più difficili da eseguire ma anche 
 i migliori perché permettono di evitare il rischio.
 \end{itemize}
 
 \begin{figure}[H]
 	\begin{center}	
-\includegraphics[scale=0.3]{res/img/control_timeline.png}
+\includegraphics[scale=0.3]{control_timeline}
 	\end{center}
 	\caption{Linea del tempo dei vari tipi di controllo.}
 \end{figure}
 
 \paragraph*{Controlli correttivi} Controlli che risolvono i problemi e 
 evitano che quella tipologia di problema risorga nel futuro. Ad esempio il 
-\textit{contingency plan}\footnote{Il \textit{contingency plan} è quella 
+\textit{contingency plan}\footnote{Il contingency plan è quella 
 attività che permette l'erogazione di un servizio anche ad un livello 
 degradato.} è uno di questi.
 
@@ -292,17 +291,17 @@ un controllo non trova il problema possa trovarlo un altro.
 
 \subsection{Step 6 e 7: Test dell'audit}
 
-
-\textbf{Evidence:} i risultati (\emph{findings}) sono basati su prove e fatti 
+\begin{itemize}
+\item \textbf{Evidence:} i risultati (\emph{findings}) sono basati su prove e fatti 
 sufficienti e affidabili e su una corretta interpretazione dell'evidenza. 
 
-\textbf{Documentazione:} il lavoro di audit e l'evidenza 
+\item \textbf{Documentazione:} il lavoro di audit e l'evidenza 
 devono essere completamente documentate per supportare le conclusioni.
 
-\textbf{Supervisione:} lo staff di audit viene supervisionato per assicurare che l'audit 
+\item \textbf{Supervisione:} lo staff di audit viene supervisionato per assicurare che l'audit 
 venga eseguito in modo professionale.
 
-\textbf{Scetticismo professionale:} bisognare essere scettici nei confronti dei 
+\item \textbf{Scetticismo professionale:} bisognare essere scettici nei confronti dei 
 controlli in modo da verificare tutto quello che deve essere verificato.
 Quando si incontrano irregolarità bisogna andare in profondità, riportandole 
 in maniera corretta. Anche le controparti vanno informate e questa tipologia di 
@@ -310,6 +309,7 @@ azioni non va mai eseguita di ``nascosto''. Lo stesso discorso va fatto anche
 se la controparte è in malafede. In caso venga scopera una controparte che è in 
 malafede bisogna avvisare immediatamente riguardo alla situazione, perché è 
 presente il rischio che la controparte cancelli le prove che la colpevolizzano.
+\end{itemize}
 
 \subsubsection{Test sostantivo e test di conformità}
 
@@ -330,7 +330,7 @@ sostanziali siano più numerosi in tipo e numero.
 \item \textbf{Test:} I file eseguibili vengono buildati dal codice sorgente che sta nel 
 repository? Se questo non accade è un grave problema, perchè significa che si 
 sta usando del software in produzione che è diverso da quello che è presente 
-nel repository.
+nel repository;
 \item \textbf{Test:} Sono state seguite le procedure adeguate durante la release? Nelle 
 aziende grosse, è presente un libro dei test, in cui chi è responsabile appone 
 una firma prima di rilasciare una certa versione del software.
@@ -348,7 +348,6 @@ sistema, eseguendo i calcoli manualmente;
 \end{itemize}
 
 
-
 \paragraph{Campionamento}
 
 \textbf{Campionamento statistico:} ci sono tecniche standard, fornisce un 
@@ -361,4 +360,4 @@ $$
 
 \textbf{Campionamento non stastistico:} si basa sul giudizio e soprattutto su 
 informazioni a contorno. Si perde la rappresentatività del campione statistico, 
-ma si troverà delle evidenze su ciò che staremo cercando.
+ma si troverano delle evidenze su ciò che stiamo cercando.
