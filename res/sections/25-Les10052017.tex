@@ -1,101 +1,92 @@
-\section{Segregation of duties}
+\subsection{Segregation of duties}
 
 Questo concetto è molto importante.
 
-La \textit{compliance} è più importante di \textit{security} perché bisogna 
+La \textit{conformità} è più importante della \textit{sicurezza} perché bisogna 
 essere conformi a degli standard.
 
-È importante, come già detto in diversi punti degli appunti, separare i vari 
-poteri delle persone, in maniera tale da assicurarsi che non avvengano ``abusi 
-di potere''.
+È importante, come già detto in orecedenza, separare i vari 
+poteri tra le persone, in maniera tale da assicurarsi che non avvengano ``abusi 
+di potere'' (es. l'amministratore di rete concede i diritti, ma qualcuno deve autorizzare che il 
+ruolo $x$ necessiti dei diritti. l'amministratore implementa la concessione). 
 
-Network administrator concede i diritti, ma qualcuno deve autorizzare che il 
-ruolo $x$ abbia i diritti. Il network administrator implementa la concessione. 
-\todo{Sistema sta frase}
-
-
-È importante anche che gli \textit{assets} vengano controllati. Solitamente gli 
-\textit{assets} sono fisici, ma nel settore IT possono essere immateriali (come 
+È importante anche che gli \textit{asset} vengano controllati. Solitamente gli 
+\textit{asset} sono fisici, ma nel settore IT possono essere immateriali (come 
 un file contente un disegno di un progetto per una architettura di rete). Quindi 
 è importante documentare le responsabilità. Si è responsabili quando occorrono 
-due condizioni:
-\begin{itemize}
-\item Quando si è nominati ufficialmente, tramite una delega formale
-\item Si hanno i poteri per implementare correttamente quanto richiesto
-\end{itemize}
+\textit{due condizioni:} quando si è nominati ufficialmente (tramite una delega formale) o
+quando si hanno i poteri per implementare correttamente quanto richiesto.
 
-\subsection{Personale}
+\subsubsection{Personale}
 
-Dal punto di vista della sicurezza il personale è sempre l'anello debole della 
-sicurezza. I \textit{background check} dipende sempre in base alla mansione che 
-dev'essere coperta. Questi controlli sono abbastanza sensibili, e di solito 
-avvengono anche per ruoli come amministratore delegato.
-Se viene maneggiato denaro o \textit{assets} sicuramente è necessario eseguire 
-un \textit{background check} per assicurarsi la \textbf{professionalità} e 
-l'\textbf{affidabilità} della persona. Anche essere coinvolti in una stupida 
-rissa potrebbe compromettere l'affidabilità di una persona. I propri 
-\textit{social network} quindi dovrebbero essere sempre controllati in maniera 
+Dal punto di vista della sicurezza il personale è sempre l'anello debole. 
+Il \textit{background check} dipende sempre in base alla mansione che 
+dev'essere coperta. Questi controlli sono abbastanza sensibili.
+Se viene maneggiato denaro o \textit{asset} sicuramente è necessario eseguire 
+un \textit{background check} per assicurarsi la \textit{professionalità} e 
+l'\textit{affidabilità} della persona (anche essere coinvolti in una stupida 
+rissa potrebbe compromettere l'affidabilità di una persona). Di conseguenza, i propri 
+profili social dovrebbero essere sempre controllati in maniera 
 tale da non contenere contenuto non appropriato.
 
-Il \textit{monitoring} delle email è un problema dappertutto tranne negli USA, 
-perché lì le email non sono protette. L'azienda fa lo scanner dei PC dei 
+Il \textit{monitoring} delle email è un problema ovunque, tranne negli USA: 
+lì le email non sono protette. L'azienda fa lo scan dei PC dei 
 dipendenti. In Italia, dopo un caso eclatante, la giurisprudenza permette di 
 leggere le email di lavoro.
 
-\subsubsection{Assunzione degli impiegati}
+\paragraph{Assunzione degli impiegati}
 
-Bisogna fare attenzione quando si eseguono assunzioni del personale. È 
-importante anche controllare che chi venga assunto non esegui manomissioni dei 
+Bisogna fare attenzione quando si eseguono assunzioni: è 
+importante anche controllare che chi viene assunto non esegua manomissioni dei 
 documenti ufficiali\footnote{La falsificazione di documenti nella pubblica 
-amministrazione comporta una reclusione dai 2 ai 5 anni.}.
+amministrazione comporta una reclusione dai 2 ai 5 anni.} (es. dichiarate di 
+essere laureato senza una laurea).
 
 Il \textbf{mansionario} specifica cosa un impiegato deve fare.
 
-\textit{Confidentiality agreement}: contratto in cui il lavoratore dichiara di 
-non divulgare quello per cui lavora l'azienda e indica anche un limite di tempo 
+\textbf{Confidentiality agreement}: contratto in cui il lavoratore dichiara di 
+non divulgare nulla di quello su cui lavora l'azienda e indica anche un limite di tempo 
 per cui l'impiegato non può svolgere un lavoro nello stesso campo.
 
 
-\subsubsection{Orientamento dei nuovi impiegati}
+\paragraph{Orientamento dei nuovi impiegati}
 
-
-Quando un nuovo impiegato firma un documento:
+Quando un nuovo impiegato firma un documento ha letto e accettato le policy di 
+sicurezza. Inoltre si impegna a:
 \begin{itemize}
-\item ha letto e accettato le policy di sicurezza
-\item promette di non divulgare ID e password per il login
-\item creare password di qualità
-\item bloccare il terminale quando non è presente
-\item riportare violazioni della sicurezza sospette
-\item mantenere una buona sicurezza fisica
+\item non divulgare ID e password per il login;
+\item creare password di qualità;
+\item bloccare il terminale quando non è presente;
+\item riportare violazioni della sicurezza sospette;
+\item mantenere una buona sicurezza fisica.
 \end{itemize}
 
-\subsubsection{Employee termination}
+\paragraph{Employee termination}
 
 Quando si arriva al termine del periodo lavorativo si deve ritornare 
 l'equipaggiamento aziendale e revocare l'accesso all'individuo. Badge e 
-cartellini devono essere riconsegnati, e le autorizzazioni che l'individuo aveva 
+cartellini devono essere riconsegnati; le autorizzazioni che l'individuo aveva 
 all'interno dell'azienda devono essere revocate.
 
-\subsection{Accordi tra terze parti}
+\subsubsection{Accordi tra terze parti}
 
 Definiscono le \textit{policy} di sicurezza relative alle informazioni e le 
 procedure per implementare le \textit{policy}; forniscono controlli per 
 proteggersi contro software malevolo. Pubblicano restrizioni per la copia e la 
-distribuzione delle informazioni, implementa procedure per determinare se gli 
+distribuzione delle informazioni, implementano procedure per determinare se gli 
 \textit{asset} sono stati compromessi e assicurano il ritorno o la distruzione 
 dei dati al termine del rapporto lavorativo.
 
-\subsection{Riassunto dei controlli sul personale}
+\subsubsection{Riassunto dei controlli sul personale}
 
-Quindi in generale abbiamo visto che i seguenti punti riguardo al controllo sul 
-personale sono importanti:
+I punti importanti del controllo sul personale sono:
 \begin{itemize}
-\item Segregation of Duties
-\item Vacanze obbligatorie e rotazione delle mansioni
-\item Addestramento delle policy e procedure
-\item Controlli del background
-\item Need to know/Least privilege
-\item Meccanismo di segnalazione di frodi 
+\item Segregation of Duties;
+\item Vacanze obbligatorie e rotazione delle mansioni;
+\item Addestramento delle policy e procedure;
+\item Controlli del background;
+\item Need to know/Least privilege;
+\item Meccanismo di segnalazione di frodi.
 \end{itemize}
 
 \section{Esercizi}
