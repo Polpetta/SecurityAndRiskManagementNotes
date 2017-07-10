@@ -13,7 +13,7 @@ Nota sull'esame: descrizione di un caso + poche domande
 
 Nell'immagine \ref{fig:security:software:development}:
 
-\begin{enumerate*}[label=\Alph*]
+\begin{enumerate*}[label=\alph*)]
 	\item Abuse case (invece di use case) si riferisce ai  tipici casi in cui il 
 	sistema può essere flesso in chiara violazione delle policy di 
 	sicurezza. 
@@ -50,30 +50,61 @@ Nell'immagine \ref{fig:security:software:development}:
 \end{itemize}
 
 
-\paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni
+\paragraph{Batch Processing} 
+È un tipo di controllo dell'input.
+Elaborazione sequenziale di blocchi di transazioni
 dopo che sono state aggregate. 
+L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
+dei controlli automatici su un batch e associati ad un batch file.
+Viene effettuata la validazione della transazione. Le transazioni
+rifiutate sono corrette e rimandate o trattate in altro modo.
+
+Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
+Il processing viene completato.
+Infine segue il batch balancing attraverso 
+una riconciliazione manuale o automatica dei controlli di batch.
+
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=0.5]{batch_processing}
         \end{center}
         \caption{Batch processing}
-        \label{fig:security:software:development}
+        \label{fig:security:batch:processing}
 \end{figure}
 
 \paragraph{Transaction Authorization}
-Manuale
+\begin{itemize}
+	\item Manuale: Ottenimento della firma dal management 
+	\item Automatico
+\end{itemize}
 
 Automatico
 
 \paragraph{Error Handling Alternatives}
-Rigettare le transazioni con errori e continuare a processare il batch;
-Stoppare tutto il batch
-
+Il trattamento degli errori di input possono essere trattati
+con le seguenti tecniche:
+\begin{itemize}
+\item Rigettare le transazioni con errori e continuare a processare 
+il batch;
+\item Rigettatre l'intero batch di transazioni, se contiene
+degli errori.
+\item Tieni il batch in sospeso fintanto che le transazioni 
+non vengono fissate.
+\item Accetta l'intero batch ma contrassegna le transazioni che
+contengono degli errori per renderne più facile l'identificazione,
+permettendo quindi futuri correzioni.
+\end{itemize}
 
 
 \subparagraph{Data Processing}
 
-\todo{copia schema}
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{data_processing}
+        \end{center}
+        \caption{Data processing}
+        \label{fig:data:processing}
+\end{figure}
 
 Il processing comprende controllo dei parametri di sistema (es. specificare
 minimo e massimo), Standing data (file permanenti), report delle eccezioni
@@ -81,32 +112,79 @@ minimo e massimo), Standing data (file permanenti), report delle eccezioni
 (giornaliero).
 
 \paragraph{Processing controls}
+I processing controls sono usati per assicurare
+l'accuratezza, la completezza e la validità dei dati durante
+processing online o batch. Questi controlli sono messi in campo
+per verificare che i dati vengano procesati solo tramite routine
+autorizzate. Esistono due modi per eseguire i processing controls:
 
-Per-Transaction Basis \todo{completare}
 \begin{itemize}
-\item Editing
-\item Controlli sugli ammontare calcolati
-\item Controlli programmati
-\item Report delle eccezioni
+\item \textbf{Eseguita transazione per transazione}
+\begin{itemize}
+\item Editing: il programma testa l'accuratezza, la completezza
+e la validità dei dati.
+\item Controlli sugli ammontare calcolati: i valori calclati
+sono controllati per essere ragionevoli e non eccedere il massimo.
+\item Controlli programmati: Software che rileva, logga e inizia
+delle azioni correttive per gli errori.
+\item Report delle eccezioni: gli errori delle transazioni vengono
+riportati con il loro tipo di errore.
 \end{itemize}
 
-Per-Batch Basis
+\item \textbf{Eseguita Batch per Batch}
 
 \begin{itemize}
-\item Batch Register:
-\item Run-To-Run Basis
+\item Batch Register:I batch totals sono salvati manualmente per essere
+confrontati con i totals di sistema. 
+\item Run-To-Run Totals: ogni passo del processing riporta i batch
+controls calcolati
+\item Reconciliation: un supervisore deve ricontrollare che \emph{tutti}
+i dati sono stati salvati e processati correttamente.
+\end{itemize}
+\end{itemize}
+
+
+\paragraph{Controllo sui file dati}
+\begin{itemize}
 \item
+Prerecorded Input: Certain information fields are preprinted on a blank
+input form to reduce input errors.
+\item
+Data File Security: solo l'accesso autorizzato è consentito.
+\item
+Version usage: è sempre usata la versione corretta di un file
+\item
+Transaction Logs: Un traccia per l'audit: salva la data e l'ora dell'input,
+l'ID dell'utente, il terminal (su cui si è effettuata la transazione) e
+l'input di transazioni.
+\item
+Before and After Image Reporting: Un file contenente dati è salvato
+prima e dopo averlo processato. In questo modo è possibile tenere traccia
+dell'impatto delle transizioni sui file.
+\item 
+Parity Checking: Quando un file è inviato, bisogna aggiungere dei codici
+per il controllo, per asicurare che sia trasmeso senza errori (hash).
 \end{itemize}
 
-\paragraph{Controllo sui dati}
+Controlli su \textbf{Batch Processing}:
+\begin{itemize}
+\item
+Error reporting \& handing: tutti i report di errori sono stati riconciliati
+e le autorizzazioni/correzioni sono state trasmesse in ordine temporale.
+\item
+One-for-One Checking: i documenti descrivono correttamente il processing
+che è avvenuto.
+\item
+Source document retention: la gestione dei documenti è un'attività molto
+onerosa perché richiede che ci sia una organizzazione in piedi.
+\item
+Internal \& External Labeling: c'è il backup, bisogna etichettarli in 
+modo da trovare quello giusto.
+\end{itemize}
 
-\todo{copiare l'elenco}
 
-Source document retention: la gestione dei documenti è un'attività molto onerosa
-perché richiede che ci sia una organizzazione in piedi.
 
-Internal \& External Labeling: c'è il backup, bisogna etichettarli in modo da
-trovare quello giusto.
+
 
 \section{Esercizi}
 
@@ -115,15 +193,35 @@ Gli esercizi sono disponibili in \ref{esCs:ac}
 \chapter{Application Audit}
 \label{cs:aa}
 
-I task degli auditor delle applicazioni. Bisogna andare a testare le
-applicazioni che sono significative per l'azienda. Tutte è impossibile.
-Testare i controlli. Analisi del risultato devo estendere il controllo è
-inutile, è oneroso e così via.
+I compiti dell'auditor includono:
+\begin{itemize}
+\item Identificare componenti signaficativi delle applicazioni e 
+il flusso delle transazioni.
+\item 
+Identificare controlli appropriati e valutarne l'efficacia
+\item 
+Testare i controlli
+\item Analizzare i risultati del singolo test per determinare se 
+il controllo funziona come atteso: così si può giudicare se è inutile,
+oneroso, o se è utile, ecc.
+\end{itemize}
 
 \todo{Insert image: Integrated testing facilities}
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{testing_facilities_integrated}
+        \end{center}
+        \caption{Strumenti di test integrati.}
+        \label{fig:testing:facilities:integrated}
+\end{figure}
 
-
-\todo{Insert image parallel operation}
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{parallel_operation_simulation}
+        \end{center}
+        \caption{Operazioni o simulazioni parallele.}
+        \label{fig:testing:facilities:parallel}
+\end{figure}
 si fa quando si vuole aggiornare i sistemi in produzione.
 
 \todo{Insert image Embedded}
