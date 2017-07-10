@@ -50,15 +50,15 @@ Purtroppo è stavo verificato che è debole e quindi il numero è stato cambiato
 
 Vantaggi:
 \begin{itemize}
-\item Risolve il problema della gestione delle chiavi
-\item Basato su problemi matematici
-\item Relativamente recente
+\item Risolve il problema della gestione delle chiavi;
+\item Basato su problemi matematici;
+\item Relativamente recente.
 \end{itemize}
 
 Svantaggi:
 \begin{itemize}
-\item Insicuro contro il quantum computing
-\item Computazionalmente pesante
+\item Insicuro contro il quantum computing;
+\item Computazionalmente pesante.
 \end{itemize}
 
 
@@ -74,9 +74,9 @@ attacchi dall'esterno ma che potrebbero avvenire anche dall'interno.
 Pur essendo un'architttettura vecchia, viene ancora utilizzata.
 Computer fortificato contro gli attaccanti:
 \begin{itemize}
-\item applicazioni disattivate
-\item sistema operativo patchato
-\item Configurazioni di sicurezza strette
+\item applicazioni disattivate;
+\item sistema operativo patchato;
+\item Configurazioni di sicurezza strette.
 \end{itemize}
 
 \subsection{Attaccando la rete}\footnote{\textit{Black Hat} è anche un termine
@@ -96,14 +96,14 @@ interna.
 
 \paragraph*{Filtri}
 
-Il filtro serve a filtrare le connessioni. \`E identificabile come il livello 0
+Il filtro serve a filtrare le connessioni. È identificabile come il livello 0
 della sicurezza, e si divide in diverse categorie di filtri:
 \begin{itemize}
-\item Route filter: verifica la sorgente e la destinazione degli indirizzi IP
+\item Route filter: verifica la sorgente e la destinazione degli indirizzi IP;
 \item Packet filter: scansiona le intestazioni dei pacchetti e li scarta se non
-passano i controlli impostati
+passano i controlli impostati;
 \item Content filter: scansiona il contenuto dei pacchetti e li scarta se non
-passano i controlli impostati
+passano i controlli impostati.
 \end{itemize}
 
 \subparagraph*{Packet Filter Firewall}
@@ -115,14 +115,14 @@ della porta e capacità ispettiva.
 Esistono diverse configurazioni per il \textit{firewalling}:
 \begin{itemize}
  \item Router Packet Filtering: analisi sul singolo pacchetto, non c'è memoria
-dei precedenti
+dei precedenti;
  \item Stateful Inspection: non guardiamo il singolo pacchetto ma la trama dei
-vari pacchetti. Causa un po' di overhead
+vari pacchetti. Causa un po' di overhead;
  \item Circuit-Level Firewall: viene utilizzato un \textit{Proxy Server} che
 funge da intermediario e porta la risposta. Funge da mediatore, con spesso la
-capacità di \textit{screening}.
+capacità di \textit{screening};
  \item Application-Level Firewall: tutte le applicazioni che accedono ad
-internet vengono gestite dal proxy
+internet vengono gestite dal proxy.
 \end{itemize}
 
 
@@ -164,12 +164,12 @@ accessi}
 Sono i canali tramite i quali è possibile accedere a una rete.
 
 Esistono diversi canali di accessi, che sono qui elencati in ordine
-descrescente di pericolosit\`a:
+descrescente di pericolosità:
 \begin{enumerate}
- \item Usb
+ \item Usb;
  \item Wlan (la seconda più pericolosa perché vi si può accedere da fuori
-l'azienda)
- \item Internet (non così pericolosa perché c'è il firewall)
+l'azienda);
+ \item Internet (non così pericolosa perché c'è il firewall).
 \end{enumerate}
 
 È importante quindi che anche queste entrate vengano protette.
@@ -234,19 +234,19 @@ funzionamento\footnote{Vengono spesso utilizzate dalle università}.
 \paragraph{Data privacy}
 
 \begin{itemize}
-\item Confidenzialità
-\item Autenticità
-\item Integrità
+\item Confidenzialità;
+\item Autenticità;
+\item Integrità;
 \item Nonrepudation: non c'è la possibilità di dire "\textit{non l'ho inviato io
 quel messaggio}" (firma digitale). Le chiavi simmetriche non garantiscono questa
-proprietà e quindi non si possono impelementare per fare pagamenti online..
+proprietà e quindi non si possono implementare per fare pagamenti online.
 \end{itemize}
 
 \paragraph{Remote Access Security}
 
 Le VPN vengono spesso implementate con IPSec.
 
-IPSec \`e un protocollo di rete che permette di autenticare e criptare i
+IPSec è un protocollo di rete che permette di autenticare e criptare i
 pacchetti mandati lungo la rete. Include anche protocolli per stabilire mutue
 autenticazioni tra agenti all'inizio di una sessione e permette inoltre le
 negoziazioni di chiavi crittografiche. IPSec permette di progettere flussi di
@@ -259,10 +259,10 @@ L' hash è una funzione matematica che prende in input una stringa di idmensione
 aribtraria e restituisce una stringa di dimensione fissa. La sicurezza di oggi è
 basata sugli \textit{hash} Presenta diverse proprietà:
 \begin{itemize}
-\item La non invertibilità (\emph{one way hash})
+\item La non invertibilità (\emph{one way hash});
 \item Collision resistance: è difficile trovare una coppia $(x_1,x_2)$ tale che
 $h(x_1) = h(x_2)$ con $h$ funzione di hash\footnote{Grazie a questa proprietà si
-possono eseguire le firme digitali}.
+possono eseguire le firme digitali.}.
 \end{itemize}
 
 \subparagraph*{Utilizzo}

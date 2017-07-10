@@ -47,13 +47,12 @@ Gli esercizi sono disponibili alla sezione \ref{EsHacknet}.
 \paragraph*{Componenti crittografiche}
 Nelle comunicazioni criptate sono sempre identificabili questi elementi:
 \begin{itemize}
-\item Sender
-\item Receiver
-\item Encryption
-\item Decryption
-\item Cypher text
+\item Sender;
+\item Receiver;
+\item Encryption;
+\item Decryption;
+\item Cypher text.
 \end{itemize}
-
 
 \subsection{Categorie di crittografia}
 
@@ -77,21 +76,18 @@ decrifrare il messaggio occorre avere la stessa chiave.
 \paragraph*{Tipologie di cifrari} Esistono diversi tipi di cifrari, che 
 tradizionalmente sono:
 \begin{itemize}
- \item A sostituzione
+ \item \textbf{A sostituzione}
  \begin{itemize}
-  \item[Monoalfabetico] Usa un unico alfabeto tramite trasposizione e 
-sostituzione (es. cifrario di 
-Cesare). Si capisce che è monoalfabetico dal fatto che le doppie mappano sulle 
-stesse lettere.
+  \item \textbf{Monoalfabetico:} usa un unico alfabeto tramite trasposizione e 
+sostituzione (es. cifrario di Cesare). Si capisce che è monoalfabetico dal fatto 
+che le doppie mappano sulle stesse lettere.
 Al contrario, se le doppie non mappano sulla stessa lettera posso dire che il 
 cifrario è non monoalfabetico (che non vuol dire polialfabetico).
-
-  \item[Polialfabetico] Quando si hanno come riferimenti multipli alfabeti.
+  \item \textbf{Polialfabetico:} quando si hanno come riferimenti multipli alfabeti.
  In una corrispondenza di una doppia occorrenza si ottengono due caratteri 
 diversi
  \end{itemize}
- \item A trasposizione \\
- Questo tipo di cifrario esegue una trasposizione del testo, dove la chiave sarà 
+ \item \textbf{A trasposizione:} questo tipo di cifrario esegue una trasposizione del testo, dove la chiave sarà 
 il vero segreto. La funzione di trasposizione è sempre bigettiva. 
 \end{itemize}
 
@@ -189,9 +185,9 @@ AES opera utilizzando matrici di $4\cdot4$ byte chiamate stati (states). Quando 
 AES ha tre differenti configurazioni in base alle chiavi e al numero di 
 ripetizioni dei round di trasformazione. Le configurazioni possibili sono:
 \begin{itemize}
- \item 10 cicli di ripetizioni per chiavi a 128 bit
- \item 12 cicli di ripetizioni per chiavi a 192 bit
- \item 14 cicli di ripetizioni per chiavi a 256 bit
+ \item 10 cicli di ripetizioni per chiavi a 128 bit;
+ \item 12 cicli di ripetizioni per chiavi a 192 bit;
+ \item 14 cicli di ripetizioni per chiavi a 256 bit.
 \end{itemize}
 
 \subsubparagraph*{Struttura di ogni round}
@@ -205,12 +201,11 @@ C'è un passaggio iniziale:
 Successivamente per cifrare sono previsti diversi round o cicli di processamento: ogni round (fase) dell'AES (eccetto l'ultimo) consiste dei seguenti quattro passaggi:
 
 \begin{enumerate}
-\item \textbf{SubBytes:} sostituzione non lineare di tutti i byte che vengono rimpiazzati secondo una specifica tabella.
-\item \textbf{ShiftRows:} spostamento dei byte di un certo numero di posizioni dipendente dalla riga di appartenenza
-\item \textbf{MixColumns:} combinazione dei byte con un'operazione lineare, i byte vengono trattati una colonna per volta.
+\item \textbf{SubBytes:} sostituzione non lineare di tutti i byte che vengono rimpiazzati secondo una specifica tabella;
+\item \textbf{ShiftRows:} spostamento dei byte di un certo numero di posizioni dipendente dalla riga di appartenenza;
+\item \textbf{MixColumns:} combinazione dei byte con un'operazione lineare, i byte vengono trattati una colonna per volta;
 \item \textbf{AddRoundKey:} ogni byte della tabella viene combinato con la chiave di sessione, la chiave di sessione viene calcolata dal gestore delle chiavi.
 \end{enumerate}
-
 
 Il numero di round o cicli di processamento/elaborazione crittografica dei quattro passaggi precedenti è 10 con l'ultimo round che salta il passaggio \textbf{MixColumns}.
 
