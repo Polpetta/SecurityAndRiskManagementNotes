@@ -2,31 +2,26 @@
 
 È importare eseguire una \textit{Business Impact Analisys}, per capire i danni
 che ci possono essere al sistema.
-Una buona guida può essere porsi le seguente domande:
-\begin{itemize}
-\item Quando interviene il team per la gestione dell'incidente?
-\item Come possono aiutare le agenzie governative? Negli USA FBI e in Italia la
-Polizia Postale.
-\end{itemize}
+Una buona guida può essere porsi le seguente domande: quando interviene il team 
+per la gestione dell'incidente? Come possono aiutare le agenzie governative? 
+Negli USA FBI e in Italia la Polizia Postale.
 
+\paragraph{Tecnologie per il rilevamento}
 
-
-\paragraph*{Tecnologie per il rilevamento}
-
-Ogni organizzazione deve avere una le capacità di monitoraggio e di rilevamento
-sufficiente per capire se ci sono incidenti in una misura di tempo ristretta.
+Ogni organizzazione deve avere le capacità di monitoraggio e di rilevamento
+sufficienti per capire se ci sono incidenti, in una misura di tempo ristretta.
 
 \subparagraph*{Decoy} Esiste tutta un'area molto ricca (anche in termini
 monetari) che fanno \textit{decoy}, ovvero fanno un falso obiettivo: son sistemi
-in uso, account, servizi, ecc... che sono credibili da parte dell'organizzazione
-ma che non sono usabili. Quando questi account, servizi, ... vengono usati
-l'attacco viene rilevato. Questa metodologia è per certi versi diversa
-dall'\textit{honeypot}, e si diversifica in quanto è un'operazione per eseguire
-controlli, non una vulnerabilità fittizia aperta appositamente.
+in uso, account, servizi e altro che sono credibili da parte dell'organizzazione
+ma che non sono usabili. Quando vengono usati l'attacco viene rilevato. Questa 
+metodologia è per certi versi diversa dall'\textit{honeypot} e si diversifica 
+in quanto è un'operazione per eseguire controlli, non una vulnerabilità fittizia 
+aperta appositamente.
 
 \subparagraph*{Vulnerabilità e incidenti} Gli incidenti e le vulnerabilità
-legate registrate tramite i log si stanno rivelando fallimentari, e si sta
-cominciando ad utilizzare l'intelligenza artificiale come modo per eseguire
+correlate che vengono registrate tramite i log si stanno rivelando fallimentari 
+e si sta cominciando ad utilizzare l'intelligenza artificiale come modo per eseguire
 analisi su grandi moli di dati.
 
 \paragraph*{Management Participation}
@@ -34,8 +29,10 @@ analisi su grandi moli di dati.
 Proporre alternative
 \begin{itemize}
 \item Include le criticità del business, rischio della proposta, costo e tempo
-per il recupero, affidabilità
-\item Costi di detection: NIDS/HIDS
+per il recupero, affidabilità;
+\item Costi di ridondanza: preparazione, acquisti di router e computer ridondandti, 
+capacità di reazione;
+\item Costi di detection: NIDS/HIDS.
 \end{itemize}
 
 Il management prende la decisione finale (il senior mngm deve essere convinto
@@ -44,81 +41,54 @@ che la soluzione vale i soldi investiti).
 \paragraph*{Contenuti IRP}
 
 \begin{itemize}
-\item Preparazione preincidente
-\item Come dichiarare il disastro
-\item Procedure di evacuazione
-\item Identificare le persone responsabili, informazioni e contatti
+\item Preparazione preincidente;
+\item Come dichiarare il disastro;
+\item Procedure di evacuazione;
+\item Identificare le persone responsabili, informazioni e contatti.
 \end{itemize}
 
 \subsubsection{Passo 2: Identificazione}
+
 \subparagraph*{Triage} Questa operazione (detta anche \textbf{selezione}) si fa
 anche negli ospedali (bianco, verde rosso giallo ecc.) e consiste nell'eseguire
 una categorizzazione degli eventi. Possibili punti importanti:
 \begin{itemize}
-\item che tipo di incidente è avvenuto?
-\item qual è la severità dell'incidente
-\item chi dovrebbe essere chiamato?
-\item stabilire una catena di custodia per le prove
+\item Che tipo di incidente è avvenuto?
+\item Qual è la gravità dell'incidente?
+\item Chi dovrebbe essere chiamato?
+\item Stabilire una catena di custodia per le prove.
 \end{itemize}
-È importante che esistano queste tipologie di procedure in quanto permette alla
-gente di eseguire in maniera ``automatica'' anche quando ci sono situazione di
+
+È importante che esistano queste tipologie di procedure visto che permettono alla
+gente di eseguire in maniera ``automatica'' anche quando ci sono situazioni di
 allarme/si è sotto attacco.
 
 \subparagraph*{Catena di custodia delle prove} Un passo che non bisogna fare mai
 è inquinare le tracce (anche biologiche) di un indicente. Questo perché
 potrebbero essere utili per ricostruire l'incidente e anche utili per perseguire
 chi ha commesso il reato.
-In ogni momento l'evidenza deve seguire la catena della custodia. % u wot m8?
-
-
-\subsubsection{Passo 3: Containment per conte: Identificazione}
-\subparagraph*{Triage} Questa operazione (detta anche \textbf{selezione}) si fa
-anche negli ospedali (bianco, verde rosso giallo ecc.) e consiste nell'eseguire
-una categorizzazione degli eventi. Possibili punti importanti:
-\begin{itemize}
-\item che tipo di incidente è avvenuto?
-\item qual è la severità dell'incidente
-\item chi dovrebbe essere chiamato?
-\item stabilire una catena di custodia per le prove
-\end{itemize}
-È importante che esistano queste tipologie di procedure in quanto permette alla
-gente di eseguire in maniera ``automatica'' anche quando ci sono situazione di
-allarme/si è sotto attacco.
-
-\subparagraph*{Catena di custodia delle prove} Un passo che non bisogna fare mai
-è inquinare le tracce (anche biologiche) di un indicente. Questo perché
-potrebbero essere utili per ricostruire l'incidente e anche utili per perseguire
-chi ha commesso il reato.
-In ogni momento l'evidenza deve seguire la catena della custodia. % u wot m8?
-
+In ogni momento l'evidenza deve seguire la catena della custodia.
 
 \subsubsection{Passo 3: Containment}
 
 Si attiva il team di risposta all'incidente per contenere il rischio, si
-isola\todo{Completare la frase!}
-
+isola il problema e si ottengono e preservano le prove.
 
 Bisogna anche capire la corretta strategia per contenere i danni. Alcune
 soluzioni potrebbero comprendere la disconnessione di rete, ma questo implica
 dei costi che vanno valutati.
 
-
-
 \paragraph*{Risposta}
 
-Alcune valide risposte sono:
+Risposta tecnica:
 \begin{itemize}
 \item Collezionare informazioni sul sistema
 \item Analizzare i \textit{log} di sistema
-\item Persecuzione\footnote{In termini legali.} dell'attaccante. Un problema è
-che il personale che si occupa dell'aspetto legale di attacchi informatici è
-poco.  % Momento di crisi del prof sui possibili sinonimi di 'persecuzione'
 \end{itemize}
 
-
-
-
-
+Risposta legale: persecuzione\footnote{In termini legali.} dell'attaccante. Un problema è
+che il personale che si occupa dell'aspetto legale di attacchi informatici è
+poco.
 
 \subsubsection{Passo 4: Analisi e Eradicazione}
 
@@ -126,12 +96,11 @@ Determinare com'è avvenuto l'attacco: 5 w del giornalismo. Capire qual è stato
 l'impatto e che danni ha causato. Rimuovere la radice per:
 
 \begin{itemize}
-\item Ricostruire il sistema
-\item Parlare con l'ISP per ottenere più informazioni
-\item Eseguire un'analisi di vulnerabilità
-\item Migliorare le difese \todo{completa}
+\item Ricostruire il sistema;
+\item Parlare con l'ISP per ottenere più informazioni;
+\item Eseguire un'analisi di vulnerabilità;
+\item Migliorare le difese con miglioramenti alle tecniche di protezione.
 \end{itemize}
-
 
 \paragraph*{Analisi}
 
@@ -152,7 +121,7 @@ Alcune possibili soluzioni:
 \begin{enumerate}
 \item Se un account root viene compromesso, non è possibile recuperare per cui è
 meglio resettare completamente il sistema formattando tutto e ripristinando i
-dati dal backup, sperando che non siano stati compromessi precedentemente.
+dati dal backup, sperando che non siano stati compromessi precedentemente;
 \item Implementare le patch recenti e gli antivirus, tutte le password devono
 essere cambiate.
 \end{enumerate}
@@ -164,10 +133,8 @@ funzionante e testato.
 
 \subsubsection{Passo 6: Imparare la lezione}
 
-Si trova nell'\textit{Incident Report}, che include cosa è andato storto,
-quando, quanto è costato, ecc. Il piano deve essere presentato agli
-stakeholders.
-
+Il follow-up include: scrivere \textit{Incident Report} (che include cosa è andato storto,
+quando, quanto è costato, ecc) e presentare il risultato agli stakeholders.
 
 \section{Pianificazione dei processi}
 \label{IRBC:pp}
@@ -188,27 +155,32 @@ una lunga esperienza che istruisce
 
 
 \paragraph*{Penetration Tests} Esistono diverse modalità per eseguire dei
-penetration tests:
+penetration tests
 \begin{itemize}
-\item Blind: i penetration testers non sanno nulla riguardo a possibili
+\item \textbf{External:} test da fuori il perimetro della rete;
+\item \textbf{Internal:} test da dentro la rete;
+\item \textbf{Blind:} i penetration testers non sanno nulla riguardo a possibili
 \textit{decoy} o possibili \textit{honeypot}. Gli amministratori sono a
-conoscenza del test
-\item Double blind: come blind, ma anche gli amministratori di sistema non sanno
-nulla riguardo l'attacco\footnote{Non è molto utile di solito}.
+conoscenza del test;
+\item \textbf{Double blind:} come blind, ma anche gli amministratori di sistema non sanno
+nulla riguardo l'attacco\footnote{Non è molto utile di solito};
+\item \textbf{Targeted:} si hanno informazioni interne sul target. Potresse essere 
+necessario l'accesso ad un account.
 \end{itemize}
 
 \subsection{Incident Management Metrics}
+
 \begin{itemize}
-\item Numero di incidenti riportati
-\item Numero di incidenti rilevati
-\item Tempo medio i risposta di un incidente
-\item Numero totale di incidenti risolti
-\item Misure prese proattive e preventive
-\item Danno totale degli incidenti riportati e rilevati
-\item \todo{Ultimo}
+\item Numero di incidenti riportati;
+\item Numero di incidenti rilevati;
+\item Tempo medio i risposta di un incidente;
+\item Numero totale di incidenti risolti;
+\item Misure prese proattive e preventive;
+\item Danno totale degli incidenti riportati e rilevati;
+\item Danno totale se gli incidenti non sono stati contenuti per tempo.
 \end{itemize}
 
-\subsubsection{Challenges} % Sono sottosezioni
+\subsubsection{Challenges}
 
 Questo viene detto anche come risoluzione dei problemi ``a costo
 zero''\footnote{Che per la terza legge della termodinamica non può essere mai
@@ -217,7 +189,7 @@ nuove responsabilità e nuovi oneri, che di solito non riesce a portare a termin
 in quanto è presente un grosso \textit{overloading} sulla persona stessa.
 
 \paragraph*{Comunicazione} La comunicazione all'interno di un \textit{team} è
-importante, e non dev'essere né troppa né troppo poca.
+importante e non dev'essere né troppa né troppo poca.
 
 \subsection{Esercizi}
 
@@ -226,35 +198,43 @@ Gli esercizi sono disponibili in \ref{esIRBC:pp}
 \chapter{Computer Forensics}\todo{Copia grafico}
 \label{IRBC:cf}
 
-Raccolgono tutti gli indizi che possono essere utili per la risoluzione di un
-incidente.
+Il processo di identificazione, preservazione, analisi e presentazione di prove 
+di tipo digitale per un procedimento legale. Le prove devono rimanere inalterate 
+e la catena di custodia deve essere mantenuta professionalmente.
 
-Le prove devono passare i test sulla:
+Quattro considerazioni principali:
+
 \begin{enumerate}
-\item Autenticità
-\item \todo{Missing in Action}
+\item identificare le prove;
+\item preservare le prove;
+\item analizzare le prove;
+\item presentare le prove.
 \end{enumerate}
 
-Bisogna tenere conto che le prove devono essere esposte solitamente ad avvocati,
-e quindi a volte è necessario che il lessico usato non sia tecnico e fruibile da
-tutti.
+Le prove devono passare i test sulla \textbf{autenticità} - la prova è una vera 
+e affidabile copia della scena del crimine (la computer forensic non distrugge 
+o altera l'evidenza)- e \textbf{continuità} - la catena di custodia assicura 
+che la prova sia intatta.
+
+Bisogna tenere conto che le prove devono essere esposte ad avvocati
+e quindi è necessario che il lessico usato non sia troppo tecnico e fruibile da tutti.
 
 \section{Preparare una prova}
 
+Lavorare con la polizia per evitare: contaminazione delle prove, liberare la 
+catena di custodia e infrangere i diritti del sospettato.
+
 Ci sono alcune prove che non possono essere portate in tribunale, a causa di
-quella che si chiama \textbf{corrispondenza privilegiata}, che sono delle e-mail
-di tipo classificate che vengono controllate da un delegato speciale che
-conferma o meno se hanno a che fare con il caso. È quindi importante prestare
-attenzione a come le prove vengono gestite.
-
-
-Il processo di identificare, analizzare e \todo{completare}
+quella che si chiama \textbf{corrispondenza privilegiata}: sono delle e-mail
+di tipo classificato che vengono controllate da un delegato speciale, il quale 
+conferma o meno se hanno a che fare con il caso. Di conseguenza, è importante 
+prestare attenzione a come le prove vengono gestite.
 
 \section{Creare una copia forense}
 
-Questo assicura che i contenuti non siano cambiati. Per eseguire questo non
-vengono eseguiti tramite una copia normale, ma tramite la creazione di
-un'immagine del disco\footnote{Ad esepmio con dd}.
+Questo assicura che i contenuti non siano cambiati. Per creare una copia non si
+ eseguiti una copia normale, ma tramite la creazione di
+un'immagine del disco\footnote{Ad esempio con dd}.
 
 La fase di \textbf{indexing} dei dati dev'essere eseguita tramite algoritmi
 \textit{smart}, che permette una ricerca più veloce di particolari stringhe di
@@ -263,28 +243,41 @@ testo.
 \section{Rapporto Legale}
 
 Descrivere i dettagli dell'incidente accuratamente, essere comprensibile e non
-ambiguo, offrire valide conclusioni, opinioni o raccomandazioni, descrivere come
-le conclusioni sono state raggiunte, essere puntuale e preciso e facile da
-riferire
+ambiguo, offrire valide conclusioni, opinioni o raccomandazioni e descrivere come
+le conclusioni sono state raggiunte. Il rapporto deve resistenere ad uno scrutinio 
+legale, essere creato in maniera rapida e deve essere preciso e facile da essere 
+riferibile.
 
+\section{Forense}
 
-\todo{Add title}
+\subsection{Form della catena di custodia}
 
+Serve a tracciare dove e come le prove sono state gestite; include:
+nome e contatto del custode, identificatori dettagliati della prova, quando, 
+da chi e perché la prova è stata acquisita o spostata, dove viene conservata 
+e quando/se è tornata.
+
+Inoltre sono presenti log dettagliati delle attività, delle checklist per i 
+tecnici che la acquisiscono e un form di \textit{non-disclosure} firmato.
+
+\subsection{Log del caso}
+
+Il log del caso include:
 \begin{itemize}
-\item Numero di caso
-
+\item numero del caso;
+\item note basilari, requisiti e procedure del caso;
+\item data di quando è stata ricevuta la richiesta;
+\item data di assegnazione delle indagini ad un investigatore;
+\item data di completamento;
+\item nome e informazioni di contatto per l'investigatore e il richiedente.
 \end{itemize}
 
-Investigation report
-\begin{itemize}
-\item Name and contact info for investigators
-\item Numero del caso
-\item Data di investigazione
-\item Dettagli dell'interrogatorio o comunicazioni
-\item Dettagli del device
+\subsection{Report dell'investigazione}
 
-\end{itemize}
-
+Include: nome e contatti per l'investigatore, numero del caso, data di 
+investigazione, dettagli delle interviste o comunicazioni, dei 
+dispositivi o dei dati acquisiti, dei software utilizzati, dei ritrovamenti 
+(includendo i dati) e una firma dell'investigatore.
 
 \section{Esercizi}
 
