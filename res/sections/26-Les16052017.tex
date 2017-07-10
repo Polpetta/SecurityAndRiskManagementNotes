@@ -1,36 +1,38 @@
-COBIT deriva dal COSO.
-
 \subsubsection{Monitoring} 
-Quando vedete una freccia è circolare bisogna pensare al \textbf{PDCA} (Plan Do 
-Check Act). Infatti tutti i progetti sono ormai circolari.  
-\emph{Kaizen} parola giapponese che vuol dire ``miglioramento continuo''
+Quando vedete una freccia circolare bisogna pensare al \textbf{PDCA} (Plan Do 
+Check Act). Infatti, ormai tutti i progetti sono circolari.  
+\emph{Kaizen} è una parola giapponese che vuol dire ``miglioramento continuo''
 Scostamento tra valore atteso e valore ottenuto. Quando si vede che c'è un delta 
- si cerca di operare per migliorarlo.
+si cerca di operare per migliorarlo.
 Una volta raggiunto l'obiettivo, bisogna migliorare.
 
 \begin{itemize}
-\item Monitorare e valutare la performance dell'IT.
-\item Compliance:
-SRL (Società responsabilità limitata) dopo il caso ERON? se non si intraprendono 
+\item ME1: monitorare e valutare la performance dell'IT;
+\item ME2: monitorare e valutare i controlli interni;
+\item ME3: assicurarsi della conformità normativa;
+\item ME4: fornire una governance per l'IT.
+\end{itemize}
+
+\todo{tirare via sta cosa?}
+Compliance: SRL (Società responsabilità limitata) dopo il caso ERON? se non si intraprendono 
 le attività proattive per quanto riguarda la sicurezza si hanno conseguenze 
 legali.
+
 Sulla nuova normativa di privacy se l'azienda non intraprenderà le procedure 
 adeguate per preservare la privacy, avrà delle multe fino al 5\% del fatturato e 
 la possibilità di andare a processo.
-\item 
-\item 
-\end{itemize}
 
 \subsubsection{SSE-CMM: System Security Eng -- Capability Maturity Model}
+
 Modelli di maturità. Questa categorizzazione si applica a tutto. Nata per 
 l'ingegneria del Software.
-La maturità è la capacità di governare i processi. Se si riesce anche a mettere 
+La maturità è la capacità di governare i processi: se si riesce anche a mettere 
 in pratica il miglioramento continuo si è a livelli alti.
 
-Gli investitori saranno più portati a investire in aziende hanno un CMM alto 
-rispetto a uno basso, in quanto quelle basse (dallo stage 2 in giù) sono legate 
+Di conseguenza, gli investitori saranno più portati a investire in aziende che hanno un CMM alto 
+rispetto a uno basso, in quanto quelle basse (dallo Stage 2 in giù) sono legate 
 al lato ``umano''. Essere a livelli alti è anche un vantaggio che si può portare 
-al mercato.
+sul mercato.
 
 Grazie a questo è possibile mettere in piedi un sistema di miglioramento 
 continuo.
@@ -44,16 +46,17 @@ continuo.
 \end{figure}
 
 Se i controlli non sono documentati non si sa come possono essere migliorati, 
-valutarli ecc\dots
-(Dal Livello 4 in su) Automatizzazione dei processi di controllo permettono un 
+valutati, ecc\dots
+\emph{I livelli sono molto importanti:} dal Livello 4 in su, l'automatizzazione dei processi di controllo permette un 
 risparmio sul TCO (Total Cost of Ownership).
-\textbf{I livelli sono molto importanti}.
+
 
 
 \subsubsection{Standard di sicurezza}
 
-ISO 27001 e il COBIT sono gli standard di sicurezza di base. La\textit{gap 
-analysis} ci aiuta a vedere dove sono presenti differenze da colmare.
+ISO 27001 e il COBIT sono gli standard di sicurezza di base. La \textit{gap 
+analysis} (differenza tra dove vorremmo essere e dove siamo) ci aiuta a capire 
+dove sono presenti le lacune da colmare.
 
 \begin{figure}[h!]
         \begin{center}
@@ -61,104 +64,115 @@ analysis} ci aiuta a vedere dove sono presenti differenze da colmare.
         \end{center}
         \caption{I 5 livelli del Capability Maturity Model (CMM) e il
         loro rapporto con un programma di sicurezza.}
-        \label{fig:}
 \end{figure}
 
 
 \paragraph{Livello 0}
 
+Al livello iniziale si è come un pompiere: si corre continuamente a destra e a 
+sinistra per risolvere eventuali problemi.
 
-Al livello iniziale si è come un pompiere, che si corre a destra e a sinistra a 
-risolvere eventuali problemi.
+\paragraph{Livello 1 - Esecuzione informale}
 
-\paragraph{Livello 1}
-
-I problemi di sicurezza sono trattati in maniera reattiva, ovvero si reagisce 
-alla minaccia (portando prima o poi l'attacco a vincere). Non ci sono piani di 
+La progettazione della sicurezza è definita in maniera povera, i problemi di 
+sicurezza sono trattati in maniera reattiva: si reagisce 
+alla minaccia, portando prima o poi l'attacco a vincere. Non ci sono piani di 
 contingenza\footnote{I piani di contingenza sono dei piani che dettano le azioni 
-da compiere in caso si verificano delle situazioni d'emergenza.}. Il lavoro 
-viene compiuto sempre \textit{ad hoc}.
+da compiere in caso si verificano delle situazioni d'emergenza.}. I budget, la 
+qualità, le funzionalità e i progetti vengono schedulati \textit{ad hoc}.
+Non ci sono aree dei processi.
 
-\paragraph{Livello 2 - Pianificazione}
+\paragraph{Livello 2 - Pianificato e Tracciato}
 
-Gli eventi sono tracciati, ma si segue una pianificazione 
-"personalizzata"\footnote{Vedi come esempio la morte nera.}.
+Le procedure vengono definite a livello di progetto. La definizione, pianificazione 
+e le performance diventano de-facto standard da progetto a progetto. Gli eventi 
+vengono tracciati. Le funzionalità comuni includono: pianificazione, disciplina, 
+verifica e tracciamento delle performance.
 
-\paragraph{Livello 3}
-I processi sono standardizzati le persone sanno cosa fare riusciamo a tracciare 
-la performance. 
+\paragraph{Livello 3 - Ben definito}
 
+I processi di sicurezza sono standardizzati all'interno dell'organizzazione e il 
+personale viene addestrato per assicurarsi che abbia le conoscenze e le skill 
+necessarie. In aggiunta, le misure vengono basate su un processo definito e gli 
+audit tracciano le performance. Le funzionalità più comuni includono: definire 
+un processo standard, eseguire il processo definito e coordinare le pratiche 
+relative alla sicurezza.
 
+\subparagraph*{Policy per la documentazione}
 
-Con il livello 3 è possibile sopravvivere ad un livello negativo forte.
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=0.5]{res/img/documentation_policy}
+        \end{center}
+        \caption{Policy per la documentazione.}
+\end{figure}
 
+\subparagraph*{Esempi di policy}
 
-
-
-
-
-Quando vengono assunti i nuovi dipendenti fanno corsi, ecc.
-
-
-
-
-
-
-
-
-\paragraph{Livello 4 - Metriche}
-
-
-Il livello 4 è tutto scritto e documentato, e sono presenti politiche, 
-procedure, standard e \textit{guidelines}. Tutto dev'essere documentato (e c'è 
-tanta carta quindi).
-
-
-
-\subparagraph{Esempi di policy}
-
-\begin{itemize}
-\item Rischi
-\item Monitoraggio e metriche
-\item Risposta all'incidente
-\item Business continuity e disaster recovery plan
-\end{itemize}
+I \textbf{rischi} dovrebbero essere gestiti utilizzando dei controlli e delle 
+contromisure appropriate per raggiungere dei livelli accettabili a dei costi 
+accettabili. Il \textbf{monitoraggio} e le \textbf{metriche} dovrebbero essere 
+implementate, gestite e mantenute per fornire una certezza continua che tutte 
+le policy sulla sicurezza siano rispettate e i controlli oggettivi siano 
+riscontrati. Le \textbf{capacità di risposta ad incidenti} sono implementate e 
+gestite sufficientemente per garantire che gli incidenti non affliggano materialmente 
+la capacità dell'organizzazione di continuare le proprie operazioni. 
+La \textbf{business continuity} e il \textbf{recovery plan} dovrebbero essere 
+sviluppate, mantenute e testate in modo che assicurino la capacità dell'organizzazione 
+di proseguire con le proprie attività sotto tutte le condizioni.
 
 Nota: una cattiva \textit{policy} fa riferimento alla tecnologia. Le 
 \textit{policy} sono solamente linee guida.
 
-\subsubparagraph*{Definizioni di qualità}
+\subparagraph*{Policy, procedure e standard}
 
+\textbf{Obiettivo di una policy:} descrive \textit{cosa} deve essere soddisfatto.\\
+\newline
+\textbf{Controllo della policy:} tecniche per raggiungere l'obiettivo, suddivise in
 \begin{itemize}
-\item Quality assurance 
-\item Quality control è più semplice si può validare con dei test.
+\item \textbf{Procedure:} definiscono come la policy deve essere perseguita;
+\item \textbf{Standard:} regola, metrica o vincolo specifico che implementa la policy.
 \end{itemize}
 
+\subparagraph*{Definizioni della qualità}
 
+\textbf{Quality assurance:} assicurarsi che tutto lo staff stia seguendo i 
+processi della qualità definiti.\\
+\newline
+\textbf{Controllo della qualità:} condurre test per validare che il software è 
+privo di difetti e corrisponde alle aspettative dell'utente.
 
+\paragraph{Livello 4 - Metriche}
 
+Esistono degli obiettivi misurabili per la qualità della sicurezza, le misure 
+sono correlate agli obiettivi del business dell'organizzazione. Le funzionalità 
+comuni includono: stabilire degli obiettivi misurabili di qualità e una gestione
+oggettiva delle performance (SLA).
+È tutto scritto e documentato: sono presenti politiche, 
+procedure, standard e linee guida.
 
 \subsubparagraph{Metriche}
 
-Senza metriche è impossibile migliorarsi perché non si sa cosa succede.
+Le metriche permettono ad auditor differenti di attestare che i programmi per 
+la sicurezza vengono attuati. Monitorare il raggiungimento di controlli oggettivi 
+è più importante che perfezionare le procedure di sicurezza.
+
 Senza metriche quantitative si lascia spazio alla soggettività.
-
-\subsubparagraph*{Metriche operazionali}
-
-Le metriche di tipo operazionali per esempio includono metriche su come eseguire 
-un corretto \textit{patching} dei sistemi.
-
 
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=1.5]{res/img/metriche}
         \end{center}
-        \caption{Esempi di metriche per un'azienda.}
-        
+        \caption{Esempi di metriche per un'azienda.}    
 \end{figure}
 
+\subsubparagraph*{Metriche operazionali}
+
+Le metriche di tipo operazionale includono metriche su come eseguire 
+un corretto \textit{patching} dei sistemi.
+
 Confrontare le metriche con quelle di altre aziende permette di capire quanto 
-siamo un possibile \textit{target} per possibile attaccanti.
+siamo un possibile \textit{target} per gli attaccanti.
 
 \subsubparagraph*{Metriche di tipo strategico}
 
@@ -168,45 +182,27 @@ l'azienda e l'auditor.
 
 \subsubparagraph{Compliance interna}
 
-
-La \textit{compliance} sono fotografie che in qualche modo catturano la realtà 
-in qualche momento. Compliance e errore interno sono dati importanti perché 
+La conformità (\textit{compliance}) assicura la conformità con le policy 
+organizzative. Compliance e errore interno sono dati importanti perché 
 fanno capire all'azienda quanto è allineata con gli obiettivi strategici che si 
 è prefissata.
 
 
-\paragraph{Livello 5 - Ottimizzazione}
+\paragraph{Livello 5 - Miglioramento continuo}
 
-Miglioramento continuo e ottimizzazione. Plan Do check act.
-Si svolgono anche azioni proattive. Funzione strategica "new tehnologies" come 
-le nuove tecnologie possono essere flesse per gli obiettivi aziendali. 
-Prima avere un cambio tecnologico di fondo è raro mentre oggi ogni 3 anni. Chi 
-prende la tecnologia e la incorpora si prende la fetta di mercato. Tecnologia 
-disruttiva?.
+Il miglioramento continuo parte dalle misure e dagli eventi sulla sicurezza.
+Vengono valutate nuove tecnologie e nuovi processi. Le funzionalità comuni 
+includono: miglioramento delle capacità organizzative e della efficacia dei 
+processi (ROI).
 
-%         /\
-%        /  \
-%        \/\/
-%         ~|
-%        !~~-!
-%        |` ,!
-%        |'` |
-%        |   |
-%        |   |
-%        |   |
-%        |   |
-%        |   |
-% _______|___|_______
-% \                 /
-%  \_______________/
-
-
+Prima avere un cambio tecnologico di fondo è raro, oggi avviene ogni 3 anni. Chi 
+prende la tecnologia e la incorpora si prende la fetta di mercato.
 
 Le grande società fanno \textit{scouting} di nuove tecnologie. Il vantaggio di 
-essere un'azienda piccola è che si può essere aggressivi e investire. Questo 
-aiuta il movimento economico. Questo ci dice che aziende come Google non ci 
-saranno per sempre. Con il cambiamento tecnologico non si è ancora capito a dove 
-possono portare. Un'altra area importante è l'intelligenza artificiale legata 
+essere un'azienda piccola è che si può essere aggressivi e investire, aiutando 
+il movimento economico. Questo ci dice che aziende come Google non ci 
+saranno per sempre. Non si è ancora capito a dove possa portare il cambiamento
+tecnologico. Un'altra area importante è l'intelligenza artificiale legata 
 alla sicurezza.
 
 
@@ -217,19 +213,32 @@ Gli esercizi sono disponibili in \ref{esSM:COBIT}
 \chapter{Policy and Governance}
 \label{PG}
 
-\section{Coorporate governance}
+\section{Governance}
 
-È la leadership che consente di arrivare ad avere valore per gli stakeholders.
-L'IT governance sia assicura del corretto allineamento dell'IT con gli 
-obiettivi aziendali. dell'azienda.
+\textbf{Corporate governance:} è la leadership da parte dei direttori aziendali nel 
+creare e presentare il valore agli stakeholders.\\
+\newline
+\textbf{IT governance:} si assicura del corretto allineamento dell'IT con gli 
+obiettivi aziendali.
 
 
 
-\section{Strategic Planning Proccess}
+\section{Strategic Planning Process}
 \label{PG:SPP}
 
-Oggi come oggi una pianificazione strategica nell'IT è in 3 anni, in quanto tra 
+Oggi come oggi una \textbf{pianificazione strategica} nell'IT è in 3 anni, in quanto tra 
 5 anni nessuno sa cosa ci sarà. Quindi la lunghezza dei piani si è accorciata, 
 specialmente nel settore informatico in quanto la pressione tecnologica è 
 altissima. Questa pianificazione è destinata ad accorciarsi grazie 
 all'intelligenza artificiale, che aiuterà gli umani a prendere decisioni.
+La \textbf{pianficazione tattica} dura un anno permette all'organizzazione di 
+muoversi verso gli obiettivi strategici, mentre la pianificazione operazionale 
+definisce piani dettagliati o tecnici.
+
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=0.6]{res/img/planning_process}
+        \end{center}
+        \caption{Piramide dei differenti tipi di pianificazione.}    
+\end{figure}
+

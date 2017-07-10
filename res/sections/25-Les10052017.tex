@@ -1,101 +1,92 @@
-\section{Segregation of duties}
+\subsection{Segregation of duties}
 
 Questo concetto è molto importante.
 
-La \textit{compliance} è più importante di \textit{security} perché bisogna 
+La \textit{conformità} è più importante della \textit{sicurezza} perché bisogna 
 essere conformi a degli standard.
 
-È importante, come già detto in diversi punti degli appunti, separare i vari 
-poteri delle persone, in maniera tale da assicurarsi che non avvengano ``abusi 
-di potere''.
+È importante, come già detto in orecedenza, separare i vari 
+poteri tra le persone, in maniera tale da assicurarsi che non avvengano ``abusi 
+di potere'' (es. l'amministratore di rete concede i diritti, ma qualcuno deve autorizzare che il 
+ruolo $x$ necessiti dei diritti. l'amministratore implementa la concessione). 
 
-Network administrator concede i diritti, ma qualcuno deve autorizzare che il 
-ruolo $x$ abbia i diritti. Il network administrator implementa la concessione. 
-\todo{Sistema sta frase}
-
-
-È importante anche che gli \textit{assets} vengano controllati. Solitamente gli 
-\textit{assets} sono fisici, ma nel settore IT possono essere immateriali (come 
+È importante anche che gli \textit{asset} vengano controllati. Solitamente gli 
+\textit{asset} sono fisici, ma nel settore IT possono essere immateriali (come 
 un file contente un disegno di un progetto per una architettura di rete). Quindi 
 è importante documentare le responsabilità. Si è responsabili quando occorrono 
-due condizioni:
-\begin{itemize}
-\item Quando si è nominati ufficialmente, tramite una delega formale
-\item Si hanno i poteri per implementare correttamente quanto richiesto
-\end{itemize}
+\textit{due condizioni:} quando si è nominati ufficialmente (tramite una delega formale) o
+quando si hanno i poteri per implementare correttamente quanto richiesto.
 
-\subsection{Personale}
+\subsubsection{Personale}
 
-Dal punto di vista della sicurezza il personale è sempre l'anello debole della 
-sicurezza. I \textit{background check} dipende sempre in base alla mansione che 
-dev'essere coperta. Questi controlli sono abbastanza sensibili, e di solito 
-avvengono anche per ruoli come amministratore delegato.
-Se viene maneggiato denaro o \textit{assets} sicuramente è necessario eseguire 
-un \textit{background check} per assicurarsi la \textbf{professionalità} e 
-l'\textbf{affidabilità} della persona. Anche essere coinvolti in una stupida 
-rissa potrebbe compromettere l'affidabilità di una persona. I propri 
-\textit{social network} quindi dovrebbero essere sempre controllati in maniera 
+Dal punto di vista della sicurezza il personale è sempre l'anello debole. 
+Il \textit{background check} dipende sempre in base alla mansione che 
+dev'essere coperta. Questi controlli sono abbastanza sensibili.
+Se viene maneggiato denaro o \textit{asset} sicuramente è necessario eseguire 
+un \textit{background check} per assicurarsi la \textit{professionalità} e 
+l'\textit{affidabilità} della persona (anche essere coinvolti in una stupida 
+rissa potrebbe compromettere l'affidabilità di una persona). Di conseguenza, i propri 
+profili social dovrebbero essere sempre controllati in maniera 
 tale da non contenere contenuto non appropriato.
 
-Il \textit{monitoring} delle email è un problema dappertutto tranne negli USA, 
-perché lì le email non sono protette. L'azienda fa lo scanner dei PC dei 
+Il \textit{monitoring} delle email è un problema ovunque, tranne negli USA: 
+lì le email non sono protette. L'azienda fa lo scan dei PC dei 
 dipendenti. In Italia, dopo un caso eclatante, la giurisprudenza permette di 
 leggere le email di lavoro.
 
-\subsubsection{Assunzione degli impiegati}
+\paragraph{Assunzione degli impiegati}
 
-Bisogna fare attenzione quando si eseguono assunzioni del personale. È 
-importante anche controllare che chi venga assunto non esegui manomissioni dei 
+Bisogna fare attenzione quando si eseguono assunzioni: è 
+importante anche controllare che chi viene assunto non esegua manomissioni dei 
 documenti ufficiali\footnote{La falsificazione di documenti nella pubblica 
-amministrazione comporta una reclusione dai 2 ai 5 anni.}.
+amministrazione comporta una reclusione dai 2 ai 5 anni.} (es. dichiarate di 
+essere laureato senza una laurea).
 
 Il \textbf{mansionario} specifica cosa un impiegato deve fare.
 
-\textit{Confidentiality agreement}: contratto in cui il lavoratore dichiara di 
-non divulgare quello per cui lavora l'azienda e indica anche un limite di tempo 
+\textbf{Confidentiality agreement}: contratto in cui il lavoratore dichiara di 
+non divulgare nulla di quello su cui lavora l'azienda e indica anche un limite di tempo 
 per cui l'impiegato non può svolgere un lavoro nello stesso campo.
 
 
-\subsubsection{Orientamento dei nuovi impiegati}
+\paragraph{Orientamento dei nuovi impiegati}
 
-
-Quando un nuovo impiegato firma un documento:
+Quando un nuovo impiegato firma un documento ha letto e accettato le policy di 
+sicurezza. Inoltre si impegna a:
 \begin{itemize}
-\item ha letto e accettato le policy di sicurezza
-\item promette di non divulgare ID e password per il login
-\item creare password di qualità
-\item bloccare il terminale quando non è presente
-\item riportare violazioni della sicurezza sospette
-\item mantenere una buona sicurezza fisica
+\item non divulgare ID e password per il login;
+\item creare password di qualità;
+\item bloccare il terminale quando non è presente;
+\item riportare violazioni della sicurezza sospette;
+\item mantenere una buona sicurezza fisica.
 \end{itemize}
 
-\subsubsection{Employee termination}
+\paragraph{Employee termination}
 
 Quando si arriva al termine del periodo lavorativo si deve ritornare 
 l'equipaggiamento aziendale e revocare l'accesso all'individuo. Badge e 
-cartellini devono essere riconsegnati, e le autorizzazioni che l'individuo aveva 
+cartellini devono essere riconsegnati; le autorizzazioni che l'individuo aveva 
 all'interno dell'azienda devono essere revocate.
 
-\subsection{Accordi tra terze parti}
+\subsubsection{Accordi tra terze parti}
 
 Definiscono le \textit{policy} di sicurezza relative alle informazioni e le 
 procedure per implementare le \textit{policy}; forniscono controlli per 
 proteggersi contro software malevolo. Pubblicano restrizioni per la copia e la 
-distribuzione delle informazioni, implementa procedure per determinare se gli 
+distribuzione delle informazioni, implementano procedure per determinare se gli 
 \textit{asset} sono stati compromessi e assicurano il ritorno o la distruzione 
 dei dati al termine del rapporto lavorativo.
 
-\subsection{Riassunto dei controlli sul personale}
+\subsubsection{Riassunto dei controlli sul personale}
 
-Quindi in generale abbiamo visto che i seguenti punti riguardo al controllo sul 
-personale sono importanti:
+I punti importanti del controllo sul personale sono:
 \begin{itemize}
-\item Segregation of Duties
-\item Vacanze obbligatorie e rotazione delle mansioni
-\item Addestramento delle policy e procedure
-\item Controlli del background
-\item Need to know/Least privilege
-\item Meccanismo di segnalazione di frodi 
+\item Segregation of Duties;
+\item Vacanze obbligatorie e rotazione delle mansioni;
+\item Addestramento delle policy e procedure;
+\item Controlli del background;
+\item Need to know/Least privilege;
+\item Meccanismo di segnalazione di frodi.
 \end{itemize}
 
 \section{Esercizi}
@@ -111,26 +102,26 @@ Gli obiettivi di questa parte del corso sono:
 \begin{itemize}
 \item Quality assurance
 \item Capire i ruoli di CISO, CIO, CSO Board of directors, Executive 
-Management..
-\item Definire security baseline 
-\item Descrivere COBIT, CMM (vecchio), levels 1-5
+Management...
+\item Definire delle baseline sulla sicurezza 
+\item Descrivere COBIT, CMM (vecchio), livelli 1-5
 \end{itemize}
 
 \chapter{COBIT, CMM}
 
-\textbf{CMM} sta per \textit{Capability Maturity Model} si è capito che lo 
+\textbf{CMM} sta per \textit{Capability Maturity Model}. Si è capito che lo 
 sviluppo del software è cruciale nelle società che lo sviluppano, e vengono 
-mappate in 5 livelli, che ad oggi identificano anche la maturità di un'azienda. 
+mappate in 5 livelli, che ad oggi identificano anche la maturità di un'azienda.\todo{Questo lo sistemi tu Davide perché non si capisce un cazzo}
 Il \textbf{COBIT} è uno standard diverso.
 
 \section{COBIT \& COSO}
 
 \textbf{COSO} è un modello strategico per la governance dell'azienda. Purtroppo 
-è troppo complesso per un'azienda di dimensioni medio grandi, ed quindi è caduto 
+è troppo complesso per un'azienda di dimensioni medio grandi e quindi è caduto 
 in disuso.
-\textbf{COBIT} insieme di raccomandazioni finalizzati alla \textit{governance} 
+\textbf{COBIT} è un insieme di raccomandazioni finalizzate alla \textit{governance} 
 del sistema IT a livello operativo.
-COBIT deriva da COSO ed è allineato con esso. In particolare il grafico
+COBIT deriva da COSO ed è allineato con esso. In particolare il grafico in Figura
 \ref{fig:cobit:coso:relazione} mostra la relazione tra COSO e COBIT\footnote{Esistono manuali gratuiti 
 riguardo COBIT, che spaziano dal livello \textit{entry} fino a quelli più 
 avanzati. Questi manuali sono consigliati a chi vuole approcciarsi a questo ambiente 
@@ -149,40 +140,61 @@ COBIT4:  \url{https://www.isaca.org/Italian/Documents/CobiT-41-Italian.pdf}}.
 
 \subsubsection{Pianificazione e organizzazione}
 
-In un IT è importante definire un piano strategico per l'IT. Si è passati dall'
+In un'azienda IT è importante definire un piano strategico per l'IT. Si è passati dall'
 avere un insieme di applicazioni centralizzate ad architetture distribuite 
-\textit{cloud}-centriche. Chi ha previsto queste innovazioni ieri oggi sta 
+\textit{cloud}-centriche. Chi ha previsto queste innovazioni ieri, oggi sta 
 guadagnando molto.
 
 L'\textit{information architecture} si focalizza su come viene distribuita 
 l'informazione, su come viene distribuito il dato e su come aggiunge 
 informazione al dato.
 
-L'innovazione tecnologica è quella di andare verso un IT decentralizzato. La 
-manutenzione è importante, ed è quindi importante capire che una rivisitazione 
-dei costi IT non è possibile farla a costo 0. I processi messi in piedi sono 
-molti importanti. La comunicazione è fondamentale, ed è un difetto di 
+La tendenza tecnologica è quella di andare verso un IT decentralizzato. La 
+manutenzione è importante ed è quindi altrettanto importante capire che una rivisitazione 
+dei costi IT non è possibile che venga eseguita a costo 0. I processi messi in piedi sono 
+molti importanti. La comunicazione è fondamentale ed è un difetto di 
 informatici e ingegneri. La non-comunicazione fa appassire le 
 idee\footnote{Perla del professore: \textbf{una buona idea comunicata bene 
-ottiene molto di più di una idea eccellente comunicata male.}}, e questo viene 
-aggravato dall'inerzia che una grande azienda ha, in quanto un gran numero di 
+ottiene molto di più di un'idea eccellente comunicata male.}} e questo viene 
+aggravato dall'inerzia che ha una grande azienda, in quanto un gran numero di 
 persone si muovono lentamente tra loro.
 
-Le risorse IT sono importanti anche loro: non serve più solo prendere ``quello 
+Anche le risorse IT sono importanti: non serve più solo prendere ``quello 
 bravo'', ma è importante avere un piano di \textit{retention}, ovvero capire 
 come mantenere i dipendenti (soprattutto le persone chiave) all'interno 
 dell'azienda. Questo andrebbe fatto anche nelle aziende piccole (20-30 
 dipendenti)\footnote{Il professore consiglia di andare a vedere il PMI: 
 \textit{Project Management Institute}, che spiega come gestire vari progetti.}.
 
+\begin{itemize}
+\item PO1: definire un piano IT strategico;
+\item PO2: definire l'architettura dell'informazione;
+\item PO3: determinare la direzione tecnologica;
+\item PO4: definire i processi IT, l'organizzazione e le relazioni;
+\item PO5: gestire gli investimenti nell'IT;
+\item PO6: comunicare al management direzione e obiettivi;
+\item PO7: gestire le risorse umane dell'IT;
+\item PO8: gestire la qualità;
+\item PO9: valutare e gestire i rischi IT; 
+\item PO10: gestire i progetti.
+
+\end{itemize}
+
 \subsubsection{Acquisizione e implementazione}
 
-È importante identificare soluzioni automatizzate
-
+\begin{itemize}
+\item AI1: identificare soluzioni automatizzate;
+\item AI2: acquisire e mantenere le applicazioni software;
+\item AI3: acquisire e mantenere l'infrastruttura tecnologica;
+\item AI4: abilitare operazioni e utilizzo;
+\item AI5: procurare le risorse IT;
+\item AI6: gestire i cambiamenti;
+\item AI7: installare e accreditare soluzioni e cambiamenti.
+\end{itemize}
 
 \subsubsection{Consegna e supporto}
 
-Quando si hanno servizi di diverse parti gli SLI(?) sono fondamentali.
+Quando si hanno servizi di diverse parti gli SLI\todo{cosa sono?} sono fondamentali.
 Gestione e capacità sono concetti diversi. Quando si ha settato 
 un'organizzazione il limite estremo è la capacità ottimale (è quando tutti 
 lavorano al 100\%, che è impossibile). Da qui bisogna capire dove si è e quanto 
