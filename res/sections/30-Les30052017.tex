@@ -22,6 +22,33 @@ Nell'immagine \ref{fig:security:software:development}:
 \end{enumerate*}
 
 \paragraph{Transaction Validation}
+\begin{itemize}
+	\item Sequence check: l'utilizzo di sequence number fanno sì che numeri
+	out-of-sequence o numeri duplicati vengano rifiutati.
+	\item Controllo dell'intervallo e limiti: i numeri sono sotto un numero
+	massimo dato o in un intervallo specifico.
+	\item Controlli di validità o lookup di una tabella:
+	solo alcuni valori sono accettati (es. Sesso = M/F).
+	\item Controlli di ragionevolezza: i valori inseriti sono ragionevoli.
+	Per esempio per una pizzeria un'ordine di pizza d'asporto di 100 pizze
+	va verificato.
+	\item Controlli di esistenza: i campi richiesti da compilare
+	sono completati correttamente.
+	\item Key Verification: l'input è controllato due volte attraverso
+	una seconda persona o tutte le cifre sono immesse due volte.
+	\item Check Digit: una cifra potrebbe verificare la corretta
+	immissione di altre cifre.
+	\item Completeness check: viene immesso un input completo. Gli
+	spazi o gli zero sono controllati per ogni lettera o cifra 
+	richiesta \todo{Non chiaro il testo originale}.
+	\item Duplicate Check: bisogna sempre controllare se una transizione
+	con lo stesso ID esiste già. In caso affermativo va rifiutata.
+	\item Consistency or Logical Relationship Check: i nuovi dati
+	sono coerenti con altri dati a disposizione: per esempio
+	la data di nascita di un dipendente deve essere avvenuta almeno
+	16 anni fa.
+\end{itemize}
+
 
 \paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni
 dopo che sono state aggregate. 
