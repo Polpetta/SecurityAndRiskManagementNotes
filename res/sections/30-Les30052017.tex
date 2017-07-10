@@ -112,23 +112,36 @@ minimo e massimo), Standing data (file permanenti), report delle eccezioni
 (giornaliero).
 
 \paragraph{Processing controls}
-
-Per-Transaction Basis \todo{completare}
-\begin{itemize}
-\item Editing
-\item Controlli sugli ammontare calcolati
-\item Controlli programmati
-\item Report delle eccezioni
-\end{itemize}
-
-Per-Batch Basis
+I processing controls sono usati per assicurare
+l'accuratezza, la completezza e la validità dei dati durante
+processing online o batch. Questi controlli sono messi in campo
+per verificare che i dati vengano procesati solo tramite routine
+autorizzate. Esistono due modi per eseguire i processing controls:
 
 \begin{itemize}
-\item Batch Register:
-\item Run-To-Run Basis
-\item
+\item \textbf{Eseguita transazione per transazione}
+\begin{itemize}
+\item Editing: il programma testa l'accuratezza, la completezza
+e la validità dei dati.
+\item Controlli sugli ammontare calcolati: i valori calclati
+sono controllati per essere ragionevoli e non eccedere il massimo.
+\item Controlli programmati: Software che rileva, logga e inizia
+delle azioni correttive per gli errori.
+\item Report delle eccezioni: gli errori delle transazioni vengono
+riportati con il loro tipo di errore.
 \end{itemize}
 
+\item \textbf{Eseguita Batch per Batch}
+
+\begin{itemize}
+\item Batch Register:I batch totals sono salvati manualmente per essere
+confrontati con i totals di sistema. 
+\item Run-To-Run Totals: ogni passo del processing riporta i batch
+controls calcolati
+\item Reconciliation: un supervisore deve ricontrollare che \emph{tutti}
+i dati sono stati salvati e processati correttamente.
+\end{itemize}
+\end{itemize}
 \paragraph{Controllo sui dati}
 
 \todo{copiare l'elenco}
