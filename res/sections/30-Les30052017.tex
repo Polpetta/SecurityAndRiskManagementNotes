@@ -1,20 +1,37 @@
 \chapter{Application Controls}
 \label{cs:ac}
 
-Esame: descrizione di un caso + poche domande
+Nota sull'esame: descrizione di un caso + poche domande
 
-\todo{Era la descrizione dell'immagine con un sacco di freccette}
-Abuse case (invece di use case) sono i tipici casi in cui il sistema può essere
-flesso in chiara violazione delle policy di sicurezza.
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{security_software_development}
+        \end{center}
+        \caption{La sicurezza nello sviluppo del software}
+        \label{fig:security:software:development}
+\end{figure}
 
-Code review consiste anche nell'analisi statica.
+Nell'immagine \ref{fig:security:software:development}:
 
-Test sul software: penetration test, stress test
+\begin{enumerate*}[label=\Alph*]
+	\item Abuse case (invece di use case) si riferisce ai  tipici casi in cui il 
+	sistema può essere flesso in chiara violazione delle policy di 
+	sicurezza. 
+	\item La Code review consiste anche nell'analisi statica.
+	\item Il Test sul software è inteso come penetration test, stress test, ecc.
+\end{enumerate*}
 
 \paragraph{Transaction Validation}
 
 \paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni
-dopo che sono state aggregate. \todo{Insert Image}
+dopo che sono state aggregate. 
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=0.5]{batch_processing}
+        \end{center}
+        \caption{Batch processing}
+        \label{fig:security:software:development}
+\end{figure}
 
 \paragraph{Transaction Authorization}
 Manuale
