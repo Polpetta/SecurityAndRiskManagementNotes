@@ -13,7 +13,7 @@ Nota sull'esame: descrizione di un caso + poche domande
 
 Nell'immagine \ref{fig:security:software:development}:
 
-\begin{enumerate*}[label=\Alph*]
+\begin{enumerate*}[label=\alph*)]
 	\item Abuse case (invece di use case) si riferisce ai  tipici casi in cui il 
 	sistema può essere flesso in chiara violazione delle policy di 
 	sicurezza. 
@@ -50,8 +50,20 @@ Nell'immagine \ref{fig:security:software:development}:
 \end{itemize}
 
 
-\paragraph{Batch Processing} Elaborazione sequenziale di blocchi di transazioni
+\paragraph{Batch Processing} 
+È un tipo di controllo dell'input.
+Elaborazione sequenziale di blocchi di transazioni
 dopo che sono state aggregate. 
+L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
+dei controlli automatici su un batch e associati ad un batch file.
+Viene effettuata la validazione della transazione. Le transazioni
+rifiutate sono corrette e rimandate o trattate in altro modo.
+
+Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
+Il processing viene completato.
+Infine segue il batch balancing attraverso 
+una riconciliazione manuale o automatica dei controlli di batch.
+
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=0.5]{batch_processing}
@@ -61,13 +73,26 @@ dopo che sono state aggregate.
 \end{figure}
 
 \paragraph{Transaction Authorization}
-Manuale
+\begin{itemize}
+	\item Manuale: Ottenimento della firma dal management 
+	\item Automatico
+\end{itemize}
 
 Automatico
 
 \paragraph{Error Handling Alternatives}
-Rigettare le transazioni con errori e continuare a processare il batch;
-Stoppare tutto il batch
+Il trattamento degli errori di input possono essere trattati
+con le seguenti tecniche:
+\begin{itemize}
+\item Rigettare le transazioni con errori e continuare a processare 
+il batch;
+\item Rigettatre l'intero batch di transazioni, se contiene
+degli errori.
+\item Tieni il batch in sospeso fintanto che le transazioni 
+non vengono fissate.
+\item Accetta l'intero batch ma contrassegna le transazioni che
+contengono degli errori per renderne più facile l'identificazione,
+permettendo quindi futuri correzioni.
 
 
 
