@@ -4,14 +4,10 @@ Gli eventi danneggianti possono essere classificati in base ai costi
 che possono comportare. Sono riportati in ordine crescente diverse categorie:
 
 \begin{itemize}
-\item Negligible \\
-Costo non significativo
-\item Minor \\
-Non ignorabile ma con costo senza impatto sul business
-\item Major \\
-Impatto su uno o più dipartimenti e può impattare sui clienti esterni
-\item Crisis \\
-Evento che ci costa la permanenza sul mercato
+\item \textbf{Negligible:} costo non significativo;
+\item \textbf{Minor:} non ignorabile ma con costo senza impatto sul business;
+\item \textbf{Major:} impatto su uno o più dipartimenti e può impattare sui clienti esterni;
+\item \textbf{Crisis:} evento che ci costa la permanenza sul mercato.
 \end{itemize}
 
 Questa classificazione non è semplice, anche perché ogni categoria ha una
@@ -30,21 +26,21 @@ Potrebbero accadere i seguenti disastri:
  Questo impatta sulle aule e il dipartimento. Come lo
 classifichiamo? Crisi, potrebbe essere major se limitato ad una parte del
 dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte
-rischio da tenere in considerazione.
+rischio da tenere in considerazione;
 
  \item Attacco hacker \\
  Attaccano per esempio il sistema di registrazione dei voti. Può essere un
-evento major che ha implicazioni legali (non \`e possibile registrare voti).
+evento major che ha implicazioni legali (non è possibile registrare voti);
 
  \item Indisponibilità dalla rete \\
  Livello di disastro: crisi. I dipartimenti dipendono dalla rete perché
 ci lavorano. Questo blocca completamente il dipartimento. Oggi una rete viene
 considerata come il sistema nervoso di un' organizzazione. Senza la quale
-l'organizzazione è costretta a fermarsi.
+l'organizzazione è costretta a fermarsi;
 
  \item Social engineering \\
  Può esserci un attacco al sistema di registrazione magari tramite una frode
-(mi prendono password e token).
+(mi prendono password e token);
 
  \item Server failure \\
  Collasso dei server. Si hanno le stesse conseguenze di network unavailable.
@@ -68,7 +64,8 @@ Questo perché sono coinvolti processi che vanno capiti e contestualizzati.
         regolare, alla interruzione e infine al ripristino del servizio 
         regolare, passando per il servizio degradato.}
 \end{figure}
-Abbiamo un servizio regolare, si veri-fica un'interruzione e ci troviamo
+
+Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo
 nell'\textbf{interruption window} (finestra di tempo per cui il servizio non è
 disponibile). Se è stato fatto un \textit{disaster recovery plan}
 possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per
@@ -98,13 +95,13 @@ Di seguito viene riportata una lista di definizioni appena viste:
 
 \begin{itemize}
  \item \textbf{Business Continuity} \\
- Riuscire ad operare anche se con una modalità degradata del servizio.
+ Riuscire ad operare anche se con una modalità degradata del servizio;
  \item \textbf{Disaster recovery} \\
- Permette di sopravvivere anche se il servizio IT è non disponbile
+ Permette di sopravvivere anche se il servizio IT è non disponbile;
  \item \textbf{Alternate Process Mode}
- Modalità alternata.
+ Modalità alternata;
  \item \textbf{Disaster Recovery mode} \\
- Piano che permette di passare in modalità alternata.
+ Piano che permette di passare in modalità alternata;
  \item \textbf{Restoration plan} \\
  Permette di passare dalla modalità alternata a quella normale.
 \end{itemize}
@@ -118,11 +115,11 @@ del servizio lo ha. In ordine di importanza:
 deve fermare. (es. telemedicina, un medico sta al MIT e tramite telemedicina 
 opera qualcuno a Ginevra, chiaramente il servizio non può essere interrotto. 
 Questo servizio implica la \textit{safety}, ogni servizio che implica la safety 
-è critico per definizione.
+è critico per definizione;
  \item \textbf{Vital:} andare avanti a mano per un tempo molto ridotto. Costo
-elevato.
+elevato;
  \item \textbf{Sensitive:} posso sostituire all'IT una procedura manuale per un
-periodo limitato di tempo ma mi costa di più.
+periodo limitato di tempo ma mi costa di più;
 
  \item \textbf{Nonsensitive:} posso andare avanti manualmente per un periodo
 esteso di tempo.
@@ -157,10 +154,10 @@ settimana. Ovviamente bisogna tenere in considerazione il fatto che se c'è una
 
 \begin{itemize}
  \item \textbf{Recovery Point Objective}: ammontare di dati che possiamo
-perdere quando recuperiamo dal backup.
+perdere quando recuperiamo dal backup;
 
  \item \textbf{Recovery Time Objective}: tempo che serve per recuperare le
-applicazioni e ripartire in modo da poter ripristinare il servizio.
+applicazioni e ripartire in modo da poter ripristinare il servizio;
 
  \item \textbf{Orphan data}: dati che vanno persi e non sono recuperabili.
 \end{itemize}
@@ -203,7 +200,7 @@ semestre scolastico: alta priorità               \\
 \end{table}
 
 
-\section{Tipologie di \textit{disaster recovery}}
+\section{Tipologie di disaster recovery}
 
 \subsection{RAID}
 
@@ -212,14 +209,10 @@ Sistema di ridondanza per i dati. Sono sei con diverse modalità.
   \item RAID 0: i dischi anziché essere memorizzati su un disco sono
   memorizzati su due dischi. Possibile accesso parallelo ma niente backup
   (striping).
-
   \item RAID 1: backup su un altro disco (mirroring).
-
   \item Altri raid
-
   \item RAID 5: si fa striping e redundancy. Ho più dischi e faccio striping
   con in aggiunta dei bit di parità.
-
 \end{itemize}
 
 \subsection{Network Disaster recovery}
@@ -227,19 +220,19 @@ Sistema di ridondanza per i dati. Sono sei con diverse modalità.
 Per recuperare un problema di rete la cosa più semplice è diversificare (avere
 ridondanza, una rete alternativa). Due tipi di ridondanza:
 \begin{itemize}
-  \item \textbf{alternative routing}: faccio un contratto con una società che
+  \item \textbf{Alternative routing}: faccio un contratto con una società che
   mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere
 sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo
-fisico, altrimenti è inutile;
+fisico, altrimenti è inutile.
   \begin{itemize}
     \item last-mile circuit protection: se mi tranciano l'ultimo miglio tra
 l'azienda e la centralina posso mantenere comunicazioni tramite
 \textit{microwave communication}\footnote{Comunicazione a Microonde.}, faccio
 comunicazione punto punto. Questa tecnologia viene usata abbastanza spesso in
-quanto non richiede una particolare installazione ed è abbastanza economica.
-    \item long-haul network diversity
+quanto non richiede una particolare installazione ed è abbastanza economica;
+    \item long-haul network diversity;
   \end{itemize}
-  \item \textbf{diverse routing}: si fa con la stessa società ma questa società
+  \item \textbf{Diverse routing}: si fa con la stessa società ma questa società
 garantisce un instradamento diverso.
 \end{itemize}
 
@@ -259,27 +252,21 @@ Esistono diverse tecnologie di backup:
   centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro
   operativo). Il tempo di recupero da \textit{downtime} è molto basso ma il
   costo è molto alto. Il costo è molto alto perché bisogna duplicare
-  l'infrastruttura e il costo dell'\textit{information processes}.
-
+  l'infrastruttura e il costo dell'\textit{information processes};
   \item \textbf{Warm site}: c'è un altro sito che ha tutti gli assets pronti
-  per lavorare ma non è ancora operativo.
-
+  per lavorare ma non è ancora operativo;
   \item \textbf{Cold site}: abbiamo un sito predisposto per l'emergenza ma che
   di fatto è vuoto. Ad esempio gli attacchi per il computer sono pronti ma
   mancano i server e le configurazioni. Questa installazione è quella che
   richiede più tempo per diventare operativo, anche se il suo costo è molto
-  basso.
-
+  basso;
   \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi
   di recupero ma si trovano in una fascia operativa media. Due società nello
   stesso segmento di mercato ma non troppo in competizione si potrebbero
   accordare per condividere i siti caldi. Questo rientra nella fase di
-  \textbf{reciprocal agreeement}.
-
-
+  \textbf{reciprocal agreeement};
   \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e
   garantisce la connettività.
-
 \end{itemize}
 
 
@@ -307,20 +294,16 @@ chi fornisce il \textit{cloud computing}), sicurezza.
 
 Esistono diversi metodi di dispiegamento
 \begin{itemize}
-  \item Pubblico: pago e accedo al cloud (ad esempio Amazon AWS).
-
+  \item Pubblico: pago e accedo al cloud (es. Amazon AWS);
   \item Privato: creo un mio \textit{datacenter} e lo utilizzo per i miei
-  servizi (ad esempio il datacenter di una banca).
-
-  \item Ibrido: via di mezzo tra public e private.
-
+  servizi (es. il datacenter di una banca);
+  \item Ibrido: via di mezzo tra public e private;
   \item Comunitario: raggruppa organizzazioni che hanno lo stesso tipo di
   interessi o problematiche. Privato ma ``allargato''.
-
 \end{itemize}
 
 Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il
-\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la
+\textit{cloud} dò i miei dati in mano a terzi. Un altro problema è la
 \textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità
 diverse sulla stessa macchina grazie alla virtualizzazione. In caso di
 fallimento di una macchina potrebbero fallire più servizi di diversi utenti,
@@ -336,7 +319,6 @@ Esistono diversi modelli di servizio
   faccio girare le mie applicazioni.
   \item Infrastructure (IaaS): viene fornita la macchina e l'azienda ci mette
   sopra quello di cui ha bisogno.
-
 \end{itemize}
 
 \subsubsection{Caratteristiche essenziali}
@@ -351,11 +333,9 @@ self-service.
  \item \textbf{Service Level Agreement (SLA)}: definisce performance,
 sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di
 fornitura di internet, il SLA di solito è la banda minima garantita.
-
  \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server
 usato da altre organizzazioni. È quindi necessario avere un'adeguata
 segmentazione e isolamento. Un set di \textit{policy} sono anche necessarie.
-
  \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
 dell'azienda e da quella del cloud provider.
 \end{itemize}
@@ -368,7 +348,7 @@ commercialista fa la dichiarazione ma chi la firma è il responsabile legale.
 
 \paragraph*{Vantaggi} Costo basso.
 
-\paragraph*{Svantaggi}La sicurezza. Processi veramente critici vanno posti a
+\paragraph*{Svantaggi} La sicurezza. Processi veramente critici vanno posti a
 distanza geografica perché se capita una catastrofe è molto probabile che venga
 colpito anche a chi è vicino (ovvero è presente una suscettibilità allo stesso
 disastro).
