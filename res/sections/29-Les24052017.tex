@@ -1,8 +1,7 @@
-
 \section{Race condition}
 
 Questo attacco può essere molto pericoloso in alcune situazioni, come nel caso 
-per esempio di computazioni eseguite su architettura \textit{CUDA}, in cui era 
+di computazioni eseguite su architettura \textit{CUDA}, in cui era 
 possibile estrarre informazioni sensibili durante la computazione. In ambiente 
 \textit{cloud} è importante assicurarsi che ci sia un \textit{hypervisor} che 
 coordina tutte le computazioni.
@@ -12,31 +11,29 @@ ad esempio) o in situazioni di sequenziazione genomica/proteica.
 
 \section{Messaggi d'errore troppo verbosi}
 
-A volte i messaggi di errore sono troppi verbosi, e possono far inferire delle 
+A volte i messaggi di errore sono troppi verbosi e possono far inferire delle 
 informazioni. Un messaggio di errore troppo verboso è solitamente il form di 
 login: in alcuni servizi sono presenti messaggi come ``password scorretta'', che 
 permette all'attaccante di sapere che esiste un login con quell'indirizzo 
 e-mail.
 
 \section{External Control of Path}
+
 Normalmente quando si ha un sito web bisogna settare i diritti. Se dall'esterno 
-si può lanciare un file (per esempio un file word) si da una backdoor ad un 
-potenziale attaccante.\todo{Sistema}
-
-
+si può lanciare un file (es. file Word) si fornisce una backdoor per un 
+potenziale attaccante.
 
 \section{Uso di software non fidato}
 
-Il software a volte installato dall'utente non è fidato, che può essere uno 
+Il software a volte installato dall'utente non è fidato, (es. uno 
 \textit{spyware} che si occupa di raccogliere informazioni a scopo pubblicitario 
-o di profilazione.
+o di profilazione).
 
 Il software free è sicuro? Sì, ma solo se è \textit{open-source} e ha un po' di 
 ``anzianità'' (viene utilizzato da un po' di tempo).
 
 \section{Problemi classici di sicurezza}
 
-Per esempio il codice:
 \begin{verbatim}
 Security() {
  String contents, environment;
@@ -52,36 +49,38 @@ Security() {
 
 Questa porzione di codice contiene diversi errori:
 \begin{itemize}
-\item Errori troppo verbosi
-\item Il file viene salvato in chiaro
-\item Non viene chiuso il file dopo la lettura
-\item Non viene controllata la lunghezza della lettura del file
+\item Errori troppo verbosi;
+\item Il file viene salvato in chiaro;
+\item Non viene chiuso il file dopo la lettura;
+\item Non viene controllata la lunghezza della lettura del file.
 \end{itemize}
 
 Un altro errore è:
 \begin{verbatim}
 purchaseProduct() {
- password ="
+ password ="N23m**2d3";
+ count = form.quantity; //input
+ total = count * product.cost();
+ Message m = new Message(name,password,product,total);
+ m.myEncrypt();
+ server.send(m);
 }
 \end{verbatim}
-Un problema è la password \emph{hard-coded} del codice.
 
 Ci sono errori gravi in questo pezzo di codice:
 \begin{itemize}
-\item Le password vengono salvate sul codice (detto anche \textit{hardcoded})
-\item Ci potrebbe essere un \textit{overflow}, che a volte potrebbe accadere uno 
-\textit{swift-to-left} % correggete la mia scrittura REEEEEE
+\item Le password vengono salvate sul codice (detto anche \textit{hardcoded}):
+\item Ci potrebbe essere un \textit{overflow} (es. uno \textit{shift-bit});
 \item Viene usata una routine locale per eseguire la criptazione dei dati, 
-mentre si dovrebbe sempre utilizzare algoritmi standard
+mentre si dovrebbe sempre utilizzare algoritmi standard.
 \end{itemize}
 
 
 \paragraph*{Come evitare gli errori} Un modo per evitare questi errori è 
-adeguatamente testare il software che viene scritto. Purtroppo non è possibile 
-testare il programma con tutti gli input possibili, ed è quindi necessario 
-controllare adeguatamente il software con una \textit{test-suite} adeguata. 
-Anche il \textit{model-checking} è importante per analizzare il software. % 
-controlla mirko perchè sto guardando un video su youtube contemporaneamente
+testare adeguatamente il software che viene scritto. Purtroppo non è possibile 
+testare il programma con tutti gli input possibili, quindi è necessario 
+controllare il software con una \textit{test-suite} adeguata. 
+Anche il \textit{model-checking} è importante per analizzare il software.
 
 \subsection{Esercizi}
 
@@ -90,10 +89,10 @@ La parte di esercizi riguardo questa sezione è disponibile in \ref{es:Controlli
 \part{Controlli di sicurezza}
 
 Questo modulo si concentra sui controlli di sicurezza del software. Per fare ciò 
-dovremo vedere il ciclo di vita del software, con un occhio però alla sicurezza.
+dovremo vedere il ciclo di vita del software, con un occhio alla sicurezza.
 Partiremo dall'analisi dei requisiti, per andare all'analisi del rischio e per 
 finire con lo sviluppo del software.
-Anche l'ambiente produttivo richiede attenzione, è importante il mantenimento da 
+Anche l'ambiente produttivo richiede attenzione: è importante il mantenimento da 
 parte di vista della sicurezza per non introdurre bug nel software.
 
 \chapter{Validazione degli input}
@@ -102,20 +101,14 @@ parte di vista della sicurezza per non introdurre bug nel software.
 
 Alcuni punti importanti riguardo la validazioni delle transazioni sono:
 \begin{itemize}
-\item Sequence Check:
-\item Limit o Range Check:
-\item Validity Check or Table Lookup:
-\item Reasonableness Check: 
-Per esempio oggi come oggi il numero di pizze in america hanno poche grandi 
-catene, e questo perchè? Perchè il sistema è diventato tutto informatizzato, ed 
-è per questo che PizzaHat ha il monopolio in america, grazie alla sua 
-applicazione. È per questo che il controllo sull'input è molto importante, 
-perchè un possibile attacco di Denial Of Service sarebbe ordinare un numero 
-incontrollato di pizze.
-\item Existence Check:
-\item Key verification: fare inserire due volte la mail (per esempio)
-\item Check digit:
-\item Completeness Check
+\item Sequence Check;
+\item Limit o Range Check;
+\item Validity Check o Table Lookup;
+\item Reasonableness Check;
+\item Existence Check;
+\item Key verification (es. fare inserire due volte la mail)
+\item Check digit;
+\item Completeness Check;
 \item Duplicate Check: è importante che il sistemi controlli un possibile doppio 
 acquisto da parte di un utente, che potrebbe eseguire un acquisto per errore. 
 Anche questa tipologia di controlli dovrebbero essere eseguiti.
@@ -123,3 +116,9 @@ Anche questa tipologia di controlli dovrebbero essere eseguiti.
 maniera automatizzata, e i controlli logici permettono di controllare per 
 esempio se gli utenti stanno mentendo o meno. 
 \end{itemize}
+
+Per esempio, oggi come oggi in america hanno poche grandi catene per la pizza.
+Questo perchè il sistema è diventato informatizzato, garantendo il monopolio a
+PizzaHut grazie alla sua applicazione. È per questo che il controllo sull'input 
+è molto importante, perché un possibile attacco di Denial Of Service potrebbe 
+essere ordinare un numero incontrollato di pizze.
