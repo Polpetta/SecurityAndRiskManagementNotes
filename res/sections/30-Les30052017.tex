@@ -119,7 +119,7 @@ permettendo quindi futuri correzioni.
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{data_processing}
+                \includegraphics[width=0.7\textwidth]{data_processing}
         \end{center}
         \caption{Data processing}
         \label{fig:data:processing}
@@ -219,61 +219,55 @@ il controllo funziona come atteso: così si può giudicare se è inutile,
 oneroso, o se è utile, ecc.
 \end{itemize}
 
-\paragraph*{Strumenti di test integrati}
+\section{Strumenti integrati di test}
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{testing_facilities_integrated}
+                \includegraphics[width=0.7\textwidth]{testing_facilities_integrated}
         \end{center}
-        \caption{Strumenti di test integrati.}
+        \caption{Strumenti integrati di test.}
         \label{fig:testing:facilities:integrated}
 \end{figure}
 
-\paragraph*{Operazioni/simulazioni parallele}
+\subsection{Operazioni/simulazioni parallele}
 
 I dati vengono processati attraverso due sistemi differenti e i risultati vengono confrontati.
 Questo approccio è utile per verificare nuovi sistemi, comparandoli con quelli vecchi.
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{parallel_operation_simulation}
+                \includegraphics[width=0.7\textwidth]{parallel_operation_simulation}
         \end{center}
         \caption{Operazioni o simulazioni parallele.}
         \label{fig:testing:facilities:parallel}
 \end{figure}
 
-\subparagraph*{Operazioni parallele}
+\textbf{Operazioni parallele:} confrontare il nuovo sistema con quello vecchio funzionante.
 
-Confrontare il nuovo sistema con quello vecchio funzionante.
+\textbf{Simulazioni parallele:} confrontare il sistema reale e quello simulato.
 
-\subparagraph*{Simulazioni parallele}
+\subsection{Embedded Audit Data Collection}
 
-Confrontare il sistema reale e quello simulato.
-
-\paragraph*{Embedded Audit Data Collection}
-
-\begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{embedded}
+                \includegraphics[width=0.8\textwidth]{embedded}
+                \captionof{figure}{Embedded Audit Data Collection}
+        		\label{fig:testing:facilities:parallel}
         \end{center}
-        \caption{Embedded Audit Data Collection}
-        \label{fig:testing:facilities:parallel}
-\end{figure}
+        
 
 \textbf{Embedded Audit Modules (EAM):} Il software per l'audit è incorportato direttamente 
 nei programmi per monitorare specifici tipi di transformazioni. Il suo grande svantaggio è 
-quello di rallentare il sistema. Qualora vada tutto bene sono soldi spesi inutilmente.\\
-\newline
+quello di rallentare il sistema. Qualora vada tutto bene sono soldi spesi inutilmente.
+
 \textbf{Systems Control Audit Review File (SCARF):} fornisce informazioni di tipo statistico 
 riguardo ai dati dei file di input "normali", per determinare per l'auditor se il file è 
-stato sufficientemente modificato.\\
-\newline
-\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per fare validazione.\\
+stato sufficientemente modificato.
 
-\paragraph{Tecniche di testing per le applicazioni}
-\todo{copia elenco}
+\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per fare validazione.
 
-Dati dei test:
+\section{Tecniche di testing per le applicazioni}
+
+\textbf{Test data:}
 \begin{itemize}
     \item Test data: testare le transazioni che attraversano programmi reali;
     \item Strumenti di testing integrati: creare delle transazioni di test da includere con 
@@ -284,7 +278,7 @@ Dati dei test:
     e genera i log durante la produzione.
 \end{itemize}
 
-Debugging/Processing:
+\textbf{Debugging/Processing:}
 
 \begin{itemize}
     \item Mapping: identifica la logica di alcuni specifici programmi che non sono stati ancora testati;
@@ -293,7 +287,7 @@ Debugging/Processing:
     \item Snapshot: registra flussi di transazioni designate seguendo dei path logici.
 \end{itemize}
 
-Sistemi di validazione:
+\textbf{Sistemi di validazione:}
 
 \begin{itemize}
     \item Sistema di valutazione base-case: utilizza i test data per testare i programmi e verificare che 
@@ -302,7 +296,7 @@ Sistemi di validazione:
     \item Operazioni parallele.
 \end{itemize}
 
-\paragraph{Tecniche di Auditing Online}
+\section{Tecniche di Auditing Online}
 
 \textbf{Audit Hooks:} all'interno del codice ci sono delle condizioni particolari che se
 sono soddisfatte triggerano delle operazioni di auditing, è meno pesante delle
