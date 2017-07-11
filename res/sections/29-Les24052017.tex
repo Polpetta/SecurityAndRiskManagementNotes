@@ -95,30 +95,28 @@ finire con lo sviluppo del software.
 Anche l'ambiente produttivo richiede attenzione: è importante il mantenimento da 
 parte di vista della sicurezza per non introdurre bug nel software.
 
-\chapter{Validazione degli input}
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{security_software_development}
+        \end{center}
+        \caption{La sicurezza nello sviluppo del software}
+        \label{fig:security:software:development}
+\end{figure}
 
-\section{Validazione delle transazioni}
 
-Alcuni punti importanti riguardo la validazioni delle transazioni sono:
-\begin{itemize}
-\item Sequence Check;
-\item Limit o Range Check;
-\item Validity Check o Table Lookup;
-\item Reasonableness Check;
-\item Existence Check;
-\item Key verification (es. fare inserire due volte la mail)
-\item Check digit;
-\item Completeness Check;
-\item Duplicate Check: è importante che il sistemi controlli un possibile doppio 
-acquisto da parte di un utente, che potrebbe eseguire un acquisto per errore. 
-Anche questa tipologia di controlli dovrebbero essere eseguiti.
-\item Consistency or Logical Relationship Check: son difficili da eseguire in 
-maniera automatizzata, e i controlli logici permettono di controllare per 
-esempio se gli utenti stanno mentendo o meno. 
-\end{itemize}
 
-Per esempio, oggi come oggi in america hanno poche grandi catene per la pizza.
-Questo perchè il sistema è diventato informatizzato, garantendo il monopolio a
-PizzaHut grazie alla sua applicazione. È per questo che il controllo sull'input 
-è molto importante, perché un possibile attacco di Denial Of Service potrebbe 
-essere ordinare un numero incontrollato di pizze.
+Nell'immagine \ref{fig:security:software:development}:
+
+\begin{enumerate*}[label=\alph*)]
+	\item Abuse cases (invece di use cases) si riferiscono ai  tipici 
+	casi in cui il sistema può essere flesso in chiara violazione delle
+	policy di sicurezza. 
+	\item La Code review consiste anche nell'analisi statica.
+	\item Il Test sul software è inteso come penetration test, stress test, ecc.
+\end{enumerate*}
+
+
+
+
+
+
