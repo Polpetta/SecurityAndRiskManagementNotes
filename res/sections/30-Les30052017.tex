@@ -350,12 +350,12 @@ Gli esercizi sono disponibili in \ref{esCs:aa}
 
 \part{Incident process forensics}
 
-Un incidente relativo alla sicurezza può capitare per molti problemi. Un
+Un incidente relativo alla sicurezza può capitare per molti motivi. Un
 incidente è catalogato come tale quando c'è una violazione della \textit{policy}
 di sicurezza. Un incidente può essere di due tipologie:
 \begin{itemize}
-\item Malizioso
-\item Casuale (non malizioso)
+\item Malizioso;
+\item Casuale (non malizioso).
 \end{itemize}
 
 \chapter{Incident Response vs Business Contiuity}
@@ -366,29 +366,34 @@ continuity plan}.
 
 \section{Business Continuity Plan}
 
-\subsection{Terminologia della \textit{recovery}}
-\todo{Add refernce to old image --> RECOVERY TERMS}
-Esiste una determinata tipologia di termini:
+\subsection{Terminologia della recovery}
+
 \begin{itemize}
-\item Interruption Window
-\item Service Delivery Objective
-\item ?? \todo{Aggiungimi :(}
+\item \textbf{Interruption Window:} durata di tempo in cui l'organizzazione può attendere 
+tra il \textit{Point of Failure} e la riesumazione del servizio;
+\item \textbf{Service Delivery Objective (SDO):} livello di servizio in modalità alternativa;
+\item \textbf{Maximum Tolerable Outage:} tempo massimo che si può passare in modalità alternativa.
 \end{itemize}
 
-In particolare, esistono diversi ruoli che vedremo in dettaglio.
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=\textwidth]{recovery}
+        \end{center}
+        \caption{Timeline dei tempi di recovery.}
+        \label{fig:audit:hooks}
+\end{figure}
 
-\paragraph*{IMT} L'IMT, che significa \textbf{Incident Management Team}, fa
-parte della \textit{steering commitee} e sono membri dell'IRT. % va troppo
-veloce
+\subsubsection{Ruoli}
 
+\paragraph*{Incident Management Team} L'IMT fa parte della \textit{steering commitee} 
+e sono membri dell'IRT. Sviluppano strategie e piani per la risposta all'incidente e 
+gestione dei rischi. Ottiene i fondi e verifica le richiesta di performance e requisiti.
 
-
-
-\paragraph*{IRT} L'IRT, che significa \textbf{Incident Response Team}, ed è il
+\paragraph*{Incident Response Team} L'IRT è il
 team che gestisce l'incidente, ha una conoscenza tecnica dei sistemi e di
-``hacking'' (è il classico informatico)
+``hacking'' (è il classico informatico).
 
-\paragraph*{Investigatore} Presenti in aziende grandi, è una persona di fiducia
+\paragraph*{Investigatore} Presente in aziende grandi, è una persona di fiducia
 che ha accesso a tutte le risorse aziendali e si occupa di cercare le cause
 dell'incidente che a volte possono anche essere dolose.
 
@@ -398,23 +403,23 @@ dell'incidente che a volte possono anche essere dolose.
 
 Questo piano si suddivide in diversi \textit{step}:
 \begin{enumerate}
-\item Preparazione
-\item Identificazione
-\item Contenimento
-\item Analisi e eradicazione
-\item Recupero
-\item Imparare
+\item Preparazione;
+\item Identificazione;
+\item Contenimento;
+\item Analisi e eradicazione;
+\item Recupero;
+\item Imparare.
 \end{enumerate}
 
 Vediamo brevemente il significato di ogni passo, che sarà analizzato in
 profondità più avanti.
 
-\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, ovvero è
-una fase che è l'\textbf{analisi dello scenario}.
+\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, corrisponde ad
+una fase di \textbf{analisi dello scenario}.
 
-\paragraph*{Identificazione} Questo \textit{step} succede quando si viene
-avvisati dell'anomalia e si comincia a cercare la causa del problema. Più e
-ricco e sistema il complesso informativo più è difficile trovare la causa del
+\paragraph*{Identificazione} Questo step inizia quando si viene
+avvisati dell'anomalia e si comincia a cercare la causa del problema. Più è
+ricco e complesso il sistema informativo, più è difficile trovare la causa del
 problema.
 
 \paragraph*{Contenimento} In questa fase si cerca di ``limitare i danni'', con
@@ -422,10 +427,10 @@ l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare
 elementi della produttività.
 
 \paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perchè è
-successo, e si cerca di risolvere la causa.
+successo, provando a risolvere la causa.
 
 \paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per
-ritornare alla fase di preparazione
+ritornare alla fase di preparazione.
 
 \paragraph*{Imparare} Questa parte è molto importante, in quanto imparare la
 lezione permette di evitare futuri attacchi e di rendere il sistema più sicuro.
