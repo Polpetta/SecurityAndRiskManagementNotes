@@ -1,6 +1,16 @@
 \chapter{Application Controls}
 \label{cs:ac}
 
+Quando viene fatta review dei controlli di input, l'auditor deve
+assicurare che tutte le transazioni sono state immesse correttamente.
+I controlli devono essere in grado di verificare che l'input sia valido.
+Questo è molto importante perché in molti sistemi automatizzati,
+l'output di un sistema è l'input di un altro. In queste situazioni,
+i dati devono essere controllati per verificare le informazioni sia
+dalla applicazione mittente che da quella ricevente.
+
+
+
 Nota sull'esame: descrizione di un caso + poche domande
 
 \begin{figure}[h!]
@@ -14,9 +24,9 @@ Nota sull'esame: descrizione di un caso + poche domande
 Nell'immagine \ref{fig:security:software:development}:
 
 \begin{enumerate*}[label=\alph*)]
-	\item Abuse case (invece di use case) si riferisce ai  tipici casi in cui il 
-	sistema può essere flesso in chiara violazione delle policy di 
-	sicurezza. 
+	\item Abuse cases (invece di use cases) si riferiscono ai  tipici 
+	casi in cui il sistema può essere flesso in chiara violazione delle
+	policy di sicurezza. 
 	\item La Code review consiste anche nell'analisi statica.
 	\item Il Test sul software è inteso come penetration test, stress test, ecc.
 \end{enumerate*}
@@ -57,13 +67,15 @@ dopo che sono state aggregate.
 L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
 dei controlli automatici su un batch e associati ad un batch file.
 Viene effettuata la validazione della transazione. Le transazioni
-rifiutate sono corrette e rimandate o trattate in altro modo.
+rifiutate sono corrette e rispedite o trattate in altro modo.
 
 Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
 Il processing viene completato.
 Infine segue il batch balancing attraverso 
 una riconciliazione manuale o automatica dei controlli di batch.
 
+Una rappresentazione grafica del batch processing si può trovare in 
+Figura \ref{fig:security:batch:processing}.
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=0.5]{batch_processing}
