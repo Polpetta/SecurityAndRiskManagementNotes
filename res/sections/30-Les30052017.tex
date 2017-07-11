@@ -1,6 +1,9 @@
 \chapter{Application Controls}
 \label{cs:ac}
 
+Nota sull'esame: descrizione di un caso + poche domande
+
+\section{Controlli di Input}
 Quando viene fatta review dei controlli di input, l'auditor deve
 assicurare che tutte le transazioni sono state immesse correttamente.
 I controlli devono essere in grado di verificare che l'input sia valido.
@@ -8,30 +11,6 @@ Questo è molto importante perché in molti sistemi automatizzati,
 l'output di un sistema è l'input di un altro. In queste situazioni,
 i dati devono essere controllati per verificare le informazioni sia
 dalla applicazione mittente che da quella ricevente.
-
-
-
-Nota sull'esame: descrizione di un caso + poche domande
-
-\begin{figure}[h!]
-        \begin{center}
-                \includegraphics[width=\textwidth]{security_software_development}
-        \end{center}
-        \caption{La sicurezza nello sviluppo del software}
-        \label{fig:security:software:development}
-\end{figure}
-
-
-
-Nell'immagine \ref{fig:security:software:development}:
-
-\begin{enumerate*}[label=\alph*)]
-	\item Abuse cases (invece di use cases) si riferiscono ai  tipici 
-	casi in cui il sistema può essere flesso in chiara violazione delle
-	policy di sicurezza. 
-	\item La Code review consiste anche nell'analisi statica.
-	\item Il Test sul software è inteso come penetration test, stress test, ecc.
-\end{enumerate*}
 
 \paragraph{Input Form}
 Un input form dovrebbe avere le seguenti caratteristiche:
@@ -46,11 +25,7 @@ incrociato ad altri documenti;
 \item Richiedere firme per l'autorizzazione se necessario.
 \end{itemize}
 
-
-
-
-
-\paragraph{Transaction Validation}
+\paragraph{Validazione delle Transazioni}
 \begin{itemize}
 	\item Sequence check: l'utilizzo di sequence number fanno sì che numeri
 	out-of-sequence o numeri duplicati vengano rifiutati.
@@ -77,6 +52,15 @@ incrociato ad altri documenti;
 	la data di nascita di un dipendente deve essere avvenuta almeno
 	16 anni fa.
 \end{itemize}
+
+Per esempio, oggi come oggi in america hanno poche grandi catene per la pizza.
+Questo perchè il sistema è diventato informatizzato, garantendo il monopolio a
+PizzaHut grazie alla sua applicazione. È per questo che il controllo sull'input 
+è molto importante, perché un possibile attacco di Denial Of Service potrebbe 
+essere ordinare un numero incontrollato di pizze.
+
+
+
 
 
 \paragraph{Batch Processing} 
@@ -131,6 +115,12 @@ permettendo quindi futuri correzioni.
 \end{itemize}
 
 
+
+
+
+
+\section{Processing Controls}
+
 \subparagraph{Data Processing}
 
 \begin{figure}[h!]
@@ -144,7 +134,8 @@ permettendo quindi futuri correzioni.
 Il processing comprende controllo dei parametri di sistema (es. specificare
 minimo e massimo), Standing data (file permanenti), report delle eccezioni
 (errori nelle transazioni), log delle transazioni, file delle transazioni
-(giornaliero).
+(giornaliero). Una rappresentazione grafica di Data processing è riportata
+nella figura \ref{fig:data:processing}.
 
 \paragraph{Processing controls}
 I processing controls sono usati per assicurare
@@ -182,8 +173,9 @@ i dati sono stati salvati e processati correttamente.
 \paragraph{Controllo sui file dati}
 \begin{itemize}
 \item
-Prerecorded Input: Certain information fields are preprinted on a blank
-input form to reduce input errors.
+Prerecorded Input: Alcuni campi devono avere dei valori prefissati
+quando non si scrive niente. Questo diminuisce il numero di errori.
+
 \item
 Data File Security: solo l'accesso autorizzato è consentito.
 \item
