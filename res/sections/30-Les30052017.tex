@@ -142,15 +142,49 @@ controls calcolati
 i dati sono stati salvati e processati correttamente.
 \end{itemize}
 \end{itemize}
-\paragraph{Controllo sui dati}
 
-\todo{copiare l'elenco}
 
-Source document retention: la gestione dei documenti è un'attività molto onerosa
-perché richiede che ci sia una organizzazione in piedi.
+\paragraph{Controllo sui file dati}
+\begin{itemize}
+\item
+Prerecorded Input: Certain information fields are preprinted on a blank
+input form to reduce input errors.
+\item
+Data File Security: solo l'accesso autorizzato è consentito.
+\item
+Version usage: è sempre usata la versione corretta di un file
+\item
+Transaction Logs: Un traccia per l'audit: salva la data e l'ora dell'input,
+l'ID dell'utente, il terminal (su cui si è effettuata la transazione) e
+l'input di transazioni.
+\item
+Before and After Image Reporting: Un file contenente dati è salvato
+prima e dopo averlo processato. In questo modo è possibile tenere traccia
+dell'impatto delle transizioni sui file.
+\item 
+Parity Checking: Quando un file è inviato, bisogna aggiungere dei codici
+per il controllo, per asicurare che sia trasmeso senza errori (hash).
+\end{itemize}
 
-Internal \& External Labeling: c'è il backup, bisogna etichettarli in modo da
-trovare quello giusto.
+Controlli su \textbf{Batch Processing}:
+\begin{itemize}
+\item
+Error reporting \& handing: tutti i report di errori sono stati riconciliati
+e le autorizzazioni/correzioni sono state trasmesse in ordine temporale.
+\item
+One-for-One Checking: i documenti descrivono correttamente il processing
+che è avvenuto.
+\item
+Source document retention: la gestione dei documenti è un'attività molto
+onerosa perché richiede che ci sia una organizzazione in piedi.
+\item
+Internal \& External Labeling: c'è il backup, bisogna etichettarli in 
+modo da trovare quello giusto.
+\end{itemize}
+
+
+
+
 
 \section{Esercizi}
 
