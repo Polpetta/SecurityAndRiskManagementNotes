@@ -21,6 +21,8 @@ Nota sull'esame: descrizione di un caso + poche domande
         \label{fig:security:software:development}
 \end{figure}
 
+
+
 Nell'immagine \ref{fig:security:software:development}:
 
 \begin{enumerate*}[label=\alph*)]
@@ -30,6 +32,23 @@ Nell'immagine \ref{fig:security:software:development}:
 	\item La Code review consiste anche nell'analisi statica.
 	\item Il Test sul software è inteso come penetration test, stress test, ecc.
 \end{enumerate*}
+
+\paragraph{Input Form}
+Un input form dovrebbe avere le seguenti caratteristiche:
+\begin{itemize}
+\item Essere facilmente leggibile e utilizzabile;
+\item Raggruppare campi simili assieme;
+\item Provvedere codici di input predeterminati per ridurre
+gli errori;
+\item Provvedere identificativi o numeri che fanno riferimento
+incrociato ad altri documenti;
+\item Indicare la dimensione dei campi;
+\item Richiedere firme per l'autorizzazione se necessario.
+\end{itemize}
+
+
+
+
 
 \paragraph{Transaction Validation}
 \begin{itemize}
@@ -86,11 +105,15 @@ Figura \ref{fig:security:batch:processing}.
 
 \paragraph{Transaction Authorization}
 \begin{itemize}
-	\item Manuale: Ottenimento della firma dal management 
-	\item Automatico
+	\item Manuale:
+	\begin{itemize}
+	\item Ottenere una firma dal management sui form dei batch o sui
+	documenti.
+	\end{itemize}
+	\item Automatico:
+	Controllo online dell'accesso attraverso l'identifacazione del
+	terminale o della password.
 \end{itemize}
-
-Automatico
 
 \paragraph{Error Handling Alternatives}
 Il trattamento degli errori di input possono essere trattati
