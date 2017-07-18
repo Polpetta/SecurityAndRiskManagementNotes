@@ -59,6 +59,7 @@ foreach $f (@files) {
 			$pattern = 1;
 		} elsif ($line =~ /\\end\{Answer\}/g) {
 			$correct =~ s/Risposta esatta: //;
+			$correct =~ s/^(\d)(.*)/$1/;
 			$correct = cleanForPrint($correct);
 			print $fh "A: $correct\n";
 			$correct = '';
