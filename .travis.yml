@@ -15,14 +15,11 @@ addons:
     - latex-xcolor
     - pgf
 script:
-- make
-- make clean
-- make alternative
+- make 
+- make alternative OUTPUT_NAME=SecurityAndRiskManagementAlternative
+- make exam OUTPUT_NAME=SecurityAndRiskManagementExamMode
 before_deploy:
 - git fetch --tags
-- mv SecurityAndRiskManagement.pdf SecurityAndRiskManagementAlternative.pdf
-- make clean
-- make
 deploy:
   provider: releases
   api_key:
@@ -30,6 +27,7 @@ deploy:
   file: 
     - "SecurityAndRiskManagement.pdf"
     - "SecurityAndRiskManagementAlternative.pdf"
+    - "SecurityAndRiskManagementExamMode.pdf"
   skip_cleanup: true
   on:
     repo: Polpetta/SecurityAndRiskManagementNotes
