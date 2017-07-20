@@ -25,12 +25,18 @@ compile: autogen
 	$(CC) $(CCFLAGS) $(JOB_NAME); \
 
 alt:
-	set -e; \
 	cd tools/; \
 	perl answersRemover.pl; \
 	cd ../;
 
 alternative: alt compile
+
+examautogen:
+	perl tools/examVerMaker.pl;
+
+exam: examautogen alt
+	$(CC) -C $(JOB_NAME); \
+	$(CC) $(CCFLAGS) $(JOB_NAME); \
 
 clean:
 	if [[ -a res/sections/89-Answers.tex ]]; \
