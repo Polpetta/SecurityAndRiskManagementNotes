@@ -17,9 +17,9 @@ addons:
 script:
 - make 
 - make alternative OUTPUT_NAME=SecurityAndRiskManagementAlternative
-- mv SecurityAndRiskManagement.pdf SecurityAndRiskManagement.pdf.bak
+- mv SecurityAndRiskManagement.pdf SecurityAndRiskManagement.pdf.tmp
 - make clean
-- mv SecurityAndRiskManagement.pdf.bak SecurityAndRiskManagement.pdf
+- mv SecurityAndRiskManagement.pdf.tmp SecurityAndRiskManagement.pdf
 - make exam OUTPUT_NAME=SecurityAndRiskManagementExamMode
 before_deploy:
 - git fetch --tags
