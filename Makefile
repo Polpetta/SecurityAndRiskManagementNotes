@@ -7,7 +7,7 @@ PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main
 CC= latexmk
 JOB_NAME=-jobname='$(OUTPUT_NAME)'
-CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -pdf
+CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -quiet -pdf
 SHELL := /bin/bash #Need bash not shell
 
 all: compile
