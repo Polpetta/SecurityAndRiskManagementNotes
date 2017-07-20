@@ -5,7 +5,7 @@ Questo concetto è molto importante.
 La \textit{conformità} è più importante della \textit{sicurezza} perché bisogna 
 essere conformi a degli standard.
 
-È importante, come già detto in orecedenza, separare i vari 
+È importante, come già detto in precedenza, separare i vari 
 poteri tra le persone, in maniera tale da assicurarsi che non avvengano ``abusi 
 di potere'' (es. l'amministratore di rete concede i diritti, ma qualcuno deve autorizzare che il 
 ruolo $x$ necessiti dei diritti. l'amministratore implementa la concessione). 
@@ -132,6 +132,146 @@ Il CMM è stato superato dal CMMI \textit{Capability Maturity Model Integration}
 
 Il \textbf{COBIT} è uno standard diverso.
 
+
+\paragraph{Livello 0}
+
+Al livello iniziale si è come un pompiere: si corre continuamente a destra e a 
+sinistra per risolvere eventuali problemi.
+
+\paragraph{Livello 1 - Esecuzione informale}
+
+La progettazione della sicurezza è definita in maniera povera, i problemi di 
+sicurezza sono trattati in maniera reattiva: si reagisce 
+alla minaccia, portando prima o poi l'attacco a vincere. Non ci sono piani di 
+contingenza\footnote{I piani di contingenza sono dei piani che dettano le azioni 
+da compiere in caso si verificano delle situazioni d'emergenza.}. I budget, la 
+qualità, le funzionalità e i progetti vengono schedulati \textit{ad hoc}.
+Non ci sono aree dei processi.
+
+\paragraph{Livello 2 - Pianificato e Tracciato}
+
+Le procedure vengono definite a livello di progetto. La definizione, pianificazione 
+e le performance diventano de-facto standard da progetto a progetto. Gli eventi 
+vengono tracciati. Le funzionalità comuni includono: pianificazione, disciplina, 
+verifica e tracciamento delle performance.
+
+\paragraph{Livello 3 - Ben definito}
+
+I processi di sicurezza sono standardizzati all'interno dell'organizzazione e il 
+personale viene addestrato per assicurarsi che abbia le conoscenze e le skill 
+necessarie. In aggiunta, le misure vengono basate su un processo definito e gli 
+audit tracciano le performance. Le funzionalità più comuni includono: definire 
+un processo standard, eseguire il processo definito e coordinare le pratiche 
+relative alla sicurezza.
+
+\subparagraph*{Policy per la documentazione}
+
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=0.4]{res/img/documentation_policy}
+        \end{center}
+        \caption{Policy per la documentazione.}
+\end{figure}
+
+\subparagraph{Esempi di policy}
+
+I \textbf{rischi} dovrebbero essere gestiti utilizzando dei controlli e delle 
+contromisure appropriate per raggiungere dei livelli accettabili a dei costi 
+accettabili. Il \textbf{monitoraggio} e le \textbf{metriche} dovrebbero essere 
+implementate, gestite e mantenute per fornire una certezza continua che tutte 
+le policy sulla sicurezza siano rispettate e i controlli oggettivi siano 
+riscontrati. Le \textbf{capacità di risposta ad incidenti} sono implementate e 
+gestite sufficientemente per garantire che gli incidenti non affliggano materialmente 
+la capacità dell'organizzazione di continuare le proprie operazioni. 
+La \textbf{business continuity} e il \textbf{recovery plan} dovrebbero essere 
+sviluppate, mantenute e testate in modo che assicurino la capacità dell'organizzazione 
+di proseguire con le proprie attività sotto tutte le condizioni.
+
+Nota: una cattiva \textit{policy} fa riferimento alla tecnologia. Le 
+\textit{policy} sono solamente linee guida.
+
+\subparagraph{Policy, procedure e standard}
+
+\subsubparagraph*{Obiettivo di una policy:} descrive \textit{cosa} deve essere soddisfatto.
+
+\subsubparagraph*{Controllo della policy:} tecniche per raggiungere l'obiettivo, suddivise in
+\begin{itemize}
+\item \textbf{Procedure:} definiscono come la policy deve essere perseguita;
+\item \textbf{Standard:} regola, metrica o vincolo specifico che implementa la policy.
+\end{itemize}
+
+\subparagraph{Definizioni della qualità}
+
+\subsubparagraph*{Quality assurance:} assicurarsi che tutto lo staff stia seguendo i 
+processi della qualità definiti.
+
+\subsubparagraph*{Controllo della qualità:} condurre test per validare che il software è 
+privo di difetti e corrisponde alle aspettative dell'utente.
+
+\paragraph{Livello 4 - Metriche}
+
+Esistono degli obiettivi misurabili per la qualità della sicurezza, le misure 
+sono correlate agli obiettivi del business dell'organizzazione. Le funzionalità 
+comuni includono: stabilire degli obiettivi misurabili di qualità e una gestione
+oggettiva delle performance (SLA).
+È tutto scritto e documentato: sono presenti politiche, 
+procedure, standard e linee guida.
+
+\subparagraph{Metriche}
+
+Le metriche permettono ad auditor differenti di attestare che i programmi per 
+la sicurezza vengono attuati. Monitorare il raggiungimento di controlli oggettivi 
+è più importante che perfezionare le procedure di sicurezza.
+
+Senza metriche quantitative si lascia spazio alla soggettività.
+
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[scale=1.5]{res/img/metriche}
+        \end{center}
+        \caption{Esempi di metriche per un'azienda.}    
+\end{figure}
+
+\subsubparagraph*{Metriche operazionali}
+
+Le metriche di tipo operazionale includono metriche su come eseguire 
+un corretto \textit{patching} dei sistemi.
+
+Confrontare le metriche con quelle di altre aziende permette di capire quanto 
+siamo un possibile \textit{target} per gli attaccanti.
+
+\subsubparagraph*{Metriche di tipo strategico}
+
+Sono i piani legati al rischio, come il \textit{disaster recovery}.
+Il rapporto di audit è una metrica importantissima perché fa capire come lavora 
+l'azienda e l'auditor.
+
+\subsubparagraph*{Compliance interna}
+
+La conformità (\textit{compliance}) assicura la conformità con le policy 
+organizzative. Compliance e errore interno sono dati importanti perché 
+fanno capire all'azienda quanto è allineata con gli obiettivi strategici che si 
+è prefissata.
+
+
+\paragraph{Livello 5 - Miglioramento continuo}
+
+Il miglioramento continuo parte dalle misure e dagli eventi sulla sicurezza.
+Vengono valutate nuove tecnologie e nuovi processi. Le funzionalità comuni 
+includono: miglioramento delle capacità organizzative e della efficacia dei 
+processi (ROI).
+
+Prima avere un cambio tecnologico di fondo è raro, oggi avviene ogni 3 anni. Chi 
+prende la tecnologia e la incorpora si prende la fetta di mercato.
+
+Le grande società fanno \textit{scouting} di nuove tecnologie. Il vantaggio di 
+essere un'azienda piccola è che si può essere aggressivi e investire, aiutando 
+il movimento economico. Questo ci dice che aziende come Google non ci 
+saranno per sempre. Non si è ancora capito a dove possa portare il cambiamento
+tecnologico. Un'altra area importante è l'intelligenza artificiale legata 
+alla sicurezza.
+
+
 \section{COBIT \& COSO}
 
 \textbf{COSO} è un modello strategico per la governance dell'azienda. Purtroppo 
@@ -156,6 +296,13 @@ COBIT4:  \url{https://www.isaca.org/Italian/Documents/CobiT-41-Italian.pdf}}.
 
 \subsection{COBIT}
 \label{COBIT}
+
+\begin{enumerate}
+  \item Pianificazione e organizzazione;
+  \item Acquisizione e implementazione;
+  \item Consegna e supporto;
+  \item Monitoring
+\end{enumerate}
 
 \subsubsection{Pianificazione e organizzazione}
 
