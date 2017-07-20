@@ -17,7 +17,7 @@ addons:
 script:
 - make 
 - make alternative OUTPUT_NAME=SecurityAndRiskManagementAlternative
-- make clean
+- make clean OUTPUT_NAME=SecurityAndRiskManagementAlternative
 - make exam OUTPUT_NAME=SecurityAndRiskManagementExamMode
 before_deploy:
 - git fetch --tags
