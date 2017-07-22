@@ -18,8 +18,10 @@ script:
 - make 
 - make alternative OUTPUT_NAME=SecurityAndRiskManagementAlternative
 - mv SecurityAndRiskManagement.pdf SecurityAndRiskManagement.pdf.tmp
+- mv SecurityAndRiskManagementAlternative.pdf SecurityAndRiskManagementAlternative.pdf.tmp
 - make clean
 - mv SecurityAndRiskManagement.pdf.tmp SecurityAndRiskManagement.pdf
+- mv SecurityAndRiskManagementAlternative.pdf.tmp SecurityAndRiskManagementAlternative.pdf
 - make exam OUTPUT_NAME=SecurityAndRiskManagementExamMode
 before_deploy:
 - git fetch --tags
