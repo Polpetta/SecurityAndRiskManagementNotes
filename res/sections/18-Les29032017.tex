@@ -3,7 +3,7 @@
 Questa fase è quando l'attaccante prendere il controllo del computer della 
 vittima, o lo rende parte di una \textit{botnet}\footnote{Rete di computer 
 controllati senza autorizzazione tipicamente da remoto da un'entità maliziosa}. 
-Esistono diversi sitemi per portare a termine questa fase.
+Esistono diversi sistemi per portare a termine questa fase.
 
 \paragraph*{Trojan} Il \textit{Trojan} solitamente fornisce un servizio (per 
 questo motivo lo si installa) ma contemporaneamente fa qualcosa di malizioso in 
@@ -71,7 +71,7 @@ delle due chiavi può essere pubblica.
 \end{figure}
 
 Questo tipo di crittografia si identifica per il fatto che per cifrare e 
-decrifrare il messaggio occorre avere la stessa chiave.
+decifrare il messaggio occorre avere la stessa chiave.
 
 \paragraph*{Tipologie di cifrari} Esistono diversi tipi di cifrari, che 
 tradizionalmente sono:
@@ -87,7 +87,7 @@ cifrario è non monoalfabetico (che non vuol dire polialfabetico);
  In una corrispondenza di una doppia occorrenza si ottengono due caratteri diversi.
  \end{itemize}
  \item \textbf{A trasposizione:} questo tipo di cifrario esegue una trasposizione del testo, dove la chiave sarà 
-il vero segreto. La funzione di trasposizione è sempre bigettiva. 
+il vero segreto. La funzione di trasposizione è sempre biettiva. 
 \end{itemize}
 
 \subsubsection{Cifrari}
@@ -95,7 +95,7 @@ il vero segreto. La funzione di trasposizione è sempre bigettiva.
 \paragraph{Cifrario XOR}
 
 È una delle soluzioni migliori, e funziona molto bene. Dato un input, si esegue 
-uno XOR esclusivo con una chiave $K$, ottenenedo il \textit{cyphertext}. Per 
+uno XOR esclusivo con una chiave $K$, ottenendo il \textit{cyphertext}. Per 
 decriptare il testo la soluzione è prendere il testo cifrato e metterlo di nuovo 
 in XOR esclusivo con la chiave.
 
@@ -111,7 +111,7 @@ $$
 Questo cifrario viene definito come ``cifrario perfetto'', ovvero la soluzione è 
 sicura dal punto di vista dell'\textit{information theory}. La sicurezza a cui 
 siamo legati oggi è basata su problemi computazionali, in cui l'attaccante si 
-considera battutto se il numero di operazioni da eseguire è $\ge 2^{80}$.
+considera battuto se il numero di operazioni da eseguire è $\ge 2^{80}$.
 
 \subparagraph*{One-time pad (OTP)}
 In questo caso, anche se l'attaccante ha una capacità di calcolo infinita non 
@@ -122,7 +122,7 @@ completamente casuale.
 Un problema però è la frequenza delle lettere che si susseguono in un messaggio, 
 e quindi un attaccante ha la possibilità di eseguire un'analisi statistica del 
 testo.
-Nonostante le sue caratteristiche OTP non viene utilizzato perchè bisogna avere 
+Nonostante le sue caratteristiche OTP non viene utilizzato perché bisogna avere 
 sempre chiavi nuove. Altrimenti se vengono intercettati due messaggi codificati 
 con la stessa chiave è possibile riuscire applicando la statistica a capire il 
 contenuto del messaggio.
