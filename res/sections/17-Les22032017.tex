@@ -5,7 +5,7 @@
 
 Diverse aziende al giorno d'oggi sviluppano diverse milioni di linee di codice,
 e raggruppano queste linee in librerie, che vengono salvate nei sistemi. La
-perdita di queste liberie costituiscono una catastrofe. È quindi necessario:
+perdita di queste librerie costituiscono una catastrofe. È quindi necessario:
 \begin{itemize}
  \item Mantenere i backup dei dati lontani dall'azienda (off-site);
  \item Avere un posto sicuro in cui tenere le librerie/siti. Se questi siti
@@ -56,7 +56,7 @@ Gli esercizi sono disponibile alla sezione \ref{EsSat}
 
 \chapter{Network Security}
 
-\section{The problem of Network Security}
+\section{Il problema della sicurezza della rete}
 
 Ci sono due punti fondamentali al giorno d'oggi:
 
@@ -94,13 +94,13 @@ guardare sono:
  \item guardare dentro i rifiuti dell'azienda per trovare informazioni;
  \item recuperare informazioni da google, newsgroups web sites;
  \item social engineering;
- \item whols database \& arin.net;
+ \item whois database \& arin.net;
  \item interrogazioni al DNS.
 \end{itemize}
 
 \subsection{Fase 2: Scanning}
 
-Soprattutto utile per le reti wireless. Per definizioni le reti wireless fanno
+Soprattutto utile per le reti wireless. Per definizione le reti wireless fanno
 \textbf{beaconing}: dichiarano le loro informazioni a tutti, e questo presenta
 delle falle di sicurezza. Sono presenti attacchi al giorno d'oggi noti e con
 percentuale fortissima di successo, così forte che se fossero applicate al
@@ -163,19 +163,19 @@ del protocolli web, DoS, trap door, virus, worm e trojan horse.
 Questo attacco si basa sullo scambio di chiavi tramite l'algoritmo di
 \textit{Diffie-Hellman}.
 
-\subparagraph{Protocollo di scamio delle chiavi Diffie-Hellman}
+\subparagraph{Protocollo di scambio delle chiavi Diffie-Hellman}
 
-Inventato nel 1976, usa una crittografia a chiave simmetrica.
+Inventato nel 1976, usa una crittografia a chiave pubblica per poter 
+permettere lo scambio di una chiave privata.
 
 Permette a due comunicanti di generare una chiave simmetrica senza basarsi su
 un segreto pre-definito (n.b non è un algoritmo di crittografia).
 Purtroppo sarà poco effettivo contro il quantum computing, di conseguenza è 
-importante cercare una soluzione alternativa prima dell'uscita.
+importante cercare una soluzione alternativa prima della loro uscita.
 
 \subparagraph{Secure Key generation}
 
 Alice e Bob vogliono scambiarsi una chiave ma sono geograficamente lontani.
-
 Le due parti si scambiano delle informazioni pubbliche. Queste informazioni
 vengono combinate con delle informazioni private per generare una chiave,
 utilizzata per l'\textit{encryption}.
@@ -188,7 +188,7 @@ Vengono eseguiti i seguenti passi:
  \item Si sceglie un numero primo $p$ di grandezza ragionevole (almeno 2048
  bit);
  \item Si prende una radice primitiva (generatore) di $p$: dato p prendo un
- numero a caso, se ho un generatore so che esite un numero per cui elevando il
+ numero a caso, se ho un generatore so che esiste un numero per cui elevando il
  generatore a quel numero posso ottenere tutto il campo.
 \end{enumerate}
 
@@ -225,7 +225,7 @@ $B = g^b \mod p$ ($B = 5^{15} \mod 23 = 19$);
 \end{enumerate}
 
 
-\subparagraph{Esecuzione dell'attacco MITM}
+\paragraph{Esecuzione dell'attacco MITM}
 
 Questo tipo di attacco è attivo, dove i dati vengono dirottati da un attaccante
 che sta nel mezzo dell'attacco, simulando una falsa trasparenza. Questa

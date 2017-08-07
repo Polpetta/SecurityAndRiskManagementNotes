@@ -1,8 +1,6 @@
 \chapter{Application Controls}
 \label{cs:ac}
 
-Nota sull'esame: descrizione di un caso + poche domande
-
 \section{Controlli di Input}
 Quando viene fatta review dei controlli di input, l'auditor deve
 assicurare che tutte le transazioni sono state immesse correttamente.
@@ -28,33 +26,33 @@ incrociato ad altri documenti;
 \paragraph{Validazione delle Transazioni}
 \begin{itemize}
 	\item Sequence check: l'utilizzo di sequence number fanno sì che numeri
-	out-of-sequence o numeri duplicati vengano rifiutati.
+	out-of-sequence o numeri duplicati vengano rifiutati;
 	\item Controllo dell'intervallo e limiti: i numeri sono sotto un numero
-	massimo dato o in un intervallo specifico.
+	massimo dato o in un intervallo specifico,
 	\item Controlli di validità o lookup di una tabella:
-	solo alcuni valori sono accettati (es. Sesso = M/F).
+	solo alcuni valori sono accettati (es. Sesso = M/F);
 	\item Controlli di ragionevolezza: i valori inseriti sono ragionevoli.
 	Per esempio per una pizzeria un'ordine di pizza d'asporto di 100 pizze
-	va verificato.
+	va verificato;
 	\item Controlli di esistenza: i campi richiesti da compilare
-	sono completati correttamente.
+	sono completati correttamente;
 	\item Key Verification: l'input è controllato due volte attraverso
 	una seconda persona o tutte le cifre sono immesse due volte.
 	\item Check Digit: una cifra potrebbe verificare la corretta
-	immissione di altre cifre.
+	immissione di altre cifre;
 	\item Completeness check: viene immesso un input completo. Gli
 	spazi o gli zero sono controllati per ogni lettera o cifra 
-	richiesta \todo{Non chiaro il testo originale}.
+	richiesta;
 	\item Duplicate Check: bisogna sempre controllare se una transizione
-	con lo stesso ID esiste già. In caso affermativo va rifiutata.
+	con lo stesso ID esiste già. In caso affermativo va rifiutata;
 	\item Consistency or Logical Relationship Check: i nuovi dati
 	sono coerenti con altri dati a disposizione: per esempio
 	la data di nascita di un dipendente deve essere avvenuta almeno
 	16 anni fa.
 \end{itemize}
 
-Per esempio, oggi come oggi in america hanno poche grandi catene per la pizza.
-Questo perchè il sistema è diventato informatizzato, garantendo il monopolio a
+Per esempio, oggi come oggi in America hanno poche grandi catene per la pizza.
+Questo perché il sistema è diventato informatizzato, garantendo il monopolio a
 PizzaHut grazie alla sua applicazione. È per questo che il controllo sull'input 
 è molto importante, perché un possibile attacco di Denial Of Service potrebbe 
 essere ordinare un numero incontrollato di pizze.
@@ -89,13 +87,9 @@ Figura \ref{fig:security:batch:processing}.
 
 \paragraph{Transaction Authorization}
 \begin{itemize}
-	\item Manuale:
-	\begin{itemize}
-	\item Ottenere una firma dal management sui form dei batch o sui
-	documenti.
-	\end{itemize}
-	\item Automatico:
-	Controllo online dell'accesso attraverso l'identifacazione del
+	\item Manuale: ottenere una firma dal management sui form dei batch o sui
+	documenti;
+	\item Automatico: controllo online dell'accesso attraverso l'identificazione del
 	terminale o della password.
 \end{itemize}
 
@@ -106,9 +100,9 @@ con le seguenti tecniche:
 \item Rigettare le transazioni con errori e continuare a processare 
 il batch;
 \item Rigettatre l'intero batch di transazioni, se contiene
-degli errori.
+degli errori;
 \item Tieni il batch in sospeso fintanto che le transazioni 
-non vengono fissate.
+non vengono fissate;
 \item Accetta l'intero batch ma contrassegna le transazioni che
 contengono degli errori per renderne più facile l'identificazione,
 permettendo quindi futuri correzioni.
@@ -125,7 +119,7 @@ permettendo quindi futuri correzioni.
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{data_processing}
+                \includegraphics[width=0.7\textwidth]{data_processing}
         \end{center}
         \caption{Data processing}
         \label{fig:data:processing}
@@ -141,18 +135,18 @@ nella figura \ref{fig:data:processing}.
 I processing controls sono usati per assicurare
 l'accuratezza, la completezza e la validità dei dati durante
 processing online o batch. Questi controlli sono messi in campo
-per verificare che i dati vengano procesati solo tramite routine
+per verificare che i dati vengano processati solo tramite routine
 autorizzate. Esistono due modi per eseguire i processing controls:
 
 \begin{itemize}
 \item \textbf{Eseguita transazione per transazione}
 \begin{itemize}
 \item Editing: il programma testa l'accuratezza, la completezza
-e la validità dei dati.
-\item Controlli sugli ammontare calcolati: i valori calclati
-sono controllati per essere ragionevoli e non eccedere il massimo.
-\item Controlli programmati: Software che rileva, logga e inizia
-delle azioni correttive per gli errori.
+e la validità dei dati;
+\item Controlli sugli ammontare calcolati: i valori calcolati
+sono controllati per essere ragionevoli e non eccedere il massimo;
+\item Controlli programmati: software che rileva, logga e inizia
+delle azioni correttive per gli errori;
 \item Report delle eccezioni: gli errori delle transazioni vengono
 riportati con il loro tipo di errore.
 \end{itemize}
@@ -161,9 +155,9 @@ riportati con il loro tipo di errore.
 
 \begin{itemize}
 \item Batch Register:I batch totals sono salvati manualmente per essere
-confrontati con i totals di sistema. 
+confrontati con i totals di sistema;
 \item Run-To-Run Totals: ogni passo del processing riporta i batch
-controls calcolati
+controls calcolati;
 \item Reconciliation: un supervisore deve ricontrollare che \emph{tutti}
 i dati sono stati salvati e processati correttamente.
 \end{itemize}
@@ -172,38 +166,32 @@ i dati sono stati salvati e processati correttamente.
 
 \paragraph{Controllo sui file dati}
 \begin{itemize}
-\item
-Prerecorded Input: Alcuni campi devono avere dei valori prefissati
-quando non si scrive niente. Questo diminuisce il numero di errori.
+\item Prerecorded Input: Alcuni campi devono avere dei valori prefissati
+quando non si scrive niente. Questo diminuisce il numero di errori;
 
-\item
-Data File Security: solo l'accesso autorizzato è consentito.
-\item
-Version usage: è sempre usata la versione corretta di un file
-\item
-Transaction Logs: Un traccia per l'audit: salva la data e l'ora dell'input,
-l'ID dell'utente, il terminal (su cui si è effettuata la transazione) e
-l'input di transazioni.
-\item
-Before and After Image Reporting: Un file contenente dati è salvato
+\item Data File Security: solo l'accesso autorizzato è consentito;
+\item Version usage: è sempre usata la versione corretta di un file;
+\item Transaction Logs: una traccia per l'audit, salva la data e l'ora dell'input,
+l'ID dell'utente, il terminale (su cui è stata effettuata la transazione) e
+l'input di transazioni;
+\item Before and After Image Reporting: Un file contenente dati è salvato
 prima e dopo averlo processato. In questo modo è possibile tenere traccia
-dell'impatto delle transizioni sui file.
-\item 
-Parity Checking: Quando un file è inviato, bisogna aggiungere dei codici
-per il controllo, per asicurare che sia trasmeso senza errori (hash).
+dell'impatto delle transizioni sui file;
+\item Parity Checking: Quando un file è inviato, bisogna aggiungere dei codici
+per il controllo, per assicurare che sia trasmesso senza errori (hash).
 \end{itemize}
 
 Controlli su \textbf{Batch Processing}:
 \begin{itemize}
 \item
 Error reporting \& handing: tutti i report di errori sono stati riconciliati
-e le autorizzazioni/correzioni sono state trasmesse in ordine temporale.
+e le autorizzazioni/correzioni sono state trasmesse in ordine temporale;
 \item
 One-for-One Checking: i documenti descrivono correttamente il processing
-che è avvenuto.
+che è avvenuto;
 \item
 Source document retention: la gestione dei documenti è un'attività molto
-onerosa perché richiede che ci sia una organizzazione in piedi.
+onerosa perché richiede che ci sia una organizzazione in piedi;
 \item
 Internal \& External Labeling: c'è il backup, bisogna etichettarli in 
 modo da trovare quello giusto.
@@ -231,61 +219,55 @@ il controllo funziona come atteso: così si può giudicare se è inutile,
 oneroso, o se è utile, ecc.
 \end{itemize}
 
-\paragraph*{Strumenti di test integrati}
+\section{Strumenti integrati di test}
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{testing_facilities_integrated}
+                \includegraphics[width=0.7\textwidth]{testing_facilities_integrated}
         \end{center}
-        \caption{Strumenti di test integrati.}
+        \caption{Strumenti integrati di test.}
         \label{fig:testing:facilities:integrated}
 \end{figure}
 
-\paragraph*{Operazioni/simulazioni parallele}
+\subsection{Operazioni/simulazioni parallele}
 
 I dati vengono processati attraverso due sistemi differenti e i risultati vengono confrontati.
 Questo approccio è utile per verificare nuovi sistemi, comparandoli con quelli vecchi.
 
 \begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{parallel_operation_simulation}
+                \includegraphics[width=0.7\textwidth]{parallel_operation_simulation}
         \end{center}
         \caption{Operazioni o simulazioni parallele.}
         \label{fig:testing:facilities:parallel}
 \end{figure}
 
-\subparagraph*{Operazioni parallele}
+\textbf{Operazioni parallele:} confrontare il nuovo sistema con quello vecchio funzionante.
 
-Confrontare il nuovo sistema con quello vecchio funzionante.
+\textbf{Simulazioni parallele:} confrontare il sistema reale e quello simulato.
 
-\subparagraph*{Simulazioni parallele}
+\subsection{Embedded Audit Data Collection}
 
-Confrontare il sistema reale e quello simulato.
-
-\paragraph*{Embedded Audit Data Collection}
-
-\begin{figure}[h!]
         \begin{center}
-                \includegraphics[width=\textwidth]{embedded}
+                \includegraphics[width=0.8\textwidth]{embedded}
+                \captionof{figure}{Embedded Audit Data Collection}
+        		\label{fig:testing:facilities:parallel}
         \end{center}
-        \caption{Embedded Audit Data Collection}
-        \label{fig:testing:facilities:parallel}
-\end{figure}
+        
 
-\textbf{Embedded Audit Modules (EAM):} Il software per l'audit è incorportato direttamente 
+\textbf{Embedded Audit Modules (EAM):} Il software per l'audit è incorporato direttamente 
 nei programmi per monitorare specifici tipi di transformazioni. Il suo grande svantaggio è 
-quello di rallentare il sistema. Qualora vada tutto bene sono soldi spesi inutilmente.\\
-\newline
+quello di rallentare il sistema. Qualora vada tutto bene sono soldi spesi inutilmente.
+
 \textbf{Systems Control Audit Review File (SCARF):} fornisce informazioni di tipo statistico 
 riguardo ai dati dei file di input "normali", per determinare per l'auditor se il file è 
-stato sufficientemente modificato.\\
-\newline
-\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per fare validazione.\\
+stato sufficientemente modificato.
 
-\paragraph{Tecniche di testing per le applicazioni}
-\todo{copia elenco}
+\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per fare validazione.
 
-Dati dei test:
+\section{Tecniche di testing per le applicazioni}
+
+\textbf{Test data:}
 \begin{itemize}
     \item Test data: testare le transazioni che attraversano programmi reali;
     \item Strumenti di testing integrati: creare delle transazioni di test da includere con 
@@ -296,7 +278,7 @@ Dati dei test:
     e genera i log durante la produzione.
 \end{itemize}
 
-Debugging/Processing:
+\textbf{Debugging/Processing:}
 
 \begin{itemize}
     \item Mapping: identifica la logica di alcuni specifici programmi che non sono stati ancora testati;
@@ -305,16 +287,16 @@ Debugging/Processing:
     \item Snapshot: registra flussi di transazioni designate seguendo dei path logici.
 \end{itemize}
 
-Sistemi di validazione:
+\textbf{Sistemi di validazione:}
 
 \begin{itemize}
     \item Sistema di valutazione base-case: utilizza i test data per testare i programmi e verificare che 
-    le operazioni di sistema siano corretta prima di essere accettate;
+    le operazioni di sistema siano corrette prima di essere accettate;
     \item Simulazioni parallele;
     \item Operazioni parallele.
 \end{itemize}
 
-\paragraph{Tecniche di Auditing Online}
+\section{Tecniche di Auditing Online}
 
 \textbf{Audit Hooks:} all'interno del codice ci sono delle condizioni particolari che se
 sono soddisfatte triggerano delle operazioni di auditing, è meno pesante delle
@@ -358,7 +340,7 @@ di sicurezza. Un incidente può essere di due tipologie:
 \item Casuale (non malizioso).
 \end{itemize}
 
-\chapter{Incident Response vs Business Contiuity}
+\chapter{Incident Response vs Business Continuity}
 \label{IRBC}
 
 Avere un piano di risposta agli incidenti fa parte della \textit{business
@@ -426,7 +408,7 @@ problema.
 l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare
 elementi della produttività.
 
-\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perchè è
+\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perché è
 successo, provando a risolvere la causa.
 
 \paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per
