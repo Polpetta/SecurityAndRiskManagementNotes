@@ -3,8 +3,8 @@
 Obiettivi: principi della sicurezza dell'informazione, posizioni all'interno 
 degli organigrammi della gestione della sicurezza, tecniche di accesso 
 controllato, tecniche di autenticazione, tecniche di combinazione, 
-tecniche biometriche, elementi del Bell-LaPadula, elementi di sicurezza militare, 
-backup e schemi di classificazione dell'informazione.
+tecniche biometriche, elementi del Bell-LaPadula, elementi di sicurezza 
+militare, backup e schemi di classificazione dell'informazione.
 
 
 \section{Goal della sicurezza dell'informazione}
@@ -19,19 +19,22 @@ sue normative sono molto avanzate.
 
 Questi principi non invecchiano mai e sono fondamentali:
 \begin{itemize}
-  \item \textbf{Need-to-know:} le persone dovrebbero avere la abilità di accedere solamente ai dati che gli
-  servono, nulla di più. Questo principio è difficile da realizzare, ma,
-  se messo in pratica, vengono ridotti di molto i rischi.
-  \item \textbf{Least Privilege:} è la trasposizione nel senso del processo del need-to-know. Ogni persona
-  dovrebbe avere le abilità sufficienti per eseguire i propri task, ma non
-  altro.
-  \item \textbf{Segregation of Duties:} si occupa della separazione dei ruoli tra diverse persone. Di solito si
-  divide sempre in: chi origina, chi autorizza e chi verifica.
-  \item \textbf{Privacy:} questo concetto è molto grande, dice che il trattamento dei dati che
-  vengono raccolti devono essere proporzionali alle attività che vengono
-  compiute sul soggetto. Un'altra cosa importante è la \textit{data retention},
-  ovvero il limite massimo di tempo per il quale è possibile conservare i dati.
-  Trascorso questo intervallo di tempo la cancellazione dei dati è obbligatoria. I dati possono essere:
+  \item \textbf{Need-to-know:} le persone dovrebbero avere la abilità di 
+  accedere solamente ai dati che gli servono, nulla di più. Questo principio è 
+  difficile da realizzare, ma, se messo in pratica, vengono ridotti di molto i 
+  rischi.
+  \item \textbf{Least Privilege:} è la trasposizione nel senso del processo 
+  del need-to-know. Ogni persona dovrebbe avere le abilità sufficienti per 
+  eseguire i propri task, ma non altro.
+  \item \textbf{Segregation of Duties:} si occupa della separazione dei ruoli 
+  tra diverse persone. Di solito si divide sempre in: chi origina, chi 
+  autorizza e chi verifica.
+  \item \textbf{Privacy:} questo concetto è molto grande, dice che il 
+  trattamento dei dati che vengono raccolti devono essere proporzionali alle 
+  attività che vengono compiute sul soggetto. Un'altra cosa importante è la 
+  \textit{data retention}, ovvero il limite massimo di tempo per il quale è 
+  possibile conservare i dati. Trascorso questo intervallo di tempo la 
+  cancellazione dei dati è obbligatoria. I dati possono essere:
   \begin{itemize}
     \item Personali;
     \item Sensibili (ad esempio dati medici): sono presenti qui norme
@@ -89,26 +92,28 @@ eseguiti dei confronti e vengono analizzati eventuali dubbi.
 
 \begin{enumerate}
   \item \textbf{CEO/President};
-  \item \textbf{CISO:} in principio non esisteva, adesso sta prendendo il sopravvento.
-Copre anche il ruolo del CSO;
+  \item \textbf{CISO:} in principio non esisteva, adesso sta prendendo il 
+  sopravvento.Copre anche il ruolo del CSO;
   \begin{itemize}
         \item \textbf{Security Specialist};
-        \item \textbf{Security Administrator:} alloca le risorse per gli impiegati 
-        basandosi sulla documentazione scritta, oltre a monitorare l'accesso 
-        ai terminali e alle applicazioni e a preparare report sulla sicurezza.
+        \item \textbf{Security Administrator:} alloca le risorse per gli 
+        impiegati basandosi sulla documentazione scritta, oltre a monitorare 
+        l'accesso ai terminali e alle applicazioni e a preparare report sulla 
+        sicurezza.
   \end{itemize}
   \item \textbf{CSO} (Chief Security Officier);
   \item \textbf{Business Executive};
   \begin{itemize}
-  \item \textbf{Information/Data Owner}: si occupa di decidere chi è responsabile all'
-  accesso al dato. Molto importante è la gestione dell'\textit{authorization 
-  creep}, ovvero quando si hanno delle autorizzazioni che inizialmente erano 
-  utili ma che ora non servono più.
-  \item \textbf{Process Owner:} responsabile del processo (algoritmo che opera sul dato);
+  \item \textbf{Information/Data Owner}: si occupa di decidere chi è 
+  responsabile all'accesso al dato. Molto importante è la gestione dell'
+  \textit{authorization creep}, ovvero quando si hanno delle autorizzazioni 
+  che inizialmente erano utili ma che ora non servono più.
+  \item \textbf{Process Owner:} responsabile del processo (algoritmo che opera 
+  sul dato);
   \item \textbf{IS Auditor};
   \end{itemize}
-  \item \textbf{Data custodian:} si preoccupa della protezione dei dati e potrebbe essere un analista di
-  sistema o un amministrazione di sistema.
+  \item \textbf{Data custodian:} si preoccupa della protezione dei dati e 
+  potrebbe essere un analista di sistema o un amministrazione di sistema.
 \end{enumerate}
 
 \section{Classificazione della sicurezza}
@@ -155,12 +160,14 @@ solito hanno carattere legale.
 
 \subsubsection{Conservazione e distruzione di dati confidenziali}
 
-\textbf{Smaltimento dei media:} usare tool sicuri per l'eliminazione dei dati. Se i dati 
-sono altamente sensibili si può ricorrere al \textit{Degauss} o alla distruzione 
-fisica.\\
+\textbf{Smaltimento dei media:} usare tool sicuri per l'eliminazione dei dati. 
+Se i dati sono altamente sensibili si può ricorrere al \textit{Degauss} o alla 
+distruzione fisica.\\
 \newline 
+
 \textbf{Riparazione:} se un materiale (es. le fotocopiatrici hanno una memoria 
-interna) viene inviato per la riparazione, prima bisogna cancellare la memoria.\\
+interna) viene inviato per la riparazione, prima bisogna cancellare la memoria.
+\\
 \newline
 \textbf{Storage:} criptare i dati e mantenere i dispositivi in sicurezza.
 
