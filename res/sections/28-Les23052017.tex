@@ -8,15 +8,18 @@
 Operazioni relative alla sicurezza:
 \begin{itemize}
 \item Gestione delle identità e controllo degli accessi: per esempio badge 
-all'ingresso ecc. Ma non solo! Anche controlli di tipo informatico devono essere 
-aggiornati dopo ad esempio il licenziamento di un impiegato, al quale dev'essere 
-negato l'accesso ai dati aziendali alla fine del suo ultimo giorno lavorativo;
-\item \textit{Patching} del sistema e gestione delle configurazioni: il patching 
-è l'anno zero della sicurezza;
+all'ingresso ecc. Ma non solo! Anche controlli di tipo informatico devono
+essere aggiornati dopo ad esempio il licenziamento di un impiegato, al quale
+dev'essere negato l'accesso ai dati aziendali alla fine del suo ultimo giorno
+lavorativo;
+\item \textit{Patching} del sistema e gestione delle configurazioni: il
+patching è l'anno zero della sicurezza;
 \item Controlli dei cambiamenti e gestione dei rilasci: Il controllo dei 
 cambiamenti ogni cambiamento deve essere documentato e i test sono stati 
 eseguiti allora può essere introdotto.
-I rilasci software devono essere prima di tutto testati e documentati, e poi devono essere autorizzati dall'apposito responsabile. Questo procedimento garantisce che il software introdotto nel sistema non causi anomalie;
+I rilasci software devono essere prima di tutto testati e documentati, e poi
+devono essere autorizzati dall'apposito responsabile. Questo procedimento
+garantisce che il software introdotto nel sistema non causi anomalie;
 \item Metriche per la sicurezza e reporting: Ogni società sa dove bisogna 
 andare. Una tipica metrica di sicurezza in caso di \emph{awareness} interna,
 consiste nel mandare false email di spam ai dipendenti per vedere se
@@ -45,7 +48,7 @@ visione, valori, obiettivi e strategie. Quando un dipendente non lo sa o
 risponde ``solo per i soldi'' è un segnale negativo.
 
 \paragraph*{IT} L'IT serve per potare avanti obiettivi strategici di business, 
-ed è importante sapere se l'IT è in grado di raggiungere le \textit{performance} 
+ed è importante sapere se l'IT è in grado di raggiungere le \textit{performance}
 e gli obiettivi stabiliti. Inoltre sono presenti requisiti a cui essi devono 
 sottostare, come per esempio quelli legali o quelli legati alla qualità.
 
@@ -61,8 +64,8 @@ La parte di esercizi è disponibili in \ref{esSA:SO}
 \part{Secure Software}
 
 Analizzeremo come si è evoluto il software e i conseguenti attacchi, a partire 
-dai ``classici'' \textit{buffer overflow}, per arrivare a sfruttare errori nella 
-codifica dei caratteri negli URL degli indirizzi web.
+dai ``classici'' \textit{buffer overflow}, per arrivare a sfruttare errori
+nella codifica dei caratteri negli URL degli indirizzi web.
 
 \chapter{Controlli}
 \label{Controlli}
@@ -79,8 +82,8 @@ paper: \textit{Smashing The Stack For Fun And Profit.}}.
 Per risolvere tutti questi problemi è necessario \textbf{validare l'input}, 
 meglio se tramite le \textit{white list}, ovvero stendere una lista bianca in 
 cui tutto ciò che è scritto nella lista è accettato. Usare una \textit{black 
-list} è il complementare, e detta tutto ciò che non è possibile fare. Ovviamente 
-la seconda è meno restrittiva della prima.
+list} è il complementare, e detta tutto ciò che non è possibile fare.
+Ovviamente la seconda è meno restrittiva della prima.
 
 \section{Interazioni insicure tra componenti}
 
@@ -101,8 +104,8 @@ dati.
 
 \section{Jail \& Sandbox}
 
-\textbf{Jail:} il sistema operativo mette dei limiti sulle risorse che si possono 
-utilizzare.
+\textbf{Jail:} il sistema operativo mette dei limiti sulle risorse che si
+possono utilizzare.
 Da qui viene ``Jailbreak''.\\
 \newline
 \textbf{Sandbox}: l'applicazione viene fatta girare in un ambiente controllato.
@@ -117,10 +120,9 @@ Un attacco simile può essere il \textit{Cross-Site Scripting}, ovvero quando si
 fa l'\textit{inject} di codice in una richiesta web.
 
 
-Esistono attacchi anche su componenti che pensiamo sicure come l'SSL. Un esempio 
-è il \textit{SSL strip attack}.
+Esistono attacchi anche su componenti che pensiamo sicure come l'SSL. Un
+esempio è il \textit{SSL strip attack}.
 
 Un \textbf{nonce} è un numero che non deve essere casuale, ma dev'essere unico. 
 Va bene che sia anche predicibile. Serve in tutti i livelli di 
 \textit{encryption} decenti.
-
