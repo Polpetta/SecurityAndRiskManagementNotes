@@ -6,7 +6,8 @@ che possono comportare. Sono riportati in ordine crescente diverse categorie:
 \begin{itemize}
 \item \textbf{Negligible:} costo non significativo;
 \item \textbf{Minor:} non ignorabile ma con costo senza impatto sul business;
-\item \textbf{Major:} impatto su uno o più dipartimenti e può impattare sui clienti esterni;
+\item \textbf{Major:} impatto su uno o più dipartimenti e può impattare sui
+clienti esterni;
 \item \textbf{Crisis:} evento che ci costa la permanenza sul mercato.
 \end{itemize}
 
@@ -22,27 +23,24 @@ rimediare.
 Supponiamo di essere in un'università.
 Potrebbero accadere i seguenti disastri:
 \begin{itemize}
- \item Incendio: questo impatta sulle aule e il dipartimento. Come lo
-classifichiamo? Crisis, potrebbe essere major se limitato ad una parte del
-dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte
-rischio da tenere in considerazione;
-
- \item Attacco hacker: attaccano il sistema di registrazione dei voti. Può essere un
-evento major che ha implicazioni legali (non è possibile registrare voti);
-
- \item Indisponibilità dalla rete: livello di disastro, crisis. I dipartimenti 
-dipendono dalla rete perché ci lavorano. Questo blocca completamente il 
-dipartimento. Oggi una rete viene considerata come il sistema nervoso di un' 
-organizzazione. Senza la quale l'organizzazione è costretta a fermarsi;
-
- \item Social engineering: può esserci un attacco al sistema di registrazione magari tramite una frode
-(mi prendono password e token);
-
- \item Server failure: collasso dei server. Si hanno le stesse conseguenze di network unavailable.
+  \item Incendio: questo impatta sulle aule e il dipartimento. Come lo
+  classifichiamo? Crisis, potrebbe essere major se limitato ad una parte del
+  dipartimento. Attenzione: c'è la vita umana a rischio e quindi un forte
+  rischio da tenere in considerazione;
+  \item Attacco hacker: attaccano il sistema di registrazione dei voti. Può
+  essere un evento major che ha implicazioni legali (non è possibile registrare
+  voti);
+  \item Indisponibilità dalla rete: livello di disastro, crisis. I dipartimenti
+  dipendono dalla rete perché ci lavorano. Questo blocca completamente il
+  dipartimento. Oggi una rete viene considerata come il sistema nervoso di un'
+  organizzazione. Senza la quale l'organizzazione è costretta a fermarsi;
+  \item Social engineering: può esserci un attacco al sistema di registrazione
+  magari tramite una frode (mi prendono password e token);
+  \item Server failure: collasso dei server. Si hanno le stesse conseguenze di
+  network unavailable.
 Classificato come major (crisi in alcuni casi, ad esempio durante una sessione
 d'esami). Al giorno d'oggi è possibile contenere il disastro grazie a
-contromisure
-standard, che richiedono un basso costo poiché basate su hardware.
+contromisure standard, che richiedono un basso costo poiché basate su hardware.
 \end{itemize}
 
 \subsection{Recupero del servizio}
@@ -89,14 +87,18 @@ possibile.
 Di seguito viene riportata una lista di definizioni appena viste:
 
 \begin{itemize}
- \item \textbf{Business Continuity:} riuscire ad operare anche se con una modalità degradata del servizio;
- \item \textbf{Disaster recovery:} permette di sopravvivere anche se il servizio IT è non disponibile;
- \item \textbf{Alternate Process Mode:} modalità alternata;
- \item \textbf{Disaster Recovery mode:} piano che permette di passare in modalità alternata;
- \item \textbf{Restoration plan:} permette di passare dalla modalità alternata a quella normale.
+  \item \textbf{Business Continuity:} riuscire ad operare anche se con una
+  modalità degradata del servizio;
+  \item \textbf{Disaster recovery:} permette di sopravvivere anche se il
+  servizio IT è non disponibile;
+  \item \textbf{Alternate Process Mode:} modalità alternata;
+  \item \textbf{Disaster Recovery mode:} piano che permette di passare in
+  modalità alternata;
+  \item \textbf{Restoration plan:} permette di passare dalla modalità alternata
+  a quella normale.
 \end{itemize}
 
-\section{Classificazione dei servizi}
+\section{Classificazione dei servizi}\label{sec:classificazioneServizi}
 
 Il servizio ha un costo associato, di conseguenza anche la mancata erogazione
 del servizio lo ha. In ordine di importanza:
@@ -132,8 +134,8 @@ vendere. Per tutte le aziende le vendite sono critiche perché altrimenti non
 fatturano.
 
 Sotto alle sales abbiamo \textit{web service} and \textit{sales calls}. Tra i
-due, \textit{web service} è critico perché non può essere sostituito manualmente, mentre
-le \textit{sales calls} possono essere segnate a mano.
+due, \textit{web service} è critico perché non può essere sostituito
+manualmente, mentre le \textit{sales calls} possono essere segnate a mano.
 
 Gli ingegneri sono a bassa priorità perché anche se non lavorano per una
 settimana sullo sviluppo di un prodotto semplicemente viene ritardato di una
@@ -231,9 +233,10 @@ garantisce un instradamento diverso.
 Questi due obiettivi sono ovviamente conflittuali.
 
 \begin{figure}[H]
- \centering
- \includegraphics[scale=0.45]{dvsrc}
- \caption{Relazione tra tempo di disservizio e i costi di ripristino del servizio}
+  \centering
+  \includegraphics[scale=0.45]{dvsrc}
+  \caption{Relazione tra tempo di disservizio e i costi di ripristino del
+  servizio}
 \end{figure}
 
 Esistono diverse tecnologie di backup:
