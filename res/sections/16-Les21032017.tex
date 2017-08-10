@@ -3,16 +3,22 @@
 \begin{itemize}
  \item \textbf{Mandatory Access Control:} controllo d'accesso generalizzato 
  (determinato dal sistema). Specifica di chi può accedere a cosa;
- \item \textbf{Discretionary Access Control:} persone che hanno 
- l'autorizzazione ad accedere. Si trova spesso dove l'informazione deve essere 
- classificata;
- \item \textbf{Role-Based Access Control:} è la soluzione migliore per i 
- contesti organizzativi classici. Essendoci un numero fissato di ruoli per
- l'amministratore di sistema la loro gestione diviene più semplice, piuttosto
-che gestire ogni singolo impiegato. Questa realtà è ancora in forte sviluppo;
- \item \textbf{Physical Access Control:} è quell'area legata alla sicurezza 
- fisica, ed è legata al CSO ultimamente. Si costituisce di lucchetti, chiavi, 
- ecc.
+ \item \textbf{Discretionary Access Control:} permette ad un individuo
+ designato di decidere il livello di accesso degli utenti.
+ Si trova spesso dove l'informazione deve essere classificata;
+ \item \textbf{Role-Based Access Control:} il controllo di accesso è
+ determinato dal ruolo che si ricopre all'interno dell'organizzazione.
+ Questa è la soluzione migliore per i contesti
+ organizzativi classici. Essendoci un numero fissato di ruoli, per
+ l'amministratore di sistema la loro gestione diviene più semplice, 
+ perché non deve gestire ogni singolo impiegato. 
+ Questa realtà è ancora in forte sviluppo;
+ \item Physical Access Control: è quell’area legata alla sicurezza 
+ fisica, ed è legata al CISO ultimamente\footnote{Ricordiamo al lettore
+ come precedentemente questa responsabiltà era coperta dal CSO, che sta
+ pian piano venendo soppiantato dal CISO.}. Si costituisce di lucchetti,
+ chiavi, ecc.
+
 \end{itemize}
 
 
@@ -189,8 +195,13 @@ geolocalizzazione. Sempre nell'ambito bancario, pagamenti eseguiti a breve
 tempo da diverse parti del mondo non vengono autorizzati.
 
 \subsection{Single Sign On}
+Il Single Sign On (SSO) serve per poter accedere a una serie di servizi offerti dal
+provider. Con il SSO è il segmento con cui ci si autentica per primi che
+fornisce l'autorizzazione anche per le altre applicazioni.
+La sicurezza che il SSO offre non è la stessa della segmentazione dei
+servizi.
 
-Vantaggi:
+I \textbf{vantaggi} di questa tecnica:
 \begin{itemize}
 \item una buona password rimpiazza molte password;
 \item ID consistente tra i sistemi;
@@ -199,12 +210,8 @@ Vantaggi:
 \end{itemize}
 
 
-Il Single Sign On serve per poter accedere a una serie di servizi offerti dal
-provider. Con il SSO è il segmento con cui ci si autentica per primi che
-fornisce l'autorizzazione anche per le altre applicazioni.
-La sicurezza che il SSO offre non è la stessa che la segmentazione dei servizi
-offre.
-Svantaggi:
+
+Gli \textbf{svantaggi}:
 \begin{itemize}
 \item Single Point of Failure (\textbf{SPOF});
 \item Lo sviluppo del software è complicato per via di diversi sistemi 
@@ -220,13 +227,27 @@ quali per esempio le riprese di sicurezza.
 Chi sei e cosa fai, è suscettibile ad errori.
 
 \begin{itemize}
-\item \textbf{False Rejection Rate:} anche detto \textbf{falso negativo}, un 
-reject che non dovrebbe esserci stato;
-\item \textbf{False Acceptance Rate:} anche detto \textbf{falso positivo}, un 
-accept quando non avrebbe dovuto esserci;
-\item \textbf{Failure to Enroll Rate:} numero di utenti che non sono riusciti a
-registrarsi correttamente.
+\item \textbf{False Rejection Rate} (FRR): anche detto 
+\textbf{falso negativo}, un reject che non dovrebbe esserci stato;
+\item \textbf{False Acceptance Rate} (FAR): anche detto 
+\textbf{falso positivo}, un accept quando non avrebbe dovuto esserci;
+\item \textbf{Failure to Enroll Rate:} numero di utenti che non sono
+riusciti a registrarsi correttamente.
+\item \textbf{Equal Error Rate} (ERR): impostazione usata
+in biometria, per aggiustare la sentività del sistema per avere
+FRR e FAR equivalenti.
 \end{itemize}
+La relazione tra FRR, FAR e ERR vengono riassunte nella Figura 
+\ref{fig:equalErrorRate}.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.8]{equal_error_rate}
+ \caption{Relazione tra Equal Error Rate, False Rejection Rate e
+ False Acceptance Rate.}
+ \label{fig:equalErrorRate}
+\end{figure}
+
 
 \subsubsection{Metodi migliori per l'autenticazione}
 
