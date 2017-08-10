@@ -30,8 +30,8 @@ l'autenticità di chi manda i messaggi.
 
 \paragraph{Funzionamento}
 
-Si calcolano due primi grandi, si prende $\Phi$, che rappresenta 
-l'insieme di numeri coprimi con $n$.
+Si calcolano due primi grandi, si prende $\Phi(n)$, che rappresenta 
+la cardinalità dei numeri coprimi con $n$.
 Esiste la proprietà per cui $\Phi(n) = (p-1) \cdot (q-1)$.
 
 La chiave privata è l'inverso della chiave pubblica $\mod n$ ($d = e^{-1}
@@ -257,7 +257,7 @@ host.
 
 L'hash è una funzione matematica che prende in input una stringa di dimensione
 arbitraria e restituisce una stringa di dimensione fissa. La sicurezza di oggi è
-basata sugli \textit{hash} Presenta diverse proprietà:
+basata sugli \textit{hash}. Presenta diverse proprietà:
 \begin{itemize}
 \item La non invertibilità (\emph{one way hash});
 \item Collision resistance: è difficile trovare una coppia $(x_1,x_2)$ tale che
