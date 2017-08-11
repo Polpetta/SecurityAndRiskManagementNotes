@@ -94,7 +94,7 @@ Figura \ref{fig:security:batch:processing}.
 \end{itemize}
 
 \subsection{Error Handling Alternatives}
-Il trattamento degli errori di input possono essere trattati
+Gli errori di input possono essere trattati
 con le seguenti tecniche:
 \begin{itemize}
 \item Rigettare le transazioni con errori e continuare a processare
@@ -105,7 +105,7 @@ degli errori;
 non vengono fixate;
 \item Accettare l'intero batch ma contrassegnare le transazioni che
 contengono degli errori per renderne più facile l'identificazione,
-permettendo quindi futuri correzioni.
+permettendo quindi correzioni future.
 \end{itemize}
 
 
@@ -128,8 +128,8 @@ permettendo quindi futuri correzioni.
 Il processing comprende controllo dei parametri di sistema (es. specificare
 minimo e massimo), Standing data (file permanenti), report delle eccezioni
 (errori nelle transazioni), log delle transazioni, file delle transazioni
-(giornaliero). Una rappresentazione grafica di Data processing è riportata
-nella figura \ref{fig:data:processing}.
+(giornaliero). Una rappresentazione grafica di data processing è riportata
+nella Figura~\ref{fig:data:processing}.
 
 \subsection{Processing controls}
 I processing controls sono usati per assicurare
@@ -154,7 +154,7 @@ riportati con il loro tipo di errore.
 \item \textbf{Eseguita Batch per Batch}
 
 \begin{itemize}
-\item Batch Register:I batch totals sono salvati manualmente per essere
+\item Batch Register: i batch totals sono salvati manualmente per essere
 confrontati con i totals di sistema;
 \item Run-To-Run Totals: ogni passo del processing riporta i batch
 controls calcolati;
@@ -174,10 +174,10 @@ quando non si scrive niente. Questo diminuisce il numero di errori;
 \item Transaction Logs: una traccia per l'audit, salva la data e l'ora
 dell'input, l'ID dell'utente, il terminale (su cui è stata effettuata la
 transazione) e l'input di transazioni;
-\item Before and After Image Reporting: Un file contenente dati è salvato
+\item Before and After Image Reporting: un file contenente dati è salvato
 prima e dopo averlo processato. In questo modo è possibile tenere traccia
-dell'impatto delle transizioni sui file;
-\item Parity Checking: Quando un file è inviato, bisogna aggiungere dei codici
+dell'impatto delle transazioni sui file;
+\item Parity Checking: quando un file è inviato, bisogna aggiungere dei codici
 per il controllo, per assicurare che sia trasmesso senza errori (hash).
 \end{itemize}
 
