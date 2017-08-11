@@ -41,7 +41,7 @@ incrociato ad altri documenti;
 	\item Check Digit: una cifra potrebbe verificare la corretta
 	immissione di altre cifre;
 	\item Completeness check: viene immesso un input completo. Gli
-	spazi o gli zero sono controllati per ogni lettera o cifra 
+	spazi o gli zero sono controllati per ogni lettera o cifra
 	richiesta;
 	\item Duplicate Check: bisogna sempre controllare se una transizione
 	con lo stesso ID esiste già. In caso affermativo va rifiutata;
@@ -53,18 +53,18 @@ incrociato ad altri documenti;
 
 Per esempio, oggi come oggi in America hanno poche grandi catene per la pizza.
 Questo perché il sistema è diventato informatizzato, garantendo il monopolio a
-PizzaHut grazie alla sua applicazione. È per questo che il controllo 
-sull'input è molto importante, perché un possibile attacco di Denial Of 
+PizzaHut grazie alla sua applicazione. È per questo che il controllo
+sull'input è molto importante, perché un possibile attacco di Denial Of
 Service potrebbe essere ordinare un numero incontrollato di pizze.
 
 
 
 
 
-\subsection{Batch Processing} 
+\subsection{Batch Processing}
 È un tipo di controllo dell'input.
 Elaborazione sequenziale di blocchi di transazioni
-dopo che sono state aggregate. 
+dopo che sono state aggregate.
 L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
 dei controlli automatici su un batch e associati ad un batch file.
 Viene effettuata la validazione della transazione. Le transazioni
@@ -72,10 +72,10 @@ rifiutate sono corrette e rispedite o trattate in altro modo.
 
 Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
 Il processing viene completato.
-Infine segue il batch balancing attraverso 
+Infine segue il batch balancing attraverso
 una riconciliazione manuale o automatica dei controlli di batch.
 
-Una rappresentazione grafica del batch processing si può trovare in 
+Una rappresentazione grafica del batch processing si può trovare in
 Figura \ref{fig:security:batch:processing}.
 \begin{figure}[h!]
         \begin{center}
@@ -89,7 +89,7 @@ Figura \ref{fig:security:batch:processing}.
 \begin{itemize}
     \item Manuale: ottenere una firma dal management sui form dei batch o sui
     documenti;
-    \item Automatico: controllo online dell'accesso attraverso 
+    \item Automatico: controllo online dell'accesso attraverso
     l'identificazione del terminale o della password.
 \end{itemize}
 
@@ -97,11 +97,11 @@ Figura \ref{fig:security:batch:processing}.
 Il trattamento degli errori di input possono essere trattati
 con le seguenti tecniche:
 \begin{itemize}
-\item Rigettare le transazioni con errori e continuare a processare 
+\item Rigettare le transazioni con errori e continuare a processare
 il batch;
 \item Rigettare l'intero batch di transazioni, se contiene
 degli errori;
-\item Tenere il batch in sospeso fintanto che le transazioni 
+\item Tenere il batch in sospeso fintanto che le transazioni
 non vengono fixate;
 \item Accettare l'intero batch ma contrassegnare le transazioni che
 contengono degli errori per renderne più facile l'identificazione,
@@ -171,8 +171,8 @@ quando non si scrive niente. Questo diminuisce il numero di errori;
 
 \item Data File Security: solo l'accesso autorizzato è consentito;
 \item Version usage: è sempre usata la versione corretta di un file;
-\item Transaction Logs: una traccia per l'audit, salva la data e l'ora 
-dell'input, l'ID dell'utente, il terminale (su cui è stata effettuata la 
+\item Transaction Logs: una traccia per l'audit, salva la data e l'ora
+dell'input, l'ID dell'utente, il terminale (su cui è stata effettuata la
 transazione) e l'input di transazioni;
 \item Before and After Image Reporting: Un file contenente dati è salvato
 prima e dopo averlo processato. In questo modo è possibile tenere traccia
@@ -193,7 +193,7 @@ che è avvenuto;
 Source document retention: la gestione dei documenti è un'attività molto
 onerosa perché richiede che ci sia una organizzazione in piedi;
 \item
-Internal \& External Labeling: c'è il backup, bisogna etichettarli in 
+Internal \& External Labeling: c'è il backup, bisogna etichettarli in
 modo da trovare quello giusto.
 \end{itemize}
 
@@ -210,11 +210,11 @@ Gli esercizi sono disponibili in \ref{esCs:ac}
 
 I compiti dell'auditor includono:
 \begin{itemize}
-\item Identificare componenti significativi delle applicazioni e 
+\item Identificare componenti significativi delle applicazioni e
 il flusso delle transazioni;
 \item Identificare i controlli e valutarne l'efficacia;
 \item Testare i controlli;
-\item Analizzare i risultati del singolo test per determinare se 
+\item Analizzare i risultati del singolo test per determinare se
 il controllo funziona come atteso: così si può giudicare se è inutile,
 oneroso, o se è utile, ecc.
 \end{itemize}
@@ -232,9 +232,9 @@ oneroso, o se è utile, ecc.
 
 \subsection{Operazioni/simulazioni parallele}
 
-I dati vengono processati attraverso due sistemi differenti e i risultati 
+I dati vengono processati attraverso due sistemi differenti e i risultati
 vengono confrontati.
-Questo approccio è utile per verificare nuovi sistemi, comparandoli con quelli 
+Questo approccio è utile per verificare nuovi sistemi, comparandoli con quelli
 vecchi.
 
 \begin{figure}[h!]
@@ -246,7 +246,7 @@ vecchi.
         \label{fig:testing:facilities:parallel}
 \end{figure}
 
-\textbf{Operazioni parallele:} confrontare il nuovo sistema con quello vecchio 
+\textbf{Operazioni parallele:} confrontare il nuovo sistema con quello vecchio
 funzionante.
 
 \textbf{Simulazioni parallele:} confrontare il sistema reale e quello simulato.
@@ -258,18 +258,18 @@ funzionante.
                 \captionof{figure}{Embedded Audit Data Collection}
         		\label{fig:testing:facilities:parallel}
         \end{center}
-        
 
-\textbf{Embedded Audit Modules (EAM):} Il software per l'audit è incorporato 
-direttamente nei programmi per monitorare specifici tipi di transformazioni. 
-Il suo grande svantaggio è quello di rallentare il sistema. Qualora vada tutto 
+
+\textbf{Embedded Audit Modules (EAM):} Il software per l'audit è incorporato
+direttamente nei programmi per monitorare specifici tipi di transformazioni.
+Il suo grande svantaggio è quello di rallentare il sistema. Qualora vada tutto
 bene sono soldi spesi inutilmente.
 
-\textbf{Systems Control Audit Review File (SCARF):} fornisce informazioni di 
-tipo statistico riguardo ai dati dei file di input "normali", per determinare 
+\textbf{Systems Control Audit Review File (SCARF):} fornisce informazioni di
+tipo statistico riguardo ai dati dei file di input "normali", per determinare
 per l'auditor se il file è stato sufficientemente modificato.
 
-\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per 
+\textbf{Sample Audit Review File (SARF):} selezionare transazioni random per
 fare validazione.
 
 \section{Tecniche di testing per le applicazioni}
@@ -277,9 +277,9 @@ fare validazione.
 \textbf{Test data:}
 \begin{itemize}
     \item Test data: testare le transazioni che attraversano programmi reali;
-    \item Strumenti di testing integrati: creare delle transazioni di test da 
+    \item Strumenti di testing integrati: creare delle transazioni di test da
     includere con le transazioni reali;
-    \item Programmi di selezione delle transazioni: monitorna e seleziona le 
+    \item Programmi di selezione delle transazioni: monitorna e seleziona le
     transazioni in input per regolare i cicli di produzione;
     \item Dati di audit incorporati: seleziona transazioni di input random o
     distribuite statisticamente e genera i log durante la produzione.
@@ -288,20 +288,20 @@ fare validazione.
 \textbf{Debugging/Processing:}
 
 \begin{itemize}
-    \item Mapping: identifica la logica di alcuni specifici programmi che non 
+    \item Mapping: identifica la logica di alcuni specifici programmi che non
     sono stati ancora testati;
-    \item Tracing e tagging: mostra l'insieme delle istruzioni eseguite. Tagga 
-    con indicatori di luogo le 
+    \item Tracing e tagging: mostra l'insieme delle istruzioni eseguite. Tagga
+    con indicatori di luogo le
     transazioni selezionate;
-    \item Snapshot: registra flussi di transazioni designate seguendo dei path 
+    \item Snapshot: registra flussi di transazioni designate seguendo dei path
     logici.
 \end{itemize}
 
 \textbf{Sistemi di validazione:}
 
 \begin{itemize}
-    \item Sistema di valutazione base-case: utilizza i test data per testare i 
-    programmi e verificare che 
+    \item Sistema di valutazione base-case: utilizza i test data per testare i
+    programmi e verificare che
     le operazioni di sistema siano corrette prima di essere accettate;
     \item Simulazioni parallele;
     \item Operazioni parallele.
@@ -309,9 +309,9 @@ fare validazione.
 
 \section{Tecniche di Auditing Online}
 
-\textbf{Audit Hooks:} all'interno del codice ci sono delle condizioni 
-particolari che se sono soddisfatte triggerano delle operazioni di auditing, è 
-meno pesante delle EAM infatti viene attivato il controllo \emph{solo} quando 
+\textbf{Audit Hooks:} all'interno del codice ci sono delle condizioni
+particolari che se sono soddisfatte triggerano delle operazioni di auditing, è
+meno pesante delle EAM infatti viene attivato il controllo \emph{solo} quando
 si raggiungono certi path del CFG.
 
 \begin{figure}[h!]
@@ -330,11 +330,11 @@ si raggiungono certi path del CFG.
         \label{fig:audit:hooks}
 \end{figure}
 
-\textbf{Auditing online continuo:} permette agli auditor di testare il sistema 
+\textbf{Auditing online continuo:} permette agli auditor di testare il sistema
 senza interrompere le operazioni regolari di una compagnia.\\
 \newline
-\textbf{Audit hooks:} sono logiche software integrate nell'applicazione, che 
-stampano dei report degli errori red flag permettendo agli auditor di agire 
+\textbf{Audit hooks:} sono logiche software integrate nell'applicazione, che
+stampano dei report degli errori red flag permettendo agli auditor di agire
 per intercettare gli errori preventivamente prima che diventino dei problemi.
 
 \section{Esercizi}
@@ -344,7 +344,7 @@ Gli esercizi sono disponibili in \ref{esCs:aa}
 \part{Incident process forensics}
 
 Un incidente relativo alla sicurezza può capitare per molti motivi. Un
-incidente è catalogato come tale quando c'è una violazione della 
+incidente è catalogato come tale quando c'è una violazione della
 \textit{policy} di sicurezza. Un incidente può essere di due tipologie:
 \begin{itemize}
 \item Malizioso;
@@ -354,7 +354,7 @@ incidente è catalogato come tale quando c'è una violazione della
 \chapter{Incident Response vs Business Continuity}
 \label{IRBC}
 
-Avere un piano di risposta agli incidenti fa parte della \textit{business
+Avere un piano di risposta agli incidenti fa parte del \textit{business
 continuity plan}.
 
 \section{Business Continuity Plan}
@@ -362,11 +362,11 @@ continuity plan}.
 \subsection{Terminologia della recovery}
 
 \begin{itemize}
-\item \textbf{Interruption Window:} durata di tempo in cui l'organizzazione 
+\item \textbf{Interruption Window:} durata di tempo in cui l'organizzazione
 può attendere tra il \textit{Point of Failure} e la riesumazione del servizio;
-\item \textbf{Service Delivery Objective (SDO):} livello di servizio in 
+\item \textbf{Service Delivery Objective (SDO):} livello di servizio in
 modalità alternativa;
-\item \textbf{Maximum Tolerable Outage:} tempo massimo che si può passare in 
+\item \textbf{Maximum Tolerable Outage:} tempo massimo che si può passare in
 modalità alternativa.
 \end{itemize}
 
@@ -380,9 +380,9 @@ modalità alternativa.
 
 \subsubsection{Ruoli}
 
-\paragraph*{Incident Management Team} L'IMT fa parte della \textit{steering 
-commitee} e sono membri dell'IRT. Sviluppano strategie e piani per la risposta 
-all'incidente e gestione dei rischi. Ottiene i fondi e verifica le richiesta 
+\paragraph*{Incident Management Team} L'IMT fa parte della \textit{steering
+commitee} e sono membri dell'IRT. Sviluppano strategie e piani per la risposta
+all'incidente e gestione dei rischi. Ottiene i fondi e verifica le richiesta
 di performance e requisiti.
 
 \paragraph*{Incident Response Team} L'IRT è il
@@ -410,7 +410,7 @@ Questo piano si suddivide in diversi \textit{step}:
 Vediamo brevemente il significato di ogni passo, che sarà analizzato in
 profondità più avanti.
 
-\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente, 
+\paragraph*{Preparazione} Questa fase è la preparazione dell'incidente,
 corrisponde ad una fase di \textbf{analisi dello scenario}.
 
 \paragraph*{Identificazione} Questo step inizia quando si viene
@@ -422,7 +422,7 @@ problema.
 l'obiettivo di mantenere l'operatività. Questo a volte consiste in sacrificare
 elementi della produttività.
 
-\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perché 
+\paragraph*{Analisi e eradicazione} Si cerca di capire cos'è successo e perché
 è successo, provando a risolvere la causa.
 
 \paragraph*{Recupero} Si ritorna con i servizi di nuovo funzionanti, per
