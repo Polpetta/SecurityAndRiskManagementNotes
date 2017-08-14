@@ -44,6 +44,12 @@ clean:
 		rm res/sections/89-Answers.tex; \
 	fi; \
 	git checkout -- res/sections/*.tex
+	git checkout -- config/*.tex
 	git clean -Xfd
 	$(CC) -C $(JOB_NAME)
 	if [[ -a "$(OUTPUT_NAME)" ]]; then rm -rv $(OUTPUT_NAME)/; fi;
+alt2: 
+	cat config/config.tex | head -n193 > config/config.tex.tmp
+	rm config/config.tex
+	mv config/config.tex.tmp config/config.tex
+light: alt2 compile
