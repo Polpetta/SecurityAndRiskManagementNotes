@@ -13,7 +13,7 @@ perdita di queste librerie costituiscono una catastrofe. È quindi necessario:
   conoscenza è ristretta a pochi;
   \item L'ambiente delle librerie deve essere controllato costantemente(
   umidità, temperatura, UPS, sistemi anti-incendio);
-  \item Deve avere un inventario aggiornato dei supporti di memorizzazione e 
+  \item Deve avere un inventario aggiornato dei supporti di memorizzazione e
   dei file salvati.
 
 
@@ -30,7 +30,7 @@ Fare audit non è una cosa semplice, è necessario seguire alcune
  capire quali sono le cause che hanno generato l'evento negativo;
  \item Il log deve essere sicuro, l'attaccante potrebbe penetrare il sistema,
  ottenere una topologia della rete, attaccare il servizio, accedere ai dati e
- cancellare le tracce dell'intrusione. I log devono essere sicuri (es. 
+ cancellare le tracce dell'intrusione. I log devono essere sicuri (es.
  read-only). Un altro possibile attacco è alterare il timestamp dei log;
  \item Un'altra cosa importante per le grosse società con responsabilità verso
  terzi è che i log siano firmati digitalmente.
@@ -45,14 +45,14 @@ Una buona pratica è scremare l'informazione fin dall'inizio, e viene detto
 \textbf{audit reduction}.
 
 È fondamentale essere in grado di trovare \textbf{varianze} o \textbf{
-cambiamenti anomali} nel comportamento del sistema. Esistono strumenti in 
-grado di fare ciò, che mandano un allarme quando notano un'anomalia al di 
-sopra di una certa \textit{threshold}\footnote{Rappresenta la tolleranza che 
-il sistema ha.} impostata. Recentemente si sta utilizzando l'intelligenza 
+cambiamenti anomali} nel comportamento del sistema. Esistono strumenti in
+grado di fare ciò, che mandano un allarme quando notano un'anomalia al di
+sopra di una certa \textit{threshold}\footnote{Rappresenta la tolleranza che
+il sistema ha.} impostata. Recentemente si sta utilizzando l'intelligenza
 artificiale per risolvere questo tipo di problema.
 
-Infine, è utile fare l'\textbf{attack/signature detection}, ovvero 
-avere una sequenza di log dei tentativi di accesso, in modo tale da 
+Infine, è utile fare l'\textbf{attack/signature detection}, ovvero
+avere una sequenza di log dei tentativi di accesso, in modo tale da
 verificare se ci sono stati dei tentativi di attacco.
 
 \subsection{Esercizi}
@@ -153,7 +153,7 @@ Questi sono una lista di attacchi attivi più famosi:
 \item Masquerading of spoofing;
 \item Modificare il messaggio: il messaggio viene modificato durante la
 trasmissione (è sufficiente criptarlo per ovviare a questo problema);
-\item Packet replay: un pacchetto viene ritrasmesso per accedere ad un 
+\item Packet replay: un pacchetto viene ritrasmesso per accedere ad un
 servizio.
 \end{itemize}
 
@@ -161,10 +161,10 @@ servizio.
 
 Quando si hanno sufficienti informazioni riguardo la vittima è possibile, da
 parte dell'attaccante, iniziare un attacco.
-Attacchi alle reti che vengono solitamente perpetrati sono: sniffing, spoofing 
+Attacchi alle reti che vengono solitamente perpetrati sono: sniffing, spoofing
 dell'indirizzo IP e hijacking della sessione.
 
-Attacchi al sistema: buffer overflow, password cracking, SQL Injection, abuso 
+Attacchi al sistema: buffer overflow, password cracking, SQL Injection, abuso
 del protocolli web, DoS, trap door, virus, worm e trojan horse.
 
 \subsubsection{Attacchi}
@@ -176,12 +176,12 @@ Questo attacco si basa sullo scambio di chiavi tramite l'algoritmo di
 
 \subparagraph{Protocollo di scambio delle chiavi Diffie-Hellman}
 
-Inventato nel 1976, usa una crittografia a chiave pubblica per poter 
+Inventato nel 1976, usa una crittografia a chiave pubblica per poter
 permettere lo scambio di una chiave privata.
 
 Permette a due comunicanti di generare una chiave simmetrica senza basarsi su
 un segreto pre-definito (n.b. non è un algoritmo di crittografia).
-Purtroppo sarà poco effettivo contro il quantum computing, di conseguenza è 
+Purtroppo sarà poco effettivo contro il quantum computing, di conseguenza è
 importante cercare una soluzione alternativa prima della sua diffusione.
 
 \subparagraph{Secure Key generation}
@@ -211,8 +211,8 @@ segreto.\\
 Alice: $R_1 = g^x \mod p$\\
 Bob: $R_2 = g^y \mod p$\\
 \newline
-Queste informazioni vengono scambiate su un canale pubblico. Bob riceve $R_1$, 
-quello che fa è fare $K = (R_1)^y \mod p$. Alice fa la stessa cosa e quindi 
+Queste informazioni vengono scambiate su un canale pubblico. Bob riceve $R_1$,
+quello che fa è fare $K = (R_1)^y \mod p$. Alice fa la stessa cosa e quindi
 ottengono una chiave segreta condivisa che è $g^{xy} \mod p$.
 
 Il calcolo del logaritmo discreto ad oggi è un problema difficile da
@@ -280,6 +280,6 @@ necessario per violarli.}
         \label{fig:password:cracking:table}
 \end{figure}
 
-8 caratteri è il minimo per un password ed è anche poco, infatti in due ore è
+8 caratteri è il minimo per una password ed è anche poco, infatti in due ore è
 possibile rompere una qualsiasi password di 8 caratteri come mostra la Tabella
 \ref{fig:password:cracking:table}.
