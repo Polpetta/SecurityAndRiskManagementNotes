@@ -1,7 +1,7 @@
 \chapter{Access Control Techniques}
 \label{AccessControlTechniques}
 \begin{itemize}
- \item \textbf{Mandatory Access Control:} controllo d'accesso generalizzato 
+ \item \textbf{Mandatory Access Control:} controllo d'accesso generalizzato
  (determinato dal sistema). Specifica di chi può accedere a cosa;
  \item \textbf{Discretionary Access Control:} permette ad un individuo
  designato di decidere il livello di accesso degli utenti.
@@ -10,10 +10,10 @@
  determinato dal ruolo che si ricopre all'interno dell'organizzazione.
  Questa è la soluzione migliore per i contesti
  organizzativi classici. Essendoci un numero fissato di ruoli, per
- l'amministratore di sistema la loro gestione diviene più semplice, 
- perché non deve gestire ogni singolo impiegato. 
+ l'amministratore di sistema la loro gestione diviene più semplice,
+ perché non deve gestire ogni singolo impiegato.
  Questa realtà è ancora in forte sviluppo;
- \item Physical Access Control: è quell’area legata alla sicurezza 
+ \item Physical Access Control: è quell’area legata alla sicurezza
  fisica, ed è legata al CISO ultimamente\footnote{Ricordiamo al lettore
  come precedentemente questa responsabiltà era coperta dal CSO, che sta
  pian piano venendo soppiantato dal CISO.}. Si costituisce di lucchetti,
@@ -38,7 +38,7 @@ W=write)} \\
 Istruttore & Form dei voti RW; Esami sostenuti dallo studente R; Trasferimento
 di crediti R \\
 \hline
-Consigliere & Esami sostenuti dallo studente R; Pagamento tasse R; 
+Consigliere & Esami sostenuti dallo studente R; Pagamento tasse R;
 Trasferimento di crediti R \\
 \hline
 Registratore & Pagamento tasse RW; Trasferimento di crediti RW \\
@@ -60,12 +60,12 @@ Si applica una classificazione dell'informazione, che può essere:
  \item Non-classified.
 \end{itemize}
 
-Per evitare l'\textit{overclassification} si utilizzano i domini: si cercano 
-di mettere delle persone con determinate competenze nel contesto giusto (es. 
-se un dominio è il nucleare e io non ho competenze a riguardo non posso 
+Per evitare l'\textit{overclassification} si utilizzano i domini: si cercano
+di mettere delle persone con determinate competenze nel contesto giusto (es.
+se un dominio è il nucleare e io non ho competenze a riguardo non posso
 accedere a quel dominio).
 
-Un soggetto può accedere ad un oggetto solo se domina (maggiore o uguale) la 
+Un soggetto può accedere ad un oggetto solo se domina (maggiore o uguale) la
 classificazione dell'oggetto.
 
 \section{Modello Bell-La Padula}
@@ -78,11 +78,11 @@ accedere in scrittura a tutto ciò che mi domina ma non posso scrivere a ciò ch
 domino. Il tutto viene riassunto in \textit{no read up} e \textit{no write
 down}.\\
 \newline
-\textbf{Principio di tranquillità:} le classi degli oggetti non possono 
+\textbf{Principio di tranquillità:} le classi degli oggetti non possono
 cambiare.\\
 \newline
 La declassificazione risolve il problema del galleggiamento verso l'alto. Avere
-troppi documenti top-secret può causare problema. Eseguire una
+troppi documenti top-secret può causare problemi. Eseguire una
 declassificazione è una procedura costosa, ed è quando il livello di segretezza
 di un certo documento viene abbassato.
 
@@ -175,9 +175,9 @@ comprabili, e presentano tutte le entry di un determinato campo semantico.
 
 \subsection{Autenticazione a due fattori}
 
-Esistono differenti metodi per autenticarsi, e una buona autenticazione si 
-basa su diversi aspetti, detti fattori. Se si basa su un singolo fattore viene 
-detta \textit{single factor authentication} (es. una password), mentre si 
+Esistono differenti metodi per autenticarsi, e una buona autenticazione si
+basa su diversi aspetti, detti fattori. Se si basa su un singolo fattore viene
+detta \textit{single factor authentication} (es. una password), mentre si
 parla di \textit{multifactor authentication} quando se ne utilizza più di uno.
 
 I fattori sono:
@@ -186,10 +186,10 @@ I fattori sono:
  \item \textbf{Qualcosa che abbiamo} (es. una chiavetta);
  \item \textbf{Qualcosa che sappiamo} (es. una password).
 \end{itemize}
-L'autentificazione è detta \emph{forte} quando è ad almeno due fattori, e 
-solitamente si utilizza \emph{qualcosa che si ha} (es. un ID) e \emph{qualcosa 
-che si è} (es. impronte digitali). Questa funziona bene perché, in questo 
-modo, sono due i canali che devono essere compromessi da un attaccante per 
+L'autentificazione è detta \emph{forte} quando è ad almeno due fattori, e
+solitamente si utilizza \emph{qualcosa che si ha} (es. un ID) e \emph{qualcosa
+che si è} (es. impronte digitali). Questa funziona bene perché, in questo
+modo, sono due i canali che devono essere compromessi da un attaccante per
 ottenere l'accesso.
 
 Un altro esempio è l'autenticazione bancaria che, al giorno d'oggi, richiede
@@ -220,7 +220,7 @@ I \textbf{vantaggi} di questa tecnica:
 Gli \textbf{svantaggi}:
 \begin{itemize}
 \item Single Point of Failure (\textbf{SPOF});
-\item Lo sviluppo del software è complicato per via di diversi sistemi 
+\item Lo sviluppo del software è complicato per via di diversi sistemi
 operativi;
 \item Implementazione onerosa.
 \end{itemize}
@@ -233,9 +233,9 @@ quali per esempio le riprese di sicurezza.
 Chi sei e cosa fai, è suscettibile ad errori.
 
 \begin{itemize}
-\item \textbf{False Rejection Rate} (FRR): anche detto 
+\item \textbf{False Rejection Rate} (FRR): anche detto
 \textbf{falso negativo}, un reject che non dovrebbe esserci stato;
-\item \textbf{False Acceptance Rate} (FAR): anche detto 
+\item \textbf{False Acceptance Rate} (FAR): anche detto
 \textbf{falso positivo}, un accept quando non avrebbe dovuto esserci;
 \item \textbf{Failure to Enroll Rate:} numero di utenti che non sono
 riusciti a registrarsi correttamente.
@@ -243,7 +243,7 @@ riusciti a registrarsi correttamente.
 in biometria, per aggiustare la sentività del sistema per avere
 FRR e FAR equivalenti.
 \end{itemize}
-La relazione tra FRR, FAR e ERR vengono riassunte nella Figura 
+La relazione tra FRR, FAR e ERR vengono riassunte nella Figura
 \ref{fig:equalErrorRate}.
 
 \begin{figure}[H]
@@ -289,9 +289,9 @@ di questi strumenti venga mantenuta.
  \item Verificare che ci siano delle procedure e che siano implementate;
  \item Verificare che i processi seguano il pattern del \textit{need to know};
  \item Security awareness e training implementati;
- \item Il data owner e il data custodian devono sapere di essere responsabili 
+ \item Il data owner e il data custodian devono sapere di essere responsabili
  della salvaguardia dei dati;
- \item Il security administrator deve fornire la sicurezza fisica e logica per 
+ \item Il security administrator deve fornire la sicurezza fisica e logica per
  il programma IS, i dati e l'equipaggiamento;
  \item Le autorizzazioni devono essere documentate e consistenti con la realtà.
 \end{itemize}
