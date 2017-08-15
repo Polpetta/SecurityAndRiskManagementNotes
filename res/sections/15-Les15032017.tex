@@ -100,10 +100,19 @@ eseguiti dei confronti e vengono analizzati eventuali dubbi.
   sicurezza fisica;
   \item \textbf{Business Executive};
   \begin{itemize}
-  \item \textbf{Information/Data Owner}: si occupa di decidere chi è 
-  responsabile all'accesso al dato. Molto importante è la gestione dell'
-  \textit{authorization creep}, ovvero quando si hanno delle autorizzazioni 
-  che inizialmente erano utili ma che ora non servono più.
+  \item \textbf{Information/Data Owner}: 
+  è il responsabile della sicurezza del dato e 
+  \begin{enumerate*}[label=\alph*)]
+  \item decide chi ha accesso ai dati direttamente \textbf{o}
+  \item da un permesso scritto per l'accesso
+  agli amministratori della sicurezza, per prevenire
+  manipolazioni e modifiche non volute. 
+  \end{enumerate*}
+  
+  
+  Il data owner deve riguardare periodicamente le autorizzazioni del dato
+  per restringere l'\textit{authorization creep}, ovvero quando si hanno
+  delle autorizzazioni che inizialmente erano utili ma che ora non servono più.
   \item \textbf{Process Owner:} responsabile del processo (algoritmo che opera 
   sul dato);
   \item \textbf{IS Auditor}: accertamento \emph{indipendente} degli 
