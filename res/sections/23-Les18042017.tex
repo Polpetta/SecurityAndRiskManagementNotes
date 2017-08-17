@@ -1,43 +1,35 @@
-\subparagraph*{Difference Estimation Sampling}
-
-Problemi tipici che bisogna indirizzare sono la media e la deviazione standard.
-La \textbf{media} non è un fenomeno che cattura bene l'andamento generale, per la
-presenza di \textit{outlier}, ovvero dei punti fuori dal comportamento
-tipico del campione.
-La media è un parametro poco affidabile (va verificato ulteriormente). Un
-parametro più affidabile che non è soggetto agli
-outlier è la \textbf{mediana}.
-
-L'intervallo di confidenza è la probabilità che il campione rappresenti la parte
-della popolazione. Viene rappresentato con un $\epsilon$, il quale più piccolo è e
-meglio è. Solitamente, si usa un intervallo di confidenza del 90\%. Un problema
-è la possibilità di usare una distribuzione fallace completamente duale rispetto
-all'intervallo di confidenza.
 
 
-\subparagraph*{Tipi di campionamento}
+\paragraph{Tipi di campionamento} Alcuni tipi di campionamento specifici:
 
-\subsubparagraph*{Campionamento Stop-or-Go} facciamo un campionamento ridotto, se trovo
+\subparagraph*{Campionamento Stop-or-Go} 
+facciamo un campionamento ridotto, se trovo
 ciò che cerco mi fermo (e.g. se i primi 20 elementi hanno zero errori allora mi fermo,
-altrimenti...).
+altrimenti...). Questo tipo di campionamento viene usato
+quando l'IS auditor crede che relativamente pochi errori saranno 
+trovati nella popolazione.
 
-\subsubparagraph*{Campionamento discovery:} usato quando l'occorrenza dell'evento che
-sto cercando è molto rara.
+\subparagraph*{Campionamento discovery:} usato quando 
+l'occorrenza dell'evento che sto cercando è molto rara.
+È molto spesso usata quando lo scopo dell'audit è scoprire frodi, 
+infrazioni del regolamento o altre irregolarità.
 
-\subsubparagraph*{Campionamento degli attributi:} un attributo è qualsiasi
+\subparagraph*{Campionamento degli attributi:} 
+Un modello di campionamento usato per stimare la percentuale di 
+occorrenze di una specifica qualità (atributo) all'interno della
+popolazione. Un \textbf{attributo} è qualsiasi
 caratteristica che identifica una transazione rispetto alle altre (es.
 transazioni effettuate ad un certo orario).\\
-\newline
 \textbf{Tasso di errore tollerabile:} il massimo rate di errore
-tollerabile.\\
-\newline
-\textbf{Campionamento variabile:} quanto è accurato il campione nel rappresentare
-l'intera popolazione?
+tollerabile prima di dichiarare che l'affermazione da verificare
+sia falsa.\\
 
 
-\subparagraph{Campionamento variabile}
+\subparagraph*{Campionamento variabile}
+Viene usato per capire quanto è accurato il campione nel rappresentare
+l'intera popolazione. Questo campionamento si può riferire
+a diversi tipi di modelli di campionamento quantitativo:
 
-Si guardi la Figura \ref{fig:variable:sampling}.
 
 \begin{figure}[h!]
         \begin{center}
@@ -46,6 +38,41 @@ Si guardi la Figura \ref{fig:variable:sampling}.
         \caption{Procedimento per il campionamento variabile.}
         \label{fig:variable:sampling}
 \end{figure}
+
+\begin{itemize}
+\item \textbf{Stratified mean per unit:}
+Modello di campionamento statistico in cui la popolazione
+viene divisa in gruppi e i campioni sono estratti dai vari
+gruppi. È usato per produrre dimensioni dei campioni più piccoli
+dell'unstratified mean per unit.
+
+\item \textbf{Unstratified mean per unit:}
+Modello di campionamento statistico in cui viene calcolato la media
+del campione e usato come stima del totale.
+
+
+\item \textbf{Difference Estimation Sampling:} Un modello statistico 
+usato per stimare la differenza totale
+tra i valori auditati e i valori non auditati dichiarati ottenuti
+dalle osservazioni del campione.
+
+Problemi tipici che bisogna indirizzare sono la media e la deviazione standard.
+La \textbf{media} non è un fenomeno che cattura bene l'andamento generale, per la
+presenza di \textit{outlier}, ovvero dei punti fuori dal comportamento
+tipico del campione.
+La media è un parametro poco affidabile (va verificato ulteriormente). Un
+parametro più affidabile che non è soggetto agli
+outlier è la \textbf{mediana}.
+\end{itemize}
+
+La loro relazione è riportata nella Figura~\ref{fig:variable:sampling}.
+
+
+\paragraph*{Ultime considerazioni}
+Un problema è la possibilità di usare una
+distribuzione fallace completamente duale rispetto all'intervallo di 
+confidenza.
+
 
 \subsubparagraph*{Generic Audit Software (GAS)}
 
