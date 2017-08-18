@@ -72,10 +72,10 @@ full processing did occur correctly, while accounting for errors is
 called:}}:
 
 \begin{enumerate}
-\item Audit trail
-\item Validation
-\item Batch balancing
-\item Reconciliation
+\item \textit{Audit trail}
+\item \textit{Validation}
+\item \textit{Batch balancing}
+\item \textit{Reconciliation}
 \end{enumerate}
 
 
@@ -103,10 +103,10 @@ La teoria riguardante questi esercizi si trova in \ref{cs:aa}
 
   \Question I moduli integrati di audit sono associati per la maggior parte con:
 \begin{enumerate}
-\item Audit Hooks
-\item Snapshots
-\item Batch processing
-\item Parallel operation
+\item \textit{Audit Hooks}
+\item \textit{Snapshots}
+\item \textit{Batch processing}
+\item \textit{Parallel operation}
 \end{enumerate}
 
 
@@ -131,10 +131,10 @@ La teoria riguardante questi esercizi si trova in \ref{cs:aa}
 normali dati in input da file, per determinare se il file \`e sufficentemente
 vario per l'auditor:
 \begin{enumerate}
-\item test data
-\item snapshots
-\item system control audit and review file
-\item transaction selection program
+\item \textit{test data}
+\item \textit{snapshots}
+\item \textit{system control audit and review file}
+\item \textit{transaction selection program}
 \end{enumerate}
 
 \end{Exercise}
@@ -156,10 +156,10 @@ vario per l'auditor:
   \Question Combinare dati reali e di testing durante un audit \`e viene
 definito come:
 \begin{enumerate}
-\item parallel operation
-\item integrated testing facilities
-\item batch processing
-\item embedded audit modules
+\item \textit{parallel operation}
+\item \textit{integrated testing facilities}
+\item \textit{batch processing}
+\item \textit{embedded audit modules}
 \end{enumerate}
 
 \end{Exercise}
@@ -192,14 +192,15 @@ definito come:
 
   con le seguenti definizioni:
   \begin{enumerate}
-   \item Sequence number use causes out-of-sequence and duplicate 
-   numbers to be rejected.
-   \item Valid numbers are below a maximum value.
-   \item Values entered are plausible
-   \item Required fields are entered correctly.
-   \item Input is double checked via second person OR all digits are entered
-twice.
-   \item Transactions with duplicate IDs are checked for and rejected.
+   \item L'utilizzo di un \textit{sequence number} causa il rifiuto
+   dei numeri duplicati o fuori sequenza 
+   \item I numeri validi sono minori di un dato valore massimo.
+   \item I valori immessi sono plausibili.
+   \item I campi richiesti sono immessi correttamente.
+   \item L'input è controllato due volte grazie ad una seconda persona
+   \textbf{o} \emph{tutte} le cifre sono immesse due volte.
+   \item Si controlla che l'ID di una transazione non esista già, se
+   esiste viene rifiutata.
   \end{enumerate}
 
 \end{Exercise}
