@@ -315,21 +315,16 @@ malafede bisogna avvisare immediatamente riguardo alla situazione, perché è
 presente il rischio che la controparte cancelli le prove che la colpevolizzano.
 \end{itemize}
 
-\subsubsection*{Test sostantivo e test di conformità}
 
-Ci sono due tipologie principali di test
-\begin{itemize}
-\item \textbf{Test sostantivo:} verifica che tutto funzioni come dovrebbe;
-\item \textbf{Test di conformità (compliance):} è importante chiedersi  \textit{
-"i controlli sono presenti e eseguiti in maniera consistente?"}.
-\end{itemize}
 
-Se i risultati dei test di conformità sono scarsi, mi aspetto che i controlli
-sostanziali siano più numerosi in tipo e numero.
+
+
 
 \subsubsection{Step 6: Test di conformità}
+I test di conformità rispondono alla domanda \textit{
+``i controlli sono presenti e eseguiti in maniera consistente?''}.
 
-\textbf{Controllo:} il software in produzione è controllato?
+\paragraph*{Esempio di Controllo:} il software in produzione è controllato?
 \begin{itemize}
 \item \textbf{Test:} I file eseguibili vengono buildati dal codice sorgente che
 sta nel repository? Se questo non accade è un grave problema, perché significa
@@ -343,8 +338,11 @@ software.
 
 
 \subsubsection{Step 7: Test sostanziali}
+I test sostanziali verificano che tutto funzioni come dovrebbe.
+Se i risultati dei test di conformità sono scarsi, mi aspetto che i controlli
+sostanziali siano più numerosi in tipo e numero.
 
-Audit: la sezione finanziaria sulle vendite è accurata?
+\paragraph*{Esempio di Audit:} la sezione finanziaria sulle vendite è accurata?
 
 \begin{itemize}
 \item \textbf{Test:} tracciare il processing di un esempio di transazione
@@ -353,16 +351,32 @@ attraverso il sistema, eseguendo i calcoli manualmente;
 \end{itemize}
 
 
-\paragraph{Campionamento}\mbox{}\\
+\subsubsection{Campionamento}
+Si ricorre al campionamento quando considerazioni di tempo e costi
+precludono una verifica di \emph{tutti} gli eventi e 
+\emph{tutte} le transazioni di una popolazione predefinita.
+La \textbf{popolazione} consiste di un intero gruppo di oggetti
+che devono essere esaminati. 
+Il sottoinsieme della popolazione usato per
+eseguire il testing è chiamato \textbf{campione}. Il campionamento
+è utilizzato per inferire caratteristiche riguardo alla popolazione,
+basandosi sul campione.
 
-\textbf{Campionamento statistico:} ci sono tecniche standard, fornisce un
-\textit{intervallo di confidenza}\footnote{intervallo in cui siamo sicuri che
-il nostro campione sia significativo}. Se abbiamo N item, con un campione di
+Esistono due approcci generali per il campionamento dell'audit:
+\paragraph*{Campionamento statistico:} ci sono tecniche standard, fornisce un
+\textit{intervallo di confidenza}\footnote{L'\textbf{intervallo
+di confidenza} è la probabilità che le caratteristiche del
+campione siano vere rappresentazioni delle caratteristiche della 
+popolazione. Questo coefficiente viene rappresentato con un $\epsilon$,
+il quale più piccolo è e meglio è. Solitamente, si usa un intervallo di
+confidenza del 90\%.}. Se abbiamo N item, con un campione di
 $\sqrt{N}$ elementi garantisce una precisione del 99.9\%.
 $$
 (1 - 1/100)^K
 $$
-\newline
-\textbf{Campionamento non stastistico:} si basa sul giudizio e soprattutto su
-informazioni a contorno. Si perde la rappresentatività del campione statistico,
-ma si troveranno delle evidenze su ciò che stiamo cercando.
+\paragraph*{Campionamento non stastistico:} si basa sul giudizio
+dell'auditor e soprattutto su informazioni di contorno, come per
+esempio quali item/transactions sono comportano il maggior rischio?
+Con questo approccio si perde la rappresentatività
+del campione statistico, ma si trovano delle evidenze su ciò che
+si sta realmente cercando.
