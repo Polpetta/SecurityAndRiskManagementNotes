@@ -311,10 +311,12 @@ fare validazione.
 
 \section{Tecniche di Auditing Online}
 
-\textbf{Audit Hooks:} all'interno del codice ci sono delle condizioni
-particolari che se sono soddisfatte triggerano delle operazioni di auditing, è
-meno pesante delle EAM infatti viene attivato il controllo \emph{solo} quando
-si raggiungono certi path del CFG.
+\textbf{Audit Hooks:} sono logiche software integrate nell'applicazione
+che stampano dei report, degli errori e dei segnali d'allarme 
+quando alcune condizioni particolari sono soddisfatte.
+Questo approccio è meno pesante delle EAM perché il controllo 
+viene attivato \emph{solo} quando si raggiungono certi path
+del \textit{Control Flow Graph} (CFG).
 
 \begin{figure}[h!]
         \begin{center}
@@ -326,11 +328,7 @@ si raggiungono certi path del CFG.
 
 \noindent \textbf{Auditing online continuo:} permette agli auditor di
 testare il sistema senza interrompere le operazioni regolari di una
-compagnia.\\
-\newline
-\textbf{Audit hooks:} sono logiche software integrate nell'applicazione, che
-stampano dei report degli errori red flag permettendo agli auditor di agire
-per intercettare gli errori preventivamente prima che diventino dei problemi.
+compagnia.
 
 \section{Esercizi}
 
