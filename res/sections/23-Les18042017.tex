@@ -74,17 +74,6 @@ distribuzione fallace completamente duale rispetto all'intervallo di
 confidenza.
 
 
-\subsubparagraph*{Generic Audit Software (GAS)}
-
-Questa tipologia di tool sono molto utili e danno la possibilità di avere
-accesso a:
-\begin{itemize}
-\item Accesso degli utenti ai file;
-\item Organizzazione dei file;
-\item Selezione dei dati (eg. selezione di un insieme di record);
-\item Funzioni statistiche;
-\item Funzioni aritmetiche.
-\end{itemize}
 
 \subsection{Step 8: Preparare il rapporto di Audit}
 
@@ -200,14 +189,49 @@ e dell'organizzazione.
 
 
 \subsection{Computer-Assisted Audit Techniques (CAAT)}
+Durante il corso di un audit, l'auditor deve cercare di raccogliere
+prove rilevanti e utili per raggiungere gli obiettivi dell'audit.
+I finding e le conclusioni dell'audit devono essere supportate da 
+analisi appropriate e interpretazione delle prove.
 
-I software permettono agli auditor di:
+I CAAT sono strumenti importanti per l'auditor per raccogliere
+informazioni dagli ambienti di processing dell'informazione.
+In particolar modo quando i sistemi hanno hardware, software, strutture
+dati e formati di record differenti, è quasi imposibile per un auditor
+raccogliere le prove senza un tool.
+
+Questi software permettono agli auditor di:
 \begin{itemize}
 \item Accedere e analizzare i dati nel database;
-\item Effettuare test di compliance;
+\item Effettuare test di conformità;
 \item Effettuare penetration test;
 \item Testare le applicazioni.
 \end{itemize}
+
+I CAAT includono diversi tipi di tool e tecniche come per esempio
+i generalized audit software (GAS), software di utility e
+software di debbugging e scanning.
+
+\subsubsection{Generalized Audit Software (GAS)}
+Il termine GAS si riferisce a software standard capaci di leggere
+ed accedere a dati da diversi database, flat-file e file in formato
+ASCII. Gli IS auditor possono usare i GAS per analizzare indipendentemente
+i dati e usare software di alto livello per invocare delle funzioni
+sui file contenenti i dati.
+
+Questa tipologia di tool sono molto utili e permettono agli auditor di:
+\begin{itemize}
+\item Avere accesso ai file: leggere i record e la struttura del file;
+\item Riorganizzare i file: permettono l'indexing, l'ordinamento,
+il merging e la creazione di link ad altri file;
+\item Selezionare dei dati: selezionare un insieme di record,
+applicazione di filtri, ecc\dots;
+\item Eseguire funzioni statistiche: permettono il campionamento, 
+la stratificazione e l'analisi della frequenza;
+\item Eseguire Funzioni aritmetiche: permettono di eseguire operazioni e 
+funzioni matematiche sui dati contenuti nei file.
+\end{itemize}
+
 
 
 \subsection{Controllare l'auto-valutazione}
