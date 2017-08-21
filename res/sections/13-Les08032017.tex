@@ -56,41 +56,47 @@ Questo perché sono coinvolti processi che vanno capiti e contestualizzati.
         \caption{Grafico che mostra le fasi che portano dal servizio
         regolare, alla interruzione e infine al ripristino del servizio
         regolare, passando per il servizio degradato.}
-        \label{fig:recovery-times}
 \end{figure}
 
-Prendiamo ora in esame la Figura \ref{fig:recovery-times}. In un primo 
-momento abbiamo un servizio regolare. Quando si verifica un'interruzione
-ci troviamo nell'\textbf{in\-ter\-rup\-tion win\-dow} (finestra di tempo 
-in cui il servizio non è disponibile). Se è stato fatto un 
-\textit{disaster recovery plan} possiamo entrare in 
-\textbf{alternate mode} (servizio più limitato\footnote{Per 
-esempio se prima era possibile servire 100 utenti contemporaneamente 
-magari adesso \`e possibile servirne solamente 50.} ma disponibile).
-La modalità alternativa si protrae fino a che non avviene la 
-\textbf{restoration},
-ovvero il ripristino del servizio regolare.
+Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo
+nell'\textbf{in\-ter\-rup\-tion win\-dow} (finestra di tempo per cui il servizio non è
+disponibile). Se è stato fatto un \textit{disaster recovery plan}
+possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per
+esempio se era possibile servire 100 utenti contemporaneamente magari adesso
+\`e possibile servirne solamente 50.} ma disponibile).
 
 Il \textbf{Service Delivery Objective} è il livello di servizio che possiamo
-fornire in \textit{alternate mode}: per esempio una banca vuole che sia
+fornire in \textit{alternate mode} (ad esempio una banca vuole che sia
 garantito almeno il 50\% delle transazioni durante la alternate mode, quindi
-l'SDO è 50\%.
+l'SDO è 50\%).
 
-Il tempo passato tra l'inizio della modalità alternativa e il ripristino
-del livello regolare di servizio viene definito come \textbf{Max\-i\-mum
-Tol\-er\-a\-ble Out\-age} (MTO).
+La modalità alternativa ovviamente non perdura costantemente, ed ad un certo
+punto raggiunge una fine in cui il comportamento normale del sistema viene
+ripristinato. Il tempo passato tra l'inizio della modalità alternativa e la
+sua conclusione con il ripristino delle normali operazioni\footnote{Anche
+detto \textit{restoration}} viene definito come \textbf{Maximum Tolerable
+Outage}.
 
 Può darsi che non sia possibile ritornare subito al 100\% dell'operatività.
 È quindi necessario avere un \textbf{restoration plan} che permetta di passare
 dall'\textit{alternate mode} al \textit{regular service mode} nel minor tempo
 possibile.
 
-La \textbf{Business Continuity} consiste nel riuscire ad offrire i
-servizi \emph{critici} in caso di interruzioni.
-La \textbf{Disaster Recovery} permette di sopravvivere anche se il
-servizio IT è non disponibile.
-Il \textbf{Disaster Recovery Plan} (DRP) è il piano che permette di passare in
-modalità alternata.
+\subsubsection{Definizioni}
+
+Di seguito viene riportata una lista di definizioni appena viste:
+
+\begin{itemize}
+  \item \textbf{Business Continuity:} riuscire ad operare anche se con una
+  modalità degradata del servizio;
+  \item \textbf{Disaster recovery:} permette di sopravvivere anche se il
+  servizio IT è non disponibile;
+  \item \textbf{Alternate Process Mode:} modalità alternata;
+  \item \textbf{Disaster Recovery mode:} piano che permette di passare in
+  modalità alternata;
+  \item \textbf{Restoration plan:} permette di passare dalla modalità alternata
+  a quella normale.
+\end{itemize}
 
 \section{Classificazione dei servizi}\label{sec:classificazioneServizi}
 
