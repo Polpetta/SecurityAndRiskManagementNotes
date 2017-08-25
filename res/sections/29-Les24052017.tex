@@ -49,9 +49,15 @@ Security() {
 
 Questa porzione di codice contiene diversi errori:
 \begin{itemize}
-\item Errori troppo verbosi;
+\item Il file \path{security.dat} non è un percorso assoluto:
+il file può essere sostituito se il programma viene eseguito da
+un altra cartella;
+\item Errori troppo verbosi: l'errore indica il nome del file e da
+delle informazioni all'attaccante;
 \item Il file viene salvato in chiaro;
-\item Non viene chiuso il file dopo la lettura;
+\item Non viene chiuso il file dopo la lettura: lascia il file
+aperto per possibili attacchi e inoltre tiene delle risorse 
+inutilmente occupate;
 \item Non viene controllata la lunghezza della lettura del file.
 \end{itemize}
 
