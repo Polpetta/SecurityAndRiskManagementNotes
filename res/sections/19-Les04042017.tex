@@ -210,10 +210,15 @@ universitaria}
 Detti anche IDS e IPS sono dei sistemi che aiutano la protezione del sistema.
 Gli HIDS sono detti anche \textit{Host IDS} e sono IDS installati nella
 macchina. Questi sistemi purtroppo non hanno una mappa completa del traffico di
-rete, e non riescono a proteggere in maniera efficace il computer. C'è un
-problema di falsi positivi da tenere conto: il sistema potrebbe individuare che
-si sta facendo qualcosa di scorretto perché il comportamento devia dallo
-standard, ma non è necessariamente un comportamento negativo.
+rete, e non riescono a proteggere in maniera efficace il computer. A differenza
+di quest'ultimi i NIDS(\textit{Network IDS}) analizzano il traffico di rete per
+verificare la presenza di attacchi e, nel caso, avvertono l'amministratore. In
+entrambi i casi i falsi positivi sono un problema: il sistema potrebbe
+individuare un comportamento scorretto perché devia da quello standard ma ciò
+non è necessariamente sintomo di un comportamento malevolo.
+\par Gli IPS sono un'estensione dei IDS, infatti a differenza degli IDS possono
+essere abilitati a eseguire azioni di correzione, come bloccare le intrusioni
+oppure mandare allarmi.
 
 \subsubsection{IDS Intelligence Systems}
 
