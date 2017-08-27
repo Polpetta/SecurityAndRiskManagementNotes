@@ -57,23 +57,19 @@ PizzaHut grazie alla sua applicazione. È per questo che il controllo
 sull'input è molto importante, perché un possibile attacco di Denial Of
 Service potrebbe essere ordinare un numero incontrollato di pizze.
 
-
-
-
-
 \subsection{Batch Processing}
-È un tipo di controllo dell'input.
-Elaborazione sequenziale di blocchi di transazioni
-dopo che sono state aggregate.
-L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
-dei controlli automatici su un batch e associati ad un batch file.
-Viene effettuata la validazione delle transazioni. Le transazioni
-rifiutate sono corrette e rispedite o trattate in altro modo.
-
-Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
-Il processing viene completato.
-Infine segue il batch balancing attraverso
-una riconciliazione manuale o automatica dei controlli di batch.
+È un tipo di controllo dell'input che permette l'elaborazione sequenziale di
+blocchi di transazioni, dopo che queste sono state aggregate. L'input è
+autorizzato e raccolto in ``batch''. Vengono effettuati dei controlli
+automatici sui batch  (\textit{batch controls}) e associati ad un batch file.
+Successivamente viene effettuata la validazione delle transazioni. Eventuali 
+transazioni rifiutate sono corrette e rispedite oppure trattate in altro modo.
+In seguito viene effettuato il processing (es. di processing: ordini,
+pagamenti, salvataggio nel DB). Terminato il processing viene effettuato il 
+\textbf{batch balancing}, ovvero viene controllato che i totali dei batch
+corrispondano al totale dei pagamenti ricevuti, attraverso la 
+\textbf{reconciliation}, ovvero la verifica della corrispondenza dei record,
+che può essere manuale o automatica.
 
 \subsection{Transaction Authorization}
 \begin{itemize}
