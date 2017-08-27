@@ -284,7 +284,6 @@ percorso delle operazioni eseguite mentre il \textit{tagging} posiziona degli
 indicatori sulle transazioni selezionate. Un'altra parte di questa tecnica sono
 gli \textbf{Snapshot}, ovvero la registrazione dei flussi di transazioni
 progettate seguendo dei path logici.
-\end{itemize}
 
 \subsection{Sistemi di validazione}
 Il sistemi di validazione prevedono la \textbf{Base-case system evaluation},
@@ -294,13 +293,12 @@ prevedono anche \textbf{simulazioni parallele}, che utilizzano programmi per
 simulare la logica dell'applicazione, e \textbf{operazioni parallele}, con il
 quale si confrontano i risultati del nuovo e vecchio sistema di 
 \textit{processing} dei dati e si comparano i risultati.
-\end{itemize}
 
 \section{Tecniche di Auditing Online}
 Le tecniche di auditing online permettono agli auditor di testare il sistema
 senza interrompere le operazioni regolari di una compagnia. Quste prevedono:
 \begin{itemize}
-    \item \textbf{{Audit Hooks}: sono logiche software integrate
+    \item \textbf{Audit Hooks}: sono logiche software integrate
     nell'applicazione che stampano dei report, degli errori e dei segnali
     d'allarme  quando alcune condizioni particolari sono soddisfatte. Questo
     approccio è meno pesante delle EAM perché il controllo  viene attivato 
@@ -310,18 +308,15 @@ senza interrompere le operazioni regolari di una compagnia. Quste prevedono:
     \item \textbf{SCARF};
     \item \textbf{Snapshots};
     \item \textbf{Integrated Test Facilities};
-    \item \textbf{Continuous \& Intermittent Simulation (CIS)}: simulazione
+    \item \textbf{Continuous and Intermittent Simulation (CIS)}: simulazione
     delle istruzioni eseguite dall'applicazione.
 \end{itemize}
-\paragraph*
-
 
 \begin{figure}[h!]
-        \begin{center}
-                \includegraphics[width=\textwidth]{concurrent_audit_tools}
-        \end{center}
-        \caption{Strumenti di audit concorrenti.}
-        \label{fig:concurrent:audit:tools}
+  \centering
+  \includegraphics[width=\textwidth]{concurrent_audit_tools}
+  \caption{Strumenti di audit concorrenti.}
+  \label{fig:concurrent:audit:tools}
 \end{figure}
 
 \noindent \textbf{Auditing online continuo:} permette agli auditor d
