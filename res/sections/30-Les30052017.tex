@@ -266,47 +266,55 @@ fare validazione.
 
 \section{Tecniche di testing per le applicazioni}
 
-\textbf{Test data:}
-\begin{itemize}
-    \item Test data: testare le transazioni che attraversano programmi reali;
-    \item Strumenti di testing integrati: creare delle transazioni di test da
-    includere con le transazioni reali;
-    \item Programmi di selezione delle transazioni: monitora e seleziona le
-    transazioni in input per regolare i cicli di produzione;
-    \item Dati di audit incorporati: seleziona transazioni di input random o
-    distribuite statisticamente e genera i log durante la produzione.
+\subsection{Test Data}
+I \textit{test data} servono per testare le transazioni che attraversano
+programmi reali. Questi prevedono \textbf{Integrated Testing Facilities},
+ovvero la creazione di transazioni di test da includere con i dati reali, 
+\textbf{text} e possono esssere fatti sfruttando \textbf{Transaction Selection
+Programs}, programmi che monitorano e selezionano le transazioni in input per
+regolare i cicli di produzione, e \textbf{Embedded Audit Data}, cioè la
+selezione randomica delle transazioni di input o distribuita statisticamente e
+la generazione di log durante la produzione.
+
+\subsection{Debugging/Processing}
+Questa tecnica prevede il \textbf{mapping}, con il quale è possibile
+identificare le parti di un programma che non ancora state testate, il 
+\textbf{tracing e tagging}, dove il \textit{tracing} serve per evidenziare il7
+percorso delle operazioni eseguite mentre il \textit{tagging} posiziona degli
+indicatori sulle transazioni selezionate. Un'altra parte di questa tecnica sono
+gli \textbf{Snapshot}, ovvero la registrazione dei flussi di transazioni
+progettate seguendo dei path logici.
 \end{itemize}
 
-\textbf{Debugging/Processing:}
-
-\begin{itemize}
-    \item Mapping: identifica logiche di programmi che non
-    sono ancora state testate;
-    \item Tracing e tagging: mostra l'insieme delle istruzioni eseguite. Tagga
-    con indicatori di luogo le
-    transazioni selezionate;
-    \item Snapshot: registra flussi di transazioni designate seguendo dei path
-    logici.
-\end{itemize}
-
-\textbf{Sistemi di validazione:}
-
-\begin{itemize}
-    \item Sistema di valutazione base-case: utilizza i test data per testare i
-    programmi e verificare che
-    le operazioni di sistema siano corrette prima di essere accettate;
-    \item Simulazioni parallele;
-    \item Operazioni parallele.
+\subsection{Sistemi di validazione}
+Il sistemi di validazione prevedono la \textbf{Base-case system evaluation},
+cioè utilizzare i \textit{test data} per testare i programmi e verificare che
+le operazioni del sistema siano corrette prima di essere accettate. Oltre a ciò
+prevedono anche \textbf{simulazioni parallele}, che utilizzano programmi per
+simulare la logica dell'applicazione, e \textbf{operazioni parallele}, con il
+quale si confrontano i risultati del nuovo e vecchio sistema di 
+\textit{processing} dei dati e si comparano i risultati.
 \end{itemize}
 
 \section{Tecniche di Auditing Online}
+Le tecniche di auditing online permettono agli auditor di testare il sistema
+senza interrompere le operazioni regolari di una compagnia. Quste prevedono:
+\begin{itemize}
+    \item \textbf{{Audit Hooks}: sono logiche software integrate
+    nell'applicazione che stampano dei report, degli errori e dei segnali
+    d'allarme  quando alcune condizioni particolari sono soddisfatte. Questo
+    approccio è meno pesante delle EAM perché il controllo  viene attivato 
+    \emph{solo} quando si raggiungono certi path del \textit{Control Flow Graph}
+    (CFG);
+    \item \textbf{EAM};
+    \item \textbf{SCARF};
+    \item \textbf{Snapshots};
+    \item \textbf{Integrated Test Facilities};
+    \item \textbf{Continuous \& Intermittent Simulation (CIS)}: simulazione
+    delle istruzioni eseguite dall'applicazione.
+\end{itemize}
+\paragraph*
 
-\textbf{Audit Hooks:} sono logiche software integrate nell'applicazione
-che stampano dei report, degli errori e dei segnali d'allarme 
-quando alcune condizioni particolari sono soddisfatte.
-Questo approccio è meno pesante delle EAM perché il controllo 
-viene attivato \emph{solo} quando si raggiungono certi path
-del \textit{Control Flow Graph} (CFG).
 
 \begin{figure}[h!]
         \begin{center}
@@ -316,9 +324,7 @@ del \textit{Control Flow Graph} (CFG).
         \label{fig:concurrent:audit:tools}
 \end{figure}
 
-\noindent \textbf{Auditing online continuo:} permette agli auditor di
-testare il sistema senza interrompere le operazioni regolari di una
-compagnia.
+\noindent \textbf{Auditing online continuo:} permette agli auditor d
 
 \section{Esercizi}
 
