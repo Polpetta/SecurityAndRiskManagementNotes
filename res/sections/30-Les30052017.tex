@@ -67,9 +67,9 @@ transazioni rifiutate sono corrette e rispedite oppure trattate in altro modo.
 In seguito viene effettuato il processing (es. di processing: ordini,
 pagamenti, salvataggio nel DB). Terminato il processing viene effettuato il 
 \textbf{batch balancing}, ovvero viene controllato che i totali dei batch
-corrispondano al totale dei pagamenti ricevuti, e la una 
-\textbf{riconciliazione},ovvero il trattamento degli errori rilecvati, che può
-essere manuale o automatica.
+corrispondano al totale dei pagamenti ricevuti, attraverso la 
+\textbf{reconciliation}, ovvero la verifica della corrispondenzza dei record,
+che può essere manuale o automatica.
 
 \subsection{Transaction Authorization}
 \begin{itemize}
