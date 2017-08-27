@@ -290,13 +290,6 @@ Esistono diversi metodi di dispiegamento
   distinti ma sono collegati attraverso tecnologie standard o proprietarie.
 \end{itemize}
 
-Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il
-\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la
-\textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità
-diverse sulla stessa macchina grazie alla virtualizzazione. In caso di
-fallimento di una macchina potrebbero fallire più servizi di diversi utenti,
-per non parlare del fatto che un utente malintenzionato potrebbe tentare di
-accedere al servizio di un altro utente risiedente sulla stessa istanza.
 
 \subsubsection{Modello di servizio}
 
@@ -318,14 +311,22 @@ self-service.
 
 \subsubsection{Major Areas of Security Concerns}
 
+
 \begin{itemize}
  \item \textbf{Service Level Agreement (SLA)}: definisce performance,
 sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di
 fornitura di internet, il SLA di solito è la banda minima garantita.
- \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server
-usato da altre organizzazioni. È quindi necessario avere un'adeguata
-segmentazione e isolamento. Un set di \textit{policy} sono anche necessarie.
- \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
+ \item Quando si usa il \textit{cloud} si danno i propri dati in mano a
+terzi. Bisogna quindi stare attenti alla \textbf{Multi-tenancy}, ovvero
+quando mediante la virtualizzazione vengono eseguiti più servizi
+di diverse organizzazioni sulla stessa macchina.
+In caso di fallimento di una macchina potrebbero fallire più servizi di
+diversi utenti. Inoltre un utente malintenzionato
+potrebbe tentare di accedere al servizio di un altro user risiedente
+sulla stessa istanza.
+È quindi di fondamentale importanza avere delle \textit{policy} adeguate
+e buone proprietà di \textbf{segmentazione} e \textbf{isolamento}.
+\item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
 dell'azienda e da quella del cloud provider.
 \end{itemize}
 
