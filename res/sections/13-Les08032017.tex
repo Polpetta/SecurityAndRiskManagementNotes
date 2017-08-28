@@ -233,7 +233,7 @@ Questi due obiettivi sono ovviamente conflittuali.
   servizio}
 \end{figure}
 
-Esistono diverse tecnologie di backup:
+Esistono diverse \textit{alternative recovery strategy}:
 \begin{itemize}
   \item \textbf{Hot site}: il centro di \textit{backup} è allineato con il
   centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro
@@ -247,13 +247,24 @@ Esistono diverse tecnologie di backup:
   mancano i server e le configurazioni. Questa installazione è quella che
   richiede più tempo per diventare operativa, anche se il suo costo è molto
   basso;
-  \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi
-  di recupero ma si trovano in una fascia operativa media. Due società nello
+  \item Esistono inoltre \textit{alternative recovery strategies} che hanno
+  costi molto bassi di recupero ma si trovano in una fascia operativa media:
+  \begin{itemize}
+  \item \textbf{Reciprocal agreeement}: due società nello
   stesso segmento di mercato ma non troppo in competizione si potrebbero
-  accordare per condividere i siti caldi. Questo rientra nella fase di
-  \textbf{reciprocal agreeement};
+  accordare per condividere le proprie sedi in caso di disastri. 
+  La sede dell'azienda con cui ci si è accordati deve essere ubicata a
+  debita distanza, perché se capita una catastrofe è molto probabile che venga
+  colpito anche a chi è vicino (ovvero è presente una suscettibilità 
+  allo stesso disastro). Altri aspetti critici sono i problemi di 
+  compatibilità, di privacy e sicurezza, di disponibilità delle risorse
+  (computer, rete, ecc.) e per quanto tempo si è ben accetti all'interno
+  dell'azienda ospitante.
+  Tutti questi problemi fanno sì che questa
+  alternativa sia la meno indicata.
   \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e
   garantisce la connettività.
+  \end{itemize}
 \end{itemize}
 
 \subsection{Tipologie di back-up dei dati}
@@ -342,11 +353,7 @@ Non è possibile trasferire la responsabilità dei servizi nei confronti dei
 propri clienti. Ad esempio: dichiarazione dei redditi con il commercialista, il
 commercialista fa la dichiarazione ma chi la firma è il responsabile legale.
 
-\subsubsection{Accordo reciproco}
 
-\paragraph*{Vantaggi} Costo basso.
+\subsection{Esercizi}
 
-\paragraph*{Svantaggi} La sicurezza. Processi veramente critici vanno posti a
-distanza geografica perché se capita una catastrofe è molto probabile che venga
-colpito anche a chi è vicino (ovvero è presente una suscettibilità allo stesso
-disastro).
+Gli esercizi si trovano nella Sezione \ref{EsBCDR1}.
