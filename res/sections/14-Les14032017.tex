@@ -1,9 +1,9 @@
-\subsection{Business Continuity Process}
+\section{Business Continuity Process}
 
 Un piano per la continuazione del business si suddivide nei seguenti passi:
 \begin{enumerate}
   \item Attuazione dell'\textit{Business Impact Analysis};
-  \item Dare priorità ai servizi per supportare i processi critici del 
+  \item Dare priorità ai servizi per supportare i processi critici del
   business;
   \item Determinazione di modalità alternative di processo per servizi critici
   e vitali;
@@ -15,14 +15,11 @@ Un piano per la continuazione del business si suddivide nei seguenti passi:
   \item Mantenimento dei piani.
 \end{enumerate}
 
-\subsection{Esercizi}
-
-Gli esercizi si trovano nella Sezione \ref{EsBCDR1}.
 
 \section{Disaster recovery testing}
 
 Quando avviene un disastro c'è una persona che ha il compito di allertare le
-altre persone (di solito il Chief Security Officer). Quando il CSO dichiara 
+altre persone (di solito il Chief Security Officer). Quando il CSO dichiara
 l'incidente le persone posso aprire il libro del Disaster Recovery.
 
 Un incidente non viene dichiarato immediatamente, ma c'è una procedura da
@@ -32,7 +29,7 @@ subito contattati, mentre l'ufficio stampa si occupa di dichiarare l'incidente.
 Questa parte è molto delicata, e il danno dev'essere spiegato in maniera da non
 costituire una brutta pubblicità per l'azienda.
 
-L'ufficio IT entra in azione dopo tutte queste procedure preliminari sono
+L'ufficio IT entra in azione dopo che tutte queste procedure preliminari sono
 annunciate, e comincia ad agire per risolvere il problema.
 
 \subsection{Preparazione di un piano di recupero}
@@ -103,7 +100,7 @@ interruzioni prolungate                     \\ \hline
 \subsection{Mean Time Between Failure}
 
 Detto anche MTBF, è la somma del \textit{Mean Time to Repair} (MTTR) più il
-\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che intercorre 
+\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che intercorre
 tra l'inizio di due fallimenti.
 
 Il MTTR è il tempo medio necessario per la riparazione, mentre il MTTF è il
@@ -125,7 +122,7 @@ mezzo di fallimento all'anno del servizio.
 È l'esecuzione del piano per verificarne il suo funzionamento.
 Il test viene effettuato in questo ordine:
 \begin{enumerate}
-  \item \textbf{Desk-Based Evaluation/Paper test:} un gruppo comincia a 
+  \item \textbf{Desk-Based Evaluation/Paper test:} un gruppo comincia a
   seguire i passi della procedura e li esegue a mano, simile al walkthrough;
   \item \textbf{Preparedness Test:} una o più parti dell'intero test vengono
   eseguite personalmente da qualcuno;
@@ -136,17 +133,17 @@ Il test viene effettuato in questo ordine:
 
 Esistono diverse tipologie di test per la \textit{Business Continuity}:
 \begin{itemize}
-  \item \textbf{Checklist Review:} rivisitazione per piano di copertura. Tutti
-  i piani importanti sono coperti?
+  \item \textbf{Checklist Review:} rivisitazione del piano per verificare
+  che tutti gli aspetti importanti siano coperti;
   \item \textbf{Structured Walkthrough:} rivisitazione di tutti gli aspetti
   del piano, spesso guardando tutti gli
   scenari;
-  \item \textbf{Simulation Test:} esecuzione del piano basato specificamente 
+  \item \textbf{Simulation Test:} esecuzione del piano basato specificamente
   per uno scenario, senza un sito alternativo;
   \item \textbf{Parallel Test:} viene azionata la struttura alternativa fuori
   dal sito, senza interrompere il funzionamento del sito regolare;
-  \item \textbf{Full-Interruption:} si passa alla modalità alternativa da 
-  quella regolare, per verificare che tutto sia funzionante.
+  \item \textbf{Full-Interruption:} si passa dal sito regolare a quello
+  alternativo.
 \end{itemize}
 
 \subsubsection{Obiettivi del testing}
@@ -179,11 +176,18 @@ migliore osservazione.
 Dalla valutazione del test si ottengono quelli che sono i \textbf{punti di
 miglioramento}, che devono essere effettivamente messi in pratica.
 
-\paragraph*{Passi del test} Esistono diversi passi del test. C'è la sua
-preparazione, l'esecuzione del test e la pulizia dopo-test. Importante è
-ricordarsi di eseguire una pulizia dei dati dopo l'esecuzione del test, ma di
-quelli che non sono importanti per la sua valutazione (altrimenti il test
-sarebbe inutile).
+\paragraph*{Passi del test} Il test si articola in tre passi:
+\begin{enumerate*}[label=\arabic*)]
+\item il \textbf{PreTest}, ovvero la preparazione dell'attrezzatura e
+dello staff, 
+\item il \textbf{Test}, le vere azioni del \textit{business continuity
+test} e infine
+\item il \textbf{PostTest}, fase in cui si rilasciano tutte le risorse,
+si calcolano delle metriche (tempo richiesto, percentuale di transazioni
+avvenute con successo durante l'alternate mode, ecc\dots) e 
+infine si cancellano i dati del test. In ultima istanza si valuta il
+piano e si implementano le azioni correttive individuate.
+\end{enumerate*}
 
 \subsubsection{Gap Analysis}
 
@@ -198,10 +202,7 @@ dei processi).}, perché le persone sono quelle che sono più difficili da
 
 Sono presenti diversi step da controllare, che possono essere:
 \begin{itemize}
-  \item Include la BIA? La BIA è completo rispetto il RPO/RTO definito per 
-  tutti i servizi?
-  \item Il BCP in linea con gli obiettivi del business? Sono effettivi e 
-  aggiornati?
+  \item All'interno della BIA sono definiti RPO/RTO per tutti i servizi?
   \item È chiaro chi deve svolgere cosa nel BCP e nel DRP?
   \item Sono tutti allineati e competenti? Accettano volentieri questo ruolo?
   \item DRP è mantenuto, dettagliato e testato?
@@ -210,9 +211,9 @@ Sono presenti diversi step da controllare, che possono essere:
   \item Le persone nella lista del BCP o nell'albero delle chiamate hanno una
   copia del manuale?
   \item L'\textit{hot site} ha tutte le copie del software al momento usato?
-  \item Il sito di backup è mantenuto secondo le aspettative? Le 
+  \item Il sito di backup è mantenuto secondo le aspettative? Le
   aspettative sono effettive?
-  \item Il test del DRP è stato documentato per bene? Il DPR è stato 
+  \item Il test del DRP è stato documentato per bene? Il DPR è stato
   aggiornato?
 \end{itemize}
 

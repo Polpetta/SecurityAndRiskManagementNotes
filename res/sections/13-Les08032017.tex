@@ -56,47 +56,41 @@ Questo perché sono coinvolti processi che vanno capiti e contestualizzati.
         \caption{Grafico che mostra le fasi che portano dal servizio
         regolare, alla interruzione e infine al ripristino del servizio
         regolare, passando per il servizio degradato.}
+        \label{fig:recovery-times}
 \end{figure}
 
-Abbiamo un servizio regolare, si verifica un'interruzione e ci troviamo
-nell'\textbf{in\-ter\-rup\-tion win\-dow} (finestra di tempo per cui il servizio non è
-disponibile). Se è stato fatto un \textit{disaster recovery plan}
-possiamo entrare in \textbf{alternate mode} (servizio più scarno\footnote{Per
-esempio se era possibile servire 100 utenti contemporaneamente magari adesso
-\`e possibile servirne solamente 50.} ma disponibile).
+Prendiamo ora in esame la Figura \ref{fig:recovery-times}. In un primo 
+momento abbiamo un servizio regolare. Quando si verifica un'interruzione
+ci troviamo nell'\textbf{in\-ter\-rup\-tion win\-dow} (finestra di tempo 
+in cui il servizio non è disponibile). Se è stato fatto un 
+\textit{disaster recovery plan} possiamo entrare in 
+\textbf{alternate mode} (servizio più limitato\footnote{Per 
+esempio se prima era possibile servire 100 utenti contemporaneamente 
+magari adesso \`e possibile servirne solamente 50.} ma disponibile).
+La modalità alternativa si protrae fino a che non avviene la 
+\textbf{restoration},
+ovvero il ripristino del servizio regolare.
 
 Il \textbf{Service Delivery Objective} è il livello di servizio che possiamo
-fornire in \textit{alternate mode} (ad esempio una banca vuole che sia
+fornire in \textit{alternate mode}: per esempio una banca vuole che sia
 garantito almeno il 50\% delle transazioni durante la alternate mode, quindi
-l'SDO è 50\%).
+l'SDO è 50\%.
 
-La modalità alternativa ovviamente non perdura costantemente, ed ad un certo
-punto raggiunge una fine in cui il comportamento normale del sistema viene
-ripristinato. Il tempo passato tra l'inizio della modalità alternativa e la
-sua conclusione con il ripristino delle normali operazioni\footnote{Anche
-detto \textit{restoration}} viene definito come \textbf{Maximum Tolerable
-Outage}.
+Il tempo passato tra l'inizio della modalità alternativa e il ripristino
+del livello regolare di servizio viene definito come \textbf{Max\-i\-mum
+Tol\-er\-a\-ble Out\-age} (MTO).
 
 Può darsi che non sia possibile ritornare subito al 100\% dell'operatività.
 È quindi necessario avere un \textbf{restoration plan} che permetta di passare
 dall'\textit{alternate mode} al \textit{regular service mode} nel minor tempo
 possibile.
 
-\subsubsection{Definizioni}
-
-Di seguito viene riportata una lista di definizioni appena viste:
-
-\begin{itemize}
-  \item \textbf{Business Continuity:} riuscire ad operare anche se con una
-  modalità degradata del servizio;
-  \item \textbf{Disaster recovery:} permette di sopravvivere anche se il
-  servizio IT è non disponibile;
-  \item \textbf{Alternate Process Mode:} modalità alternata;
-  \item \textbf{Disaster Recovery mode:} piano che permette di passare in
-  modalità alternata;
-  \item \textbf{Restoration plan:} permette di passare dalla modalità alternata
-  a quella normale.
-\end{itemize}
+La \textbf{Business Continuity} consiste nel riuscire ad offrire i
+servizi \emph{critici} in caso di interruzioni.
+La \textbf{Disaster Recovery} permette di sopravvivere anche se il
+servizio IT è non disponibile.
+Il \textbf{Disaster Recovery Plan} (DRP) è il piano che permette di passare in
+modalità alternata.
 
 \section{Classificazione dei servizi}\label{sec:classificazioneServizi}
 
@@ -165,7 +159,7 @@ questo costa.
 
 Per fare un riassunto dell'unità viene qui proposto un esempio. In una
 università, potremmo avere il seguente \textit{Business Impact Analysis
-Summary}\footnote{Per comodità esiste anche l'abbreviazione BIA.}
+Summary}.
 
 \begin{table}[H]
 \centering
@@ -214,19 +208,23 @@ ridondanza, una rete alternativa). Due tipi di ridondanza:
 \begin{itemize}
   \item \textbf{Alternative routing}: faccio un contratto con una società che
   mi fornisce un altro mezzo fisico che esce dalla mia azienda. Bisogna essere
-sicuri che il mezzo che fornisce questa seconda società non sia lo stesso mezzo
-fisico, altrimenti è inutile.
+  sicuri che il mezzo che fornisce questa seconda società non sia lo stesso
+  mezzo fisico, altrimenti è inutile.
   \begin{itemize}
     \item last-mile circuit protection: se mi tranciano l'ultimo miglio tra
-l'azienda e la centralina posso mantenere comunicazioni tramite
-\textit{microwave communication}\footnote{Comunicazione a Microonde.}, faccio
-comunicazione punto punto. Questa tecnologia viene usata abbastanza spesso in
-quanto non richiede una particolare installazione ed è abbastanza economica;
-    \item long-haul network diversity: ricorrere a network provider
-    ridondanti;
+    l'azienda e la centralina posso mantenere comunicazioni tramite
+    \textit{microwave communication}\footnote{Comunicazione a Microonde.},
+    faccio comunicazione punto punto. Questa tecnologia viene usata abbastanza 
+    spesso in quanto non richiede una particolare installazione ed è abbastanza 
+    economica;
+    \item long-haul network diversity: è la diversificazione dei fornitori di
+    connettività su lunghe distanze assicurandosi che i tratti fisici impiegati 
+    siano effettivamente differenti, infatti èpossibile che piu' fornitori 
+    condividano lo stesso mezzo fisico (come nel caso della fibra). Tra i 
+    principali mezzi trasmissivi a lunga distanza ci sono i circuiti T-1.
   \end{itemize}
   \item \textbf{Diverse routing}: si fa con la stessa società ma questa società
-garantisce un instradamento diverso.
+  garantisce un instradamento diverso.
 \end{itemize}
 
 \subsection{Rottura vs Costi di ripristino}
@@ -240,7 +238,7 @@ Questi due obiettivi sono ovviamente conflittuali.
   servizio}
 \end{figure}
 
-Esistono diverse tecnologie di backup:
+Esistono diverse \textit{alternative recovery strategy}:
 \begin{itemize}
   \item \textbf{Hot site}: il centro di \textit{backup} è allineato con il
   centro operativo (es. gestione dei satelliti, ho due siti, uno hot e l'altro
@@ -254,15 +252,34 @@ Esistono diverse tecnologie di backup:
   mancano i server e le configurazioni. Questa installazione è quella che
   richiede più tempo per diventare operativa, anche se il suo costo è molto
   basso;
-  \item Le \textbf{alternative recovery strategies} che hanno costi molto bassi
-  di recupero ma si trovano in una fascia operativa media. Due società nello
+  \item Esistono inoltre \textit{alternative recovery strategies} che hanno
+  costi molto bassi di recupero ma si trovano in una fascia operativa media:
+  \begin{itemize}
+  \item \textbf{Reciprocal agreeement}: due società nello
   stesso segmento di mercato ma non troppo in competizione si potrebbero
-  accordare per condividere i siti caldi. Questo rientra nella fase di
-  \textbf{reciprocal agreeement};
+  accordare per condividere le proprie sedi in caso di disastri. 
+  La sede dell'azienda con cui ci si è accordati deve essere ubicata a
+  debita distanza, perché se capita una catastrofe è molto probabile che venga
+  colpito anche a chi è vicino (ovvero è presente una suscettibilità 
+  allo stesso disastro). Altri aspetti critici sono i problemi di 
+  compatibilità, di privacy e sicurezza, di disponibilità delle risorse
+  (computer, rete, ecc.) e per quanto tempo si è ben accetti all'interno
+  dell'azienda ospitante.
+  Tutti questi problemi fanno sì che questa
+  alternativa sia la meno indicata.
   \item \textbf{Mobile site}: un mezzo mobile viene con un'antenna sul sito e
   garantisce la connettività.
+  \end{itemize}
 \end{itemize}
 
+\subsection{Tipologie di back-up dei dati}
+
+\begin{center}
+\centering
+  \includegraphics[scale=0.8]{backup_types}
+  \captionof{figure}{Tipologie di backup}
+  \label{fig:data_backup_types}
+\end{center}
 
 \subsection{Cloud computing}
 
@@ -291,26 +308,21 @@ Esistono diversi metodi di dispiegamento
   \item Pubblico: pago e accedo al cloud (es. Amazon AWS);
   \item Privato: creo un mio \textit{datacenter} e lo utilizzo per i miei
   servizi (es. il datacenter di una banca);
-  \item Ibrido: via di mezzo tra public e private;
   \item Comunitario: raggruppa organizzazioni che hanno lo stesso tipo di
-  interessi o problematiche. Privato ma ``allargato''.
+  interessi o problematiche. Privato ma ``allargato'';
+  \item Ibrido: due o più cloud (privati, comunitari o pubblici) che rimangono
+  distinti ma sono collegati attraverso tecnologie standard o proprietarie.
 \end{itemize}
 
-Da tenere sempre d'occhio è la sicurezza di questi servizi: quando si usa il
-\textit{cloud} do i miei dati in mano a terzi. Un altro problema è la
-\textit{multi tenancy}, ovvero quando vengono eseguiti più servizi di entità
-diverse sulla stessa macchina grazie alla virtualizzazione. In caso di
-fallimento di una macchina potrebbero fallire più servizi di diversi utenti,
-per non parlare del fatto che un utente malintenzionato potrebbe tentare di
-accedere al servizio di un altro utente risiedente sulla stessa istanza.
 
 \subsubsection{Modello di servizio}
 
 Esistono diversi modelli di servizio
 \begin{itemize}
-  \item Software (SaaS): si fa girare applicazioni di terze parti sul cloud.
-  \item Platform (PaaS): viene fornito il sistema e l'ambiente di sviluppo, ci
-  faccio girare le mie applicazioni.
+  \item Software (SaaS): il provider mette a disposizione le proprie
+  applicazioni sull'infrastruttura cloud;
+  \item Platform (PaaS): viene fornito il sistema e l'ambiente di 
+  sviluppo (compreso l'OS), e la azienda fa girare le proprie applicazioni;
   \item Infrastructure (IaaS): viene fornita la macchina e l'azienda ci mette
   sopra quello di cui ha bisogno.
 \end{itemize}
@@ -323,14 +335,22 @@ self-service.
 
 \subsubsection{Major Areas of Security Concerns}
 
+
 \begin{itemize}
  \item \textbf{Service Level Agreement (SLA)}: definisce performance,
 sicurezza, policy, disponibilità e molte altre cose. Esempio: contratto di
 fornitura di internet, il SLA di solito è la banda minima garantita.
- \item Si ha \textbf{Multi-tenancy} quando l'applicazione è sullo stesso server
-usato da altre organizzazioni. È quindi necessario avere un'adeguata
-segmentazione e isolamento. Un set di \textit{policy} sono anche necessarie.
- \item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
+ \item Quando si usa il \textit{cloud} si danno i propri dati in mano a
+terzi. Bisogna quindi stare attenti alla \textbf{Multi-tenancy}, ovvero
+quando mediante la virtualizzazione vengono eseguiti più servizi
+di diverse organizzazioni sulla stessa macchina.
+In caso di fallimento di una macchina potrebbero fallire più servizi di
+diversi utenti. Inoltre un utente malintenzionato
+potrebbe tentare di accedere al servizio di un altro user risiedente
+sulla stessa istanza.
+È quindi di fondamentale importanza avere delle \textit{policy} adeguate
+e buone proprietà di \textbf{segmentazione} e \textbf{isolamento}.
+\item \textbf{Your coverage}: la sicurezza dipende dall'infrastruttura
 dell'azienda e da quella del cloud provider.
 \end{itemize}
 
@@ -338,11 +358,7 @@ Non è possibile trasferire la responsabilità dei servizi nei confronti dei
 propri clienti. Ad esempio: dichiarazione dei redditi con il commercialista, il
 commercialista fa la dichiarazione ma chi la firma è il responsabile legale.
 
-\subsubsection{Accordo reciproco}
 
-\paragraph*{Vantaggi} Costo basso.
+\subsection{Esercizi}
 
-\paragraph*{Svantaggi} La sicurezza. Processi veramente critici vanno posti a
-distanza geografica perché se capita una catastrofe è molto probabile che venga
-colpito anche a chi è vicino (ovvero è presente una suscettibilità allo stesso
-disastro).
+Gli esercizi si trovano nella Sezione \ref{EsBCDR1}.

@@ -1,6 +1,6 @@
 \part{Sicurezza fisica e del personale}
 \label{SFDP}
-\chapter{Difesa in profondità}
+\chapter{Sicurezza fisica}
 
 La difesa in profondità serve per proteggersi quando un livello di sicurezza
 viene superato. Questo tipo di difesa è possibile immaginarsela come gli strati
@@ -73,12 +73,24 @@ di euro.
 \item Interruttori di spegnimento d'emergenza.
 \end{itemize}
 
-\subsection{Ambiente IPF}
+\subsection[Ambiente IPF]{Ambiente IPF\protect\footnote{\textit{Information
+processing facility}}}
 
-Una sala di calcolo non va messa nei piani alti in quanto potrebbe essere
-soggetta a fulmini e a intemperie, e neanche al piano base in quanto è soggetta
-ad allagamenti. Un buon posizionamento è a metà della costruzione. È
-importante che ci siano anche delle porte taglia fuoco.
+È buona norma posizionare la sala di calcolo nei piani medi
+dell'edificio, perché ai piani alti potrebbe essere soggetta alle
+intemperie mentre nei piani inferiori potrebbe correre il rischio
+di allagarsi.
+Il rischio incendi deve essere mitigato pertanto è necessario
+che i pompieri ispezionino l'IPF ogni anno e che l'IPF disponga
+di porte tagliafuoco e muri resistenti almeno due ore in
+caso di incendio.
+Devono inoltre essere presenti un interruttore di emergenza con un
+pannello sia dentro che fuori dalla sala di calcolo, uno scaricatore di 
+tensione e un UPS.
+In ultima istanza deve essere vietato fumare, bere e mangiare nell'IPF.
+
+È compito dell'auditor richiedere la documentazione e osservare.
+L'auditor può inoltre testare le batterie e gli estintori manuali.
 
 \subsubsection{Sistema per la soppressione dei fuochi}
 
@@ -110,11 +122,13 @@ meccanismi siano \textit{fail-safe}: ovvero che in mancanza della corrente
 elettrica la porta debba rimanere aperta. Proprio per questo gli attaccanti
 potrebbero sfruttare ciò per guadagnare l'accesso.
 
-\subsubsection{Porta dell'uomo morto}
-
-Questa tecnica si basa sul \textit{piggybacking}. Per risolvere questo problema
-basta aggiungere due sistemi di entrata (es. banche), in maniera tale che venga evitato
-l'accesso per \textit{piggyback} di una persona.
+\subsubsection{Porta dell'uomo morto (Deadman door)}
+Questa tecnica prevede di avere due porte per controllare l'accesso.
+Può essere aperta solamente una porta alla volta.
+Nell'area tra le due porte può accedere \emph{una sola} persona per
+volta, così viene ridotto il rischio di \textit{piggybacking}, 
+cioè che una persona non autorizzata segua una autorizzata. 
+È un sistema utilizzato, per esempio, dalle banche.
 
 
 \subsection{Computer nei luoghi pubblici}
@@ -161,6 +175,7 @@ computer. In alternativa è necessario eseguire una crittografia di tutti i dati
 Gli esercizi sono disponibili nella Sezione \ref{esSFDP:fisica}.
 
 \section{Sicurezza del personale}
+\label{SFDP:DP}
 
 \subsection{Consapevolezza della sicurezza \& Training}
 

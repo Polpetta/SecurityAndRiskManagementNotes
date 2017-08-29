@@ -1,35 +1,35 @@
 \section{Race condition}
 
-Questo attacco può essere molto pericoloso in alcune situazioni, come nel caso 
-di computazioni eseguite su architettura \textit{CUDA}, in cui era 
-possibile estrarre informazioni sensibili durante la computazione. In ambiente 
-\textit{cloud} è importante assicurarsi che ci sia un \textit{hypervisor} che 
-coordina tutte le computazioni.
+Questo attacco può essere molto pericoloso in alcune situazioni, come nel caso
+di computazioni eseguite su architettura \textit{CUDA}, in cui era
+possibile estrarre informazioni sensibili durante la computazione. In ambiente
+\textit{cloud} è importante assicurarsi che ci sia un \textit{hypervisor} che
+coordini tutte le computazioni.
 
-Una situazione del genere può accadere in società di esplorazione geologica (eni 
+Una situazione del genere può accadere in società di esplorazione geologica (eni
 ad esempio) o in situazioni di sequenziazione genomica/proteica.
 
 \section{Messaggi d'errore troppo verbosi}
 
-A volte i messaggi di errore sono troppi verbosi e possono far inferire delle 
-informazioni. Un messaggio di errore troppo verboso è solitamente il form di 
-login: in alcuni servizi sono presenti messaggi come ``password scorretta'', che 
-permette all'attaccante di sapere che esiste un login con quell'indirizzo 
+A volte i messaggi di errore sono troppi verbosi e possono far inferire delle
+informazioni. Un messaggio di errore troppo verboso è solitamente il form di
+login: in alcuni servizi sono presenti messaggi come ``password scorretta'', che
+permette all'attaccante di sapere che esiste un login con quell'indirizzo
 e-mail.
 
 \section{External Control of Path}
 
-Normalmente quando si ha un sito web bisogna settare i diritti. Se dall'esterno 
-si può lanciare un file (es. file Word) si fornisce una backdoor per un 
+Normalmente quando si ha un sito web bisogna settare i diritti. Se dall'esterno
+si può lanciare un file (es. file Word) si fornisce una backdoor per un
 potenziale attaccante.
 
 \section{Uso di software non fidato}
 
-Il software a volte installato dall'utente non è fidato, (es. uno 
-\textit{spyware} che si occupa di raccogliere informazioni a scopo pubblicitario 
+Il software a volte installato dall'utente non è fidato, (es. uno
+\textit{spyware} che si occupa di raccogliere informazioni a scopo pubblicitario
 o di profilazione).
 
-Il software free è sicuro? Sì, ma solo se è \textit{open-source} e ha un po' di 
+Il software free è sicuro? Sì, ma solo se è \textit{open-source} e ha un po' di
 ``anzianità'' (viene utilizzato da un po' di tempo).
 
 \section{Problemi classici di sicurezza}
@@ -49,9 +49,15 @@ Security() {
 
 Questa porzione di codice contiene diversi errori:
 \begin{itemize}
-\item Errori troppo verbosi;
+\item Il file \path{security.dat} non è un percorso assoluto:
+il file può essere sostituito se il programma viene eseguito da
+un altra cartella;
+\item Errori troppo verbosi: l'errore indica il nome del file e da
+delle informazioni all'attaccante;
 \item Il file viene salvato in chiaro;
-\item Non viene chiuso il file dopo la lettura;
+\item Non viene chiuso il file dopo la lettura: lascia il file
+aperto per possibili attacchi e inoltre tiene delle risorse 
+inutilmente occupate;
 \item Non viene controllata la lunghezza della lettura del file.
 \end{itemize}
 
@@ -71,15 +77,15 @@ Ci sono errori gravi in questo pezzo di codice:
 \begin{itemize}
 \item Le password vengono salvate sul codice (detto anche \textit{hardcoded}):
 \item Ci potrebbe essere un \textit{overflow} (es. uno \textit{shift-bit});
-\item Viene usata una routine locale per eseguire la criptazione dei dati, 
+\item Viene usata una routine locale per eseguire la criptazione dei dati,
 mentre si dovrebbe sempre utilizzare algoritmi standard.
 \end{itemize}
 
 
-\paragraph*{Come evitare gli errori} Un modo per evitare questi errori è 
-testare adeguatamente il software che viene scritto. Purtroppo non è possibile 
-testare il programma con tutti gli input possibili, quindi è necessario 
-controllare il software con una \textit{test-suite} adeguata. 
+\paragraph*{Come evitare gli errori} Un modo per evitare questi errori è
+testare adeguatamente il software che viene scritto. Purtroppo non è possibile
+testare il programma con tutti gli input possibili, quindi è necessario
+controllare il software con una \textit{test-suite} adeguata.
 Anche il \textit{model-checking} è importante per analizzare il software.
 
 \subsection{Esercizi}

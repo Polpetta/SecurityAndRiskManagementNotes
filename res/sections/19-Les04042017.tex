@@ -65,6 +65,7 @@ Svantaggi:
 \section{Network defense}
 
 \subsection{Difesa in profondità}
+\label{sec:DefenseInDepth}
 
 Le difese in profondità comprendono diversi strati di protezione, per prevenire
 attacchi dall'esterno ma che potrebbero avvenire anche dall'interno.
@@ -209,10 +210,15 @@ universitaria}
 Detti anche IDS e IPS sono dei sistemi che aiutano la protezione del sistema.
 Gli HIDS sono detti anche \textit{Host IDS} e sono IDS installati nella
 macchina. Questi sistemi purtroppo non hanno una mappa completa del traffico di
-rete, e non riescono a proteggere in maniera efficace il computer: c'è un
-problema di falsi positivi: il sistema che si sta facendo qualcosa di scorretto
-perché il comportamento devia dallo standard, ma non è necessariamente un
-comportamento negativo.
+rete, e non riescono a proteggere in maniera efficace il computer. A differenza
+di quest'ultimi i NIDS(\textit{Network IDS}) analizzano il traffico di rete per
+verificare la presenza di attacchi e, nel caso, avvertono l'amministratore. In
+entrambi i casi i falsi positivi sono un problema: il sistema potrebbe
+individuare un comportamento scorretto perché devia da quello standard ma ciò
+non è necessariamente sintomo di un comportamento malevolo.
+\par Gli IPS sono un'estensione dei IDS, infatti a differenza degli IDS possono
+essere abilitati a eseguire azioni di correzione, come bloccare le intrusioni
+oppure mandare allarmi.
 
 \subsubsection{IDS Intelligence Systems}
 
@@ -226,11 +232,14 @@ Basati su reti neurali: base statistica con auto-apprendimento.
 
 \subsubsection{Honeypot \& Honeynet}
 
-Sostanzialmente sono delle ``trappole''. In un \textit{honeypot} si vuole
-indurre l'attaccante ad entrare in un certo sistema, mentre l'\textit{honeynet}
-è un modo per poter studiare l'attaccante tramite la simulazione di una rete che
-possa rappresentare del valore per l'attaccante e hanno un buon
-funzionamento\footnote{Vengono spesso utilizzate dalle università}.
+Un \textit{honeypot} è un sistema su cui sono montati software spciali
+che sembrano facili da hackerare,
+mentre un l'\textit{honeynet} è una rete in cui sembra semplice accedere
+e che sembra offrire del valore.   
+Queste due trappole servono a catturare gli attaccanti e studiare 
+i diversi tipi di attacchi\footnote{Vengono spesso utilizzate dalle
+università}. Tutto il traffico che passa per questi sistemi va considerato
+sospetto e deve pertanto essere attentamente monitorato.
 
 \paragraph{Data privacy}
 

@@ -57,33 +57,19 @@ PizzaHut grazie alla sua applicazione. È per questo che il controllo
 sull'input è molto importante, perché un possibile attacco di Denial Of
 Service potrebbe essere ordinare un numero incontrollato di pizze.
 
-
-
-
-
 \subsection{Batch Processing}
-È un tipo di controllo dell'input.
-Elaborazione sequenziale di blocchi di transazioni
-dopo che sono state aggregate.
-L'input è autorizzato e raccolto in ``batch''. Vengono effettuati
-dei controlli automatici su un batch e associati ad un batch file.
-Viene effettuata la validazione della transazione. Le transazioni
-rifiutate sono corrette e rispedite o trattate in altro modo.
-
-Viene effettuato il processing (es. ordine pagamenti e salvataggio nel DB):
-Il processing viene completato.
-Infine segue il batch balancing attraverso
-una riconciliazione manuale o automatica dei controlli di batch.
-
-Una rappresentazione grafica del batch processing si può trovare in
-Figura \ref{fig:security:batch:processing}.
-\begin{figure}[h!]
-        \begin{center}
-                \includegraphics[scale=0.5]{batch_processing}
-        \end{center}
-        \caption{Batch processing}
-        \label{fig:security:batch:processing}
-\end{figure}
+È un tipo di controllo dell'input che permette l'elaborazione sequenziale di
+blocchi di transazioni, dopo che queste sono state aggregate. L'input è
+autorizzato e raccolto in ``batch''. Vengono effettuati dei controlli
+automatici sui batch  (\textit{batch controls}) e associati ad un batch file.
+Successivamente viene effettuata la validazione delle transazioni. Eventuali 
+transazioni rifiutate sono corrette e rispedite oppure trattate in altro modo.
+In seguito viene effettuato il processing (es. di processing: ordini,
+pagamenti, salvataggio nel DB). Terminato il processing viene effettuato il 
+\textbf{batch balancing}, ovvero viene controllato che i totali dei batch
+corrispondano al totale dei pagamenti ricevuti, attraverso la 
+\textbf{reconciliation}, ovvero la verifica della corrispondenza dei record,
+che può essere manuale o automatica.
 
 \subsection{Transaction Authorization}
 \begin{itemize}
@@ -93,7 +79,7 @@ Figura \ref{fig:security:batch:processing}.
     l'identificazione del terminale o della password.
 \end{itemize}
 
-\subsection{Error Handling Alternatives}
+\subsection{Alternative per il trattamento degli errori}
 Gli errori di input possono essere trattati
 con le seguenti tecniche:
 \begin{itemize}
@@ -268,8 +254,8 @@ Il suo grande svantaggio è quello di rallentare il sistema. Qualora vada tutto
 bene sono soldi spesi inutilmente.
 
 \textbf{Systems Control Audit Review File (SCARF):} fornisce informazioni di
-tipo statistico riguardo ai dati dei file di input "normali", per determinare
-per l'auditor se il file è stato sufficientemente modificato.
+tipo statistico riguardo ai file di dati di input "normali", per determinare
+per l'auditor se il file è sufficientemente vario.
 
 \textbf{Sample Audit Review File (SARF):} selezionare transazioni random per
 fare validazione.
@@ -290,8 +276,8 @@ fare validazione.
 \textbf{Debugging/Processing:}
 
 \begin{itemize}
-    \item Mapping: identifica la logica di alcuni specifici programmi che non
-    sono stati ancora testati;
+    \item Mapping: identifica logiche di programmi che non
+    sono ancora state testate;
     \item Tracing e tagging: mostra l'insieme delle istruzioni eseguite. Tagga
     con indicatori di luogo le
     transazioni selezionate;
@@ -334,7 +320,7 @@ compagnia.
 
 Gli esercizi sono disponibili in \ref{esCs:aa}
 
-\part{Incident process forensics}
+\part{Incident process e forensics}
 
 Un incidente relativo alla sicurezza può capitare per molti motivi. Un
 incidente è catalogato come tale quando c'è una violazione della
@@ -374,10 +360,11 @@ regime.
 
 \subsubsection{Ruoli}
 
-\paragraph*{Incident Management Team} L'IMT fa parte della \textit{steering
-commitee} e sono membri dell'IRT. Sviluppano strategie e piani per la risposta
-all'incidente e gestione dei rischi. Ottiene i fondi e verifica le richiesta
-di performance e requisiti.
+\paragraph*{Incident Management Team} L'IMT è composto dallo 
+\textit{steering commitee}, da alcuni membri dell'IRT e dagli IS Mgr
+leads. L'IMT sviluppa \textbf{strategie} e
+piani per la risposta all'incidente e gestione dei rischi. 
+Ottiene i fondi e verifica le richieste di performance e i requisiti.
 
 \paragraph*{Incident Response Team} L'IRT è il
 team che gestisce l'incidente, ha una conoscenza tecnica dei sistemi e di

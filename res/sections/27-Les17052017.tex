@@ -30,7 +30,7 @@ processi.
 
 \subsubsection{Board of Directors}
 In cima c'è il \textit{Board of Directors}, che fa la \textit{review} del
-\textit{risk assessment} e del \textit{Business Impact Analysis}; definisce
+\textit{risk assessment} e della \textit{Business Impact Analysis}; definisce
 anche la penalità per la non adesione alle policy.
 
 A livello più basso c'è il Management Esecutivo (\textit{Executive Management}),
@@ -68,8 +68,8 @@ diventare CIO. Altre posizioni sono il \textit{Chief Risk Officer} e il
 \paragraph{IT Strategic Committee}
 
 Si concentra sulla direzione e la strategia, aiuta il consiglio sulla strategia
-e l'allineamento IT e ottimizza i costi IT e i rischi. Composta da membri del
-consiglio (\textit{board}) e specialisti.
+e l'allineamento IT e ottimizza i costi e i rischi legati all'IT. Composta da
+membri del consiglio (\textit{board}) e specialisti.
 
 \subparagraph*{Main concerns}
 
@@ -118,9 +118,9 @@ dell'organizzazione.
 
 
 Le decisioni vengono continuamente prese in condizioni di incertezza, ma
-comunque basandosi sui dati\footnote{Jeff Bezos, Il CEO di Amazon ha 
-affermato che prende decisioni con un po' di incertezza, all'incirca 
-quando ha l'80\% dell'informazione, ovvero quando si hanno abbastanza 
+comunque basandosi sui dati\footnote{Jeff Bezos, il CEO di Amazon ha
+affermato che prende decisioni con un po' di incertezza, all'incirca
+quando ha l'80\% dell'informazione, ovvero quando si hanno abbastanza
 dati ma c'è un certo margine d'incertezza, questo perché aspettando il
 90\% o il 100\% potrebbe essere troppo tardi.}.
 
@@ -149,6 +149,7 @@ Gli esercizi possono essere trovati nella Sezione \ref{esPG:SPP}
 
 
 \subsection{Security Positions}
+\label{SA}
 
 \subsubsection{Security Administrator}
 
@@ -158,6 +159,40 @@ Gli esercizi possono essere trovati nella Sezione \ref{esPG:SPP}
 \item Testa la sicurezza del sistema;
 \item Monitora le violazioni della sicurezza e attua misure correttive;
 \item Revisiona e valuta le policy sulla sicurezza.
+\end{itemize}
+
+\paragraph*{Operazioni sulla sicurezza}
+\label{SA:SO}
+Operazioni relative alla sicurezza:
+\begin{itemize}
+\item Gestione delle identità e controllo degli accessi: per esempio badge
+all'ingresso ecc. Ma non solo! Anche controlli di tipo informatico devono
+essere aggiornati dopo ad esempio il licenziamento di un impiegato, al quale
+dev'essere negato l'accesso ai dati aziendali alla fine del suo ultimo giorno
+lavorativo;
+\item \textit{Patching} del sistema e gestione delle configurazioni: il
+patching è l'anno zero della sicurezza;
+\item Controlli dei cambiamenti e gestione dei rilasci: ogni cambiamento deve
+essere documentato e i test sono stati eseguiti allora può essere introdotto.
+I rilasci software devono essere prima di tutto testati e documentati, e poi
+devono essere autorizzati dall'apposito responsabile. Questo procedimento
+garantisce che il software introdotto nel sistema non causi anomalie;
+\item Metriche per la sicurezza e reporting: Ogni società sa dove bisogna
+andare. Una tipica metrica di sicurezza in caso di \emph{awareness} interna,
+consiste nel mandare false email di spam ai dipendenti per vedere se
+hanno recepito le lezioni sulla sicurezza;
+\item Mantenimento dei controlli tecnologici: i controlli vanno mantenuti.
+Il controllo di sicurezza è un qualcosa che da un risparmio in termini di costi
+se applicata in maniera efficace. Vendere la sicurezza è difficile, e un buon
+manager è in grado di venderla;
+
+\item Risposta all'incidente, investigazione e risoluzione dell'incidente.
+Il problema non è come si viene attaccati ma quando si è attaccati: bisogna
+avere un buon grado di comunicazione e trovare la causa dell'incidente. Anche
+avere una buona soluzione, per prevenire che l'incidente si verifichi di nuovo.
+\textit{Investigation} è la fase successiva all'attacco e serve per capire
+perché e come è successo quello che è successo.
+
 \end{itemize}
 
 \subsubsection{Security Architect}
@@ -178,16 +213,19 @@ sicurezza e standard sicuri;
 \paragraph{Security Architect: Control Analysis}
 
 Se si vuole fare il \textit{security architect} la \textit{control analysis} è
-importante.
+importante. I dettagli di questa analisi sono riportati nella 
+Figura~\ref{fig:penta}.
 
 \begin{figure}[h!]
         \begin{center}
                 \includegraphics[scale=0.3]{res/img/penta}
         \end{center}
-        \caption{Pentagono che illustra i diversi punti della control analysis.}
+        \caption{Pentagono che illustra i diversi punti della control analysis
+		in relazione al ruolo del Security Architect.}
+		\label{fig:penta}
 \end{figure}
 
-\paragraph*{Esempi di policy per i documenti}
+\paragraph*{Esempi di documenti delle policy}\mbox{} \\
 
 \textbf{Classificazione dei dati:} definisce le categorie di sicurezza dei dati,
 la proprietà e la responsabilità.\\

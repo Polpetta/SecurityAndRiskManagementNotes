@@ -14,12 +14,6 @@ $$
 m \rightarrow h(m) \rightarrow s(h(m))
 $$
 
-La firma è
-
-$$
-\langle m, h(m), n \rangle
-$$
-
 Per verificare prendo il messaggio, calcolo l'hash e lo confronto con l'hash
 ricevuto del messaggio. Se sono uguali la comunicazione è andata a buon fine.
 Questo garantisce l'autenticità del messaggio e il non ripudio.
@@ -150,16 +144,18 @@ L'importante è convincere chi approva le scelte a spendere in sicurezza.
 \chapter{Gestione del rischio}
 
 La storia, il grado di maturità, la cultura, la società e la tolleranza
-influiscono sul rischio. Esistono anche dei fattori esterni, che sono le
-\textit{regulation}, ovvero le normative e le leggi. Il fattore esterno è la
-motivazione più forte oggigiorno, in quanto son previsti anche sanzioni di tipo
+al rischio sono dei fattori interni all'azienda che influiscono sulla
+gestione del rischio.
+Esistono anche dei fattori esterni come le
+\textit{regulation}, ovvero le normative e le leggi, e la
+\textit{industry}, ossia confrontarsi con i propri competitor.
+
+Oggigiorno i fattori esterni costituiscono la
+motivazione più forte, in quanto son previsti anche sanzioni di tipo
 penale.
 
-L'altro fattore esterno è la \textit{industry}, ossia confrontarsi con i propri
-competitor.
-
-\textbf{Risk tolerance:} come il management vive la percezione del rischio
-(quanto rischio è disposto ad accettare).
+\textbf{Risk Appetite o Tolerance:} quanto rischio è disposto ad accettare
+il management.
 
 \section{Risk Management Process}
 La gestione del rischio si suddivide nei seguenti in passi:
@@ -227,7 +223,7 @@ dinamico.
 il problema dell'identificazione dei \textit{Crown Jewels} (gioielli della
 corona) ovvero gli \textit{asset} che valgono buona parte del totale (es.
 brevetto particolare che è il core business).
- \item Determinazione della perdita dovuta e vulnerabilità nel sistema
+ \item Determinazione della perdita dovuta a minacce e vulnerabilità nel sistema
  \item Stima della possibilità di un attacco portato a termine con successo
 (ogni quanto potrebbe accadere?)
  \item Calcolare l'eventuale perdita. Son sempre da tenere a mente le seguenti
@@ -276,6 +272,20 @@ rimpiazzo e quelli legate alle perdite.
 Il costo dal punto di vista intangibile è di tipo qualitativo, e non
 quantitativo.
 
+\paragraph*{Tipologie di Minacce}
+Nella Figura \ref{fig:threat:types} vengono riportate le diverse
+tipologie di minacce.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.365]{threatAgentTypes}
+ \caption[Tabella delle differenti tipologie di minacce]{Tabella delle
+ differenti tipologie di minacce: nella prima colonna sono riportati
+ i tipi di agenti, nella seconda le motivazioni e nell'ultima colonna
+ le conseguenze di queste minacce.}
+ \label{fig:threat:types}
+\end{figure}
+
+
 
 \subsubsection{Stimare la probabilità di exploit}
 
@@ -290,6 +300,29 @@ tramite prototipi sono diversi modi da cui è possibile attingere
 informazione per capire quanto si è esposti ad un possibile \textit{exploit}.
 
 
+\paragraph*{Fonti di perdite}
+
+Archetipi:
+\begin{itemize}
+\item Utente malintenzionato (o malizioso): vuole causare un danno all'azienda;
+\item Utente non intenzionale: causa un danno all'azienda ma senza volerlo;
+\item Utente che piega le regole: in qualche modo è a metà tra i due profili
+precedenti. Le sue azioni sono intenzionali, ma non maliziose.
+\end{itemize}
+
+\subparagraph*{Impressioni dei dipendenti}
+Il 51\% pensa sia accettabile prendere dati dell'azienda perché pensano
+che sia accettabile farlo se le aziende non fanno rispettare 
+tassativamente le \textit{policy}. 
+Il 37\% usano applicazioni di file-sharing come \textit{Dropbox} o 
+\textit{Gmail} senza il permesso del datore di lavoro. 
+Mentre il 20\%  hanno scaricato proprietà intellettuale della 
+azienda sui propri dispositivi mobili.
+Infine molti eseguono download illegali sul computer aziendale.
+
+Essenzialmente, c'è poco controllosui dati, dimostrando come un utente
+può avere un atteggiamento malizioso senza troppi problemi.
+
 
 \subsubsection{Calcolare la perdita attesa}
 
@@ -297,6 +330,15 @@ La perdita è composta dal \textit{downtime}, \textit{recovery},
 \textit{liability} e il rimpiazzo del prodotto. Il costo del rimpiazzo spesso è
 minore di tutto quello che ci sta prima: ovvero tutti i costi che vengono a
 crearsi a causa della disfunzione creata.
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[scale=0.75]{systemVulnerabilities}
+ \caption[Vulnerabilità di un sistema]{Elenco delle possibili vulnerabilità di
+un sistema}
+ \label{img:vulnriskmng}
+\end{figure}
+
 
 \paragraph*{In pratica}
 
@@ -353,8 +395,8 @@ Quantitativamente:
 \begin{itemize}
 \item Il costo di un incidente HIPAA\footnote{Una serie di articoli
 che stabiliscono uno standard di sicurezza
-per lo scambio di dati elettronici. In particolare, la sicurezza e il 
-riservo di tutte le informazioni medico-sanitarie.} 
+per lo scambio di dati elettronici. In particolare, la sicurezza e il
+riservo di tutte le informazioni medico-sanitarie.}
 con protezioni insufficienti:
 \begin{itemize}
  \item SLE = 50k + (1 anno in prigione) \$ 100k = \$150k;
@@ -376,19 +418,6 @@ entità che sono state soggette a furti di dati di notificarlo ai clienti e di
 prendere contromisure per cercare di rimediare alle possibili conseguenze.
 Esiste una direttiva europea a riguardo.
 
-
-\paragraph*{Tipologie di Minacce}
-Nella Figura \ref{fig:threat:types} vengono riportate le diverse 
-tipologie di minacce.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.365]{threatAgentTypes}
- \caption[Tabella delle differenti tipologie di minacce]{Tabella delle 
- differenti tipologie di minacce: nella prima colonna sono riportati
- i tipi di agenti, nella seconda le motivazioni e nell'ultima colonna
- le conseguenze di queste minacce.}
- \label{fig:threat:types}
-\end{figure}
 
 
 \paragraph*{Come difendersi}
@@ -442,20 +471,3 @@ tutte.
 Per alcuni eventi ci si basa sull'esperienza passata (es. eventi atmosferici).
 Per eventi per cui non è possibile basarsi sulle esperienze precedenti ci si
 basa su delle \textit{guidelines}.
-
-\paragraph*{Fonti di perdite}
-
-Archetipi:
-\begin{itemize}
-\item Utente malintenzionato (o malizioso): vuole causare un danno all'azienda;
-\item Utente non intenzionale: causa un danno all'azienda ma senza volerlo;
-\item Utente che piega le regole: in qualche modo è a metà tra i due profili
-precedenti. Le sue azioni sono intenzionali, ma non maliziose.
-\end{itemize}
-
-Il 51\% pensa sia accettabile prendere dati dell'azienda perché pensano che sia
-normale farlo in assenza di \textit{policy}. Molti dati vengono passati
-nell'azienda tramite \textit{Dropbox} o su \textit{Gmail}. Altri eseguono
-download illegali sul computer aziendale. Essenzialmente, c'è poco controllo
-sui dati, dimostrando come un utente può avere un atteggiamento malizioso senza
-troppi problemi.

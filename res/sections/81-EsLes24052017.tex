@@ -1,7 +1,9 @@
+\chapter{Controlli di sicurezza e la sicurezza del Software}
+Teoria disponibile nella Parte~\ref{part:csss}.
 \section{Controlli}
 \label{es:Controlli}
 
-La teoria riguardante questi esercizi è disponibile in \ref{Controlli}
+La teoria riguardante questi esercizi è disponibile in \ref{SicurezzaDelSoftware}
 
 \begin{Exercise} [
   title={Associa i termini},
@@ -18,9 +20,9 @@ La teoria riguardante questi esercizi è disponibile in \ref{Controlli}
 \end{itemize}
 con:
 \begin{enumerate}
- \item un insieme di risorse imposte ai programmi dal kernel del sistema 
+ \item un insieme di risorse imposte ai programmi dal kernel del sistema
 operativo (per esempio la quota disco)
- \item utilizzo di timestamp per impedire il \textit{replay} attack (ad esempio 
+ \item utilizzo di timestamp per impedire il \textit{replay} attack (ad esempio
 captcha)
  \item usare una lista di input accettabili
  \item un meccanismo di sicurezza per porre in quarantena programmi non fidati
@@ -36,7 +38,7 @@ captcha)
 
   \Question Soluzione:
 \begin{itemize}
-\item Whitelist: 3 
+\item Whitelist: 3
 \item Nonce: 2
 \item Jail: 1
 \item Sandbox Environment: 4
@@ -53,7 +55,7 @@ captcha)
   label={esControlli2}
   ]
 
-  \Question Una terza parte inserisce dati maliziosi in un'altra pagina html 
+  \Question Una terza parte inserisce dati maliziosi in un'altra pagina html
 maliziosa. Questa è conosciuta come:
 \begin{enumerate}
 \item \textit{cross-site scripting}
@@ -85,7 +87,7 @@ maliziosa. Questa è conosciuta come:
 \item Eseguire il codice in ambiente ``jail'' o sandbox
 \item Usare una password \textit{hard-coded} per consentire l'accesso.
 \end{enumerate}
- 
+
 
 \end{Exercise}
 
@@ -105,13 +107,13 @@ maliziosa. Questa è conosciuta come:
 
   \Question Quale delle seguenti risposte è vera riguardo ai web server?
   \begin{enumerate}
-   \item i server non possono avere lo stato della sessione, e quindi se ne 
+   \item i server non possono avere lo stato della sessione, e quindi se ne
 devono occupare i client
-   \item il solo miglior punto per fare input validation e autenticazione è 
+   \item il solo miglior punto per fare input validation e autenticazione è
 lato client
-   \item usare il client come punto di salvataggio è sicuro se la criptazione 
+   \item usare il client come punto di salvataggio è sicuro se la criptazione
 e i controlli di integrità sono attivi
-   \item I server possono fidarsi degli input provenienti dal web se validano i 
+   \item I server possono fidarsi degli input provenienti dal web se validano i
 dati nella form.
   \end{enumerate}
 \end{Exercise}
@@ -129,14 +131,15 @@ dati nella form.
   label={esControlli5}
   ]
 
-  \Question The BEST way to ensure input validity at the client is:
+  \Question Il modo \textbf{migliore} per validare correttamente l'input lato
+client è tramite:
   \begin{enumerate}
-\item Nonce
-\item Whitelist
-\item Blacklist
-\item Integrity Checking
+\item \textit{Nonce}
+\item \textit{Whitelist}
+\item \textit{Blacklist}
+\item \textit{Integrity Checking}
 \end{enumerate}
-  
+
 
 \end{Exercise}
 
@@ -154,14 +157,14 @@ dati nella form.
   label={esControlli6}
   ]
 
-  \Question La migliore implementazione per eseguire correttamente 
+  \Question La migliore implementazione per eseguire correttamente
 \textit{access control} sarebbe:
 \begin{enumerate}
  \item non dare possibilità all'attaccante di guadagnare dati sensibili
- \item usare sempre il minor numero di permessi nel codice, per la durata più 
+ \item usare sempre il minor numero di permessi nel codice, per la durata più
 breve possibile
  \item evitare di usare cookies e file nascosti
- \item non darei mai una autorizzazione più avanzata di quella \textit{guest} 
+ \item non darei mai una autorizzazione più avanzata di quella \textit{guest}
 per gli utenti web
 \end{enumerate}
 
@@ -204,7 +207,7 @@ per gli utenti web
   label={esControlli8}
   ]
 
-  \Question Il metodo principale per evitare un \textit{replay attack} tra il 
+  \Question Il metodo principale per evitare un \textit{replay attack} tra il
 client e il server è:
 \begin{enumerate}
 \item Integrity checking
@@ -253,7 +256,7 @@ client e il server è:
   label={esControlli10}
   ]
 
-  \Question La maniera migliore per assicurarsi che nessuna modifica a un 
+  \Question La maniera migliore per assicurarsi che nessuna modifica a un
 messaggio avvenga è tramite:
 \begin{enumerate}
   \item Hashing
