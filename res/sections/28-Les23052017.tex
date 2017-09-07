@@ -86,15 +86,26 @@ comunicazione insicura, e riesce a trasmettere dati arbitrari.
 Qual è la debolezza qui? È che la associazione tra dispositivi è stata eseguita
 prima che per esempio uno dei due dispositivi vada in \textit{sleep}, e non
 viene eseguita dopo. Quindi una possibile soluzione è eseguire il login, e poi
-comunicare in maniera criptata.
+comunicare in maniera criptata. L'hash, invece, garantisce \textit{integrity}.
 
-L'hash garantisce integrity.
+Questo problema può verificarsi anche quando la interazione dei componenti tra
+loro è sicura, ma quando ne esistono molti potrebbero essere insicura.
+
+Un attacco simile può essere il \textit{Cross-Site Scripting}, ovvero quando si
+fa l'\textit{inject} di codice in una richiesta web.
+
+Esistono attacchi anche su componenti che pensiamo sicure come l'SSL. Un
+esempio è il \textit{SSL strip attack}.
 
 Un altro possibile attacco è quello dell'\textbf{SQL Injection}, dove un'intera
 stringa SQL viene mandata tramite input, che non viene sanitizzato. Un attacco
 simile con i comandi di sistema operativo si chiama \textbf{OS Command
 Injection}. Tutti questi problemi vengono risolti separando i controlli dai
 dati.
+
+Un \textbf{nonce} è un numero che non deve essere casuale, ma dev'essere unico.
+Va bene che sia anche predicibile. Serve in tutti i livelli di
+\textit{encryption} decenti.
 
 \section{Jail \& Sandbox}
 
@@ -103,20 +114,3 @@ possono utilizzare.
 Da qui viene ``Jailbreak''.\\
 \newline
 \textbf{Sandbox}: l'applicazione viene fatta girare in un ambiente controllato.
-
-
-\section{Interazione insicura dei componenti}
-
-Questo problema può essere visto anche quando la interazione dei componenti tra
-loro è sicura, ma quando ne esistono molti potrebbero essere insicura.
-
-Un attacco simile può essere il \textit{Cross-Site Scripting}, ovvero quando si
-fa l'\textit{inject} di codice in una richiesta web.
-
-
-Esistono attacchi anche su componenti che pensiamo sicure come l'SSL. Un
-esempio è il \textit{SSL strip attack}.
-
-Un \textbf{nonce} è un numero che non deve essere casuale, ma dev'essere unico.
-Va bene che sia anche predicibile. Serve in tutti i livelli di
-\textit{encryption} decenti.

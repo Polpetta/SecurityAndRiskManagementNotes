@@ -4,10 +4,9 @@
 
 \subparagraph*{Campionamento Stop-or-Go}
 facciamo un campionamento ridotto, se trovo
-ciò che cerco mi fermo (e.g. se i primi 20 elementi hanno zero errori allora mi fermo,
-altrimenti...). Questo tipo di campionamento viene usato
-quando l'IS auditor crede che relativamente pochi errori saranno
-trovati nella popolazione.
+ciò che cerco mi fermo (e.g. se i primi 20 elementi hanno zero errori allora mi
+fermo, altrimenti...). Questo tipo di campionamento viene usato quando l'IS
+auditor crede che relativamente pochi errori saranno trovati nella popolazione.
 
 \subparagraph*{Campionamento discovery:} usato quando
 l'occorrenza dell'evento che sto cercando è molto rara.
@@ -30,39 +29,36 @@ Viene usato per capire quanto è accurato il campione nel rappresentare
 l'intera popolazione. Questo campionamento si può riferire
 a diversi tipi di modelli di campionamento quantitativo:
 
-
 \begin{figure}[h!]
-        \begin{center}
-                \includegraphics[scale=0.5]{res/img/variable_sampling.png}
-        \end{center}
-        \caption{Procedimento per il campionamento variabile.}
-        \label{fig:variable:sampling}
+  \begin{center}
+    \includegraphics[scale=0.5]{res/img/variable_sampling.png}
+  \end{center}
+  \caption{Procedimento per il campionamento variabile.}
+  \label{fig:variable:sampling}
 \end{figure}
 
 \begin{itemize}
-\item \textbf{Stratified mean per unit:}
-Modello di campionamento statistico in cui la popolazione
-viene divisa in gruppi e i campioni sono estratti dai vari
-gruppi. È usato per produrre dimensioni dei campioni più piccoli
-dell'\textit{unstratified mean per unit}.
-
-\item \textbf{Unstratified mean per unit:}
-Modello di campionamento statistico in cui viene calcolato la media
-del campione e usato come stima del totale.
-
-
-\item \textbf{Difference Estimation Sampling:} Un modello statistico
-usato per stimare la differenza totale
-tra i valori auditati e i valori non auditati dichiarati ottenuti
-dalle osservazioni del campione.
-
-Problemi tipici che bisogna indirizzare sono la media e la deviazione standard.
-La \textbf{media} non è un fenomeno che cattura bene l'andamento generale, per la
-presenza di \textit{outlier}, ovvero dei punti fuori dal comportamento
-tipico del campione.
-La media è un parametro poco affidabile (va verificato ulteriormente). Un
-parametro più affidabile che non è soggetto agli
-outlier è la \textbf{mediana}.
+  \item \textbf{Stratified mean per unit:}
+  Modello di campionamento statistico in cui la popolazione
+  viene divisa in gruppi e i campioni sono estratti dai vari
+  gruppi. È usato per produrre dimensioni dei campioni più piccoli
+  dell'\textit{unstratified mean per unit}.
+  
+  \item \textbf{Unstratified mean per unit:}
+  Modello di campionamento statistico in cui viene calcolato la media
+  del campione e usato come stima del totale.
+  
+  \item \textbf{Difference Estimation Sampling:} Un modello statistico
+  usato per stimare la differenza totale
+  tra i valori auditati e i valori non auditati dichiarati ottenuti
+  dalle osservazioni del campione.
+  
+  Problemi tipici che bisogna indirizzare sono la media e la deviazione
+  standard. La \textbf{media} non è un fenomeno che cattura bene l'andamento
+  generale, per la presenza di \textit{outlier}, ovvero dei punti fuori dal
+  comportamento tipico del campione. La media è un parametro poco affidabile 
+  (va verificato ulteriormente). Un parametro più affidabile che non è soggetto
+  agli outlier è la \textbf{mediana}.
 \end{itemize}
 
 La loro relazione è riportata nella Figura~\ref{fig:variable:sampling}.
@@ -109,33 +105,46 @@ dei test, email o corrispondenza, documentazione e osservazioni.
 
 Le migliori fonti per ottenere informazioni sono:
 \begin{itemize}
-\item \textbf{Esterne:} fonti da organizzazioni esterne (es. i fornitori);
-\item \textbf{Qualificate:} le più autorevoli;
-\item \textbf{Oggettive:} evidenze per cui non è possibile esprimere un
-parere soggettivo
-\item \textbf{Tempo:} deve essere coerente con il periodo della nostra attività
-di audit
+  \item \textbf{Esterne:} fonti da organizzazioni esterne (es. i fornitori);
+  \item \textbf{Qualificate:} le più autorevoli;
+  \item \textbf{Oggettive:} evidenze per cui non è possibile esprimere un
+  parere soggettivo
+  \item \textbf{Tempo:} deve essere coerente con il periodo della nostra
+  attività di audit
 \end{itemize}
 
 \subsubsection{Comunicazione dei risultati}
 
 La comunicazione dei risultati è un passo decisivo. Questi risultati devono
-essere riportati alle persone interessate.
-La parte grossa dell'audit deve essere consegnata ai manager ad alto
-livello.
+essere riportati alle persone interessate, che sono:
+\begin{itemize}
+  \item i \textbf{manager di basso livello}: a loro deve essere riportato il
+  materiale riguardante la loro area di interesse.
+  Qualora l'auditor e il manager si trovino di comune accordo su un problema,
+  devono essere sviluppati dei corsi per correggerlo.
+  Mentre quando c'è un disaccordo devono essere
+  spiegate le conseguenze a cui un problema può portare.
+  \item i \textbf{manager di alto livello}: cui, invece, deve essere
+  consegnata la parte più grossa, con tutti i ritrovamenti di
+  loro interesse.
+\end{itemize}
+Ciò è schematizzato nella Figura~\ref{fig:consegnarisultati}.
+
+
 
 \begin{figure}[h!]
-        \begin{center}
-                \includegraphics[scale=0.4]{res/img/communication_audit.png}
-        \end{center}
-        \caption{Procedimento per la comunicazione dei risultati dell'audit.}
+  \begin{center}
+    \includegraphics[scale=0.4]{res/img/communication_audit.png}
+  \end{center}
+  \caption{Procedimento per la comunicazione dei risultati dell'audit.}
+  \label{fig:consegnarisultati}
 \end{figure}
 
 \subsection{Step 9: Prosieguo}
 
 
-Il \textit{follow-up} serve a verificare se il management ha intrapreso le azioni
-necessarie a correggere i problemi in tempo.
+Il \textit{follow-up} serve a verificare se il management ha intrapreso le
+azioni necessarie a correggere i problemi in tempo.
 
 Dopo aver consegnato il report dell'audit, l'auditor deve condurre
 delle interviste d'uscita con il management per ottenere il suo
@@ -161,8 +170,8 @@ considerazione:
 naso dove non serve. I permessi che vengono accordati devono essere messi per
 iscritto, affinché ne rimanga una traccia.
 \item Tutti i test potrebbero impattare sul sistema quindi è una buona
-pratica avvisare i settori interessati dei possibili disservizi prima di eseguire
-qualsiasi test.
+pratica avvisare i settori interessati dei possibili disservizi prima di
+eseguire qualsiasi test.
 \item Quando si lavora con i dati è importante non toccare dati o configurazioni
 importanti.
 \end{itemize}
@@ -202,10 +211,10 @@ raccogliere le prove senza un tool.
 
 Questi software permettono agli auditor di:
 \begin{itemize}
-\item Accedere e analizzare i dati nel database;
-\item Effettuare test di conformità;
-\item Effettuare penetration test;
-\item Testare le applicazioni.
+  \item Accedere e analizzare i dati nel database;
+  \item Effettuare test di conformità;
+  \item Effettuare penetration test;
+  \item Testare le applicazioni.
 \end{itemize}
 
 I CAAT includono diversi tipi di tool e tecniche come per esempio
@@ -221,15 +230,15 @@ sui file contenenti i dati.
 
 Questa tipologia di tool sono molto utili e permettono agli auditor di:
 \begin{itemize}
-\item Avere accesso ai file: leggere i record e la struttura del file;
-\item Riorganizzare i file: permettono l'indexing, l'ordinamento,
-il merging e la creazione di link ad altri file;
-\item Selezionare dei dati: selezionare un insieme di record,
-applicazione di filtri, ecc\dots;
-\item Eseguire funzioni statistiche: permettono il campionamento, 
-la stratificazione e l'analisi della frequenza;
-\item Eseguire Funzioni aritmetiche: permettono di eseguire operazioni e 
-funzioni matematiche sui dati contenuti nei file.
+  \item Avere accesso ai file: leggere i record e la struttura del file;
+  \item Riorganizzare i file: permettono l'indexing, l'ordinamento,
+  il merging e la creazione di link ad altri file;
+  \item Selezionare dei dati: selezionare un insieme di record,
+  applicazione di filtri, ecc\dots;
+  \item Eseguire funzioni statistiche: permettono il campionamento, 
+  la stratificazione e l'analisi della frequenza;
+  \item Eseguire Funzioni aritmetiche: permettono di eseguire operazioni e 
+  funzioni matematiche sui dati contenuti nei file.
 \end{itemize}
 
 
@@ -282,7 +291,8 @@ Gli esercizi su questa parte si trovano in \ref{EsAudit}.
 %ESERCIZI
 
 % Ho lasciato qui i commenti degli esercizi perché c'è una nota che non so dove
-% posizionarla, quindi così riusciamo a capire che numero di esercizio è riferito
+% posizionarla, quindi così riusciamo a capire che numero di esercizio è
+%riferito
 % quella nota contando il numero di ``Altro esercizio'' qui scritti!
 
 % Altro esercizio
