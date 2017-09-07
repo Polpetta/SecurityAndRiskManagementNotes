@@ -76,18 +76,23 @@ decifrare il messaggio occorre avere la stessa chiave.
 \paragraph*{Tipologie di cifrari} Esistono diversi tipi di cifrari, che
 tradizionalmente sono:
 \begin{itemize}
- \item \textbf{A sostituzione};
+ \item \textbf{A sostituzione:} questo tipo di cifrari usa un
+ algoritmo per rimpiazzare ogni carattere o pezzo di testo con un
+ carattere differente;
  \begin{itemize}
   \item \textbf{Monoalfabetico:} usa un unico alfabeto tramite trasposizione e
 sostituzione (es. cifrario di Cesare). Si capisce che è monoalfabetico dal fatto
 che le doppie mappano sulle stesse lettere.
 Al contrario, se le doppie non mappano sulla stessa lettera posso dire che il
 cifrario è non monoalfabetico (che non vuol dire polialfabetico);
-  \item \textbf{Polialfabetico:} quando si hanno come riferimenti molteplici alfabeti.
- In corrispondenza delle doppie si ottengono caratteri diversi.
+  \item \textbf{Polialfabetico:} quando si hanno come riferimenti 
+  molteplici alfabeti (es. cifrario di Vigenère).
+  In corrispondenza delle doppie si ottengono caratteri diversi.
  \end{itemize}
- \item \textbf{A trasposizione:} questo tipo di cifrario esegue una trasposizione del testo, dove la chiave sarà
-il vero segreto. La funzione di trasposizione è sempre biettiva.
+ \item \textbf{A trasposizione:} questo tipo di cifrario esegue una
+ trasposizione del testo, dove la chiave sarà
+ il vero segreto. La funzione di trasposizione è sempre biettiva.
+ 
 \end{itemize}
 
 \subsubsection{Cifrari}
@@ -135,8 +140,15 @@ contenuto del messaggio.
   \label{fig:password:caesar}
 \end{center}
 
+\paragraph{S-Box e P-Box}
+Nei cifrari a blocchi le \textit{S-Box} (\textit{Substitution Box})
+e \textit{P-Box} (\textit{Permutation Box}) sono usate per rendere
+difficile risalire alle relazioni tra il testo in chiaro e il testo
+cifrato. 
+\subparagraph*{S-boxes}
 
-\paragraph{S-boxes}
+Le S-Box sono dei componenti base degli algoritmi a chiave simmetrica che 
+eseguono delle sostituzioni, vengono usate per esempio nel DES.
 
 \begin{center}
   \includegraphics[scale=0.5]{res/img/sboxes.png}
@@ -145,7 +157,11 @@ contenuto del messaggio.
 \end{center}
 
 
-\paragraph{P-boxes}
+
+\subparagraph*{P-boxes}
+In crittografia le  sono un
+metodo di mescolamento di bit usato per permutare o trasporre i bit
+tra i vari ingressi delle \textit{S-Box}.
 
 \begin{center}
   \includegraphics[scale=0.3]{res/img/pboxes.png}
@@ -210,7 +226,7 @@ Il numero di round o cicli di processamento/elaborazione crittografica dei quatt
 
 \subsubsection{Modalità di operazione per i cifrari a blocchi}
 
-\paragraph{ECB mode}
+\paragraph{Eletronic Codebook (ECB) mode}
 
 Il messaggio viene diviso in blocchi e ogni blocco viene criptato separatamente.
 
@@ -236,7 +252,7 @@ immagini (esempio del pinguino di Linux che viene cifrato ma è riconoscibile).
 \label{fig:password:linux_ecb}
 \end{figure}
 
-\paragraph{CBC mode}
+\paragraph{Cipher Block Chaining (CBC) mode}
 
 L'idea di questo algoritmo è quello di concatenare i vari blocchi tra loro,
 stabilendo quindi una dipendenza tra i vari blocchi. Viene eseguito uno XOR tra
