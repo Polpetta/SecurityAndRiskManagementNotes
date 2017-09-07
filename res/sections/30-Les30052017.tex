@@ -25,30 +25,30 @@ incrociato ad altri documenti;
 
 \subsection{Validazione delle Transazioni}
 \begin{itemize}
-	\item Sequence check: l'utilizzo di sequence number fanno sì che numeri
-	out-of-sequence o numeri duplicati vengano rifiutati;
-	\item Controllo dell'intervallo e limiti: i numeri sono sotto un numero
-	massimo dato o in un intervallo specifico,
-	\item Controlli di validità o lookup di una tabella:
-	solo alcuni valori sono accettati (es. Sesso = M/F);
-	\item Controlli di ragionevolezza: i valori inseriti sono ragionevoli.
-	Per esempio per una pizzeria un'ordine di pizza d'asporto di 100 pizze
-	va verificato;
-	\item Controlli di esistenza: i campi richiesti da compilare
-	sono completati correttamente;
-	\item Key Verification: l'input è controllato due volte attraverso
-	una seconda persona o tutte le cifre sono immesse due volte.
-	\item Check Digit: una cifra potrebbe verificare la corretta
-	immissione di altre cifre;
-	\item Completeness check: viene immesso un input completo. Gli
-	spazi o gli zero sono controllati per ogni lettera o cifra
-	richiesta;
-	\item Duplicate Check: bisogna sempre controllare se una transizione
-	con lo stesso ID esiste già. In caso affermativo va rifiutata;
-	\item Consistency or Logical Relationship Check: i nuovi dati
-	sono coerenti con altri dati a disposizione: per esempio
-	la data di nascita di un dipendente deve essere avvenuta almeno
-	16 anni fa.
+        \item Sequence check: l'utilizzo di sequence number fanno sì che numeri
+        out-of-sequence o numeri duplicati vengano rifiutati;
+        \item Controllo dell'intervallo e limiti: i numeri sono sotto un numero
+        massimo dato o in un intervallo specifico,
+        \item Controlli di validità o lookup di una tabella:
+        solo alcuni valori sono accettati (es. Sesso = M/F);
+        \item Controlli di ragionevolezza: i valori inseriti sono ragionevoli.
+        Per esempio per una pizzeria un'ordine di pizza d'asporto di 100 pizze
+        va verificato;
+        \item Controlli di esistenza: i campi richiesti da compilare
+        sono completati correttamente;
+        \item Key Verification: l'input è controllato due volte attraverso
+        una seconda persona o tutte le cifre sono immesse due volte.
+        \item Check Digit: una cifra potrebbe verificare la corretta
+        immissione di altre cifre;
+        \item Completeness check: viene immesso un input completo. Gli
+        spazi o gli zero sono controllati per ogni lettera o cifra
+        richiesta;
+        \item Duplicate Check: bisogna sempre controllare se una transizione
+        con lo stesso ID esiste già. In caso affermativo va rifiutata;
+        \item Consistency or Logical Relationship Check: i nuovi dati
+        sono coerenti con altri dati a disposizione: per esempio
+        la data di nascita di un dipendente deve essere avvenuta almeno
+        16 anni fa.
 \end{itemize}
 
 Per esempio, oggi come oggi in America hanno poche grandi catene per la pizza.
@@ -62,12 +62,12 @@ Service potrebbe essere ordinare un numero incontrollato di pizze.
 blocchi di transazioni, dopo che queste sono state aggregate. L'input è
 autorizzato e raccolto in ``batch''. Vengono effettuati dei controlli
 automatici sui batch  (\textit{batch controls}) e associati ad un batch file.
-Successivamente viene effettuata la validazione delle transazioni. Eventuali 
+Successivamente viene effettuata la validazione delle transazioni. Eventuali
 transazioni rifiutate sono corrette e rispedite oppure trattate in altro modo.
 In seguito viene effettuato il processing (es. di processing: ordini,
-pagamenti, salvataggio nel DB). Terminato il processing viene effettuato il 
+pagamenti, salvataggio nel DB). Terminato il processing viene effettuato il
 \textbf{batch balancing}, ovvero viene controllato che i totali dei batch
-corrispondano al totale dei pagamenti ricevuti, attraverso la 
+corrispondano al totale dei pagamenti ricevuti, attraverso la
 \textbf{reconciliation}, ovvero la verifica della corrispondenza dei record,
 che può essere manuale o automatica.
 
@@ -95,30 +95,9 @@ permettendo quindi correzioni future.
 \end{itemize}
 
 
-
-
-
-
 \section{Processing Controls}
 
-\subsection{Data Processing}
-
-\begin{figure}[h!]
-        \begin{center}
-                \includegraphics[width=0.7\textwidth]{data_processing}
-        \end{center}
-        \caption{Data processing}
-        \label{fig:data:processing}
-\end{figure}
-
-Il processing comprende controllo dei parametri di sistema (es. specificare
-minimo e massimo), Standing data (file permanenti), report delle eccezioni
-(errori nelle transazioni), log delle transazioni, file delle transazioni
-(giornaliero). Una rappresentazione grafica di data processing è riportata
-nella Figura~\ref{fig:data:processing}.
-
-\subsection{Processing controls}
-I processing controls sono usati per assicurare
+I \textbf{processing controls} sono usati per assicurare
 l'accuratezza, la completezza e la validità dei dati durante
 processing online o batch. Questi controlli sono messi in campo
 per verificare che i dati vengano processati solo tramite routine
@@ -148,6 +127,22 @@ controls calcolati;
 i dati sono stati salvati e processati correttamente.
 \end{itemize}
 \end{itemize}
+
+\subsection{Data Processing}
+
+\begin{figure}[h!]
+        \begin{center}
+                \includegraphics[width=0.7\textwidth]{data_processing}
+        \end{center}
+        \caption{Data processing}
+        \label{fig:data:processing}
+\end{figure}
+
+Il processing comprende controllo dei parametri di sistema (es. specificare
+minimo e massimo), Standing data (file permanenti), report delle eccezioni
+(errori nelle transazioni), log delle transazioni, file delle transazioni
+(giornaliero). Una rappresentazione grafica di data processing è riportata
+nella Figura~\ref{fig:data:processing}.
 
 
 \subsection{Controllo sui file dati}
@@ -244,7 +239,7 @@ funzionante.
         \begin{center}
                 \includegraphics[width=0.8\textwidth]{embedded}
                 \captionof{figure}{Embedded Audit Data Collection}
-        		\label{fig:testing:embedded:audit:data:collection}
+                        \label{fig:testing:embedded:audit:data:collection}
         \end{center}
 
 
@@ -298,9 +293,9 @@ fare validazione.
 \section{Tecniche di Auditing Online}
 
 \textbf{Audit Hooks:} sono logiche software integrate nell'applicazione
-che stampano dei report, degli errori e dei segnali d'allarme 
+che stampano dei report, degli errori e dei segnali d'allarme
 quando alcune condizioni particolari sono soddisfatte.
-Questo approccio è meno pesante delle EAM perché il controllo 
+Questo approccio è meno pesante delle EAM perché il controllo
 viene attivato \emph{solo} quando si raggiungono certi path
 del \textit{Control Flow Graph} (CFG).
 
@@ -360,10 +355,10 @@ regime.
 
 \subsubsection{Ruoli}
 
-\paragraph*{Incident Management Team} L'IMT è composto dallo 
+\paragraph*{Incident Management Team} L'IMT è composto dallo
 \textit{steering commitee}, da alcuni membri dell'IRT e dagli IS Mgr
 leads. L'IMT sviluppa \textbf{strategie} e
-piani per la risposta all'incidente e gestione dei rischi. 
+piani per la risposta all'incidente e gestione dei rischi.
 Ottiene i fondi e verifica le richieste di performance e i requisiti.
 
 \paragraph*{Incident Response Team} L'IRT è il
