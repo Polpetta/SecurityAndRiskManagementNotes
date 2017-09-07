@@ -140,8 +140,15 @@ contenuto del messaggio.
   \label{fig:password:caesar}
 \end{center}
 
+\paragraph{S-Box e P-Box}
+Nei cifrari a blocchi le \textit{S-Box} (\textit{Substitution Box})
+e \textit{P-Box} (\textit{Permutation Box}) sono usate per rendere
+difficile risalire alle relazioni tra il testo in chiaro e il testo
+cifrato. 
+\subparagraph*{S-boxes}
 
-\paragraph{S-boxes}
+Le S-Box sono dei componenti base degli algoritmi a chiave simmetrica che 
+eseguono delle sostituzioni, vengono usate per esempio nel DES.
 
 \begin{center}
   \includegraphics[scale=0.5]{res/img/sboxes.png}
@@ -150,7 +157,11 @@ contenuto del messaggio.
 \end{center}
 
 
-\paragraph{P-boxes}
+
+\subparagraph*{P-boxes}
+In crittografia le  sono un
+metodo di mescolamento di bit usato per permutare o trasporre i bit
+tra i vari ingressi delle \textit{S-Box}.
 
 \begin{center}
   \includegraphics[scale=0.3]{res/img/pboxes.png}
