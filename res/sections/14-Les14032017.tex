@@ -1,9 +1,10 @@
-\subsection{Business Continuity Process}
+\section{Business Continuity Process}
 
 Un piano per la continuazione del business si suddivide nei seguenti passi:
 \begin{enumerate}
   \item Attuazione dell'\textit{Business Impact Analysis};
-  \item Dare priorità ai servizi per supportare i processi critici del business;
+  \item Dare priorità ai servizi per supportare i processi critici del
+  business;
   \item Determinazione di modalità alternative di processo per servizi critici
   e vitali;
   \item Sviluppare il piano di \textit{Disaster Recovery} per i servizi di
@@ -14,24 +15,21 @@ Un piano per la continuazione del business si suddivide nei seguenti passi:
   \item Mantenimento dei piani.
 \end{enumerate}
 
-\subsection{Esercizi}
-
-Gli esercizi si trovano nella sezione \ref{EsBCDR1}.
 
 \section{Disaster recovery testing}
 
 Quando avviene un disastro c'è una persona che ha il compito di allertare le
-altre persone (di solito il Chief Security Officer). Quando il CSO dichiara l'
-incidente le persone posso aprire il libro del Disaster Recovery.
+altre persone (di solito il Chief Security Officer). Quando il CSO dichiara
+l'incidente le persone posso aprire il libro del Disaster Recovery.
 
 Un incidente non viene dichiarato immediatamente, ma c'è una procedura da
 rispettare. Quando una situazione di incidente è dichiarata l'incolumità fisica
-è la prima a essere presa in considerazione. Gli \textit{Stackeholders} sono
+è la prima a essere presa in considerazione. Gli \textit{Stakeholders} sono
 subito contattati, mentre l'ufficio stampa si occupa di dichiarare l'incidente.
 Questa parte è molto delicata, e il danno dev'essere spiegato in maniera da non
 costituire una brutta pubblicità per l'azienda.
 
-L'ufficio IT entra in azione dopo tutte queste procedure preliminari sono
+L'ufficio IT entra in azione dopo che tutte queste procedure preliminari sono
 annunciate, e comincia ad agire per risolvere il problema.
 
 \subsection{Preparazione di un piano di recupero}
@@ -40,7 +38,7 @@ La vita delle persone viene messa sempre in primo piano. Viene poi definito chi
 deve fare cosa. Le copie del piano di recupero devono essere distribuite in
 diverse locazioni per evitare che possano essere distrutte.
 
-\subsubsection{Preoccupazi per un piano BCP/DR}
+\subsubsection{Preoccupazioni per un piano BCP/DR}
 
 \begin{itemize}
 \item Piano d'evacuazione: la vita delle persone è la priorità assoluta;
@@ -102,8 +100,8 @@ interruzioni prolungate                     \\ \hline
 \subsection{Mean Time Between Failure}
 
 Detto anche MTBF, è la somma del \textit{Mean Time to Repair} (MTTR) più il
-\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che percorre tra
-l'inizio di due fallimenti.
+\textit{Mean Time To Fail} (MTTF), corrisponde al tempo medio che intercorre
+tra l'inizio di due fallimenti.
 
 Il MTTR è il tempo medio necessario per la riparazione, mentre il MTTF è il
 tempo medio dalla riparazione ad un nuovo fallimento.
@@ -124,25 +122,28 @@ mezzo di fallimento all'anno del servizio.
 È l'esecuzione del piano per verificarne il suo funzionamento.
 Il test viene effettuato in questo ordine:
 \begin{enumerate}
-  \item \textbf{Desk-Based Evaluation/Paper test:} un gruppo comincia a seguire i passi della procedura e li esegue a mano,
-simile al walkthrough;
-  \item \textbf{Preparedness Test:} una o più parti dell'intero test vengono eseguite personalmente da qualcuno;
+  \item \textbf{Desk-Based Evaluation/Paper test:} un gruppo comincia a
+  seguire i passi della procedura e li esegue a mano, simile al walkthrough;
+  \item \textbf{Preparedness Test:} una o più parti dell'intero test vengono
+  eseguite personalmente da qualcuno;
   \item \textbf{Full Operational Test:} simulazione di un disastro completo.
 \end{enumerate}
 
-\subsubsection{Tipologie di test per il Business Continuity}
+\subsubsection{Tipologie di test per la Business Continuity}
 
-Esistono diverse tipologie di test per il \textit{Business Continuity}:
+Esistono diverse tipologie di test per la \textit{Business Continuity}:
 \begin{itemize}
-  \item \textbf{Checklist Review:} rivisitazione per piano di copertura. Tutti i piani importanti sono coperti?
-  \item \textbf{Structured Walkthrough:} rivisitazione di tutti gli aspetti del piano, spesso guardando tutti gli
+  \item \textbf{Checklist Review:} rivisitazione del piano per verificare
+  che tutti gli aspetti importanti siano coperti;
+  \item \textbf{Structured Walkthrough:} rivisitazione di tutti gli aspetti
+  del piano, spesso guardando tutti gli
   scenari;
-  \item \textbf{Simulation Test:} esecuzione del piano basato specificamente per uno scenario, senza un sito
-  alternativo;
-  \item \textbf{Parallel Test:} viene azionato la struttura alternativa fuori dal sito, senza
-  interrompere il funzionamento del sito regolare;
-  \item \textbf{Full-Interruption:} si passa alla modalità alternativa da quella regolare, per verificare che
-  tutto sia funzionante.
+  \item \textbf{Simulation Test:} esecuzione del piano basato specificamente
+  per uno scenario, senza un sito alternativo;
+  \item \textbf{Parallel Test:} viene azionata la struttura alternativa fuori
+  dal sito, senza interrompere il funzionamento del sito regolare;
+  \item \textbf{Full-Interruption:} si passa dal sito regolare a quello
+  alternativo.
 \end{itemize}
 
 \subsubsection{Obiettivi del testing}
@@ -175,11 +176,18 @@ migliore osservazione.
 Dalla valutazione del test si ottengono quelli che sono i \textbf{punti di
 miglioramento}, che devono essere effettivamente messi in pratica.
 
-\paragraph*{Passi del test} Esistono diversi passi del test. C'è la sua
-preparazione, l'esecuzione del test e la pulizia dopo-test. Importante è
-ricordarsi di eseguire una pulizia dei dati dopo l'esecuzione del test, ma di
-quelli che non sono importanti per la sua valutazione (altrimenti il test
-sarebbe inutile).
+\paragraph*{Passi del test} Il test si articola in tre passi:
+\begin{enumerate*}[label=\arabic*)]
+\item il \textbf{PreTest}, ovvero la preparazione dell'attrezzatura e
+dello staff, 
+\item il \textbf{Test}, le vere azioni del \textit{business continuity
+test} e infine
+\item il \textbf{PostTest}, fase in cui si rilasciano tutte le risorse,
+si calcolano delle metriche (tempo richiesto, percentuale di transazioni
+avvenute con successo durante l'alternate mode, ecc\dots) e 
+infine si cancellano i dati del test. In ultima istanza si valuta il
+piano e si implementano le azioni correttive individuate.
+\end{enumerate*}
 
 \subsubsection{Gap Analysis}
 
@@ -194,12 +202,19 @@ dei processi).}, perché le persone sono quelle che sono più difficili da
 
 Sono presenti diversi step da controllare, che possono essere:
 \begin{itemize}
-  \item Include la BIA?
-  \item È il BCP in linea con i goals del business, sono effettivi o moderni?
-  \item È chiaro chi dovrà svolgere cosa?
-  \item Sono tutti competenti? Accettano volentieri questo ruolo?
-  \item DRP è mantenuto e dettagliato?
+  \item All'interno della BIA sono definiti RPO/RTO per tutti i servizi?
+  \item È chiaro chi deve svolgere cosa nel BCP e nel DRP?
+  \item Sono tutti allineati e competenti? Accettano volentieri questo ruolo?
+  \item DRP è mantenuto, dettagliato e testato?
   \item Le procedure di backup e di recupero sono seguite?
+  \item Il BCP e il DRP sono consistenti con il piano di recupero?
+  \item Le persone nella lista del BCP o nell'albero delle chiamate hanno una
+  copia del manuale?
+  \item L'\textit{hot site} ha tutte le copie del software al momento usato?
+  \item Il sito di backup è mantenuto secondo le aspettative? Le
+  aspettative sono effettive?
+  \item Il test del DRP è stato documentato per bene? Il DPR è stato
+  aggiornato?
 \end{itemize}
 
 \subsubsection{Assicurazione}
@@ -210,26 +225,12 @@ assicurazione.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{insurance}
+\caption[Danni contro i quali ci si può assicurare divisi per
+tipologia]{Danni contro i quali ci si può assicurare divisi per
+tipologia. La sigla IPF sta per Information Processing Facility
+ed è l'edificio che ospita il data center.}
+\label{fig:insurance}
 \end{figure}
-
-\subsubsection{Auditing BCP}
-
-Include:
-\begin{itemize}
-  \item Il BIA è completo rispetto con il RPO/RTO definito per tutti i servizi?
-  \item È il BCP in linea con i goal del businees? È aggiornato ed effettivo?
-  \item È chiaro chi fa cosa nel BCP e nel DRP?
-  \item Son tutti allenati, competenti e contenti con il loro lavoro?
-  \item È il DRP dettagliato, mantenuto e testato?
-  \item Il BCP e il DRP sono consistenti con il piano di recupero?
-  \item Sono le persone nella lista del BCP/albero delle chiamate e hanno una
-    copia del manuale?
-  \item Le procedure di backup/recupero vengono seguite?
-  \item L'\textit{hot site} ha tutte le copie del software al momento usato?
-  \item Il sito di backup è mantenuto secondo le aspettative? Son le aspettative
-    effettive?
-  \item Il DRP è stato testato per bene? È stato aggiornato?
-\end{itemize}
 
 
 \section{Riassunto dei controlli principali per i controlli di sicurezza BC}

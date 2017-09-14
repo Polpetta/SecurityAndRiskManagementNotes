@@ -2,15 +2,15 @@
 
 
 \paragraph*{Controlli correttivi} (\textit{Corrective Controls})\\
-Risolvono i probemi e prevengono problemi futuri.
+Risolvono i problemi e prevengono problemi futuri.
 
 \paragraph*{Controlli Rivelativi} (\textit{Detecive Controls})\\
 Segnalano un warning quando un altro controllo di sicurezza viene bucato.
 
 \paragraph*{Controlli preventivi} (\textit{Preventive Controls})\\
-Prevengono le frodi. Includono: \textit{risk assessment}, sviluppo di controlli interni, 
-sicurezza fisica e informatica, autorizzazioni (es. password) e \textit{segregation of 
-duties}.
+Prevengono le frodi. Includono: \textit{risk assessment}, sviluppo di controlli
+interni, sicurezza fisica e informatica, autorizzazioni (es. password) e
+\textit{segregation of duties}.
 
 I controlli eseguiti in maniera preventiva sono migliori rispetto alle
 altre tipologie di controlli.
@@ -29,8 +29,8 @@ Altro errore da non sottovalutare è la promozione: dopo 8 anni di solito una
 persona si aspetta di essere promossa.
 
 L'esempio è anche importante: le persone nell'alta gerarchia diventano un
-\textbf{role model}, ovvero i sottoposti prendono ispirazione dai dirigenti, ed è
-quindi fondamentale che essi abbiano un comportamento esemplare.
+\textbf{role model}, ovvero i sottoposti prendono ispirazione dai dirigenti, ed
+è quindi fondamentale che essi abbiano un comportamento esemplare.
 
 Ma come si rimuove la possibilità di una frode?
 \begin{itemize}
@@ -38,7 +38,7 @@ Ma come si rimuove la possibilità di una frode?
   \item Sicurezza dei beni;
   \item Sicurezza fisica (es. sono presenti tornelli per accedere a determinate
 aree per esempio?) (ISO 27000, CISA, CISP);
-  \item \textit{Background checks}, spesso eseguiti su: titoli di studio, 
+  \item \textit{Background checks}, spesso eseguiti su: titoli di studio,
   casi penali o precedenti esperienze lavorative.
 \end{itemize}
 
@@ -53,14 +53,14 @@ Esistono tre fondamenti per una corretta \textbf{segregation of duties}:
   \item Verifica.
 \end{itemize}
 
-Se questi tre punti sono eseguiti correttamente (da tre persone diverse), 
-è molto difficile che una frode avvenga. 
+Se questi tre punti sono eseguiti correttamente (da tre persone diverse),
+è molto difficile che una frode avvenga.
 In caso avvenga, c'è di sicuro un caso di collusione.
 
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.425]{segregation}
- \caption{Una corretta applicazione della \textbf{segregation of duties} con 
+ \caption{Una corretta applicazione della \textbf{segregation of duties} con
 quattro componenti.}
 \end{figure}
 
@@ -78,21 +78,30 @@ primo tipo di controllo implementato prima dell'arrivo dei computer era la
 partita doppia. Ora con il computer sono presenti diversi tipi di software
 per trovare delle frodi. Quelli di tipo finanziario vanno per la maggiore.
 
-Il software identifica i vari \textit{outlier}, ovvero tutto ciò che si
-comporta molto diversamente rispetto alla media.
 
-\subsection{Incoraggiare la sicurezza nei dipartimenti IT}
 
-Alcuni punti focali:
+Per rilevare delle frodi un software può fare dei controlli
+per evidenziare diversi segnali d'allarme come per esempio:
 \begin{itemize}
-  \item Sicurezza fisica;
-  \item \textit{Segregation of duties}: una cosa importante da non sbagliare è di mettere i controlli di monitoring
-  sullo stesso hardware in cui si ha il software in produzione;
-  \item Monitor dei dipendenti;
-  \item Audit a sorpresa;
-  \item Rotazione dei lavori;
-  \item Analisi della documentazione.
+\item confrontare gli indirizzi e i numeri di telefono dei venditori con
+quelli dei dipendenti;
+\item identificare i vari \textit{outlier}, ovvero tutto ciò che si
+comporta molto diversamente rispetto alla media.
 \end{itemize}
+Il vantaggio dei controlli software è che vengono analizzati moltissimi
+dati in brevi lassi di tempo. Nonostante questo, alcuni dati vengono
+analizzati meglio da persone familiari con le operazioni dell'azienda,
+con i venditori e con i sistemi di contabilità.
+Queste persone possono ricercare venditori sconosciuti, beni o servizi
+inusuali e acquisti eccessivi di servizi.
+
+\subsection{Business Application Checks}
+Gli assegni dovrebbero essere tenuti in un luogo con accesso ristretto e
+se ne dovrebbe fare l'inventario almeno ogni trimestre.
+Le informazioni di nuovi venditori dovrebbero essere ricontrollate
+dal \textit{management}. In caso ci siano assegni restituiti,
+questi devono essere mandati ad un PO Box e valutati da qualcuno esterno
+all'azienda.
 
 \paragraph*{PO Box}
 
@@ -100,25 +109,41 @@ Alcuni punti focali:
 presentandosi con un documento d'identità. Il fermo posta non è associato a un
 indirizzo di un'abitazione.
 
+\subsection{Incoraggiare la sicurezza nei dipartimenti IT}
+
+Alcuni punti focali:
+\begin{itemize}
+  \item Sicurezza fisica;
+  \item \textit{Segregation of duties}: una cosa importante da non sbagliare è
+  di mettere i controlli di monitoring
+  sullo stesso hardware in cui si ha il software in produzione;
+  \item Monitor dei dipendenti;
+  \item Audit a sorpresa;
+  \item Rotazione dei lavori;
+  \item Analisi della documentazione.
+\end{itemize}
+
 \subsection{Esercizi}
 
-Gli esercizi su questa parte sono presenti nella rispettiva sezione
-(\ref{EsFrodi2}).
+Gli esercizi su questa parte sono presenti nella rispettiva Sezione
+\ref{EsFrodi2}.
+
 
 \section{Social Engineering}
-		
-Oggi è più facile eseguire un \textit{escalation} di privilegi dall'interno,
+
+Oggi è più facile eseguire un'\textit{escalation} di privilegi dall'interno,
 piuttosto che tentare di entrare nel sistema in maniera non autorizzata.
 
-Un tipico esempio sono le e-mail con degli eseguibili allegati.
-
-Tipici esempi sono:
+Esempi tipici di attacchi che sfruttano la tenica del
+\textit{Social Engineering} sono:
 \begin{itemize}
+  \item Le e-mail con degli allegati eseguibili;
   \item Le prime 500 persone a registrarsi a questo sito web vinceranno dei
   biglietti;
   \item Il tuo account è stato bloccato, per favore riesegui il login;
   \item Fingersi un tecnico IT\footnote{Richiede tempo ma permette di
-introdursi all'interno dell'azienda. Il veicolo di questo attacco è la fiducia.}.
+introdursi all'interno dell'azienda. Il veicolo di questo attacco è la
+fiducia.}.
 \end{itemize}
 
 \paragraph*{Definizione} Il \textit{social engineering} è convincere le persone
@@ -144,19 +169,49 @@ potrebbero essere:
 che devono essere applicate.
 \end{itemize}
 
-\subsection{Statistiche su questo tipo di frodi}
+\section[Statistiche sulle frodi]{
+Statistiche sulle frodi\protect\footnote{
+Le stime qui riportate sono state estratte dal libro
+\textit{The Art of Steals} (2001). Si riferiscono
+a quell'anno e pertanto non sono da considerare attuali.
+Vengono riportate perché sono un utile strumento per
+comprendere l'argomento.}}
+Ogni anno negli Stati Uniti il business perde $400$ miliardi di dollari
+per via delle frodi. Questa cifra corrisponde a due volte il budget
+militare degli USA.
+Un terzo di questo denaro è dovuto al fenomeno
+dell'\textit{emblezzlement}, ovvero quando impiegati rubano ai propri
+datori di lavoro.
+Il problema è che molti dirigenti, per via dell'imbarazzo,
+invece di riportare questi furti alla polizia, procedono con
+il licenziamento, facendo sì che queste persone vadano a rubare da
+qualcun altro.
+Secondo il report di KPMG del 2000 altre cause importanti sono
+la falsificazione di assegni, fatture false, clonazione di carte di
+credito e i furti.
 
-I medicinali contraffatti sono quelli che rendono di più. In generale, la merce
-contraffatta è un grosso problema.
+Un altro problema di fondamentale importanza è la \textbf{merce
+contraffatta}.
+Questo tipo di frode causa ogni anno una perdita
+di $350$ miliardi di dollari negli USA.
+La merce contraffatta che rende di più sono i medicinali.
+Di solito le persone pensano che non sia un loro problema,
+perché non si tratta di reati contro la persona, ma
+invece colpisce tutti perché comporta un innalzamento delle tasse
+per garantire beni e servizi.
+
 
 Anche il furto d'identità costituisce una grossa frode, soprattutto negli
-Stati Uniti, in cui basta il \emph{social security number} e un telefono per aprire un conto
-a nome della vittima.
+Stati Uniti, in cui basta il \emph{social security number} e un telefono per
+aprire un conto a nome della vittima.
 
 \section{Esercizi riassuntivi}
 
 Gli esercizi riassuntivi su tutto il capitolo possono essere trovati nella
 sezione apposita (\ref{EsFrodi3}).
+
+
+
 
 \chapter{Business Continuity and Disaster Recovery}
 \label{BCDR}
@@ -172,7 +227,7 @@ Prendiamo ad esempio una delle seguenti aziende:
 Che cosa succede quando avviene un fallimento di sistema, come una interruzione
 di corrente prolungata o un fallimento di server?
 
-\section{Primo passo: Business Impact Analysis}
+\section{Primo passo: Business Impact Analysis (BIA)}
 
 È di fondamentale importanza analizzare l'impatto che un evento può avere sulla
 società. Per capire questo, bisogna porsi la seguente domanda: qual è il
@@ -186,7 +241,7 @@ da quelli più piccoli a quelli più grandi\footnote{Un meteorite, ad esempio}. 
 anche doveroso chiedersi, come potrebbero questi eventi impattare sull'azienda?
 Come si relazionano la safety e la security con questi rischi? E, infine,
 quanto tempo impiego per recuperare ciò che ho perso? È possibile ritornare a
-lavoro con due modalità: in modalità degradata o ritorno a lavorare a pieno 
+lavoro con due modalità: in modalità degradata o ritorno a lavorare a pieno
 regime.
 
 È da tenere conto che più velocemente si vuole tornare ad un regime di lavoro

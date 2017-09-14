@@ -7,7 +7,7 @@ PATH_OF_CONTENTS= res/sections
 MAIN_FILE= main
 CC= latexmk
 JOB_NAME=-jobname='$(OUTPUT_NAME)'
-CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -pdf
+CCFLAGS= -pdflatex='pdflatex -interaction=nonstopmode' -quiet -pdf
 SHELL := /bin/bash #Need bash not shell
 
 all: compile
@@ -44,6 +44,12 @@ clean:
 		rm res/sections/89-Answers.tex; \
 	fi; \
 	git checkout -- res/sections/*.tex
+	git checkout -- config/*.tex
 	git clean -Xfd
 	$(CC) -C $(JOB_NAME)
 	if [[ -a "$(OUTPUT_NAME)" ]]; then rm -rv $(OUTPUT_NAME)/; fi;
+alt2: 
+	cat config/config.tex | head -n193 > config/config.tex.tmp
+	rm config/config.tex
+	mv config/config.tex.tmp config/config.tex
+light: alt2 compile

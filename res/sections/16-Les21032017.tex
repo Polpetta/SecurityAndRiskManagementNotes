@@ -1,16 +1,24 @@
 \chapter{Access Control Techniques}
 \label{AccessControlTechniques}
 \begin{itemize}
- \item \textbf{Mandatory Access Control:} controllo d'accesso generalizzato 
+ \item \textbf{Mandatory Access Control:} controllo d'accesso generalizzato
  (determinato dal sistema). Specifica di chi può accedere a cosa;
- \item \textbf{Discretionary Access Control:} persone che hanno l'autorizzazione ad
- accedere. Si trova spesso dove l'informazione deve essere classificata;
- \item \textbf{Role-Based Access Control:} è la soluzione migliore per i contesti
- organizzativi classici. Essendoci un numero fissato di ruoli per
- l'amministratore di sistema la loro gestione diviene più semplice, piuttosto
-che gestire ogni singolo impiegato. Questa realtà è ancora in forte sviluppo;
- \item \textbf{Physical Access Control:} è quell'area legata alla sicurezza fisica, ed è
- legata al CSO ultimamente. Si costituisce di lucchetti, chiavi, ecc.
+ \item \textbf{Discretionary Access Control:} permette ad un individuo
+ designato di decidere il livello di accesso degli utenti.
+ Si trova spesso dove l'informazione deve essere classificata;
+ \item \textbf{Role-Based Access Control:} il controllo di accesso è
+ determinato dal ruolo che si ricopre all'interno dell'organizzazione.
+ Questa è la soluzione migliore per i contesti
+ organizzativi classici. Essendoci un numero fissato di ruoli, per
+ l'amministratore di sistema la loro gestione diviene più semplice,
+ perché non deve gestire ogni singolo impiegato.
+ Questa realtà è ancora in forte sviluppo;
+ \item \textbf{Physical Access Control:} è quell’area legata alla sicurezza
+ fisica, ed è legata al CISO ultimamente\footnote{Ricordiamo al lettore
+ come precedentemente questa responsabiltà era coperta dal CSO, che sta
+ pian piano venendo soppiantato dal CISO.}. Si costituisce di lucchetti,
+ chiavi, ecc.
+
 \end{itemize}
 
 
@@ -30,8 +38,8 @@ W=write)} \\
 Istruttore & Form dei voti RW; Esami sostenuti dallo studente R; Trasferimento
 di crediti R \\
 \hline
-Consigliere & Esami sostenuti dallo studente R; Pagamento tasse R; Trasferimento
-di crediti R \\
+Consigliere & Esami sostenuti dallo studente R; Pagamento tasse R;
+Trasferimento di crediti R \\
 \hline
 Registratore & Pagamento tasse RW; Trasferimento di crediti RW \\
 \hline
@@ -52,28 +60,33 @@ Si applica una classificazione dell'informazione, che può essere:
  \item Non-classified.
 \end{itemize}
 
-Per evitare l'\textit{overclassification} si utilizzano i domini: si cercano di 
-mettere delle persone con determinate competenze nel contesto giusto (es. se un 
-dominio è il nucleare e io non ho competenze a riguardo non posso accedere a 
-quel dominio).
+Per evitare l'\textit{overclassification} si utilizzano i domini: si cercano
+di mettere delle persone con determinate competenze nel contesto giusto (es.
+se un dominio è il nucleare e io non ho competenze a riguardo non posso
+accedere a quel dominio).
 
-Un soggetto può accedere ad un oggetto solo se domina (maggiore o uguale) la 
+Un soggetto può accedere ad un oggetto solo se domina (maggiore o uguale) la
 classificazione dell'oggetto.
 
-\section{Modello Bell-La Padula}
+\subsection{Modello Bell-LaPadula}
 
 Si è dimostrato che adottando questo modello possiamo avere buone proprietà di
-confinamento dell'informazione.\\
+confinamento dell'informazione\footnote{Il modello Bell-LaPadula è nato
+come modello per la riservatezza delle informazioni militari, ma ha
+trovato impiego anche come modello per la sicurezza di sistemi operativi
+e basi di dati.}.
+
 Utilizza il principio di confidenzialità: si può avere accesso in lettura a
 tutto ciò che dominiamo. Per la scrittura invece vale il contrario: posso
 accedere in scrittura a tutto ciò che mi domina ma non posso scrivere a ciò che
 domino. Il tutto viene riassunto in \textit{no read up} e \textit{no write
 down}.\\
 \newline
-\textbf{Principio di tranquillità:} le classi degli oggetti non possono cambiare.\\
+\textbf{Principio di tranquillità:} le classi degli oggetti non possono
+cambiare.\\
 \newline
 La declassificazione risolve il problema del galleggiamento verso l'alto. Avere
-troppi documenti top-secret può causare problema. Eseguire una
+troppi documenti top-secret può causare problemi. Eseguire una
 declassificazione è una procedura costosa, ed è quando il livello di segretezza
 di un certo documento viene abbassato.
 
@@ -81,9 +94,15 @@ di un certo documento viene abbassato.
 
 Il \textit{System Access Control} si occupa di:
 \begin{itemize}
- \item eseguire il log degli eventi;
- \item generare report per l'amministrazione di sistema dei tentativi falliti
-di accesso, che possono essere anche accidentiali.
+  \item stabilire le regole di accesso alle informazioni;
+  \item creare e manutenere i profili degli utenti;
+  \item dare gli ID agli utenti per l'autenticazione;
+  \item informare gli utenti su come accedere e utilizzare il sistema in modo
+  valido, prima e dopo il login;
+  \item accertare la responsabilità registrando l'attività degli utenti;
+  \item eseguire il log degli eventi;
+  \item generare report per l'amministrazione di sistema dei tentativi falliti
+  di accesso, che possono essere anche accidentali.
 \end{itemize}
 
 \section{Application-Level Access Control}
@@ -135,7 +154,7 @@ nascite o numeri di telefono.
 
 \paragraph*{Base words}
 Le \textit{base-words passwords} sono password significative dal punto di vista
-memnonico che risultano essere difficili da indovinare da un attaccante perchè
+mnemonico che risultano essere difficili da indovinare da un attaccante perché
 per un estraneo risultano come se fossero una combinazione casuale di parole.
 È un metodo molto valido per costruire una forte password.
 
@@ -160,64 +179,55 @@ comprabili, e presentano tutte le entry di un determinato campo semantico.
 
 \subsection{Autenticazione a due fattori}
 
-L'autentificazione viene detta forte quando è ad almeno due fattori.
-Autenticazione forte vuol dire usare almeno due canali differenti.
+Esistono differenti metodi per autenticarsi, e una buona autenticazione si
+basa su diversi aspetti, detti fattori. Se si basa su un singolo fattore viene
+detta \textit{single factor authentication} (es. una password), mentre si
+parla di \textit{multifactor authentication} quando se ne utilizza più di uno.
 
-Ad esempio al giorno d'oggi durante un'autenticazione bancaria si richiedono
+I fattori sono:
+\begin{itemize}
+ \item \textbf{Qualcosa che siamo} (es. impronte biometriche);
+ \item \textbf{Qualcosa che abbiamo} (es. una chiavetta);
+ \item \textbf{Qualcosa che sappiamo} (es. una password).
+\end{itemize}
+L'autentificazione è detta \emph{forte} quando è ad almeno due fattori, e
+solitamente si utilizza \emph{qualcosa che si ha} (es. un ID) e \emph{qualcosa
+che si è} (es. impronte digitali). Questa funziona bene perché, in questo
+modo, sono due i canali che devono essere compromessi da un attaccante per
+ottenere l'accesso.
+
+Un altro esempio è l'autenticazione bancaria che, al giorno d'oggi, richiede
 solitamente il proprio codice bancario e un altro codice proveniente da una
 chiavetta/sms/token hardware.
-
-Per eseguire una corretta autenticazione il tutto si basa su questi tre punti:
-\begin{itemize}
- \item Qualcosa che siamo (es. impronte biometriche);
- \item Qualcosa che abbiamo (es. una chiavetta);
- \item Qualcosa che sappiamo (es. una password).
-\end{itemize}
-
-Per avere un'autenticazione forte devono essere presente almeno due di queste
-tecniche. Questo funziona bene perchè almeno due canali devono essere
-compromessi da un attaccante per poter ottenere l'accesso.
 
 Una nuova tecnica è anche quella della autorizzazione tramite
 geolocalizzazione. Sempre nell'ambito bancario, pagamenti eseguiti a breve
 tempo da diverse parti del mondo non vengono autorizzati.
 
 \subsection{Single Sign On}
+Il Single Sign On (SSO) serve per poter accedere a una serie di servizi offerti dal
+provider. Con il SSO è il segmento con cui ci si autentica per primi che
+fornisce l'autorizzazione anche per le altre applicazioni.
+La sicurezza che il SSO offre non è la stessa della segmentazione dei
+servizi.
 
-Vantaggi:
+I \textbf{vantaggi} di questa tecnica:
 \begin{itemize}
 \item una buona password rimpiazza molte password;
-\item ID consisente tra i sistemi;
+\item ID consistente tra i sistemi;
 \item riduce il lavoro degli admin nel setup e per le password dimenticate;
 \item accesso rapido ai sistemi.
 \end{itemize}
 
 
-Il Single Sign On serve per poter accedere a una serie di servizi offerti dal
-provider. Con il SSO è il segmento con cui ci si autentica per primi che
-fornisce l'autorizzazione anche per le altre applicazioni.
-La sicurezza che il SSO offre non è la stessa che la segmentazione dei servizi
-offre.
-Svantaggi:
+
+Gli \textbf{svantaggi}:
 \begin{itemize}
 \item Single Point of Failure (\textbf{SPOF});
-\item Lo sviluppo del software è complicato per via di diversi sistemi operativi;
+\item Lo sviluppo del software è complicato per via di diversi sistemi
+operativi;
 \item Implementazione onerosa.
 \end{itemize}
-
-\subsection{Combinazioni di metodi di autenticazione}
-
-Esistono diversi modi per autenticarsi. Una buona autenticazione si basa su
-diversi aspetti (detti anche fattori). Se si usa solo una fattore, per esempio
-una password, si dice che si sta usando una \textit{single factor
-authentication} (nel caso della password, ci si basa su qualcosa che solo
-l'utente sa). Autenticazioni basate su più fattori vengono dette
-\textit{multifactor authentication}, e solitamente si basano su qualcosa che si
-ha (come ad esempio il proprio ID) e su qualcosa che si è (come ad esempio un
-riconoscimento biometrico dell'impronta digitale)\footnote{Le autenticazioni
-basate su più fattori non sono limitate a due fattori, ma
-possono essere multipli.}. Questa tipologia di autenticazione è molto più
-forte della \textit{single factor authentication}.
 
 \subsection{Biometria}
 
@@ -227,13 +237,27 @@ quali per esempio le riprese di sicurezza.
 Chi sei e cosa fai, è suscettibile ad errori.
 
 \begin{itemize}
-\item \textbf{False Rejection Rate:} anche detto \textbf{falso negativo}, un reject che
-non dovrebbe esserci stato;
-\item \textbf{False Acceptance Rate:} anche detto \textbf{falso positivo}, un accept
-quando non avrebbe dovuto esserci;
-\item \textbf{Failure to Enroll Rate:} numero di utenti che non sono riusciti a
-registrarsi correttamente.
+\item \textbf{False Rejection Rate} (FRR): anche detto
+\textbf{falso negativo}, un reject che non dovrebbe esserci stato;
+\item \textbf{False Acceptance Rate} (FAR): anche detto
+\textbf{falso positivo}, un accept quando non avrebbe dovuto esserci;
+\item \textbf{Failure to Enroll Rate:} numero di utenti che non sono
+riusciti a registrarsi correttamente.
+\item \textbf{Equal Error Rate} (ERR): impostazione usata
+in biometria, per aggiustare la sentività del sistema per avere
+FRR e FAR equivalenti.
 \end{itemize}
+La relazione tra FRR, FAR e ERR vengono riassunte nella Figura
+\ref{fig:equalErrorRate}.
+
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.8]{equal_error_rate}
+ \caption{Relazione tra Equal Error Rate, False Rejection Rate e
+ False Acceptance Rate.}
+ \label{fig:equalErrorRate}
+\end{figure}
+
 
 \subsubsection{Metodi migliori per l'autenticazione}
 
@@ -262,16 +286,16 @@ inserire un dispositivo di acquisizione personale, per poter registrare i dati
 e ottenerli in maniera non autorizzata. In questa maniera l'attaccante è in
 grado di eseguire un furto d'identità. Questi strumenti dovrebbero essere posti
 in aree controllate, cosa che spesso non succede. È importante che l'integrità
-di questi strumenti venga manetenuta.
+di questi strumenti venga mantenuta.
 
 \subsection{Verifiche di un IS Auditor}
 \begin{itemize}
  \item Verificare che ci siano delle procedure e che siano implementate;
  \item Verificare che i processi seguano il pattern del \textit{need to know};
  \item Security awareness e training implementati;
- \item Il data owner e il data custodian devono sapere di essere responsabili 
+ \item Il data owner e il data custodian devono sapere di essere responsabili
  della salvaguardia dei dati;
- \item Il security administrator deve fornire la sicurezza fisica e logica per 
+ \item Il security administrator deve fornire la sicurezza fisica e logica per
  il programma IS, i dati e l'equipaggiamento;
  \item Le autorizzazioni devono essere documentate e consistenti con la realtà.
 \end{itemize}
@@ -279,4 +303,4 @@ di questi strumenti venga manetenuta.
 
 \section{Esercizi}
 
-Gli esercizi sono disponibili nella sezione apposita, in \ref{EsPass}
+Gli esercizi sono disponibili nella Sezione \ref{EsPass}.

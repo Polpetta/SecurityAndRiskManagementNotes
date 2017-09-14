@@ -5,7 +5,7 @@
 %**************************************************************
 % Frontespizio
 %**************************************************************
-\newcommand{\myName}{Davide Polonio, Federico Tavella, Mirko Bez}     %autore
+\newcommand{\myName}{Davide Polonio, Federico Tavella, Mirko Bez, Marco Zanella}
 
 \newcommand{\myTitle}{Security and Risk Management}
 \newcommand{\myUni}{Università degli Studi di Padova}           % università
@@ -14,7 +14,7 @@
 \newcommand{\myLocation}{Padova}                                % dove
 \newcommand{\myAA}{2016-2017}                                   % anno
 \newcommand{\myCopyright}{CC-BY-SA-4.0}                         % copyright
-\newcommand{\myVersion}{v0.14.0}                                % versione
+\newcommand{\myVersion}{v1.0.1}                                 % versione
 \newcommand{\myRelease}{
 https://github.com/Polpetta/SecurityAndRiskManagementNotes}
 \newcommand{\myIssue}{
@@ -85,7 +85,7 @@ https://github.com/Polpetta/SecurityAndRiskManagementNotes/pulls}
     %nesting=true,
     %frenchlinks,
     urlcolor=webbrown,
-    linkcolor=RoyalBlue,
+    linkcolor=webbrown,
     citecolor=webgreen,
     %pagecolor=RoyalBlue,
     %urlcolor=Black, linkcolor=Black, citecolor=Black, %pagecolor=Black,
@@ -134,6 +134,8 @@ https://github.com/Polpetta/SecurityAndRiskManagementNotes/pulls}
 %**************************************************************
 \definecolor{webgreen}{rgb}{0,.5,0}
 \definecolor{webbrown}{rgb}{.6,0,0}
+\definecolor{Pantone}{RGB}{155,0,20}
+\definecolor{GrigioLight}{RGB}{152, 152, 152}
 
 
 %**************************************************************
@@ -157,7 +159,7 @@ https://github.com/Polpetta/SecurityAndRiskManagementNotes/pulls}
 
 \newcommand{\intro}[1]{\emph{\textsf{#1}}}
 
-%-------------------INIZIO creazione subsubparagraph--------------------------------------
+%-------------------INIZIO creazione subsubparagraph---------------------------
 \makeatletter
 \newcounter{subsubparagraph}[subparagraph]
 \def\toclevel@subsubparagraph{6}
@@ -175,4 +177,59 @@ https://github.com/Polpetta/SecurityAndRiskManagementNotes/pulls}
 \setcounter{tocdepth}{6}
 \setcounter{secnumdepth}{6} % aggiunge contatore ai paragrafi
 \makeatother
-%-------------------FINE creazione subsubparagraph--------------------------------------
+%-------------------FINE creazione subsubparagraph-----------------------------
+
+%-------------------Capitoli personalizzati------------------------------------
+
+\titleformat{\chapter}[display]
+  {\normalsize \huge  \color{black}}%
+  {\flushright\normalsize \color{Pantone}%
+   \MakeUppercase{\chaptertitlename}\hspace{1ex}%
+   {\fontsize{60}{60}\selectfont\thechapter}}%
+  {10 pt}%
+  {\bfseries\huge#1}%
+
+%----------------FINE Capitoli personalizzati----------------------------------
+
+%----------------INIZIO Parte personalizzata-----------------------------------
+
+\renewcommand\thepart{\Alph{part}}
+
+\newcommand\partnumfont{% font specification for the number
+  \fontsize{304}{104}\color{white}\selectfont%
+}
+
+\newcommand\partnamefont{% font specification for the name "PART"
+  \color{white}\huge\bfseries%
+}
+
+\titleformat{\part}[display]
+   {\normalfont\huge\filleft}
+   { }
+   {20pt}
+   {\begin{tikzpicture}[remember picture,overlay]
+  \fill[GrigioLight]
+    (current page.north west) rectangle ([yshift=-13cm]current page.north
+east);
+    \node[
+      fill=Pantone,
+      text width=2\paperwidth,
+      rounded corners=6cm,
+      text depth=12cm,
+      anchor=center,
+      inner sep=0pt] at ([yshift=21cm]current page.south west) (parttop)
+    {\thepart};%
+    \node[
+      anchor=center,
+      inner sep=0pt,
+      outer sep=0pt] at ([xshift=16cm, yshift=6cm]parttop.south) (partnum)
+    {\partnumfont\thepart};%
+    \node[
+      anchor=north east,
+      align=right,
+      inner sep=0pt] at ([yshift=10cm] current page.center)
+    {\parbox{.7\textwidth}{\raggedleft\partnamefont\MakeUppercase{#1}}};
+    \end{tikzpicture}%
+}
+
+%--------------- FINE parte personalizzata ------------------------------------
